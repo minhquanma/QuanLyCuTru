@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -234,6 +235,10 @@
     <Compile Include="ThongTin.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-QuanLyCuTru-20180318124329.mdf" />
+    <Content Include="App_Data\aspnet-QuanLyCuTru-20180318124329_log.ldf">
+      <DependentUpon>aspnet-QuanLyCuTru-20180318124329.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-materia.min.css" />
     <Content Include="Content\bootstrap.literia.min.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -365,9 +370,7 @@
     <Content Include="Views\CuTru\Edit.cshtml" />
     <Content Include="Views\CuTru\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -403,7 +406,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58360</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
