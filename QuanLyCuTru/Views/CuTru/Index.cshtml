@@ -1,0 +1,64 @@
+﻿@model IEnumerable<QuanLyCuTru.CuTru>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayTao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayDangKy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayHetHan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CanBo.HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChiCuTru.SoNha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiCuTru.TenLoai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayTao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDangKy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayHetHan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CanBo.HoTen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChiCuTru.SoNha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiCuTru.TenLoai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaCuTru }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaCuTru }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaCuTru })
+        </td>
+    </tr>
+}
+
+</table>

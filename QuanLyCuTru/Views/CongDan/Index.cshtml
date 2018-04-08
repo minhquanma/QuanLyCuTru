@@ -1,0 +1,73 @@
+﻿@model IEnumerable<QuanLyCuTru.Models.NguoiDung>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GioiTinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SinhNhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoiSinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QueQuan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuocTich)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Avatar)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var congDan in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => congDan.HoTen)
+        </td>
+        <td>
+            @if (congDan.GioiTinh)
+            {
+                @Html.DisplayName("Nam")
+            }
+            else
+            {
+                @Html.DisplayName("Nữ")
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => congDan.SinhNhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => congDan.NoiSinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => congDan.QueQuan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => congDan.QuocTich)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => congDan.Avatar)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=congDan.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=congDan.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=congDan.Id })
+        </td>
+    </tr>
+}
+
+</table>

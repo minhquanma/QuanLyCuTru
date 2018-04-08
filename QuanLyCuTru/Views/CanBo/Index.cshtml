@@ -1,0 +1,126 @@
+﻿
+@{
+    Layout = null;
+
+    ViewBag.PageTitle = "Cán bộ";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+    @Styles.Render("~/Content/css")
+    <!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    -->
+    <link rel="stylesheet" href="~/Content/Canbo.css">
+    <title>@ViewBag.PageTitle</title>
+</head>
+<body>
+    @Html.Partial("_NavBar");
+    <main class="p-4">
+        <div class="navigation-view d-flex mb-4">
+            <div class="side-navbar bg-light rounded mr-4 pt-3">
+                <ul class="list-unstyled mb-3">
+                    <li class="text-muted text-uppercase px-3"><i class="fas fa-wrench"></i>&nbsp;administration</li>
+                    <li><a href="#" class="d-block text-success text-capitalize px-3">users</a></li>
+                    <li><a href="#" class="d-block text-success text-capitalize px-3">roles</a></li>
+                </ul>
+                <ul class="list-unstyled mb-3">
+                    <li class="text-muted text-uppercase px-3"><i class="fas fa-signal"></i>&nbsp;statistics</li>
+                    <li><a href="#" class="d-block text-success text-capitalize px-3">general</a></li>
+                    <li><a href="#" class="d-block text-success text-capitalize px-3">users</a></li>
+                    <li><a href="#" class="d-block text-success text-capitalize px-3">visitors</a></li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li class="text-muted text-uppercase px-3"><i class="fas fa-user"></i>&nbsp;profile</li>
+                    <li><a href="#" class="d-block text-success text-capitalize px-3">my profile</a></li>
+                    <li><a href="#" class="d-block text-success text-capitalize px-3">settings</a></li>
+                    <li><a href="#" class="d-block text-success text-capitalize px-3">logout</a></li>
+                </ul>
+            </div>
+            <div class="side-jumbo jumbotron mb-0 px-5">
+                <h1 class="display-5 font-weight-bold text-capitalize">Xin chào cán bộ</h1>
+                <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugit delectus ipsum consequatur. Dolore autem tenetur dolorum, dolorem exercitationem minus. At voluptate ea dicta incidunt excepturi reiciendis commodi possimus architecto? At voluptate ea dicta incidunt excepturi</p>
+                @Html.ActionLink("quản lý công dân", "QuanLyDan", "CanBo", null, new { @class = "btn btn-success text-capitalize" })
+            </div>
+        </div>
+
+        <div class="d-flex">
+            <div class="anonymous-view">&nbsp;</div>
+            <div class="data-view">
+                <div class="statistic-view row">
+                    <div class="category col-3">
+                        <h5 class="text-capitalize font-weight-bold mb-0">Tổng số</h5>
+                        <h3><span class="badge badge-dark">420</span></h3>
+                    </div>
+                    <div class="category col-3">
+                        <h5 class="text-capitalize font-weight-bold mb-0">Đăng ký hôm nay</h5>
+                        <h3><span class="badge badge-dark">69</span></h3>
+                    </div>
+                    <div class="category col-3">
+                        <h5 class="text-capitalize font-weight-bold mb-0">Chờ duyệt</h5>
+                        <h3><span class="badge badge-dark">96</span></h3>
+                    </div>
+                    <div class="category col-3">
+                        <h5 class="text-capitalize font-weight-bold mb-0">Cán bộ</h5>
+                         <h3><span class="badge badge-dark">3</span></h3>
+                    </div>
+                </div>
+
+                <h2 class="text-capitalize font-weight-bold mt-5 mb-0">
+                    Chờ duyệt
+                    <span class="h5 d-inline-block text-muted">Duyệt hoặc từ chối</span>
+                </h2>
+
+                <hr>
+
+                <table class="table table-bordered table-hover mt-4">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>City</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Dương Thanh Tân</td>
+                            <td>fckmyass@gmail.com</td>
+                            <td>0942-xxx-xxx</td>
+                            <td>Hồ Chí Minh</td>
+                            <td>God</td>
+                            <td class="text-center"><h4><span class="badge badge-danger">Active</span></h4></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mã Minh Quân</td>
+                            <td>lolicon@gmail.com</td>
+                            <td>0122-xxx-xxx</td>
+                            <td>Mẫu Quốc</td>
+                            <td>Pedobear</td>
+                            <td class="text-center"><span class="badge badge-danger">Inactive</span></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </main>
+
+
+   
+</body>
+</html>
