@@ -67,5 +67,40 @@ namespace QuanLyCuTru.Models
 
         // Thông tin đăng ký cư trú 
         public virtual ICollection<CuTru> CuTrus { get; set; }
+
+        [NotMapped]
+        [Display(Name = "E-mail")]
+        public string Email
+        {
+            /** Check user's registration email
+            *  The user's email are stored in the AspNetUsers table
+            *  If the user hasn't registered yet, the Identity object will be null
+            **/
+            get
+            {
+                try
+                {
+                    return Identity.Email;
+                } 
+                catch (NullReferenceException)
+                {
+                    return "Chưa đăng ký";
+                }
+            }
+        }
+
+        [NotMapped]
+        [Display(Name = "Địa chỉ")]
+        public string DiaChi
+        {
+            get { return $"{SoNha} {Duong}, {Phuong}, {Quan}, {ThanhPho}"; }
+        }
+
+        [NotMapped]
+        [Display(Name = "Giới tính")]
+        public string StringGioiTinh
+        {
+            get { return GioiTinh ? "Nam" : "Nữ"; }
+        }
     }
 }

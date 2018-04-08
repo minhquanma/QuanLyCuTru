@@ -27,6 +27,7 @@ namespace QuanLyCuTru.Controllers
             return View(viewModel);
         }
 
+        // POST: CanBo/QuanLyDan: used to search cong dan
         [Route("")]
         [HttpPost]
         public ActionResult Index(SearchNguoiDungViewModel viewModel)
@@ -36,9 +37,12 @@ namespace QuanLyCuTru.Controllers
                 return RedirectToAction("Index");
             }
 
+            // Input search string submitted by user
             var search = viewModel.TimKiem;
 
+            // Create a cong dan reference
             IEnumerable<NguoiDung> congDans;
+
             switch (viewModel.LoaiTimKiemId)
             {
                 case 1:
@@ -58,9 +62,21 @@ namespace QuanLyCuTru.Controllers
                     break;
             }
 
-            // Assign cong dan list
+            // Assign cong dan list to view model
             viewModel.CongDans = congDans.ToList();
             return View(viewModel);
+        }
+
+        // GET: CanBo/QuanLyDan/Details/id
+        [Route("Details")]
+        public ActionResult Details(int id)
+        {
+            // Query
+            var congDan = db.NguoiDungs
+                .Include(d => d.Identity)
+                .FirstOrDefault(c => c.Id == id);
+     
+            return View(congDan);
         }
 
         [Route("Create")]

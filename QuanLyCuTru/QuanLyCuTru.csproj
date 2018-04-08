@@ -369,6 +369,7 @@
     <Content Include="Views\CuTru\Details.cshtml" />
     <Content Include="Views\CuTru\Edit.cshtml" />
     <Content Include="Views\CuTru\Index.cshtml" />
+    <Content Include="Views\QuanLyDan\Details.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -24,3 +24,7 @@ textarea {
 }
 
 .table th, .table td { vertical-align: middle; }
+
+.circular {
+    border-radius: 50%;
+}
