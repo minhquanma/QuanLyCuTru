@@ -62,7 +62,7 @@ namespace QuanLyCuTru.Controllers
         //        return RedirectToAction("Index");
         //    }
 
-            
+
         //    return View(congDan);
         //}
 
@@ -78,7 +78,7 @@ namespace QuanLyCuTru.Controllers
         //    {
         //        return HttpNotFound();
         //    }
-       
+
         //    return View(congDan);
         //}
 
@@ -96,37 +96,37 @@ namespace QuanLyCuTru.Controllers
         //        db.SaveChanges();
         //        return RedirectToAction("Index");
         //    }
-            
+
         //    return View(congDan);
         //}
 
         //// GET: CongDan/Delete/5
         //public ActionResult Delete(int? id)
         //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    CongDan congDan = db.CongDans.Find(id);
-        //    if (congDan == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(congDan);
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //CongDan congDan = db.CongDans.Find(id);
+            //if (congDan == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(congDan);
         //}
 
-        //// POST: CongDan/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    CongDan congDan = db.CongDans.Find(id);
-        //    db.CongDans.Remove(congDan);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+//// POST: CongDan/Delete/5
+//[HttpPost, ActionName("Delete")]
+//[ValidateAntiForgeryToken]
+//public ActionResult DeleteConfirmed(int id)
+//{
+//    CongDan congDan = db.CongDans.Find(id);
+//    db.CongDans.Remove(congDan);
+//    db.SaveChanges();
+//    return RedirectToAction("Index");
+//}
 
-        protected override void Dispose(bool disposing)
+protected override void Dispose(bool disposing)
         {
             if (disposing)
             {

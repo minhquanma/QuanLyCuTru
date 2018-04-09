@@ -1,4 +1,4 @@
-﻿@model QuanLyCuTru.Models.SearchNguoiDungViewModel
+﻿@model QuanLyCuTru.Models.TimNguoiDungViewModel
 
 @{
     ViewBag.PageTitle = "Quản lý công dân";
@@ -32,11 +32,9 @@
     <button type="submit" class="btn btn-primary">Tìm kiếm</button>
 }
 
-
-
 <br />
 <p>
-    @Html.ActionLink("Thêm mới", "AddCongDan", null, new { @class = "btn btn-outline-primary" })
+    @Html.ActionLink("Thêm mới", "ThemCongDan", null, new { @class = "btn btn-outline-primary" })
 </p>
 
 <table class="table">
@@ -89,12 +87,12 @@
                 @Html.DisplayFor(modelItem => congDan.ChucVu.Ten)
             </td>
             <td>
-                @Html.ActionLink("Sửa", "Edit", "QuanLyDan", new { id = congDan.Id }, null) |
-                @Html.ActionLink("Chi tiết", "Details", "QuanLyDan", new { id = congDan.Id }, null) |
-                @Html.ActionLink("Xóa", "Delete", "QuanLyDan", new { id = congDan.Id }, null)
+                @Html.ActionLink("Sửa", "SuaCongDan", new { id = congDan.Id }) |
+                @Html.ActionLink("Chi tiết", "ChiTietCongDan", new { id = congDan.Id }) |
+                @Html.ActionLink("Xóa", "XoaCongDan", new { id = congDan.Id })
             </td>
             <td>
-                <img src="https://pbs.twimg.com/media/DaRRyhrUQAEQN-R.jpg" alt="" style="width:50px; height:50px; border-radius: 50%; " />
+                <img src="@congDan.Avatar" alt="" style="width:50px; height:50px; border-radius: 50%; " />
             </td>
         </tr>
     }

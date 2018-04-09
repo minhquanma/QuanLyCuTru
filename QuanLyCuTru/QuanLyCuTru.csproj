@@ -233,17 +233,23 @@
     <Compile Include="Migrations\201804091542089_UpdateModel.Designer.cs">
       <DependentUpon>201804091542089_UpdateModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804091637450_ReseedDatabase.cs" />
+    <Compile Include="Migrations\201804091637450_ReseedDatabase.Designer.cs">
+      <DependentUpon>201804091637450_ReseedDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddCongDanViewModel.cs" />
     <Compile Include="Models\ChucVu.cs" />
     <Compile Include="Models\CuTru.cs" />
+    <Compile Include="Models\DangKyCongDanViewModel.cs" />
     <Compile Include="Models\LoaiCuTru.cs" />
     <Compile Include="Models\LoaiTimKiem.cs" />
     <Compile Include="Models\NguoiDung.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\SearchNguoiDungViewModel.cs" />
+    <Compile Include="Models\QuyenHanViewModel.cs" />
+    <Compile Include="Models\TimNguoiDungViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ThongTin.cs" />
@@ -388,7 +394,11 @@
     <Content Include="Views\QuanLyDan\Details.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\CongDan.cshtml" />
-    <Content Include="Views\Admin\AddCongDan.cshtml" />
+    <Content Include="Views\Admin\ChiTietCongDan.cshtml" />
+    <Content Include="Views\Admin\ThemCongDan.cshtml" />
+    <Content Include="Views\Admin\XoaCongDan.cshtml" />
+    <Content Include="Views\Admin\DangKyCongDan.cshtml" />
+    <Content Include="Views\Admin\QuyenHan.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -419,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804091542089_UpdateModel.resx">
       <DependentUpon>201804091542089_UpdateModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804091637450_ReseedDatabase.resx">
+      <DependentUpon>201804091637450_ReseedDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

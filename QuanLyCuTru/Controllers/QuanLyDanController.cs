@@ -20,7 +20,7 @@ namespace QuanLyCuTru.Controllers
         public ActionResult Index()
         {
             var congDans = db.NguoiDungs.ToList();
-            var viewModel = new SearchNguoiDungViewModel
+            var viewModel = new TimNguoiDungViewModel
             {
                 CongDans = congDans
             };
@@ -30,7 +30,7 @@ namespace QuanLyCuTru.Controllers
         // POST: CanBo/QuanLyDan: used to search cong dan
         [Route("")]
         [HttpPost]
-        public ActionResult Index(SearchNguoiDungViewModel viewModel)
+        public ActionResult Index(TimNguoiDungViewModel viewModel)
         {
             if (ModelState.IsValid == false)
             {

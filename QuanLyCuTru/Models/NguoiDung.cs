@@ -10,6 +10,7 @@ namespace QuanLyCuTru.Models
     public class NguoiDung
     {
         // Primary Key
+        [Display(Name = "Mã công dân")]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Họ tên không được để trống")]
@@ -75,6 +76,22 @@ namespace QuanLyCuTru.Models
         public virtual ICollection<CuTru> CuTrus { get; set; }
 
         [NotMapped]
+        public bool HasEmail 
+        {
+            get 
+            {
+                try
+                {
+                    return true;
+                }
+                catch (NullReferenceException)
+                {
+                    return false;
+                }
+            }
+        }
+
+        [NotMapped]
         [Display(Name = "E-mail")]
         public string Email
         {
@@ -84,14 +101,7 @@ namespace QuanLyCuTru.Models
             **/
             get
             {
-                try
-                {
-                    return Identity.Email;
-                } 
-                catch (NullReferenceException)
-                {
-                    return "Chưa đăng ký";
-                }
+                return HasEmail ? Identity.Email : "Chưa đăng ký";
             }
         }
 
@@ -99,7 +109,7 @@ namespace QuanLyCuTru.Models
         [Display(Name = "Địa chỉ")]
         public string DiaChi
         {
-            get { return $"{SoNha} {Duong}, {Phuong}, {Quan}, {ThanhPho}"; }
+            get { return $"{SoNha} {Duong}, Phường {Phuong}, Quận {Quan}, {ThanhPho}"; }
         }
 
         [NotMapped]

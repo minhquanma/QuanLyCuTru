@@ -6,7 +6,7 @@ using System.Web;
 
 namespace QuanLyCuTru.Models
 {
-    public class SearchNguoiDungViewModel
+    public class TimNguoiDungViewModel
     {
         public byte LoaiTimKiemId { get; set; }
         public IEnumerable<LoaiTimKiem> LoaiTimKiems

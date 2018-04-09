@@ -32,6 +32,55 @@ namespace QuanLyCuTru
         }
     }
 
+    public class MyPasswordValidator : PasswordValidator
+    {
+        public override Task<IdentityResult> ValidateAsync(string item)
+        {
+            if (item == null)
+            {
+                throw new ArgumentNullException("item");
+            }
+            var errors = new List<string>();
+            if (string.IsNullOrWhiteSpace(item) || item.Length < RequiredLength)
+            {
+                //TODO: add error message from your own resources file with specified culture.
+                //TODO: remove following line if your code completed
+                //errors.Add(String.Format(CultureInfo.CurrentCulture, Resources.PasswordTooShort, RequiredLength));
+            }
+            if (RequireNonLetterOrDigit && item.All(IsLetterOrDigit))
+            {
+                //TODO: add error message from your own resources file with specified culture.
+                //TODO: remove following line if your code completed
+                //errors.Add(Resources.PasswordRequireNonLetterOrDigit);
+            }
+            if (RequireDigit && item.All(c => !IsDigit(c)))
+            {
+                //TODO: add error message from your own resources file with specified culture.
+                //TODO: remove following line if your code completed
+                errors.Add("Mật khẩu phải có ký tự số");
+            }
+            if (RequireLowercase && item.All(c => !IsLower(c)))
+            {
+                //TODO: add error message from your own resources file with specified culture.
+                //TODO: remove following line if your code completed
+                //errors.Add(Resources.PasswordRequireLower);
+            }
+            if (RequireUppercase && item.All(c => !IsUpper(c)))
+            {
+                //TODO: add error message from your own resources file with specified culture.
+                //TODO: remove following line if your code completed
+                //errors.Add(Resources.PasswordRequireUpper);
+            }
+            if (errors.Count == 0)
+            {
+                //TODO: add error message from your own resources file with specified culture.
+                //TODO: remove following line if your code completed
+                //return Task.FromResult(IdentityResult.Success);
+            }
+            return Task.FromResult(IdentityResult.Failed(String.Join(" ", errors)));
+        }
+    }
+
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
@@ -54,10 +103,10 @@ namespace QuanLyCuTru
             manager.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
+                RequireNonLetterOrDigit = false,
                 RequireDigit = true,
-                RequireLowercase = true,
-                RequireUppercase = true,
+                RequireLowercase = false,
+                RequireUppercase = false,
             };
 
             // Configure user lockout defaults
