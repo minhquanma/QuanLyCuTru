@@ -29,6 +29,9 @@ namespace QuanLyCuTru.Models
         public int ChucVuId { get; set; }
         public ChucVu ChucVu { get; set; }
 
+        [Display(Name = "Điện thoại")]
+        public string DienThoai { get; set; }
+
         [Required]
         [Display(Name = "Số nhà")]
         public string SoNha { get; set; }
