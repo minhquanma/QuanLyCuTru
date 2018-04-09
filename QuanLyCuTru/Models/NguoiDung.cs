@@ -63,12 +63,12 @@ namespace QuanLyCuTru.Models
 
         public string Avatar { get; set; }
 
-        // ASP.NET Identity: Lưu thông xác thực đăng nhập Identity
+        // ASP.NET Identity: User's authentication data are stored here.
         [ForeignKey("Identity")]
         public string IdentityId { get; set; } 
         public virtual ApplicationUser Identity { get; set; }
 
-        // Thông tin đăng ký cư trú 
+        // Cu Tru data  
         public virtual ICollection<CuTru> CuTrus { get; set; }
 
         [NotMapped]

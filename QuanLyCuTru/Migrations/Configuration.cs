@@ -14,6 +14,7 @@ namespace QuanLyCuTru.Migrations
 
         protected override void Seed(QuanLyCuTru.Models.ApplicationDbContext context)
         {
+            //context.Database.ExecuteSqlCommand("DBCC CHECKIDENT ('NguoiDungs', RESEED, 1000)");
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
