@@ -231,6 +231,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AddCongDanViewModel.cs" />
     <Compile Include="Models\ChucVu.cs" />
     <Compile Include="Models\CuTru.cs" />
     <Compile Include="Models\LoaiCuTru.cs" />
@@ -382,6 +383,8 @@
     <Content Include="Views\CuTru\Index.cshtml" />
     <Content Include="Views\QuanLyDan\Details.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\CongDan.cshtml" />
+    <Content Include="Views\Admin\AddCongDan.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

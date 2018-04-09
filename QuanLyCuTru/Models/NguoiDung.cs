@@ -27,6 +27,7 @@ namespace QuanLyCuTru.Models
 
         // Chức vụ (many-to-1)
         public int ChucVuId { get; set; }
+        [Display(Name = "Chức vụ")]
         public ChucVu ChucVu { get; set; }
 
         [Display(Name = "Điện thoại")]

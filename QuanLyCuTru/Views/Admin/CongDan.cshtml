@@ -1,0 +1,104 @@
+﻿@model QuanLyCuTru.Models.SearchNguoiDungViewModel
+
+@{
+    ViewBag.PageTitle = "Quản lý công dân";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2>Danh sách</h2>
+
+<!-- Html.ActionLink("Thêm mới", "Create", "QuanLyDan", null, null) -->
+@using (Html.BeginForm("Index", "QuanLyDan", FormMethod.Post, new { @class = "form-inline" }))
+{
+    <label class="mr-sm-2" for="inlineFormCustomSelect">Tìm kiếm</label>
+    <!-- <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+        <option selected>Chọn loại...</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select> -->
+    @Html.DropDownListFor(m => m.LoaiTimKiemId,
+        new SelectList(Model.LoaiTimKiems, "Id", "Name"),
+        new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
+
+    @Html.TextBoxFor(m => m.TimKiem,
+        new
+        {
+            @class = "form-control mb-2 mr-sm-2 mb-sm-0",
+            @placeholder = "Nhập dữ liệu muốn tìm"
+        })
+
+    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+}
+
+
+
+<br />
+<p>
+    @Html.ActionLink("Thêm mới", "AddCongDan", null, new { @class = "btn btn-outline-primary" })
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CongDans[0].HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CongDans[0].GioiTinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CongDans[0].SinhNhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CongDans[0].NoiSinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CongDans[0].QueQuan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CongDans[0].QuocTich)
+        </th>
+        <th>@Html.DisplayNameFor(model => model.CongDans[0].ChucVu)</th>
+        <th>Thao tác</th>
+        <th>Ảnh</th>
+    </tr>
+
+    @foreach (var congDan in Model.CongDans)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => congDan.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => congDan.StringGioiTinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => congDan.SinhNhat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => congDan.NoiSinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => congDan.QueQuan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => congDan.QuocTich)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => congDan.ChucVu.Ten)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", "QuanLyDan", new { id = congDan.Id }, null) |
+                @Html.ActionLink("Chi tiết", "Details", "QuanLyDan", new { id = congDan.Id }, null) |
+                @Html.ActionLink("Xóa", "Delete", "QuanLyDan", new { id = congDan.Id }, null)
+            </td>
+            <td>
+                <img src="https://pbs.twimg.com/media/DaRRyhrUQAEQN-R.jpg" alt="" style="width:50px; height:50px; border-radius: 50%; " />
+            </td>
+        </tr>
+    }
+</table>
+
+
+

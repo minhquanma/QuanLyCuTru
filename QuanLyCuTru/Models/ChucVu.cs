@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -8,6 +9,8 @@ namespace QuanLyCuTru.Models
     public class ChucVu
     {
         public int Id { get; set; }
+
+        [Display(Name = "Chức vụ")]
         public string Ten { get; set; }
 
         // 1-to-many
