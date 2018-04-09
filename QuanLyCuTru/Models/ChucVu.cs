@@ -8,6 +8,7 @@ namespace QuanLyCuTru.Models
 {
     public class ChucVu
     {
+        [Display(Name = "Chức vụ")]
         public int Id { get; set; }
 
         [Display(Name = "Chức vụ")]

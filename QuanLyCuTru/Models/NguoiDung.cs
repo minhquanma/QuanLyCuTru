@@ -12,7 +12,7 @@ namespace QuanLyCuTru.Models
         // Primary Key
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Họ tên không được để trống")]
         [Display(Name = "Họ tên")]
         public string HoTen { get; set; }
 
@@ -20,36 +20,38 @@ namespace QuanLyCuTru.Models
         [Display(Name = "Giới tính")]
         public bool GioiTinh { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Sinh nhật không được để trống")]
         [Display(Name = "Sinh nhật")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? SinhNhat { get; set; }
 
         // Chức vụ (many-to-1)
+        [Display(Name = "Chức vụ")]
         public int ChucVuId { get; set; }
+
         [Display(Name = "Chức vụ")]
         public ChucVu ChucVu { get; set; }
 
         [Display(Name = "Điện thoại")]
         public string DienThoai { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Số nhà không được để trống")]
         [Display(Name = "Số nhà")]
         public string SoNha { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Đường không được để trống")]
         [Display(Name = "Đường")]
         public string Duong { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Phường không được để trống")]
         [Display(Name = "Phường")]
         public string Phuong { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Quận không được để trống")]
         [Display(Name = "Quận")]
         public string Quan { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Thành phố không được để trống")]
         [Display(Name = "Thành phố")]
         public string ThanhPho { get; set; }
 

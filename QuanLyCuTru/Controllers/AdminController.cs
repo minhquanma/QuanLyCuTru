@@ -50,5 +50,17 @@ namespace QuanLyCuTru.Controllers
 
             return View(nguoiDung);
         }
+
+        // POST: Admin/AddCongDan
+        [HttpPost]
+        public ActionResult AddCongDan(AddCongDanViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            viewModel.ChucVus = db.ChucVus.ToList();
+            return View(viewModel);
+        }
     }
 }

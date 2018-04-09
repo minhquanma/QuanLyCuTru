@@ -13,7 +13,8 @@ namespace QuanLyCuTru.Models
         [Display(Name = "Ngày tạo")]
         public DateTime NgayTao { get; set; }
 
-        [Display(Name = "Ngày tạo")]
+        [Required(ErrorMessage = "Ngày đăng ký không được để trống")]
+        [Display(Name = "Ngày đăng ký")]
         public DateTime NgayDangKy { get; set; }
 
         [Display(Name = "Ngày hết hạn")]
@@ -22,21 +23,27 @@ namespace QuanLyCuTru.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
+        [Required(ErrorMessage = "Điện thoại không được để trống")]
         [Display(Name = "Điện thoại")]
         public string DienThoai { get; set; }
 
+        [Required(ErrorMessage = "Số nhà không được để trống")]
         [Display(Name = "Số nhà")]
         public string SoNha { get; set; }
 
+        [Required(ErrorMessage = "Đường không được để trống")]
         [Display(Name = "Đường")]
         public string Duong { get; set; }
 
+        [Required(ErrorMessage = "Phường không được để trống")]
         [Display(Name = "Phường")]
         public string Phuong { get; set; }
 
+        [Required(ErrorMessage = "Quận không được để trống")]
         [Display(Name = "Quận")]
         public string Quan { get; set; }
 
+        [Required(ErrorMessage = "Thành phố không được để trống")]
         [Display(Name = "Thành phố")]
         public string ThanhPho { get; set; }
 
@@ -55,5 +62,10 @@ namespace QuanLyCuTru.Models
 
         // Danh sách công dân (many-to-many)
         public virtual ICollection<NguoiDung> CongDans { get; set; }
+
+        public CuTru()
+        {
+            DaDuyet = false;
+        }
     }
 }

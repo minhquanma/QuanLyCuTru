@@ -229,6 +229,10 @@
     <Compile Include="Migrations\201804090804324_UpdateCuTruCredential.Designer.cs">
       <DependentUpon>201804090804324_UpdateCuTruCredential.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804091542089_UpdateModel.cs" />
+    <Compile Include="Migrations\201804091542089_UpdateModel.Designer.cs">
+      <DependentUpon>201804091542089_UpdateModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddCongDanViewModel.cs" />
@@ -412,6 +416,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804090804324_UpdateCuTruCredential.resx">
       <DependentUpon>201804090804324_UpdateCuTruCredential.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804091542089_UpdateModel.resx">
+      <DependentUpon>201804091542089_UpdateModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
