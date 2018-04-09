@@ -19,6 +19,12 @@ namespace QuanLyCuTru.Models
         [Display(Name = "Ngày hết hạn")]
         public DateTime? NgayHetHan { get; set; }
 
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Display(Name = "Điện thoại")]
+        public string DienThoai { get; set; }
+
         [Display(Name = "Số nhà")]
         public string SoNha { get; set; }
 

@@ -224,6 +224,10 @@
     <Compile Include="Migrations\201804090731586_UpdateNguoiDungPhoneNumber.Designer.cs">
       <DependentUpon>201804090731586_UpdateNguoiDungPhoneNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804090804324_UpdateCuTruCredential.cs" />
+    <Compile Include="Migrations\201804090804324_UpdateCuTruCredential.Designer.cs">
+      <DependentUpon>201804090804324_UpdateCuTruCredential.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ChucVu.cs" />
@@ -243,8 +247,6 @@
     <Content Include="App_Data\aspnet-QuanLyCuTru-20180318124329_log.ldf">
       <DependentUpon>aspnet-QuanLyCuTru-20180318124329.mdf</DependentUpon>
     </Content>
-    <Content Include="Content\bootstrap-materia.min.css" />
-    <Content Include="Content\bootstrap.literia.min.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\canbo.css" />
     <Content Include="Content\img\bg.jpg" />
@@ -297,6 +299,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -398,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804090731586_UpdateNguoiDungPhoneNumber.resx">
       <DependentUpon>201804090731586_UpdateNguoiDungPhoneNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804090804324_UpdateCuTruCredential.resx">
+      <DependentUpon>201804090804324_UpdateCuTruCredential.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
