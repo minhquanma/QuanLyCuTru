@@ -199,9 +199,7 @@ Backup*/
 UpgradeLog*.XML
 UpgradeLog*.htm
 
-# SQL Server files
-*.mdf
-*.ldf
+# SQL Server files - this shit has been removed
 
 # Business Intelligence projects
 *.rdl.data

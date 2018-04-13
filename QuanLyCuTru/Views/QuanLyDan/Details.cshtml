@@ -20,7 +20,7 @@
     <h4>@Model.HoTen</h4>
     <hr />
     <dl class="dl-horizontal">
-        <img src="https://cdn2.iconfinder.com/data/icons/rcons-users-color/32/boy-512.png" alt="" class="avatar" />
+        <img src="@Model.Avatar" alt="" class="avatar" />
         <dt>
             @Html.DisplayNameFor(model => model.Email)
         </dt>
@@ -75,14 +75,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.QuocTich)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Avatar)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Avatar)
         </dd>
     </dl>
 </div>

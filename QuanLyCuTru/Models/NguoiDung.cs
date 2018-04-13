@@ -82,7 +82,7 @@ namespace QuanLyCuTru.Models
             {
                 try
                 {
-                    return true;
+                    return Identity.Email != null ? true : false;
                 }
                 catch (NullReferenceException)
                 {

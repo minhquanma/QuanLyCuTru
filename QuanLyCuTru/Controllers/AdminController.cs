@@ -21,6 +21,7 @@ namespace QuanLyCuTru.Controllers
         public AdminController()
         {
             db = new ApplicationDbContext();
+            ViewBag.PageTitle = "Admin";
         }
 
         protected override void Dispose(bool disposing)

@@ -205,6 +205,7 @@
     <Compile Include="Controllers\CongDanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\QuanLyCuTruController.cs" />
     <Compile Include="Controllers\QuanLyDanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -243,6 +244,7 @@
     <Compile Include="Models\ChucVu.cs" />
     <Compile Include="Models\CuTru.cs" />
     <Compile Include="Models\DangKyCongDanViewModel.cs" />
+    <Compile Include="Models\DangKyCuTruViewModel.cs" />
     <Compile Include="Models\LoaiCuTru.cs" />
     <Compile Include="Models\LoaiTimKiem.cs" />
     <Compile Include="Models\NguoiDung.cs" />
@@ -399,6 +401,9 @@
     <Content Include="Views\Admin\XoaCongDan.cshtml" />
     <Content Include="Views\Admin\DangKyCongDan.cshtml" />
     <Content Include="Views\Admin\QuyenHan.cshtml" />
+    <Content Include="Views\QuanLyCuTru\CreateTest.cshtml" />
+    <Content Include="Views\QuanLyCuTru\Index.cshtml" />
+    <Content Include="Views\QuanLyCuTru\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

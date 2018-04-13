@@ -1,0 +1,105 @@
+﻿@model QuanLyCuTru.Models.DangKyCuTruViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("AddUser", "QuanLyCuTru"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control"})
+        @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })
+    </div>
+
+    <div id="CongDans" class="list-group col-md-3">
+        <li class="list-group-item active">Danh sách công dân</li>
+    </div>
+    @Html.ValidationMessageFor(m => m.CongDans, null, new { @class = "text-danger" })
+
+    <br/>
+    <div class="input-group mb-3">
+        <input id="inputUserId" type="text" class="form-control" placeholder="Nhập mã công dân" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button id="buttonAdd" class="btn btn-outline-secondary" type="button">Button</button>
+        </div>
+    </div>
+    <input id="send" type="submit" value="Submit" class="btn btn-primary" />
+}
+
+@section scripts 
+{
+@Scripts.Render("~/bundles/jqueryval")
+    <script>  
+        var listOfIds = [];
+
+        $('#buttonAdd').click(() => {
+            let userId = $("#inputUserId").val();
+            let li = `<a href="#" class="list-group-item list-group-item-action">${userId}</a>`;
+
+            // Append HTML list 
+            $("#CongDans").append(li);
+
+            // Add to json list
+            listOfIds.push(userId);
+        });
+
+        $('#send').click(() => {
+            // Generate hidden input
+            for (var item in listOfIds)
+            {
+                let congDan = `<input type="hidden" name="CongDans[${item}].Id" value="${listOfIds[item]}" />`;
+                $("form").append(congDan)
+                console.log(congDan)
+            }
+        });
+
+        @*var listOfIds = [];
+
+        $('#buttonAdd').click(() => {
+            let userId = $("#inputUserId").val();
+            let li = `<a href="#" class="list-group-item list-group-item-action">${userId}</a>`;
+
+            // Append HTML list 
+            $("#listNguoiDung").append(li);
+
+            // Generate new object
+            var congDan = {
+                
+                Id: userId
+            }
+
+            // Add to json list
+            listOfIds.push(congDan);
+        });
+
+        $('#send').click(() => {
+            var email = $("#Email").val();
+            var model = {
+                Email: email,
+                CongDans: listOfIds 
+            };
+
+            console.log(model)
+            
+            $.ajax({
+                url: "@Url.Action("AddUser")",
+                type: "POST",
+                data: JSON.stringify(model),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                error: function (response) {
+                  
+                    var html; // build html with the obj containing server result
+                    $("#content").html(html);
+                },
+                success: function (response) {
+                   
+                    var html; // build html with the obj containing server result
+                    $("#content").html(html);
+                }
+            })
+        });*@
+    </script>
+}

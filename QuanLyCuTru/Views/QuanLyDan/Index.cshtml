@@ -1,7 +1,6 @@
 ﻿@model QuanLyCuTru.Models.TimNguoiDungViewModel
 
 @{
-    ViewBag.PageTitle = "Quản lý công dân";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -67,14 +66,7 @@
                 @Html.DisplayFor(modelItem => congDan.HoTen)
             </td>
             <td>
-                @if (congDan.GioiTinh)
-                {
-                    @Html.DisplayName("Nam")
-                }
-                else
-                {
-                    @Html.DisplayName("Nữ")
-                }
+                @Html.DisplayFor(modelItem => congDan.StringGioiTinh)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => congDan.SinhNhat)

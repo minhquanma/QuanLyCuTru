@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -11,13 +12,16 @@ namespace QuanLyCuTru.Models
         public int Id { get; set; }
 
         [Display(Name = "Ngày tạo")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime NgayTao { get; set; }
 
         [Required(ErrorMessage = "Ngày đăng ký không được để trống")]
         [Display(Name = "Ngày đăng ký")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime NgayDangKy { get; set; }
 
         [Display(Name = "Ngày hết hạn")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? NgayHetHan { get; set; }
 
         [Display(Name = "Email")]
@@ -62,6 +66,13 @@ namespace QuanLyCuTru.Models
 
         // Danh sách công dân (many-to-many)
         public virtual ICollection<NguoiDung> CongDans { get; set; }
+
+        [NotMapped]
+        [Display(Name = "Địa chỉ")]
+        public string DiaChi
+        {
+            get { return $"{SoNha} {Duong}, Phường {Phuong}, Quận {Quan}, {ThanhPho}"; }
+        }
 
         public CuTru()
         {
