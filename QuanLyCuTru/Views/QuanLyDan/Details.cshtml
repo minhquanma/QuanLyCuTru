@@ -10,7 +10,8 @@
         width: 200px;
         height: 200px;
         border-radius: 50%;
-        margin: 2em;
+        display: block;
+        margin: 0 auto;
     }
 </style>
 
@@ -19,65 +20,53 @@
 <div>
     <h4>@Model.HoTen</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <img src="@Model.Avatar" alt="" class="avatar" />
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+    <div class="row align-items-center">
+        <div class="col-md-5">
+            <img src="@Html.DisplayFor(model => model.Avatar)" alt="" class="avatar" />
+        </div>
+        <div class="table-responsive-md">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th class="border-0">@Html.DisplayNameFor(model => model.Email)</th>
+                        <td class="border-0">@Html.DisplayFor(model => model.Email)</td>
+                    </tr>
+                    <tr>
+                        <th class="border-0">@Html.DisplayNameFor(model => model.StringGioiTinh)</th>
+                        <td class="border-0">@Html.DisplayFor(model => model.StringGioiTinh)</td>
+                    </tr>
+                    <tr>
+                        <th class="border-0">@Html.DisplayNameFor(model => model.SinhNhat)</th>
+                        <td class="border-0">@Html.DisplayFor(model => model.SinhNhat)</td>
+                    </tr>
+                    <tr>
+                        <th class="border-0">@Html.DisplayNameFor(model => model.DiaChi)</th>
+                        <td class="border-0">@Html.DisplayFor(model => model.DiaChi)</td>
+                    </tr>
+                    <tr>
+                        <th class="border-0">@Html.DisplayNameFor(model => model.NoiSinh)</th>
+                        <td class="border-0">@Html.DisplayFor(model => model.NoiSinh)</td>
+                    </tr>
+                    <tr>
+                        <th class="border-0">@Html.DisplayNameFor(model => model.QueQuan)</th>
+                        <td class="border-0">@Html.DisplayFor(model => model.QueQuan)</td>
+                    </tr>
+                    <tr>
+                        <th class="border-0">@Html.DisplayNameFor(model => model.QuocTich)</th>
+                        <td class="border-0">@Html.DisplayFor(model => model.QuocTich)</td>
+                    </tr>
+                    @*<tr>
+                    <th scope="row">@Html.DisplayNameFor(model => model.Avatar)</th>
+                    <td>@Html.DisplayFor(model => model.Avatar)</td>
+                </tr>*@
+                </tbody>
+            </table>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StringGioiTinh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StringGioiTinh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SinhNhat)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SinhNhat)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DiaChi)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DiaChi)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NoiSinh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NoiSinh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.QueQuan)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.QueQuan)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.QuocTich)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.QuocTich)
-        </dd>
-    </dl>
+        </div>
+    </div>
+    
 </div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
