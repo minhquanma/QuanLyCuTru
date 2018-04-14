@@ -241,6 +241,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddCongDanViewModel.cs" />
+    <Compile Include="Models\CanBoViewModel.cs" />
     <Compile Include="Models\ChucVu.cs" />
     <Compile Include="Models\CuTru.cs" />
     <Compile Include="Models\DangKyCongDanViewModel.cs" />
