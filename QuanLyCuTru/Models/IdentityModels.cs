@@ -33,18 +33,19 @@ namespace QuanLyCuTru.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            /** Quan hệ dữ liệu 
-             *  One-To-Many khỏi cần config ở đây, chỉ cần khai báo ở model class
+            /** Database Relationship 
+             *  One-To-Many configurations is not required, it's been mapped automatically
              * **/
 
+            // The junction table between "CuTru has many CongDan" is declared here.
             modelBuilder.Entity<CuTru>()
                 .HasMany<NguoiDung>(s => s.CongDans)
                 .WithMany(c => c.CuTrus)
                 .Map(cs =>
                 {
-                    cs.MapLeftKey("CuTruId");
-                    cs.MapRightKey("CongDanId");
-                    cs.ToTable("DangKyCuTru");
+                    cs.MapLeftKey("CuTruId"); // Name of First Table Key
+                    cs.MapRightKey("CongDanId"); // Name of Second Table Key
+                    cs.ToTable("DangKyCuTru"); // Name of the junction table
                 });
         }
         public ApplicationDbContext()

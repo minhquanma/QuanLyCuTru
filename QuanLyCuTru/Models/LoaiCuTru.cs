@@ -14,7 +14,7 @@ namespace QuanLyCuTru.Models
         [Display(Name = "Loại cư trú")]
         public string Ten { get; set; }
 
-        // Các thông tin cư trú thuộc loại cư trú này (1-to-many)
+        //  The list of CuTru entities belong to this LoaiCuTru  (1-to-many)
         public ICollection<CuTru> CuTrus { get; set; }
     }
 }

@@ -80,12 +80,19 @@ namespace QuanLyCuTru.Models
         {
             get 
             {
+                /** Check user's registration email
+                *  The user's email are stored in the AspNetUsers table
+                *  If the user hasn't registered yet, the Identity object will be null
+                **/
                 try
                 {
+                    // try returning the Email, if it's not null => the user HasEmail
                     return Identity.Email != null ? true : false;
                 }
                 catch (NullReferenceException)
                 {
+                    // the operation fails when the user has no email (the Identity is null)
+                    // when it throws NullReferenceException => return false 
                     return false;
                 }
             }
@@ -95,10 +102,6 @@ namespace QuanLyCuTru.Models
         [Display(Name = "E-mail")]
         public string Email
         {
-            /** Check user's registration email
-            *  The user's email are stored in the AspNetUsers table
-            *  If the user hasn't registered yet, the Identity object will be null
-            **/
             get
             {
                 return HasEmail ? Identity.Email : "Chưa đăng ký";
