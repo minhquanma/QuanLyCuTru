@@ -34,8 +34,7 @@ namespace QuanLyCuTru.Controllers
             return View(cuTrus);
         }
 
-        [Route("Create")]
-        public ActionResult Create()
+        public DangKyCuTruViewModel InitDangKyCuTruViewModel()
         {
             // Lay thong tin dang nhap hien tai cua can bo
             var currentId = User.Identity.GetUserId();
@@ -49,6 +48,14 @@ namespace QuanLyCuTru.Controllers
                 CongDans = new List<int>()
             };
 
+            return cuTru;
+        }
+
+        [Route("Create")]
+        public ActionResult Create()
+        { 
+            var cuTru = InitDangKyCuTruViewModel();
+           
             return View(cuTru);
         }
 
@@ -59,17 +66,12 @@ namespace QuanLyCuTru.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // Lay thong tin dang nhap hien tai cua can bo
-                var currentId = User.Identity.GetUserId();
-                var canBo = db.NguoiDungs.SingleOrDefault(s => s.IdentityId.Contains(currentId));
-                var loaiCuTrus = db.LoaiCuTrus;
-
-                viewModel.CanBoId = canBo.Id;
-                viewModel.LoaiCuTru = loaiCuTrus;
+                viewModel = InitDangKyCuTruViewModel();
          
                 return View(viewModel);
             }
 
+            // Tao moi thong tin cu tru
             var cuTru = new CuTru
             {
                 NgayDangKy = viewModel.NgayDangKy,
@@ -84,15 +86,24 @@ namespace QuanLyCuTru.Controllers
                 ThanhPho = viewModel.ThanhPho,
                 LoaiCuTruId = viewModel.LoaiCuTruId,
                 CanBoId = viewModel.CanBoId,
+                DaDuyet = true,
                 CongDans = new Collection<NguoiDung>()
             };
 
-            viewModel.CongDans.ForEach(value =>
+           
+            foreach (int value in viewModel.CongDans)
             {
                 // Query each congdan
                 var congDan = db.NguoiDungs.SingleOrDefault(c => c.Id == value);
+
+                if (congDan == null)
+                {
+                    ModelState.AddModelError("", "Thông tin công dân không hợp lệ");
+                    return View(InitDangKyCuTruViewModel());
+                }
+
                 cuTru.CongDans.Add(congDan);
-            });
+            }
          
 
             db.CuTrus.Add(cuTru);
@@ -110,6 +121,7 @@ namespace QuanLyCuTru.Controllers
             return View();
         }
 
+        // Test codes
         [Route("AddUser")]
         [HttpPost]
         public ActionResult AddUser(DangKyCuTruViewModel viewModel)

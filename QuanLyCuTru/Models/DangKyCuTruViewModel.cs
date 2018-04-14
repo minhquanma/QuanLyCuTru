@@ -65,6 +65,7 @@ namespace QuanLyCuTru.Models
         public NguoiDung CanBo { get; set; }
 
         [Display(Name = "Danh sách công dân")]
+        [Required(ErrorMessage = "Danh sách công dân không được để trống")]
         public List<int> CongDans { get; set; }
 
         public DangKyCuTruViewModel()
