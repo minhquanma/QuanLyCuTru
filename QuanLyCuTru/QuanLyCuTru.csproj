@@ -405,6 +405,7 @@
     <Content Include="Views\QuanLyCuTru\CreateTest.cshtml" />
     <Content Include="Views\QuanLyCuTru\Index.cshtml" />
     <Content Include="Views\QuanLyCuTru\Create.cshtml" />
+    <Content Include="Views\QuanLyCuTru\Details.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

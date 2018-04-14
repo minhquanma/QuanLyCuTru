@@ -1,0 +1,101 @@
+﻿@model QuanLyCuTru.Models.CuTru
+
+@{
+    ViewBag.Title = "Chi tiết cư trứ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thông tin chi tiết cư trú</h2>
+
+<div>
+    <h4>Mã số: @Model.Id</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <div class="list-group col-md-4">
+            <a href="#" class="list-group-item list-group-item-action active">
+                Danh sách công dân
+            </a>
+            @foreach (var congDan in Model.CongDans)
+            {
+                @Html.ActionLink(congDan.HoTen, "Details", "QuanLyDan", new { id = congDan.Id }, new { @class = "list-group-item list-group-item-action" })
+            }
+        </div>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiCuTru.Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiCuTru.Ten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayTao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayTao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayDangKy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDangKy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayHetHan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayHetHan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DienThoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DienThoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DaDuyet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DaDuyet)
+        </dd>
+
+        <dt>
+            Tên cán bộ duyệt
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CanBo.HoTen)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Quay về", "Index")
+</p>

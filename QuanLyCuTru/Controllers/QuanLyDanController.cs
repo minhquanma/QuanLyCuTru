@@ -15,14 +15,54 @@ namespace QuanLyCuTru.Controllers
     {
         ApplicationDbContext db = new ApplicationDbContext();
 
+        public IEnumerable<NguoiDung> SearchCongDan(byte? LoaiTimKiemId, string TimKiem)
+        {
+            // Create a cong dan list reference
+            IEnumerable<NguoiDung> congDans;
+
+            switch (LoaiTimKiemId)
+            {
+                case 1:
+                    congDans = db.NguoiDungs.Where(d => d.HoTen.Contains(TimKiem));
+                    break;
+                case 2:
+                    congDans = db.NguoiDungs.Where(d => d.NoiSinh.Contains(TimKiem));
+                    break;
+                case 3:
+                    congDans = db.NguoiDungs.Where(d => d.QueQuan.Contains(TimKiem));
+                    break;
+                case 4:
+                    congDans = db.NguoiDungs.Where(d => d.QuocTich.Contains(TimKiem));
+                    break;
+                default:
+                    congDans = db.NguoiDungs;
+                    break;
+            }
+
+            return congDans;
+        }
         // GET: CanBo/QuanLyDan
         [Route("")]
-        public ActionResult Index()
+        public ActionResult Index(byte? LoaiTimKiemId, string TimKiem)
         {
-            var congDans = db.NguoiDungs.ToList();
+            IEnumerable<NguoiDung> congDans;
+
+            if (LoaiTimKiemId == null || TimKiem == null)
+            {
+                LoaiTimKiemId = null;
+                congDans = db.NguoiDungs.ToList();
+            }
+            else
+            {
+                congDans = SearchCongDan(LoaiTimKiemId, TimKiem);
+            }
+                
+
             var viewModel = new TimNguoiDungViewModel
             {
-                CongDans = congDans
+                CongDans = congDans.ToList(),
+                TimKiem = TimKiem,
+                LoaiTimKiemId = LoaiTimKiemId
             };
             return View(viewModel);
         }
@@ -30,7 +70,7 @@ namespace QuanLyCuTru.Controllers
         // POST: CanBo/QuanLyDan: used to search cong dan
         [Route("")]
         [HttpPost]
-        public ActionResult Index(TimNguoiDungViewModel viewModel)
+        public ActionResult Index([Bind(Include = "LoaiTimKiemId, TimKiem")]TimNguoiDungViewModel viewModel)
         {
             if (ModelState.IsValid == false)
             {
@@ -38,32 +78,11 @@ namespace QuanLyCuTru.Controllers
             }
 
             // Input search string submitted by user
-            var search = viewModel.TimKiem;
-
-            // Create a cong dan list reference
-            IEnumerable<NguoiDung> congDans;
-
-            switch (viewModel.LoaiTimKiemId)
-            {
-                case 1:
-                    congDans = db.NguoiDungs.Where(d => d.HoTen.Contains(search));
-                    break;
-                case 2:
-                    congDans = db.NguoiDungs.Where(d => d.NoiSinh.Contains(search));
-                    break;
-                case 3:
-                    congDans = db.NguoiDungs.Where(d => d.QueQuan.Contains(search));
-                    break;
-                case 4:
-                    congDans = db.NguoiDungs.Where(d => d.QuocTich.Contains(search));
-                    break;
-                default:
-                    congDans = db.NguoiDungs;
-                    break;
-            }
+            byte? LoaiTimKiemId = viewModel.LoaiTimKiemId;
+            var TimKiem = viewModel.TimKiem;
 
             // Assign cong dan list to view model
-            viewModel.CongDans = congDans.ToList();
+            viewModel.CongDans = SearchCongDan(LoaiTimKiemId, TimKiem).ToList();
             return View(viewModel);
         }
 

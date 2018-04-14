@@ -1,10 +1,10 @@
 ﻿using QuanLyCuTru.Models;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 using Microsoft.AspNet.Identity;
 
 namespace QuanLyCuTru.Controllers
@@ -110,6 +110,19 @@ namespace QuanLyCuTru.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
             
+        }
+
+        // GET: CanBo/QuanLyCuTru/Details/:id
+
+        [Route("Details")]
+        public ActionResult Details(int id)
+        {
+            var cuTru = db.CuTrus.Include(m => m.CongDans).SingleOrDefault(c => c.Id == id);
+
+            if (cuTru == null)
+                return HttpNotFound();
+
+            return View(cuTru);
         }
 
         // POST: CanBo/QuanLyCuTru

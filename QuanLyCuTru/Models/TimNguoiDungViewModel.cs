@@ -8,7 +8,7 @@ namespace QuanLyCuTru.Models
 {
     public class TimNguoiDungViewModel
     {
-        public byte LoaiTimKiemId { get; set; }
+        public byte? LoaiTimKiemId { get; set; }
         public IEnumerable<LoaiTimKiem> LoaiTimKiems
         {
             get
