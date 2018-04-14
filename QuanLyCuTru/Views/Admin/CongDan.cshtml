@@ -32,12 +32,12 @@
 }
 
 <br />
-<p>
-    @Html.ActionLink("Thêm mới", "ThemCongDan", null, new { @class = "btn btn-outline-primary" })
-</p>
-
+<p> @Html.ActionLink("Thêm mới", "ThemCongDan", null, new { @class = "btn btn-outline-success" })</p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CongDans[0].Id)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.CongDans[0].HoTen)
         </th>
@@ -64,6 +64,9 @@
     @foreach (var congDan in Model.CongDans)
     {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => congDan.Id)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => congDan.HoTen)
             </td>

@@ -31,11 +31,6 @@ namespace QuanLyCuTru.Controllers
         public ActionResult Index()
         {
             var cuTrus = db.CuTrus.ToList();
-
-            cuTrus.Add(new CuTru() { Id = 1, Email = "Hem có" });
-            cuTrus.Add(new CuTru() { Id = 2, Email = "Hem biết" });
-            cuTrus.Add(new CuTru() { Id = 3, Email = "Ahihih" });
-
             return View(cuTrus);
         }
 

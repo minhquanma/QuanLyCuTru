@@ -6,10 +6,11 @@
     <div class="navbar-collapse collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a href="#" class="nav-link">Home</a>
+                @Html.ActionLink("Trang chủ", "Index", "CanBo", null, new { @class = "nav-link" })
+      
             </li>
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Users</a>
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Công dân</a>
                 <div class="dropdown-menu">
                     <a href="#" class="dropdown-item">Link 1</a>
                     <a href="#" class="dropdown-item">Link 2</a>
@@ -17,15 +18,16 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Roles</a>
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cư trú</a>
                 <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">Link 1</a>
-                    <a href="#" class="dropdown-item">Link 2</a>
-                    <a href="#" class="dropdown-item">Link 3</a>
+                    <a href="#" class="dropdown-item">Danh sách</a>
+                    <a href="#" class="dropdown-item">Chưa duyệt</a>
+                    <a href="#" class="dropdown-item">Đã duyệt</a>
+                    <a href="#" class="dropdown-item">Hết hạn</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">Stats</a>
+                <a href="#" class="nav-link">Liên hệ</a>
             </li>
         </ul>
         @using Microsoft.AspNet.Identity
@@ -38,8 +40,7 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">@User.Identity.GetUserName()</a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="#" class="dropdown-item text-capitalize">my profile</a>
-                            <a href="#" class="dropdown-item text-capitalize">settings</a>
+                            <a href="#" class="dropdown-item text-capitalize">Hồ sơ cá nhân</a>
                             <a href="javascript:document.getElementById('logoutForm').submit()" class="dropdown-item text-capitalize">Đăng xuất</a>
                         </div>
                     </li>

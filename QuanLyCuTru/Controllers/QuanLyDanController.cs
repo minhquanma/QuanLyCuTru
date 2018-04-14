@@ -40,7 +40,7 @@ namespace QuanLyCuTru.Controllers
             // Input search string submitted by user
             var search = viewModel.TimKiem;
 
-            // Create a cong dan reference
+            // Create a cong dan list reference
             IEnumerable<NguoiDung> congDans;
 
             switch (viewModel.LoaiTimKiemId)

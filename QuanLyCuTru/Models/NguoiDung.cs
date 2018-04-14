@@ -10,7 +10,7 @@ namespace QuanLyCuTru.Models
     public class NguoiDung
     {
         // Primary Key
-        [Display(Name = "Mã công dân")]
+        [Display(Name = "Mã số")]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Họ tên không được để trống")]
