@@ -11,6 +11,11 @@ namespace QuanLyCuTru.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        public CanBoController()
+        {
+            ViewBag.PageTitle = "Cán bộ";   
+        }
+
         // GET: CanBo
         public ActionResult Index()
         {

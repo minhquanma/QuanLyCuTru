@@ -23,8 +23,10 @@ namespace QuanLyCuTru.Controllers
         }
 
         // GET: Navbar
-        public ActionResult Index()
+        public ActionResult Index(string pageTitle)
         {
+            ViewBag.PageTitle = pageTitle;
+
             if (User.Identity.IsAuthenticated)
             {
                 string uid = User.Identity.GetUserId();

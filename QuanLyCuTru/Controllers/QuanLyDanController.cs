@@ -13,7 +13,18 @@ namespace QuanLyCuTru.Controllers
     [RoutePrefix("CanBo/QuanLyDan")]
     public class QuanLyDanController : Controller
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        ApplicationDbContext db;
+
+        public QuanLyDanController()
+        {
+            db = new ApplicationDbContext();
+            ViewBag.PageTitle = "Cán bộ";
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
+        }
 
         public IEnumerable<NguoiDung> SearchCongDan(byte? LoaiTimKiemId, string TimKiem)
         {

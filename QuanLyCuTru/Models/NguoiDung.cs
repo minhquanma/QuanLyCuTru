@@ -76,6 +76,8 @@ namespace QuanLyCuTru.Models
         public virtual ICollection<CuTru> CuTrus { get; set; }
 
         [NotMapped]
+
+        [NotMapped]
         public bool HasEmail 
         {
             get 
