@@ -76,7 +76,13 @@ namespace QuanLyCuTru.Models
         public virtual ICollection<CuTru> CuTrus { get; set; }
 
         [NotMapped]
-
+        public string DisplayAvatar
+        {
+            get
+            {
+                return Avatar == null ? "/Content/img/avatar.png" : Avatar;
+            }
+        }
         [NotMapped]
         public bool HasEmail 
         {
