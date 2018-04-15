@@ -31,3 +31,7 @@ textarea {
         border-radius: 50%;
         margin: 2em;
 }
+
+.nav-avatar {
+    border-radius: 50%
+}

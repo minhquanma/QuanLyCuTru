@@ -205,6 +205,7 @@
     <Compile Include="Controllers\CongDanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NavbarController.cs" />
     <Compile Include="Controllers\QuanLyCuTruController.cs" />
     <Compile Include="Controllers\QuanLyDanController.cs" />
     <Compile Include="Global.asax.cs">
@@ -407,7 +408,9 @@
     <Content Include="Views\QuanLyCuTru\Create.cshtml" />
     <Content Include="Views\QuanLyCuTru\Details.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Navbar\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
