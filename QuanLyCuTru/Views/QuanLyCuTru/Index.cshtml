@@ -1,4 +1,4 @@
-﻿@model IEnumerable<QuanLyCuTru.Models.CuTru>
+﻿@model QuanLyCuTru.Models.TimCuTruViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -6,34 +6,70 @@
 }
 
 <h2>Quản lý cư trú</h2>
+@using (Html.BeginForm("Index", "QuanLyDan", FormMethod.Post))
+{
+    // First line
+    <div class="form-inline">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Tìm kiếm</label>
+        @Html.DropDownListFor(m => m.LoaiTimKiems,
+        new SelectList(Model.LoaiTimKiems, "Id", "Name"),
+        new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
 
+        @Html.TextBoxFor(m => m.TimKiem,
+        new
+        {
+            @class = "form-control mb-2 mr-sm-2 mb-sm-0",
+            @placeholder = "Nhập dữ liệu muốn tìm"
+        })
+
+        <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+    </div>
+    <br/>
+
+   // Second line
+    <div class="form-inline">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Loại cư trú</label>
+        @Html.DropDownListFor(m => m.LoaiCuTrus,
+        new SelectList(Model.LoaiCuTrus, "Id", "Name"),
+        new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
+
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Thời hạn</label>
+        @Html.DropDownListFor(m => m.LoaiTimKiems,
+        new SelectList(Model.LoaiTimKiems, "Id", "Name"),
+        new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
+
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Đã duyệt?
+        </label>
+    </div>
+}
 <p>
     @Html.ActionLink("Tạo mới", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Id)
+            @Html.DisplayNameFor(model => model.CuTrus[0].Id)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LoaiCuTru.Ten)
+            @Html.DisplayNameFor(model => model.CuTrus[0].LoaiCuTru.Ten)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NgayDangKy)
+            @Html.DisplayNameFor(model => model.CuTrus[0].NgayDangKy)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NgayHetHan)
+            @Html.DisplayNameFor(model => model.CuTrus[0].NgayHetHan)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DiaChi)
+            @Html.DisplayNameFor(model => model.CuTrus[0].DiaChi)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DaDuyet)
+            @Html.DisplayNameFor(model => model.CuTrus[0].DaDuyet)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model)
+@foreach (var item in Model.CuTrus)
 {
     <tr>
         <td>

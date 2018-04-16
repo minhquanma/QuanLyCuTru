@@ -30,8 +30,18 @@ namespace QuanLyCuTru.Controllers
         [Route("")]
         public ActionResult Index()
         {
-            var cuTrus = db.CuTrus.ToList();
-            return View(cuTrus);
+            IEnumerable<CuTru> cuTrus = db.CuTrus;
+
+            string TimKiem = "";
+            byte? LoaiTimKiemId = 0;
+
+            var viewModel = new TimCuTruViewModel
+            {
+                CuTrus = cuTrus.ToList(),
+                TimKiem = TimKiem,
+                LoaiTimKiemId = LoaiTimKiemId
+            };
+            return View(viewModel);
         }
 
         public DangKyCuTruViewModel InitDangKyCuTruViewModel()
@@ -49,6 +59,13 @@ namespace QuanLyCuTru.Controllers
             };
 
             return cuTru;
+        }
+
+        public IEnumerable<CuTru> SearchCuTru()
+        {
+            IEnumerable<CuTru> cuTrus = null;
+
+            return cuTrus;
         }
 
         [Route("Create")]
@@ -114,7 +131,7 @@ namespace QuanLyCuTru.Controllers
 
         // GET: CanBo/QuanLyCuTru/Details/:id
 
-        [Route("Details")]
+        [Route("Details/{id}")]
         public ActionResult Details(int id)
         {
             var cuTru = db.CuTrus.Include(m => m.CongDans).SingleOrDefault(c => c.Id == id);

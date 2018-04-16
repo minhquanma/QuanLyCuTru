@@ -52,6 +52,7 @@ namespace QuanLyCuTru.Controllers
 
             return congDans;
         }
+
         // GET: CanBo/QuanLyDan
         [Route("")]
         public ActionResult Index(byte? LoaiTimKiemId, string TimKiem)

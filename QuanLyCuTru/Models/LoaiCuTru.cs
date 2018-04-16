@@ -16,5 +16,16 @@ namespace QuanLyCuTru.Models
 
         //  The list of CuTru entities belong to this LoaiCuTru  (1-to-many)
         public ICollection<CuTru> CuTrus { get; set; }
+
+        public LoaiCuTru()
+        {
+
+        }
+
+        public LoaiCuTru(int Id, string Ten)
+        {
+            this.Id = Id;
+            this.Ten = Ten;
+        }
     }
 }
