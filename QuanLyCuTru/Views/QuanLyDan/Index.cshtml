@@ -81,9 +81,13 @@
                 @Html.DisplayFor(modelItem => congDan.QuocTich)
             </td>
             <td>
-                @Html.ActionLink("Sửa", "Edit", "QuanLyDan", new { id = congDan.Id }, null) |
+                <a class="icon-link" href="@Url.Action("Edit", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-edit"></i></a> |
+                <a class="icon-link" href="@Url.Action("Details", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-list"></i></a> |
+                <a class="icon-link" href="@Url.Action("Delete", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-trash-alt"></i></a>
+
+                @*@Html.ActionLink("Sửa", "Edit", "QuanLyDan", new { id = congDan.Id }, null) |
                 @Html.ActionLink("Chi tiết", "Details", "QuanLyDan", new { id = congDan.Id }, null) |
-                @Html.ActionLink("Xóa", "Delete", "QuanLyDan", new { id = congDan.Id }, null)
+                @Html.ActionLink("Xóa", "Delete", "QuanLyDan", new { id = congDan.Id }, null)*@
             </td>
             <td>
                 <img src="https://pbs.twimg.com/media/DaRRyhrUQAEQN-R.jpg" alt="" style="width:50px; height:50px; border-radius: 50%; " />
