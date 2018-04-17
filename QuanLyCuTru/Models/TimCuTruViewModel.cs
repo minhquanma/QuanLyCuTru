@@ -19,7 +19,8 @@ namespace QuanLyCuTru.Models
                     new LoaiTimKiem(1, "Tên"),
                     new LoaiTimKiem(2, "Nơi sinh"),
                     new LoaiTimKiem(3, "Quê quán"),
-                    new LoaiTimKiem(4, "Quốc tịch")
+                    new LoaiTimKiem(4, "Quốc tịch"),
+                    new LoaiTimKiem(5, "Địa chỉ")
                 };
             }
         }
@@ -48,8 +49,8 @@ namespace QuanLyCuTru.Models
                 return new List<LoaiTimKiem>
                 {
                     new LoaiTimKiem(1, "Tất cả"),
-                    new LoaiTimKiem(2, "Tạm vắng"),
-                    new LoaiTimKiem(3, "Tạm trú")
+                    new LoaiTimKiem(2, "Còn hạn"),
+                    new LoaiTimKiem(3, "Hết hạn")
                 };
             }
         }

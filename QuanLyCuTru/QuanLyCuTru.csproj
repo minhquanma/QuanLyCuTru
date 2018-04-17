@@ -239,6 +239,10 @@
     <Compile Include="Migrations\201804091637450_ReseedDatabase.Designer.cs">
       <DependentUpon>201804091637450_ReseedDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804170725539_UpdateCuTruModel.cs" />
+    <Compile Include="Migrations\201804170725539_UpdateCuTruModel.Designer.cs">
+      <DependentUpon>201804170725539_UpdateCuTruModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddCongDanViewModel.cs" />
@@ -443,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804091637450_ReseedDatabase.resx">
       <DependentUpon>201804091637450_ReseedDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804170725539_UpdateCuTruModel.resx">
+      <DependentUpon>201804170725539_UpdateCuTruModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

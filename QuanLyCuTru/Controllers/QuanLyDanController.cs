@@ -91,7 +91,7 @@ namespace QuanLyCuTru.Controllers
 
             // Input search string submitted by user
             byte? LoaiTimKiemId = viewModel.LoaiTimKiemId;
-            var TimKiem = viewModel.TimKiem;
+            string TimKiem = viewModel.TimKiem;
 
             // Assign cong dan list to view model
             viewModel.CongDans = SearchCongDan(LoaiTimKiemId, TimKiem).ToList();

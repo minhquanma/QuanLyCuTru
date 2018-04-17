@@ -22,7 +22,7 @@ namespace QuanLyCuTru.Models
 
         [Display(Name = "Ngày hết hạn")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime? NgayHetHan { get; set; }
+        public DateTime NgayHetHan { get; set; }
 
         [Display(Name = "Email")]
         public string Email { get; set; }

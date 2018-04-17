@@ -6,12 +6,12 @@
 }
 
 <h2>Quản lý cư trú</h2>
-@using (Html.BeginForm("Index", "QuanLyDan", FormMethod.Post))
+@using (Html.BeginForm("Index", "QuanLyCuTru", FormMethod.Post))
 {
     // First line
     <div class="form-inline">
         <label class="mr-sm-2" for="inlineFormCustomSelect">Tìm kiếm</label>
-        @Html.DropDownListFor(m => m.LoaiTimKiems,
+        @Html.DropDownListFor(m => m.LoaiTimKiemId,
         new SelectList(Model.LoaiTimKiems, "Id", "Name"),
         new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
 
@@ -29,13 +29,13 @@
    // Second line
     <div class="form-inline">
         <label class="mr-sm-2" for="inlineFormCustomSelect">Loại cư trú</label>
-        @Html.DropDownListFor(m => m.LoaiCuTrus,
+        @Html.DropDownListFor(m => m.LoaiCuTruId,
         new SelectList(Model.LoaiCuTrus, "Id", "Name"),
         new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
 
         <label class="mr-sm-2" for="inlineFormCustomSelect">Thời hạn</label>
-        @Html.DropDownListFor(m => m.LoaiTimKiems,
-        new SelectList(Model.LoaiTimKiems, "Id", "Name"),
+        @Html.DropDownListFor(m => m.LoaiHanId,
+        new SelectList(Model.LoaiHans, "Id", "Name"),
         new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
 
         <label class="form-check-label">
@@ -93,7 +93,7 @@
         <td>
             @Html.ActionLink("Sửa", "Edit", new { id = item.Id }) |
             @Html.ActionLink("Chi tiết", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Xóa", "Delete", new { id = item.Id })
+            <i class="fas fa-trash-alt">@Html.ActionLink("Xóa", "Delete", new { id = item.Id })</i>
         </td>
     </tr>
 }
