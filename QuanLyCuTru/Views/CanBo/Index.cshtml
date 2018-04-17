@@ -67,7 +67,7 @@
                         <h3><span class="badge badge-dark">96</span></h3>
                     </div>
                     <div class="category col-3">
-                        <h5 class="text-capitalize font-weight-bold mb-0">Cán bộ</h5>
+                        <h5 class="text-capitalize font-weight-bold mb-0">Hết hạn</h5>
                         <h3><span class="badge badge-dark">3</span></h3>
                     </div>
                 </div>
@@ -79,17 +79,15 @@
 
                 <hr>
 
-                <table class="table table-bordered table-hover mt-4">
+                <table class="table  table-hover mt-4">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>City</th>
-                            <th>Role</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>Tên</th>
+                            <th>Địa chỉ</th>
+                            <th>Điện thoại</th>
+                            <th>Ngày đăng ký</th>
+                            <th>Loại</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -98,20 +96,16 @@
                             <td>Dương Thanh Tân</td>
                             <td>fckmyass@gmail.com</td>
                             <td>0942-xxx-xxx</td>
-                            <td>Hồ Chí Minh</td>
-                            <td>God</td>
-                            <td class="text-center"><h4><span class="badge badge-danger">Active</span></h4></td>
-                            <td>&nbsp;</td>
+                            <td>@DateTime.Now.ToShortDateString()</td>
+                            <td>Tạm vắng</td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
                             <td>Mã Minh Quân</td>
                             <td>lolicon@gmail.com</td>
                             <td>0122-xxx-xxx</td>
-                            <td>Mẫu Quốc</td>
-                            <td>Pedobear</td>
-                            <td class="text-center"><span class="badge badge-danger">Inactive</span></td>
-                            <td>&nbsp;</td>
+                            <td>@DateTime.Now.ToShortDateString()</td>
+                            <td>Tạm trú</td>
                         </tr>
                     </tbody>
                 </table>

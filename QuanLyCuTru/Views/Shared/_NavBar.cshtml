@@ -1,6 +1,10 @@
 ﻿@model QuanLyCuTru.Models.NguoiDung
 
-
+<style>
+.navbar{
+    padding: 0.5rem 1rem;
+}
+</style>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a href="#" class="navbar-brand">@ViewBag.PageTitle</a>
  
@@ -40,10 +44,10 @@
             using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
             {
                 @Html.AntiForgeryToken()
-                <ul class="navbar-nav">
+                <ul class="navbar-nav  mr-sm-2">
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                            <img src="@Model.Avatar" width="30" height="30" class="nav-avatar d-inline-block align-top" alt="">
+                            <img src="@Model.Avatar" width="30" height="30" class="nav-avatar mr-sm-2" alt="">
                             @User.Identity.GetUserName()
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
