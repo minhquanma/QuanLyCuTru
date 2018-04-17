@@ -25,7 +25,6 @@
         <button type="submit" class="btn btn-primary">Tìm kiếm</button>
     </div>
     <br/>
-
    // Second line
     <div class="form-inline">
         <label class="mr-sm-2" for="inlineFormCustomSelect">Loại cư trú</label>
@@ -43,8 +42,9 @@
         </label>
     </div>
 }
+<br />
 <p>
-    @Html.ActionLink("Tạo mới", "Create")
+    @Html.ActionLink("Tạo mới", "Create", null, new { @class = "btn btn-success" })
 </p>
 <table class="table">
     <tr>

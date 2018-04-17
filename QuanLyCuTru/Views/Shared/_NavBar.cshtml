@@ -15,18 +15,19 @@
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cư trú</a>
                 <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">Đăng ký</a>
-                    <a href="#" class="dropdown-item">Danh sách</a>
+                    @Html.ActionLink("Đăng ký", "Create", "QuanLyCuTru", null, new { @class = "dropdown-item" })
+                    @Html.ActionLink("Danh sách", "Index", "QuanLyCuTru", null, new { @class = "dropdown-item" })
                     <a href="#" class="dropdown-item">Chưa duyệt</a>
+                    <a href="#" class="dropdown-item">Đã duyệt</a>
+
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cư trú</a>
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Công dân</a>
                 <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">Danh sách</a>
-                    <a href="#" class="dropdown-item">Chưa duyệt</a>
-                    <a href="#" class="dropdown-item">Đã duyệt</a>
-                    <a href="#" class="dropdown-item">Hết hạn</a>
+                    @Html.ActionLink("Danh sách", "Index", "QuanLyDan", null, new { @class = "dropdown-item" })
+                    <a href="#" class="dropdown-item">Chưa đăng ký</a>
+                    <a href="#" class="dropdown-item">Đã đăng ký</a>
                 </div>
             </li>
             <li class="nav-item">

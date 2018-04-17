@@ -19,6 +19,7 @@ namespace QuanLyCuTru.Controllers
 
         public QuanLyCuTruController()
         {
+            ViewBag.PageTitle = "Cán bộ";
             db = new ApplicationDbContext();
         }
 
@@ -31,6 +32,11 @@ namespace QuanLyCuTru.Controllers
         {
             IEnumerable<CuTru> cuTrus = null;
 
+            if (TimKiem == null)
+            {
+                cuTrus = db.CuTrus;
+                goto TimKiemIsNull;
+            }
             // First step: Filtering data by Loại Tìm Kiếm
             switch (LoaiTimKiemId)
             {
@@ -62,6 +68,7 @@ namespace QuanLyCuTru.Controllers
                     break;
             }
 
+            TimKiemIsNull:
             // Filtering data by Loại cư trú
             switch (LoaiCuTruId)
             {
@@ -126,11 +133,6 @@ namespace QuanLyCuTru.Controllers
         [Route("")]
         public ActionResult Index(TimCuTruViewModel viewModel)
         {
-            if (!ModelState.IsValid)
-            {
-                return RedirectToAction("Index");
-            }
-
             byte? LoaiTimKiemId = viewModel.LoaiTimKiemId;
             byte? LoaiCuTruId = viewModel.LoaiCuTruId;
             byte? LoaiHanId = viewModel.LoaiHanId;

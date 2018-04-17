@@ -268,7 +268,9 @@
     <Content Include="App_Data\aspnet-QuanLyCuTru-20180318124329_log.ldf">
       <DependentUpon>aspnet-QuanLyCuTru-20180318124329.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\bootstrap.flatly.min.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.pulse.min.css" />
     <Content Include="Content\canbo.css" />
     <Content Include="Content\img\bg.jpg" />
     <Content Include="Content\index.css" />
@@ -395,11 +397,6 @@
     <Content Include="Views\AddCanBo\Edit.cshtml" />
     <Content Include="Views\AddCanBo\Index.cshtml" />
     <Content Include="Views\QuanLyDan\Create.cshtml" />
-    <Content Include="Views\CuTru\Create.cshtml" />
-    <Content Include="Views\CuTru\Delete.cshtml" />
-    <Content Include="Views\CuTru\Details.cshtml" />
-    <Content Include="Views\CuTru\Edit.cshtml" />
-    <Content Include="Views\CuTru\Index.cshtml" />
     <Content Include="Views\QuanLyDan\Details.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\CongDan.cshtml" />
