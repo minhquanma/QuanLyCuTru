@@ -7,7 +7,9 @@ namespace QuanLyCuTru.Models
 {
     public class CanBoViewModel
     {
-        public string TenChucVu { get; set; }
-
+        public int TongSo { get; set; }
+        public int DangKyHomNay { get; set; }
+        public int ChoDuyet { get; set; }
+        public int HetHan  { get; set; }
     }
 }

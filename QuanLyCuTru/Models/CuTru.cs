@@ -74,6 +74,24 @@ namespace QuanLyCuTru.Models
             get { return $"{SoNha} {Duong}, Phường {Phuong}, Quận {Quan}, {ThanhPho}"; }
         }
 
+        [NotMapped]
+        [Display(Name = "Tên")]
+        public string Ten
+        {
+            get
+            {
+                // Get the number of CongDans in this CuTru object
+                int numberOfCongDans = CongDans.Count();
+
+                switch(numberOfCongDans)
+                {
+                    default: return "Nhiều người";
+                    case 0: return "Không có";
+                    case 1: return CongDans.First().HoTen;
+                }
+            }
+        }
+
         public CuTru()
         {
             DaDuyet = false;

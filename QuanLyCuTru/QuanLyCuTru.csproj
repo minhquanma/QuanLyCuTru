@@ -409,6 +409,8 @@
     <Content Include="Views\QuanLyCuTru\Index.cshtml" />
     <Content Include="Views\QuanLyCuTru\Create.cshtml" />
     <Content Include="Views\QuanLyCuTru\Details.cshtml" />
+    <Content Include="Views\CanBo\_NavigationView.cshtml" />
+    <Content Include="Views\CanBo\_TableView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Navbar\" />

@@ -1,7 +1,6 @@
-﻿
+﻿@model QuanLyCuTru.Models.CanBoViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    //Layout = null;
     ViewBag.PageTitle = "Cán bộ";
 }
 
@@ -21,96 +20,36 @@
         <div class="alert alert-success">
             <strong>Thông báo!</strong> Tin tức từ chỉ huy.
         </div>
-        <div class="navigation-view d-flex mb-4">
-            <div class="side-navbar bg-light rounded mr-4 pt-3">
-                <ul class="list-unstyled mb-3">
-                    <li class="text-muted text-uppercase px-3"><i class="fas fa-wrench"></i>&nbsp;Quản trị viên</li>
-                    <li><a href="#" class="d-block text-success text-capitalize px-3">Người dùng</a></li>
-                    <li><a href="#" class="d-block text-success text-capitalize px-3">Quyền hạn</a></li>
-                </ul>
-                <ul class="list-unstyled mb-3">
-                    <li class="text-muted text-uppercase px-3"><i class="fas fa-signal"></i>&nbsp;Thống kê</li>
-                    <li><a href="#" class="d-block text-success text-capitalize px-3">Tổng quan</a></li>
-                </ul>
-                <ul class="list-unstyled">
-                    <li class="text-muted text-uppercase px-3"><i class="fas fa-user"></i>&nbsp;Cán bộ quản lý</li>
-                    <li><a href="#" class="d-block text-success text-capitalize px-3">Quản lý cư trú</a></li>
-                    <li><a href="#" class="d-block text-success text-capitalize px-3">Quản lý công dân</a></li>
-                    <li><a href="#" class="d-block text-success text-capitalize px-3"></a></li>
-                </ul>
-            </div>
-            <div class="side-jumbo jumbotron mb-0 px-5">
-                <h1 class="display-5 font-weight-bold text-capitalize">Xin chào cán bộ</h1>
-                <p class="text-justify">
-                    Hệ thống website quản lý thông tin cư trú tại địa phương
-                </p>
-                @Html.ActionLink("quản lý cư trú", "QuanLyCuTru", "CanBo", null, new { @class = "btn btn-success text-capitalize" })
-                @Html.ActionLink("quản lý công dân", "QuanLyDan", "CanBo", null, new { @class = "btn btn-primary text-capitalize" })
-
-            </div>
-        </div>
-
+        @Html.Partial("_NavigationView")
         <div class="d-flex">
             <div class="anonymous-view">&nbsp;</div>
             <div class="data-view">
                 <div class="statistic-view row">
                     <div class="category col-3">
                         <h5 class="text-capitalize font-weight-bold mb-0">Tổng số</h5>
-                        <h3><span class="badge badge-dark">420</span></h3>
+                        <h3><span class="badge badge-dark">@Model.TongSo</span></h3>
                     </div>
                     <div class="category col-3">
                         <h5 class="text-capitalize font-weight-bold mb-0">Đăng ký hôm nay</h5>
-                        <h3><span class="badge badge-dark">69</span></h3>
+                        <h3><span class="badge badge-dark">@Model.DangKyHomNay</span></h3>
                     </div>
                     <div class="category col-3">
                         <h5 class="text-capitalize font-weight-bold mb-0">Chờ duyệt</h5>
-                        <h3><span class="badge badge-dark">96</span></h3>
+                        <h3><span class="badge badge-dark">@Model.ChoDuyet</span></h3>
                     </div>
                     <div class="category col-3">
                         <h5 class="text-capitalize font-weight-bold mb-0">Hết hạn</h5>
-                        <h3><span class="badge badge-dark">3</span></h3>
+                        <h3><span class="badge badge-dark">@Model.HetHan</span></h3>
                     </div>
                 </div>
-
+                @Html.Action("_TableView")
                 <h2 class="text-capitalize font-weight-bold mt-5 mb-0">
                     Chờ duyệt
                     <span class="h5 d-inline-block text-muted">Duyệt hoặc từ chối</span>
                 </h2>
 
-                <table class="table  table-hover mt-4">
-                    <thead>
-                        <tr>
-                            <th class="border-bottom-0">ID</th>
-                            <th class="border-bottom-0">Tên</th>
-                            <th class="border-bottom-0">Địa chỉ</th>
-                            <th class="border-bottom-0">Điện thoại</th>
-                            <th class="border-bottom-0">Ngày đăng ký</th>
-                            <th class="border-bottom-0">Loại</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Dương Thanh Tân</td>
-                            <td>fckmyass@gmail.com</td>
-                            <td>0942-xxx-xxx</td>
-                            <td>@DateTime.Now.ToShortDateString()</td>
-                            <td>Tạm vắng</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Mã Minh Quân</td>
-                            <td>lolicon@gmail.com</td>
-                            <td>0122-xxx-xxx</td>
-                            <td>@DateTime.Now.ToShortDateString()</td>
-                            <td>Tạm trú</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </main>
-
-
 </body>
 </html>
