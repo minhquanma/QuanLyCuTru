@@ -30,8 +30,8 @@ namespace QuanLyCuTru.Controllers
 
         public IEnumerable<CuTru> SearchCuTru(byte? LoaiTimKiemId,
             byte? LoaiCuTruId,
-            byte? LoaiHanId,
             byte? LoaiTrangThaiId,
+            byte? LoaiHanId,
             string TimKiem)
         {
             IEnumerable<CuTru> cuTrus = null;
@@ -125,27 +125,26 @@ namespace QuanLyCuTru.Controllers
 
         // GET: CanBo/QuanLyCuTru
         [Route("")]
-        public ActionResult Index(byte? LoaiTimKiemId, byte? LoaiCuTruId, byte? LoaiHanId, byte? LoaiTrangThaiId, string TimKiem)
+        public ActionResult Index(byte? LoaiTimKiemId, byte? LoaiCuTruId, byte? LoaiTrangThaiId, byte? LoaiHanId, string TimKiem)
         {
             // Get CuTru list
-            IEnumerable<CuTru> cuTrus;
+            IEnumerable<CuTru> cuTrus = SearchCuTru(LoaiTimKiemId,
+                LoaiCuTruId,
+                LoaiTrangThaiId,
+                LoaiHanId,
+                TimKiem);
 
-            //if (LoaiTimKiemId == null || TimKiem == null)
-            //{
-            //    LoaiTimKiemId = null;
-            //    cuTrus = db.CuTrus.ToList();
-            //}
-            //else
-            //{
-                cuTrus = SearchCuTru(LoaiTimKiemId, LoaiCuTruId, LoaiHanId, LoaiTrangThaiId, TimKiem);
-            //}
-
+            // Create TimCuTruViewModel based on params data
             var viewModel = new TimCuTruViewModel
             {
                 CuTrus = cuTrus.ToList(),
                 TimKiem = TimKiem,
-                LoaiTimKiemId = LoaiTimKiemId
+                LoaiTimKiemId = LoaiTimKiemId,
+                LoaiCuTruId = LoaiCuTruId,
+                LoaiHanId = LoaiHanId,
+                LoaiTrangThaiId = LoaiTrangThaiId
             };
+
             return View(viewModel);
         }
 
@@ -156,14 +155,14 @@ namespace QuanLyCuTru.Controllers
         {
             byte? LoaiTimKiemId = viewModel.LoaiTimKiemId;
             byte? LoaiCuTruId = viewModel.LoaiCuTruId;
-            byte? LoaiHanId = viewModel.LoaiHanId;
             byte? LoaiTrangThaiId = viewModel.LoaiTrangThaiId;
+            byte? LoaiHanId = viewModel.LoaiHanId;
             string TimKiem = viewModel.TimKiem;
 
             viewModel.CuTrus = SearchCuTru(LoaiTimKiemId,
                 LoaiCuTruId,
-                LoaiHanId,
                 LoaiTrangThaiId,
+                LoaiHanId,
                 TimKiem).ToList();
 
             return View(viewModel);
@@ -206,7 +205,7 @@ namespace QuanLyCuTru.Controllers
                 return View(viewModel);
             }
 
-            // Tao moi thong tin cu tru
+            // Create a new CuTru
             var cuTru = new CuTru
             {
                 NgayDangKy = viewModel.NgayDangKy,
@@ -221,7 +220,7 @@ namespace QuanLyCuTru.Controllers
                 ThanhPho = viewModel.ThanhPho,
                 LoaiCuTruId = viewModel.LoaiCuTruId,
                 CanBoId = viewModel.CanBoId,
-                DaDuyet = true,
+                DaDuyet = true, 
                 CongDans = new Collection<NguoiDung>()
             };
 
@@ -233,6 +232,7 @@ namespace QuanLyCuTru.Controllers
 
                 if (congDan == null)
                 {
+                    // Non existent
                     ModelState.AddModelError("", "Thông tin công dân không hợp lệ");
                     return View(InitDangKyCuTruViewModel());
                 }
@@ -240,7 +240,6 @@ namespace QuanLyCuTru.Controllers
                 cuTru.CongDans.Add(congDan);
             }
          
-
             db.CuTrus.Add(cuTru);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -258,28 +257,6 @@ namespace QuanLyCuTru.Controllers
                 return HttpNotFound();
 
             return View(cuTru);
-        }
-
-        // POST: CanBo/QuanLyCuTru
-        [Route("Index2")]
-        [HttpPost]
-        public ActionResult Index2(DangKyCuTruViewModel viewModel)
-        {
-            // Test code
-            return View();
-        }
-
-        // Test codes
-        [Route("AddUser")]
-        [HttpPost]
-        public ActionResult AddUser(DangKyCuTruViewModel viewModel)
-        {
-            if (ModelState.IsValid)
-            {
-                return Json("Success");
-            }
-
-            return View("Index", viewModel);
         }
     }
 }
