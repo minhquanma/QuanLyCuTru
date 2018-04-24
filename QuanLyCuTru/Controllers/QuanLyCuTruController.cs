@@ -28,7 +28,11 @@ namespace QuanLyCuTru.Controllers
             db.Dispose();
         }
 
-        public IEnumerable<CuTru> SearchCuTru(byte? LoaiTimKiemId, byte? LoaiCuTruId, byte? LoaiHanId, string TimKiem)
+        public IEnumerable<CuTru> SearchCuTru(byte? LoaiTimKiemId,
+            byte? LoaiCuTruId,
+            byte? LoaiHanId,
+            byte? LoaiTrangThaiId,
+            string TimKiem)
         {
             IEnumerable<CuTru> cuTrus = null;
 
@@ -37,6 +41,7 @@ namespace QuanLyCuTru.Controllers
                 cuTrus = db.CuTrus;
                 goto TimKiemIsNull;
             }
+
             // First step: Filtering data by Loại Tìm Kiếm
             switch (LoaiTimKiemId)
             {
@@ -83,6 +88,22 @@ namespace QuanLyCuTru.Controllers
                     break;
             }
 
+            // Filtering data by Loại trạng thái
+            switch (LoaiTrangThaiId)
+            {
+                case 1:
+                    // Not touching
+                    break;
+                case 2:
+                    // Đã duyệt
+                    cuTrus = cuTrus.Where(c => c.DaDuyet == true);
+                    break;
+                case 3:
+                    // Chưa duyệt
+                    cuTrus = cuTrus.Where(c => c.DaDuyet == false);
+                    break;
+            }
+
             // Filtering data by Loại thời hạn
             switch (LoaiHanId)
             {
@@ -104,7 +125,7 @@ namespace QuanLyCuTru.Controllers
 
         // GET: CanBo/QuanLyCuTru
         [Route("")]
-        public ActionResult Index(byte? LoaiTimKiemId, byte? LoaiCuTruId, byte? LoaiHanId, string TimKiem)
+        public ActionResult Index(byte? LoaiTimKiemId, byte? LoaiCuTruId, byte? LoaiHanId, byte? LoaiTrangThaiId, string TimKiem)
         {
             // Get CuTru list
             IEnumerable<CuTru> cuTrus;
@@ -116,7 +137,7 @@ namespace QuanLyCuTru.Controllers
             //}
             //else
             //{
-                cuTrus = SearchCuTru(LoaiTimKiemId, LoaiCuTruId, LoaiHanId, TimKiem);
+                cuTrus = SearchCuTru(LoaiTimKiemId, LoaiCuTruId, LoaiHanId, LoaiTrangThaiId, TimKiem);
             //}
 
             var viewModel = new TimCuTruViewModel
@@ -136,9 +157,15 @@ namespace QuanLyCuTru.Controllers
             byte? LoaiTimKiemId = viewModel.LoaiTimKiemId;
             byte? LoaiCuTruId = viewModel.LoaiCuTruId;
             byte? LoaiHanId = viewModel.LoaiHanId;
+            byte? LoaiTrangThaiId = viewModel.LoaiTrangThaiId;
             string TimKiem = viewModel.TimKiem;
 
-            viewModel.CuTrus = SearchCuTru(LoaiTimKiemId, LoaiCuTruId, LoaiHanId, TimKiem).ToList();
+            viewModel.CuTrus = SearchCuTru(LoaiTimKiemId,
+                LoaiCuTruId,
+                LoaiHanId,
+                LoaiTrangThaiId,
+                TimKiem).ToList();
+
             return View(viewModel);
         }
 

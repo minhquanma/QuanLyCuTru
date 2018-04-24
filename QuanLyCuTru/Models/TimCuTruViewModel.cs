@@ -54,6 +54,22 @@ namespace QuanLyCuTru.Models
                 };
             }
         }
+
+
+        // DropDownList Trạng thái 
+        public byte? LoaiTrangThaiId { get; set; }
+        public IEnumerable<LoaiTimKiem> LoaiTrangThais
+        {
+            get
+            {
+                return new List<LoaiTimKiem>
+                {
+                    new LoaiTimKiem(1, "Tất cả"),
+                    new LoaiTimKiem(2, "Đã duyệt"),
+                    new LoaiTimKiem(3, "Chưa duyệt")
+                };
+            }
+        }
         public List<CuTru> CuTrus { get; set; }
 
         [Required]
