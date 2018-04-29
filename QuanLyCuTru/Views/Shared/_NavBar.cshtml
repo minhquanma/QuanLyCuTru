@@ -21,9 +21,12 @@
                 <div class="dropdown-menu">
                     @Html.ActionLink("Đăng ký", "Create", "QuanLyCuTru", null, new { @class = "dropdown-item" })
                     @Html.ActionLink("Danh sách", "Index", "QuanLyCuTru", null, new { @class = "dropdown-item" })
-                    <a href="#" class="dropdown-item">Chưa duyệt</a>
-                    <a href="#" class="dropdown-item">Đã duyệt</a>
-
+                    @Html.ActionLink("Chưa duyệt", "Index", "QuanLyCuTru",
+                       new { LoaiTrangThaiId = 3 },
+                       new { @class = "dropdown-item" })
+                    @Html.ActionLink("Đã duyệt", "Index", "QuanLyCuTru",
+                       new { LoaiTrangThaiId = 2 },
+                       new { @class = "dropdown-item" })
                 </div>
             </li>
             <li class="nav-item dropdown">

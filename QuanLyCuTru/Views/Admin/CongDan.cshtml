@@ -27,12 +27,13 @@
             @class = "form-control mb-2 mr-sm-2 mb-sm-0",
             @placeholder = "Nhập dữ liệu muốn tìm"
         })
-
     <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+    <div class="ml-auto">
+        @Html.ActionLink("Thêm mới", "ThemCongDan", null, new { @class = "btn btn-outline-success" })
+    </div>
 }
 
 <br />
-<p> @Html.ActionLink("Thêm mới", "ThemCongDan", null, new { @class = "btn btn-outline-success" })</p>
 <table class="table">
     <tr>
         <th>
@@ -89,12 +90,12 @@
                 @Html.DisplayFor(modelItem => congDan.ChucVu.Ten)
             </td>
             <td>
-                @Html.ActionLink("Sửa", "SuaCongDan", new { id = congDan.Id }) |
-                @Html.ActionLink("Chi tiết", "ChiTietCongDan", new { id = congDan.Id }) |
-                @Html.ActionLink("Xóa", "XoaCongDan", new { id = congDan.Id })
+                <a class="icon-link" href="@Url.Action("SuaCongDan", "Admin", new { id = congDan.Id })"><i class="fas fa-edit"></i></a> |
+                <a class="icon-link" href="@Url.Action("ChiTietCongDan", "Admin", new { id = congDan.Id })"><i class="fas fa-list"></i></a> |
+                <a class="icon-link" href="@Url.Action("XoaCongDan", "Admin", new { id = congDan.Id })"><i class="fas fa-trash-alt"></i></a>
             </td>
             <td>
-                <img src="@congDan.Avatar" alt="" style="width:50px; height:50px; border-radius: 50%; " />
+                <img src="@congDan.DisplayAvatar" alt="" style="width:50px; height:50px; border-radius: 50%; " />
             </td>
         </tr>
     }
