@@ -261,7 +261,7 @@
     <Compile Include="Models\TimNguoiDungViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ThongTin.cs" />
+    <Compile Include="Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnet-QuanLyCuTru-20180318124329.mdf" />

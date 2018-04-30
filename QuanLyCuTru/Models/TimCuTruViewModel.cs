@@ -56,7 +56,6 @@ namespace QuanLyCuTru.Models
             }
         }
 
-
         // DropDownList Trạng thái 
         public byte? LoaiTrangThaiId { get; set; }
         public IEnumerable<LoaiTimKiem> LoaiTrangThais

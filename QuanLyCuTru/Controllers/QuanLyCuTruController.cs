@@ -75,12 +75,10 @@ namespace QuanLyCuTru.Controllers
                     break;
                 // Địa chỉ cư trú
                 case 5:
-                    
                     cuTrus = db.CuTrus.Where(c => (c.SoNha + " " + c.Duong + " " + c.Phuong + " " + c.Quan + " " + c.ThanhPho).Contains(TimKiem.Trim()));
                     break;
                 // Địa chỉ dân
                 case 6:
-                 
                     cuTrus = db.NguoiDungs
                         .Where(c => (c.SoNha + " " + c.Duong + " " + c.Phuong + " " + c.Quan + " " + c.ThanhPho).Contains(TimKiem.Trim()))
                         .SelectMany(x => x.CuTrus)

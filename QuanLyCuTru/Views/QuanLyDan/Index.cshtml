@@ -6,70 +6,81 @@
 
 <br />
 <h2>Danh sách</h2>
-
-    <!-- Html.ActionLink("Thêm mới", "Create", "QuanLyDan", null, null) -->
-@using (Html.BeginForm("Index", "QuanLyDan", FormMethod.Post, new { @class = "form-inline" }))
+@using (Html.BeginForm("Index", "QuanLyDan", FormMethod.Post, new { @class = "mb-4" }))
 {
-    <label class="mr-sm-2" for="inlineFormCustomSelect">Tìm kiếm</label>
-    <!-- <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-        <option selected>Chọn loại...</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-    </select> -->
-    @Html.DropDownListFor(m => m.LoaiTimKiemId,
+    // First line
+    <div class="form-inline">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Tìm kiếm</label>
+        @Html.DropDownListFor(m => m.LoaiTimKiemId,
                         new SelectList(Model.LoaiTimKiems, "Id", "Name"),
                         new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
 
-    @Html.TextBoxFor(m => m.TimKiem,
+        @Html.TextBoxFor(m => m.TimKiem,
                         new
                         {
                             @class = "form-control mb-2 mr-sm-2 mb-sm-0",
                             @placeholder = "Nhập dữ liệu muốn tìm"
                         })
 
-    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+        <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+    </div>
+    <br />
+    // Second line
+    <div class="form-inline">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Loại tài khoản</label>
+        @Html.DropDownListFor(m => m.LoaiTaiKhoanId,
+         new SelectList(Model.LoaiTaiKhoans, "Id", "Name"),
+         new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
 
-    if (User.IsInRole("Admin"))
-    {
-        <div class="ml-auto">
-            @Html.ActionLink("Thêm mới", "ThemCongDan", null, new { @class = "btn btn-outline-success" })
-        </div>
-    }        
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Giới tính</label>
+        @Html.DropDownListFor(m => m.LoaiGioiTinhId,
+         new SelectList(Model.LoaiGioiTinhs, "Id", "Name"),
+         new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
+
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="ml-auto">
+                @Html.ActionLink("Thêm mới", "ThemCongDan", null, new { @class = "btn btn-success" })
+            </div>
+        }
+    </div>
 }
 
 <br />
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CongDans[0].Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CongDans[0].HoTen)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CongDans[0].GioiTinh)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CongDans[0].SinhNhat)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CongDans[0].NoiSinh)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CongDans[0].QueQuan)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CongDans[0].QuocTich)
-        </th>
+<table class="table table-hover">
+    <thead>
+    <th>
+        @Html.DisplayNameFor(model => model.CongDans[0].Id)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.CongDans[0].HoTen)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.CongDans[0].GioiTinh)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.CongDans[0].SinhNhat)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.CongDans[0].NoiSinh)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.CongDans[0].QueQuan)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.CongDans[0].QuocTich)
+    </th>
+    @if (User.IsInRole("Admin"))
+    {
         <th>Thao tác</th>
-        <th>Ảnh</th>
-    </tr>
+    }
+    <th>Ảnh</th>
+    </thead>
 
     @foreach (var congDan in Model.CongDans)
-{
-        <tr>
+    {
+        <tr class="clickable-row" data-href="@Url.Action("Details", "QuanLyDan", new { id = congDan.Id })">
             <td>
                 @Html.DisplayFor(modelItem => congDan.Id)
             </td>
@@ -91,15 +102,17 @@
             <td>
                 @Html.DisplayFor(modelItem => congDan.QuocTich)
             </td>
-            <td>
-                <a class="icon-link" href="@Url.Action("Edit", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-edit"></i></a> |
-                <a class="icon-link" href="@Url.Action("Details", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-list"></i></a> |
-                <a class="icon-link" href="@Url.Action("Delete", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-trash-alt"></i></a>
+            @if (User.IsInRole("Admin"))
+            {
+                <td>
 
-                @*@Html.ActionLink("Sửa", "Edit", "QuanLyDan", new { id = congDan.Id }, null) |
-                @Html.ActionLink("Chi tiết", "Details", "QuanLyDan", new { id = congDan.Id }, null) |
-                @Html.ActionLink("Xóa", "Delete", "QuanLyDan", new { id = congDan.Id }, null)*@
-            </td>
+
+                    <a class="icon-link" href="@Url.Action("Edit", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-edit"></i></a> |
+                    <a class="icon-link" href="@Url.Action("Details", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-list"></i></a> |
+                    <a class="icon-link" href="@Url.Action("Delete", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-trash-alt"></i></a>
+
+                </td>
+            }
             <td>
                 <img src="@congDan.DisplayAvatar" alt="" style="width:50px; height:50px; border-radius: 50%; " />
             </td>
@@ -107,5 +120,14 @@
     }
 </table>
 
+@section Scripts {
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".clickable-row").click(function () {
+                window.location = $(this).data("href");
+            });
+        });
+    </script>
+}
 
 

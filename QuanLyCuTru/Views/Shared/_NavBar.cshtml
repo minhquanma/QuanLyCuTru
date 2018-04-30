@@ -33,8 +33,12 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Công dân</a>
                 <div class="dropdown-menu">
                     @Html.ActionLink("Danh sách", "Index", "QuanLyDan", null, new { @class = "dropdown-item" })
-                    <a href="#" class="dropdown-item">Chưa đăng ký</a>
-                    <a href="#" class="dropdown-item">Đã đăng ký</a>
+                    @Html.ActionLink("Đã đăng ký", "Index", "QuanLyDan",
+                       new { LoaiTaiKhoanId = 2 },
+                       new { @class = "dropdown-item" })
+                    @Html.ActionLink("Chưa đăng ký", "Index", "QuanLyDan",
+                       new { LoaiTaiKhoanId = 3 },
+                       new { @class = "dropdown-item" })
                 </div>
             </li>
             <li class="nav-item">

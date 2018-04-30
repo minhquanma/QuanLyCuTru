@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<br />
 <h2>Quản lý cư trú</h2>
 @using (Html.BeginForm("Index", "QuanLyCuTru", FormMethod.Post, new { @class = "mb-4" }))
 {
@@ -48,8 +49,8 @@
     </div>
 }
 
-<table class="table text-center">
-    <tr>
+<table class="table text-center table-hover">
+    <thead>
         <th>
             @Html.DisplayNameFor(model => model.CuTrus[0].Id)
         </th>
@@ -68,12 +69,12 @@
         <th>
             @Html.DisplayNameFor(model => model.CuTrus[0].DaDuyet)
         </th>
-        <th></th>
-    </tr>
+        <th>Thao tác</th>
+    </thead>
 
 @foreach (var item in Model.CuTrus)
 {
-    <tr>
+    <tr class="clickable-row" data-href="@Url.Action("Details", new { id = item.Id })">
         <td>
             @Html.DisplayFor(modelItem => item.Id)
         </td>
@@ -93,16 +94,19 @@
             @Html.DisplayFor(modelItem => item.DaDuyet)
         </td>
         <td>
-
             <a class="icon-link" href="@Url.Action("Edit", new { id = item.Id })"><i class="fas fa-edit"></i></a> |
             <a class="icon-link" href="@Url.Action("Details", new { id = item.Id })"><i class="fas fa-list"></i></a> |
             <a class="icon-link" href="@Url.Action("Delete", new { id = item.Id })"><i class="fas fa-trash-alt"></i></a>
-
-            @*@Html.ActionLink("Sửa", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Chi tiết", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Xóa", "Delete", new { id = item.Id })*@
         </td>
     </tr>
 }
-
 </table>
+@section Scripts {
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".clickable-row").click(function () {
+                window.location = $(this).data("href");
+            });
+        });
+    </script>
+}

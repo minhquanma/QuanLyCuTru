@@ -3,8 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Net;
-using System.Web;
+using DateTimeExt;
 using System.Web.Mvc;
 
 namespace QuanLyCuTru.Controllers
@@ -25,11 +24,17 @@ namespace QuanLyCuTru.Controllers
         {
             db.Dispose();
         }
-
-        public IEnumerable<NguoiDung> SearchCongDan(byte? LoaiTimKiemId, string TimKiem)
+   
+        public IEnumerable<NguoiDung> SearchCongDan(byte? LoaiTimKiemId, byte? LoaiTaiKhoanId, byte? LoaiGioiTinhId, string TimKiem)
         {
             // Create a cong dan list reference
-            IEnumerable<NguoiDung> congDans;
+            IEnumerable<NguoiDung> congDans = null;
+
+            if (TimKiem == null)
+            {
+                congDans = db.NguoiDungs;
+                goto TimKiemIsNull;
+            }
 
             switch (LoaiTimKiemId)
             {
@@ -45,56 +50,76 @@ namespace QuanLyCuTru.Controllers
                 case 4:
                     congDans = db.NguoiDungs.Where(d => d.QuocTich.Contains(TimKiem));
                     break;
+                case 5:
+                    // Địa chỉ
+                    congDans = db.NguoiDungs.Where(c => (c.SoNha + " " + c.Duong + " " + c.Phuong + " " + c.Quan + " " + c.ThanhPho).Contains(TimKiem));
+                    break;
                 default:
                     congDans = db.NguoiDungs;
                     break;
             }
 
+            TimKiemIsNull:
+            switch(LoaiTaiKhoanId)
+            {
+                case 1:
+                    // Do nothing
+                    break;
+                case 2:
+                    // Đã đăng ký
+                    congDans = congDans.Where(d => d.IdentityId != null);
+                    break;
+                case 3:
+                    // Chưa đăng ký
+                    congDans = congDans.Where(d => d.IdentityId == null);
+                    break;
+            }
+
+            switch (LoaiGioiTinhId)
+            {
+                case 1:
+                    break;
+                case 2:
+                    congDans = congDans.Where(d => d.GioiTinh == true);
+                    break;
+                case 3:
+                    congDans = congDans.Where(d => d.GioiTinh == false);
+                    break;
+            }
             return congDans;
         }
 
         // GET: CanBo/QuanLyDan
         [Route("")]
-        public ActionResult Index(byte? LoaiTimKiemId, string TimKiem)
+        public ActionResult Index(byte? LoaiTimKiemId, byte? LoaiTaiKhoanId, byte? LoaiGioiTinhId, string TimKiem)
         {
-            IEnumerable<NguoiDung> congDans;
-
-            if (LoaiTimKiemId == null || TimKiem == null)
-            {
-                LoaiTimKiemId = null;
-                congDans = db.NguoiDungs.ToList();
-            }
-            else
-            {
-                congDans = SearchCongDan(LoaiTimKiemId, TimKiem);
-            }
+            // Get CongDan list
+            IEnumerable<NguoiDung> congDans = SearchCongDan(LoaiTimKiemId, LoaiTaiKhoanId, LoaiGioiTinhId, TimKiem);
                 
-
             var viewModel = new TimNguoiDungViewModel
             {
                 CongDans = congDans.ToList(),
                 TimKiem = TimKiem,
-                LoaiTimKiemId = LoaiTimKiemId
+                LoaiTimKiemId = LoaiTimKiemId,
+                LoaiTaiKhoanId = LoaiTaiKhoanId,
+                LoaiGioiTinhId = LoaiGioiTinhId
             };
+
             return View(viewModel);
         }
 
         // POST: CanBo/QuanLyDan: used to search cong dan
         [Route("")]
         [HttpPost]
-        public ActionResult Index([Bind(Include = "LoaiTimKiemId, TimKiem")]TimNguoiDungViewModel viewModel)
-        {
-            if (ModelState.IsValid == false)
-            {
-                return RedirectToAction("Index");
-            }
-
-            // Input search string submitted by user
+        public ActionResult Index(TimNguoiDungViewModel viewModel)
+        { 
             byte? LoaiTimKiemId = viewModel.LoaiTimKiemId;
+            byte? LoaiTaiKhoanId = viewModel.LoaiTaiKhoanId;
+            byte? LoaiGioiTinhId = viewModel.LoaiGioiTinhId;
             string TimKiem = viewModel.TimKiem;
 
             // Assign cong dan list to view model
-            viewModel.CongDans = SearchCongDan(LoaiTimKiemId, TimKiem).ToList();
+            viewModel.CongDans = SearchCongDan(LoaiTimKiemId, LoaiTaiKhoanId, LoaiGioiTinhId, TimKiem).ToList();
             return View(viewModel);
         }
 

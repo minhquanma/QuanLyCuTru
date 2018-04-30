@@ -24,7 +24,7 @@ namespace QuanLyCuTru.Models
         [Required(ErrorMessage = "Sinh nhật không được để trống")]
         [Display(Name = "Sinh nhật")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime? SinhNhat { get; set; }
+        public DateTime SinhNhat { get; set; }
 
         // Chức vụ (many-to-1)
         [Display(Name = "Chức vụ")]
