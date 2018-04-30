@@ -20,7 +20,8 @@ namespace QuanLyCuTru.Models
                     new LoaiTimKiem(2, "Nơi sinh"),
                     new LoaiTimKiem(3, "Quê quán"),
                     new LoaiTimKiem(4, "Quốc tịch"),
-                    new LoaiTimKiem(5, "Địa chỉ")
+                    new LoaiTimKiem(5, "Địa chỉ cư trú"),
+                    new LoaiTimKiem(6, "Địa chỉ công dân")
                 };
             }
         }

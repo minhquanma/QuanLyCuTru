@@ -54,20 +54,39 @@ namespace QuanLyCuTru.Controllers
                     break;
                 // Nơi sinh
                 case 2:
-                    cuTrus = cuTrus.Where(c => c.SoNha.Contains(TimKiem));
+                    cuTrus = db.NguoiDungs
+                        .Where(c => c.NoiSinh.Contains(TimKiem))
+                        .SelectMany(x => x.CuTrus)
+                        .Distinct();
                     break;
                 // Quê quán
                 case 3:
-                    cuTrus = cuTrus.Where(c => c.CongDans.Any(d => d.QueQuan.Contains(TimKiem)));
+                    cuTrus = db.NguoiDungs
+                        .Where(c => c.QueQuan.Contains(TimKiem))
+                        .SelectMany(x => x.CuTrus)
+                        .Distinct();
                     break;
                 // Quốc tịch
                 case 4:
-                    cuTrus = cuTrus.Where(c => c.CongDans.Any(d => d.QuocTich.Contains(TimKiem)));
+                    cuTrus = db.NguoiDungs
+                        .Where(c => c.QuocTich.Contains(TimKiem))
+                        .SelectMany(x => x.CuTrus)
+                        .Distinct();
                     break;
-                // Địa chỉ
+                // Địa chỉ cư trú
                 case 5:
-                    cuTrus = cuTrus.Where(c => c.DiaChi.ToLower().Contains(TimKiem.ToLower()));
+                    
+                    cuTrus = db.CuTrus.Where(c => (c.SoNha + " " + c.Duong + " " + c.Phuong + " " + c.Quan + " " + c.ThanhPho).Contains(TimKiem.Trim()));
                     break;
+                // Địa chỉ dân
+                case 6:
+                 
+                    cuTrus = db.NguoiDungs
+                        .Where(c => (c.SoNha + " " + c.Duong + " " + c.Phuong + " " + c.Quan + " " + c.ThanhPho).Contains(TimKiem.Trim()))
+                        .SelectMany(x => x.CuTrus)
+                        .Distinct();
+                    break;
+
                 default:
                     cuTrus = db.CuTrus;
                     break;
