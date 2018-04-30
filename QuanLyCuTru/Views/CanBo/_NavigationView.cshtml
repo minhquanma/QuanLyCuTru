@@ -1,10 +1,13 @@
 ﻿<div class="navigation-view d-flex mb-4">
     <div class="side-navbar bg-light rounded mr-4 pt-3">
-        <ul class="list-unstyled mb-3">
-            <li class="text-muted text-uppercase px-3"><i class="fas fa-wrench"></i>&nbsp;Quản trị viên</li>
-            <li><a href="#" class="d-block text-success text-capitalize px-3">Người dùng</a></li>
-            <li><a href="#" class="d-block text-success text-capitalize px-3">Quyền hạn</a></li>
-        </ul>
+        @if (User.IsInRole("Admin"))
+        {
+            <ul class="list-unstyled mb-3">
+                <li class="text-muted text-uppercase px-3"><i class="fas fa-wrench"></i>&nbsp;Quản trị viên</li>
+                <li><a href="#" class="d-block text-success text-capitalize px-3">Người dùng</a></li>
+                <li><a href="#" class="d-block text-success text-capitalize px-3">Quyền hạn</a></li>
+            </ul>
+        }
         <ul class="list-unstyled mb-3">
             <li class="text-muted text-uppercase px-3"><i class="fas fa-signal"></i>&nbsp;Thống kê</li>
             <li><a href="#" class="d-block text-success text-capitalize px-3">Tổng quan</a></li>

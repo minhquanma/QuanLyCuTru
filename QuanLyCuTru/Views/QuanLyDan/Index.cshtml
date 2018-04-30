@@ -9,7 +9,7 @@
 
     <!-- Html.ActionLink("Thêm mới", "Create", "QuanLyDan", null, null) -->
 @using (Html.BeginForm("Index", "QuanLyDan", FormMethod.Post, new { @class = "form-inline" }))
-{ 
+{
     <label class="mr-sm-2" for="inlineFormCustomSelect">Tìm kiếm</label>
     <!-- <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
         <option selected>Chọn loại...</option>
@@ -18,20 +18,25 @@
         <option value="3">Three</option>
     </select> -->
     @Html.DropDownListFor(m => m.LoaiTimKiemId,
-        new SelectList(Model.LoaiTimKiems, "Id", "Name"),
-        new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
+                        new SelectList(Model.LoaiTimKiems, "Id", "Name"),
+                        new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
 
     @Html.TextBoxFor(m => m.TimKiem,
-        new
-        {
-            @class = "form-control mb-2 mr-sm-2 mb-sm-0",
-            @placeholder = "Nhập dữ liệu muốn tìm"
-        })
+                        new
+                        {
+                            @class = "form-control mb-2 mr-sm-2 mb-sm-0",
+                            @placeholder = "Nhập dữ liệu muốn tìm"
+                        })
 
     <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+
+    if (User.IsInRole("Admin"))
+    {
+        <div class="ml-auto">
+            @Html.ActionLink("Thêm mới", "ThemCongDan", null, new { @class = "btn btn-outline-success" })
+        </div>
+    }        
 }
-
-
 
 <br />
 
@@ -63,7 +68,7 @@
     </tr>
 
     @foreach (var congDan in Model.CongDans)
-    {
+{
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => congDan.Id)
