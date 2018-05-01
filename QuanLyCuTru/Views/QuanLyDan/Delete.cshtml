@@ -1,0 +1,64 @@
+﻿@model QuanLyCuTru.Models.NguoiDung
+
+@{
+    ViewBag.Title = "Xóa công dân";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Bạn có chắc là muốn xóa công dân này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <img src="@Model.Avatar" alt="" class="avatar" />
+        <dt>
+            @Html.DisplayNameFor(model => model.ChucVu.Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChucVu.Ten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HoTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GioiTinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StringGioiTinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SinhNhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SinhNhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> 
+            @Html.ActionLink("Trở về", "Index", null, new { @class = "btn btn-info" })
+        </div>
+    }
+</div>

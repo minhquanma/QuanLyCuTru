@@ -23,7 +23,7 @@ namespace QuanLyCuTru.Models
 
         [Required(ErrorMessage = "Sinh nhật không được để trống")]
         [Display(Name = "Sinh nhật")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime SinhNhat { get; set; }
 
         // Chức vụ (many-to-1)
@@ -83,6 +83,7 @@ namespace QuanLyCuTru.Models
                 return Avatar == null ? "/Content/img/avatar.png" : Avatar;
             }
         }
+
         [NotMapped]
         public bool HasEmail 
         {

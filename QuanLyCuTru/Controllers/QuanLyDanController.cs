@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using DateTimeExt;
 using System.Web.Mvc;
+using System.Net;
 
 namespace QuanLyCuTru.Controllers
 {
@@ -138,7 +139,91 @@ namespace QuanLyCuTru.Controllers
         [Route("Create")]
         public ActionResult Create()
         {
-            return View();
+            var nguoiDung = new AddCongDanViewModel
+            {
+                NguoiDung = new NguoiDung(),
+                ChucVus = db.ChucVus.ToList()
+            };
+
+            return View(nguoiDung);
+        }
+
+        [HttpPost]
+        [Route("Create")]
+        public ActionResult Create(NguoiDung nguoiDung)
+        {
+            if (ModelState.IsValid)
+            {
+                db.NguoiDungs.Add(nguoiDung);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            var viewModel = new AddCongDanViewModel
+            {
+                NguoiDung = nguoiDung,
+                ChucVus = db.ChucVus.ToList()
+            };
+
+            return View(viewModel);
+        }
+
+        [Route("Edit")]
+        public ActionResult Edit(int id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            NguoiDung nguoiDung = db.NguoiDungs.Include(m => m.ChucVu).FirstOrDefault(m => m.Id == id);
+            var viewModel = new AddCongDanViewModel
+            {
+                NguoiDung = nguoiDung,
+                ChucVus = db.ChucVus.ToList()
+            };
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [Route("Edit")]
+        public ActionResult Edit(NguoiDung nguoiDung)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(nguoiDung).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            var viewModel = new AddCongDanViewModel
+            {
+                NguoiDung = nguoiDung,
+                ChucVus = db.ChucVus.ToList()
+            };
+            return View(viewModel);
+        }
+
+        [Route("Delete")]
+        public ActionResult Delete(int id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            NguoiDung nguoiDung = db.NguoiDungs.Include(m => m.ChucVu).FirstOrDefault(m => m.Id == id);
+            if (nguoiDung == null)
+            {
+                return HttpNotFound();
+            }
+            return View(nguoiDung);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult _Delete(int id)
+        {
+            var nguoiDung = db.NguoiDungs.Find(id);
+            db.NguoiDungs.Remove(nguoiDung);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         //// GET: CanBo/QuanLyDan/Create
@@ -184,7 +269,7 @@ namespace QuanLyCuTru.Controllers
         //    }
 
         //    return View(congDan);
- 
+
         //}
     }
 }

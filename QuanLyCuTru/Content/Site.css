@@ -25,6 +25,9 @@ textarea {
 
 .table th, .table td { vertical-align: middle; }
 
+img {
+    object-fit: cover;
+}
 .avatar {
         width: 200px;
         height: 200px;

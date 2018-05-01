@@ -389,7 +389,6 @@
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\CanBo\Index.cshtml" />
     <Content Include="Views\QuanLyDan\Index.cshtml" />
-    <Content Include="Views\QuanLyDan\Edit.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
     <Content Include="Views\AddCanBo\Create.cshtml" />
     <Content Include="Views\AddCanBo\Delete.cshtml" />
@@ -411,6 +410,8 @@
     <Content Include="Views\QuanLyCuTru\Details.cshtml" />
     <Content Include="Views\CanBo\_NavigationView.cshtml" />
     <Content Include="Views\CanBo\_TableView.cshtml" />
+    <Content Include="Views\QuanLyDan\Delete.cshtml" />
+    <Content Include="Views\QuanLyDan\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Navbar\" />

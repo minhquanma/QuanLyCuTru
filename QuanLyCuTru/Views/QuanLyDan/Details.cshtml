@@ -1,7 +1,7 @@
 ﻿@model QuanLyCuTru.Models.NguoiDung
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Chi tiết công dân";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -68,6 +68,6 @@
 </div>
 
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Trở về", "Index", null, new { @class = "btn btn-info" })
 </p>
