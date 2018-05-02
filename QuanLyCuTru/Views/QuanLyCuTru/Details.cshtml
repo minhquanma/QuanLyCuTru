@@ -90,7 +90,8 @@
                 }
                 else
                 {
-                    @Html.ActionLink("Click vào đây để duyệt", "Duyet", "QuanLyCuTru", new { id = Model.Id }, new { @class = "btn btn-success"})
+                    <button id="duyetButton" data-cutru-id="@Model.Id" class="btn btn-success">Click vào đây để duyệt</button>
+                    //@Html.ActionLink("Click vào đây để duyệt", "Duyet", "QuanLyCuTru", new { id = Model.Id }, new { @id = "duyet", @class = "btn btn-success"})
                 }
             </dd>
 
@@ -105,6 +106,31 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Sửa", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Quay về", "Index")
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" })
+    @Html.ActionLink("Quay về", "Index", null, new { @class = "btn btn-primary" })
 </p>
+@section scripts 
+{
+    <script>
+        $(document).ready(() => {
+            $("#duyetButton").on("click", (e) => {
+                var id = $(e.target).attr("data-cutru-id");
+                //confirm
+                bootbox.confirm("Bạn có chắc là muốn duyệt cư trú này?", (result) => {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/QuanLyCuTru/Duyet/" + id,
+                            method: "PATCH",
+                            success: () => {
+                                window.location.replace("/CanBo/QuanLyCuTru");
+                            }
+                        })
+                    }
+                    else {
+                        console.log("Cancelled");
+                    }
+                });
+            });
+        });
+    </script>    
+}
