@@ -1,7 +1,7 @@
 ﻿@model QuanLyCuTru.Models.CuTru
 
 @{
-    ViewBag.Title = "Chi tiết cư trứ";
+    ViewBag.Title = "Chi tiết cư trú";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -17,7 +17,8 @@
             </a>
             @foreach (var congDan in Model.CongDans)
             {
-                @Html.ActionLink(congDan.HoTen, "Details", "QuanLyDan", new { id = congDan.Id }, new { @class = "list-group-item list-group-item-action" })
+                var text = $"Mã số: {congDan.Id} - {congDan.HoTen} ({congDan.StringGioiTinh}), {DateTime.Now.Year - congDan.SinhNhat.Year} tuổi";
+                @Html.ActionLink(text, "Details", "QuanLyDan", new { id = congDan.Id }, new { @class = "list-group-item list-group-item-action" })
             }
         </div>
         <div class="col-12 col-md-6 mt-4">
@@ -83,7 +84,14 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.DaDuyet)
+                @if (Model.DaDuyet)
+                {
+                    @Html.DisplayFor(model => model.DaDuyet)
+                }
+                else
+                {
+                    @Html.ActionLink("Click vào đây để duyệt", "Duyet", "QuanLyCuTru", new { id = Model.Id }, new { @class = "btn btn-success"})
+                }
             </dd>
 
             <dt>

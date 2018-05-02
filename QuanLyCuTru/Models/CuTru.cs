@@ -51,7 +51,7 @@ namespace QuanLyCuTru.Models
         [Display(Name = "Thành phố")]
         public string ThanhPho { get; set; }
 
-        [Display(Name = "Đã duyệt")]
+        [Display(Name = "Đã duyệt?")]
         public bool DaDuyet { get; set; }
 
         // Loại cư trú (many-to-1)

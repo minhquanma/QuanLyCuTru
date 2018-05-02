@@ -165,6 +165,12 @@ namespace QuanLyCuTru.Controllers
             return View(viewModel);
         }
 
+        [Route("Duyet")]
+        public ActionResult Duyet(int id)
+        {
+            return View();
+        }
+
         // POST: CanBo/QuanLyCuTru
         [HttpPost]
         [Route("")]
