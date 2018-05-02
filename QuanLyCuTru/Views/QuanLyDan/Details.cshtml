@@ -29,7 +29,18 @@
                 <tbody>
                     <tr>
                         <th class="border-0">@Html.DisplayNameFor(model => model.Email)</th>
-                        <td class="border-0">@Html.DisplayFor(model => model.Email)</td>
+                        <td class="border-0">
+                            @if (Model.HasEmail)
+                            {
+                                @Html.DisplayFor(model => model.Email)
+                            }
+                            else if (User.IsInRole("Admin"))
+                            {
+                                @Html.ActionLink("Click vào để đăng ký", "DangKyCongDan", "Admin", new { id = Model.Id }, null)
+                            }
+                            else
+                            { @Html.DisplayFor(model => model.Email) }
+                        </td>
                     </tr>
                     <tr>
                         <th class="border-0">@Html.DisplayNameFor(model => model.StringGioiTinh)</th>

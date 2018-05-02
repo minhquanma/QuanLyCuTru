@@ -415,11 +415,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
-    <Content Include="Views\CongDan\Delete.cshtml" />
-    <Content Include="Views\CongDan\Details.cshtml" />
-    <Content Include="Views\CongDan\Edit.cshtml" />
     <Content Include="Views\CongDan\Index.cshtml" />
-    <Content Include="Views\CongDan\Login.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\CanBo\Index.cshtml" />
     <Content Include="Views\QuanLyDan\Index.cshtml" />
