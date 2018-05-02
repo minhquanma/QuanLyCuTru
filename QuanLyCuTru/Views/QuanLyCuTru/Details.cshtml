@@ -11,17 +11,19 @@
     <h4>Mã số: @Model.Id</h4>
     <hr />
     <dl class="row">
-        <div class="col-12">
-            <a href="#" class="list-group-item list-group-item-action active">
-                Danh sách công dân
-            </a>
-            @foreach (var congDan in Model.CongDans)
-            {
-                var text = $"Mã số: {congDan.Id} - {congDan.HoTen} ({congDan.StringGioiTinh}), {DateTime.Now.Year - congDan.SinhNhat.Year} tuổi";
-                @Html.ActionLink(text, "Details", "QuanLyDan", new { id = congDan.Id }, new { @class = "list-group-item list-group-item-action" })
-            }
+        <div class="col-12 mt-1">
+            <div class="col-12 col-md-6 p-0">
+                <a href="#" class="list-group-item list-group-item-action active">
+                    Danh sách công dân
+                </a>
+                @foreach (var congDan in Model.CongDans)
+                {
+                    var text = $"Mã số: {congDan.Id} - {congDan.HoTen} ({congDan.StringGioiTinh}), {DateTime.Now.Year - congDan.SinhNhat.Year} tuổi";
+                    @Html.ActionLink(text, "Details", "QuanLyDan", new { id = congDan.Id }, new { @class = "list-group-item list-group-item-action" })
+                }
+            </div>
         </div>
-        <div class="col-12 col-md-6 mt-4">
+        <div class="col-12 col-md-6 mt-3">
             <dt>
                 @Html.DisplayNameFor(model => model.DiaChi)
             </dt>
@@ -62,7 +64,7 @@
                 @Html.DisplayFor(model => model.NgayHetHan)
             </dd>
         </div>
-        <div class="col-12 col-md-6 mt-4">
+        <div class="col-12 col-md-6 mt-md-3">
             <dt>
                 @Html.DisplayNameFor(model => model.Email)
             </dt>

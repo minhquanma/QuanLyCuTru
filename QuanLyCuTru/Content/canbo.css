@@ -6,10 +6,10 @@
     flex: 0 0 75%;
 }
 
-.anonymous-view {
+/*.anonymous-view {
     flex: 1;
-}
+}*/
 
 .data-view {
-    flex: 0 0 75%;
+    flex: 1;
 }
