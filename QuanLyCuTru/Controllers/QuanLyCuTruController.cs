@@ -264,7 +264,6 @@ namespace QuanLyCuTru.Controllers
         }
 
         // GET: CanBo/QuanLyCuTru/Details/:id
-
         [Route("Details/{id}")]
         public ActionResult Details(int id)
         {
