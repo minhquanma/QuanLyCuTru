@@ -39,6 +39,24 @@ img {
     border-radius: 50%
 }
 
+.border {
+    border: 1px solid;
+    border-radius: 0.25rem;
+    border-color: #02B875 !important;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.list-group-item-action {
+    width: 100%;
+    color: #495057;
+    text-align: inherit;
+}
 .icon-link:link,
 .icon-link:visited{
     color: black;

@@ -11,7 +11,7 @@
     <h4>Mã số: @Model.Id</h4>
     <hr />
     <dl class="row">
-        <div class="col-12 mt-1">
+        <div class="col-10 mt-3">
             <div class="col-12 col-md-6 p-0">
                 <a href="#" class="list-group-item list-group-item-action active">
                     Danh sách công dân
@@ -107,7 +107,7 @@
         </div>
     </dl>
 </div>
-<p>
+<p class="text-center">
     @Html.ActionLink("Sửa", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" })
     @Html.ActionLink("Quay về", "Index", null, new { @class = "btn btn-primary" })
 </p>
