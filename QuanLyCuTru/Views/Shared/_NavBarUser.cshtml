@@ -1,0 +1,32 @@
+﻿@model QuanLyCuTru.Models.NguoiDung
+
+<style>
+.navbar{
+    padding: 0.5rem 1rem;
+}
+</style>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">@ViewBag.PageTitle</a>
+ 
+    <button class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                @Html.ActionLink("Trang chủ", "Index", "CongDan", null, new { @class = "nav-link" })
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cư trú</a>
+                <div class="dropdown-menu">
+                    @Html.ActionLink("Thông tin", "Index", "CongDan", null, new { @class = "dropdown-item" })
+                    @Html.ActionLink("Đăng ký", "Create", "CongDan", null, new { @class = "dropdown-item" })
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Liên hệ</a>
+            </li>
+        </ul>
+        @Html.Partial("_ProfileView")
+    </div>
+</nav>

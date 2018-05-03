@@ -92,6 +92,29 @@ namespace QuanLyCuTru.Models
             }
         }
 
+        [NotMapped]
+        [Display(Name = "Thời hạn")]
+        public int ThoiHan
+        {
+            get
+            {
+                // Calculate remaining valid day
+                int remainingDays = NgayHetHan.Subtract(NgayDangKy).Days;
+
+                return remainingDays;
+            }
+        }
+
+        [NotMapped]
+        [Display(Name = "Thời hạn")]
+        public string DisplayThoiHan
+        {
+            get
+            {
+                return ThoiHan > 0 ? $"{ThoiHan} ngày" : "Hết hạn";
+            }
+        }
+
         public CuTru()
         {
             DaDuyet = false;

@@ -30,7 +30,13 @@ namespace QuanLyCuTru.Controllers
             if (User.Identity.IsAuthenticated)
             {
                 string uid = User.Identity.GetUserId();
+
+                // Get current logged in user profile based on Uid
                 NguoiDung nguoiDung = db.NguoiDungs.SingleOrDefault(u => u.IdentityId.Contains(uid));
+
+                // If the current logged in user is CongDan
+                if (User.IsInRole("CongDan"))
+                    return PartialView("_NavBarUser", nguoiDung);
 
                 return PartialView("_NavBar", nguoiDung);
             }

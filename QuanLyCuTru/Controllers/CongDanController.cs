@@ -19,10 +19,8 @@ namespace QuanLyCuTru.Controllers
         // GET: CongDan
         public ActionResult Index()
         {
-            // Lấy danh sách công dân
-            var congDans = db.NguoiDungs
-                .Where(dan => dan.ChucVuId == 4);
-            return View(congDans.ToList());
+            var cuTrus = db.CuTrus;
+            return View(cuTrus);
         }
 
         // GET: CongDan/Details/5
