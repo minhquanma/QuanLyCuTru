@@ -90,11 +90,15 @@
                 {
                     @Html.DisplayFor(model => model.DaDuyet)
                 }
-                else
+                else if (User.IsInRole("Admin") || User.IsInRole("CanhSatKhuVuc"))
                 {
                     <button id="duyetButton" data-cutru-id="@Model.Id" class="btn btn-success">Click vào đây để duyệt</button>
-                    //@Html.ActionLink("Click vào đây để duyệt", "Duyet", "QuanLyCuTru", new { id = Model.Id }, new { @id = "duyet", @class = "btn btn-success"})
                 }
+                else
+                {
+                    @Html.DisplayFor(model => model.DaDuyet)
+                }
+
             </dd>
 
             <dt>

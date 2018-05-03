@@ -1,0 +1,186 @@
+﻿@model QuanLyCuTru.Models.DangKyCuTruViewModel
+
+@{
+    ViewBag.Title = "Đăng ký";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Đăng ký cư trú</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.CanBoId)
+    <div class="row">
+        <hr />
+        <div class="col-12 col-md-6">
+            @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.NgayTao, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    @Html.EditorFor(model => model.NgayTao, "{0:dd/MM/yyyy}", new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                    @Html.ValidationMessageFor(model => model.NgayTao, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NgayDangKy, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    @Html.EditorFor(model => model.NgayDangKy, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NgayDangKy, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NgayHetHan, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    @Html.EditorFor(model => model.NgayHetHan, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                    @Html.ValidationMessageFor(model => model.NgayHetHan, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DienThoai, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    @Html.EditorFor(model => model.DienThoai, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DienThoai, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SoNha, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    @Html.EditorFor(model => model.SoNha, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SoNha, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Duong, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    @Html.EditorFor(model => model.Duong, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Duong, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Phuong, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    @Html.EditorFor(model => model.Phuong, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Phuong, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Quan, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    @Html.EditorFor(model => model.Quan, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Quan, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.ThanhPho, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    @Html.EditorFor(model => model.ThanhPho, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ThanhPho, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LoaiCuTruId, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    @Html.DropDownList("LoaiCuTruId", new SelectList(Model.LoaiCuTru, "Id", "Ten"), htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.LoaiCuTruId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="">
+                    <div id="CongDans" class="list-congdan list-group">
+                        <li class="list-group-item active">Danh sách công dân</li>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.CongDans, "", new { @class = "text-danger" })
+                    <br />
+                    <div class="input-group mb-3">
+                        <input id="inputUserId" type="text" class="form-control" placeholder="Nhập mã công dân" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button id="buttonAdd" class="btn btn-outline-secondary" type="button">Thêm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 ">
+                    <input id="buttonSend" type="submit" value="Tạo mới" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Trở về", "Index", null, new { @class = "btn btn-primary" })
+</div>
+
+@section scripts
+{
+    @*Scripts.Render("~/bundles/jqueryval")*@
+    @Scripts.Render("~/bundles/jquery-ui")
+    <script>
+        $(document).ready(function () {
+
+            // DateTime picker for NgayTao
+            $('#NgayTao').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: 'dd/mm/yy'
+            });
+            // DateTime picker for NgayDangKy
+            $('#NgayDangKy').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: 'dd/mm/yy'
+            });
+            // DateTime picker for NgayHetHan
+            $('#NgayHetHan').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: 'dd/mm/yy'
+            });
+
+            var listOfIds = [];
+
+            $('#buttonAdd').click(() => {
+                let userId = $("#inputUserId").val();
+                let li = `<a href="#" class="list-group-item list-group-item-action">${userId}</a>`;
+
+                $("#CongDans").append(li);   // Append HTML
+
+                listOfIds.push(userId);   // Add to json list
+
+                $("#inputUserId").val("");  // Clear the TextBox
+            });
+
+            $('#buttonSend').click(() => {
+                // Generate hidden input
+                for (var item in listOfIds) {
+                    let congDan = `<input type="hidden" name="CongDans[${item}]" value="${listOfIds[item]}" />`;
+                    $("form").append(congDan)
+                    console.log(congDan)
+                }
+            });
+        });
+
+
+
+    </script>
+}

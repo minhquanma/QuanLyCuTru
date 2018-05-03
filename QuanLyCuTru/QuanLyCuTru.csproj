@@ -453,6 +453,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_NavBarUser.cshtml" />
     <Content Include="Views\Shared\_ProfileView.cshtml" />
+    <Content Include="Views\CongDan\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Navbar\" />

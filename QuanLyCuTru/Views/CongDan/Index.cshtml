@@ -28,6 +28,9 @@
             <th class="border-bottom-0">
                 @Html.DisplayNameFor(m => m.NgayHetHan)
             </th>
+            <th class="border-bottom-0">
+                @Html.DisplayNameFor(m => m.DisplayThoiHan)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -40,7 +43,9 @@
                 <td>@item.DienThoai</td>
                 <td>@item.NgayDangKy.ToShortDateString()</td>
                 <td>@item.NgayHetHan.ToShortDateString()</td>
+                <td>@item.DisplayThoiHan</td>
             </tr>
         }
     </tbody>
 </table>
+@Html.ActionLink("Đăng ký mới", "Create", null, new { @class = "btn btn-success" })

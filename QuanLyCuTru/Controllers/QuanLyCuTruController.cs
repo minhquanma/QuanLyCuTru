@@ -11,7 +11,7 @@ using System;
 namespace QuanLyCuTru.Controllers
 {
     // This is a child route
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, CanhSatKhuVuc, BaoVeDanPho")]
     [RoutePrefix("CanBo/QuanLyCuTru")]
     public class QuanLyCuTruController : Controller
     {
@@ -228,6 +228,13 @@ namespace QuanLyCuTru.Controllers
                 return View(viewModel);
             }
 
+            bool DuocDuyet;
+            // Get role info
+            if (User.IsInRole("Admin") || User.IsInRole("CanhSatKhuVuc"))
+                DuocDuyet = true;
+            else
+                DuocDuyet = false;
+
             // Create a new CuTru
             var cuTru = new CuTru
             {
@@ -243,7 +250,7 @@ namespace QuanLyCuTru.Controllers
                 ThanhPho = viewModel.ThanhPho,
                 LoaiCuTruId = viewModel.LoaiCuTruId,
                 CanBoId = viewModel.CanBoId,
-                DaDuyet = true, 
+                DaDuyet = DuocDuyet, 
                 CongDans = new Collection<NguoiDung>()
             };
 

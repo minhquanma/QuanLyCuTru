@@ -48,7 +48,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.NguoiDung.ChucVuId, "ChucVuId", htmlAttributes: new { @class = "control-label col-12" })
+                @Html.LabelFor(model => model.NguoiDung.ChucVuId, null, htmlAttributes: new { @class = "control-label col-12" })
                 <div class="col-md-10">
                     @Html.DropDownListFor(m => m.NguoiDung.ChucVuId,
                                      new SelectList(Model.ChucVus, "Id", "Ten"), new { @class = "form-control" })
@@ -136,22 +136,19 @@
                     @Html.ValidationMessageFor(model => model.NguoiDung.Avatar, "", new { @class = "text-danger" })
                 </div>
             </div>
-        </div>
 
-
-
-
-        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <div>
+                    <input type="submit" value="Tạo mới" class="btn btn-success" />
+                    @Html.ActionLink("Trở về", "Index", null, new { @class = "btn btn-primary" })
+                </div>
             </div>
         </div>
+           
     </div>
 }
 
-<div>
-    @Html.ActionLink("Trở về", "Index")
-</div>
+
 @section scripts
 {
     @Scripts.Render("~/bundles/jquery-ui")

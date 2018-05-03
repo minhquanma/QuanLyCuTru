@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using QuanLyCuTru.Models;
 using System;
-using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -32,7 +32,7 @@ namespace QuanLyCuTru.Controllers
                 string uid = User.Identity.GetUserId();
 
                 // Get current logged in user profile based on Uid
-                NguoiDung nguoiDung = db.NguoiDungs.SingleOrDefault(u => u.IdentityId.Contains(uid));
+                NguoiDung nguoiDung = db.NguoiDungs.Include(c => c.ChucVu).FirstOrDefault(u => u.IdentityId.Contains(uid));
 
                 // If the current logged in user is CongDan
                 if (User.IsInRole("CongDan"))

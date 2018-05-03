@@ -9,18 +9,106 @@ using System.Web.Mvc;
 using QuanLyCuTru;
 using System.Web.Security;
 using QuanLyCuTru.Models;
+using Microsoft.AspNet.Identity;
+using System.Collections.ObjectModel;
 
 namespace QuanLyCuTru.Controllers
 {
+    [Authorize]
     public class CongDanController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db;
+
+        public CongDanController()
+        {
+            db = new ApplicationDbContext();
+        }
+
+        public DangKyCuTruViewModel InitDangKyCuTruViewModel()
+        {
+            // Lay thong tin dang nhap hien tai cua user
+            var currentId = User.Identity.GetUserId();
+            var nguoiDung = db.NguoiDungs.SingleOrDefault(s => s.IdentityId.Contains(currentId));
+         
+            var cuTru = new DangKyCuTruViewModel
+            {
+                Email = nguoiDung.Email,
+                DienThoai = nguoiDung.DienThoai,
+                LoaiCuTru = db.LoaiCuTrus,
+                CongDans = new List<int>()
+            };
+
+            return cuTru;
+        }
 
         // GET: CongDan
         public ActionResult Index()
         {
-            var cuTrus = db.CuTrus;
+            // Get all CuTru entity created by me
+            var currentId = User.Identity.GetUserId();
+            var nguoiDung = db.NguoiDungs.SingleOrDefault(s => s.IdentityId.Contains(currentId));
+
+            var cuTrus = db.CuTrus.Where(c => c.Email.Contains(nguoiDung.Email));
             return View(cuTrus);
+        }
+
+        // GET: CongDan/Create
+        public ActionResult Create()
+        {
+            var cuTru = InitDangKyCuTruViewModel();
+
+            return View(cuTru);
+        }
+
+        // POST: CongDan/Create
+        [HttpPost]
+        public ActionResult Create(DangKyCuTruViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                viewModel = InitDangKyCuTruViewModel();
+
+                return View(viewModel);
+            }
+
+            // Create a new CuTru
+            var cuTru = new CuTru
+            {
+                NgayDangKy = viewModel.NgayDangKy,
+                NgayHetHan = viewModel.NgayHetHan,
+                NgayTao = viewModel.NgayTao,
+                Email = viewModel.Email,
+                DienThoai = viewModel.DienThoai,
+                SoNha = viewModel.SoNha,
+                Duong = viewModel.Duong,
+                Phuong = viewModel.Phuong,
+                Quan = viewModel.Quan,
+                ThanhPho = viewModel.ThanhPho,
+                LoaiCuTruId = viewModel.LoaiCuTruId,
+                CanBoId = viewModel.CanBoId,
+                DaDuyet = false,
+                CongDans = new Collection<NguoiDung>()
+            };
+
+
+            foreach (int value in viewModel.CongDans)
+            {
+                // Query each congdan
+                var congDan = db.NguoiDungs.SingleOrDefault(c => c.Id == value);
+
+                if (congDan == null)
+                {
+                    // Non existent
+                    ModelState.AddModelError("", "Thông tin công dân không hợp lệ");
+                    return View(InitDangKyCuTruViewModel());
+                }
+
+                cuTru.CongDans.Add(congDan);
+            }
+
+            db.CuTrus.Add(cuTru);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // GET: CongDan/Details/5

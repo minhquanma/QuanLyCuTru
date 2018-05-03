@@ -1,4 +1,6 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@model QuanLyCuTru.Models.NguoiDung
+
+@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -8,7 +10,7 @@
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                     <img src="@Model.Avatar" width="30" height="30" class="nav-avatar mr-sm-2" alt="">
-                    @User.Identity.GetUserName()
+                    @User.Identity.GetUserName() (@Model.ChucVu.Ten)
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a href="#" class="dropdown-item text-capitalize">Hồ sơ cá nhân</a>

@@ -10,6 +10,7 @@ using System.Net;
 namespace QuanLyCuTru.Controllers
 {
     // This is a child route
+    [Authorize(Roles = "Admin, CanhSatKhuVuc")]
     [RoutePrefix("CanBo/QuanLyDan")]
     public class QuanLyDanController : Controller
     {
@@ -137,6 +138,7 @@ namespace QuanLyCuTru.Controllers
         }
 
         [Route("Create")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             var nguoiDung = new AddCongDanViewModel
@@ -150,6 +152,7 @@ namespace QuanLyCuTru.Controllers
 
         [HttpPost]
         [Route("Create")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(NguoiDung nguoiDung)
         {
             if (ModelState.IsValid)
@@ -169,6 +172,7 @@ namespace QuanLyCuTru.Controllers
         }
 
         [Route("Edit")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
             if (id == null)
@@ -186,6 +190,7 @@ namespace QuanLyCuTru.Controllers
 
         [HttpPost]
         [Route("Edit")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(NguoiDung nguoiDung)
         {
             if (ModelState.IsValid)

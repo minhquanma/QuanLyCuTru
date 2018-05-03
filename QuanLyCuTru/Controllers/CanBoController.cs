@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace QuanLyCuTru.Controllers
 {
+    [Authorize(Roles = "Admin, CanhSatKhuVuc, BaoVeDanPho")]
     public class CanBoController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
