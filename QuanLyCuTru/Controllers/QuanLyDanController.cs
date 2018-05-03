@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using DateTimeExt;
 using System.Web.Mvc;
 using System.Net;
+using PagedList;
+using PagedList.Mvc;
+using System.IO;
 
 namespace QuanLyCuTru.Controllers
 {
@@ -14,7 +16,8 @@ namespace QuanLyCuTru.Controllers
     [RoutePrefix("CanBo/QuanLyDan")]
     public class QuanLyDanController : Controller
     {
-        ApplicationDbContext db;
+        private ApplicationDbContext db;
+        private static int pageNumber = 5;
 
         public QuanLyDanController()
         {
@@ -93,14 +96,14 @@ namespace QuanLyCuTru.Controllers
 
         // GET: CanBo/QuanLyDan
         [Route("")]
-        public ActionResult Index(byte? LoaiTimKiemId, byte? LoaiTaiKhoanId, byte? LoaiGioiTinhId, string TimKiem)
+        public ActionResult Index(byte? LoaiTimKiemId, byte? LoaiTaiKhoanId, byte? LoaiGioiTinhId, string TimKiem, int? page)
         {
             // Get CongDan list
             IEnumerable<NguoiDung> congDans = SearchCongDan(LoaiTimKiemId, LoaiTaiKhoanId, LoaiGioiTinhId, TimKiem);
                 
             var viewModel = new TimNguoiDungViewModel
             {
-                CongDans = congDans.ToList(),
+                CongDans = congDans.OrderBy(c => c.Id).ToPagedList(page ?? 1, pageNumber),
                 TimKiem = TimKiem,
                 LoaiTimKiemId = LoaiTimKiemId,
                 LoaiTaiKhoanId = LoaiTaiKhoanId,
@@ -114,14 +117,15 @@ namespace QuanLyCuTru.Controllers
         [Route("")]
         [HttpPost]
         public ActionResult Index(TimNguoiDungViewModel viewModel)
-        { 
+        {
+            int? page = null;
             byte? LoaiTimKiemId = viewModel.LoaiTimKiemId;
             byte? LoaiTaiKhoanId = viewModel.LoaiTaiKhoanId;
             byte? LoaiGioiTinhId = viewModel.LoaiGioiTinhId;
             string TimKiem = viewModel.TimKiem;
 
             // Assign cong dan list to view model
-            viewModel.CongDans = SearchCongDan(LoaiTimKiemId, LoaiTaiKhoanId, LoaiGioiTinhId, TimKiem).ToList();
+            viewModel.CongDans = SearchCongDan(LoaiTimKiemId, LoaiTaiKhoanId, LoaiGioiTinhId, TimKiem).OrderBy(c => c.Id).ToPagedList(page ?? 1, pageNumber);
             return View(viewModel);
         }
 
@@ -153,22 +157,51 @@ namespace QuanLyCuTru.Controllers
         [HttpPost]
         [Route("Create")]
         [Authorize(Roles = "Admin")]
-        public ActionResult Create(NguoiDung nguoiDung)
+        public ActionResult Create(AddCongDanViewModel viewModel)
         {
+            var imageTypes = new string[]
+            {
+                "image/gif",
+                "image/jpeg",
+                "image/pjpeg",
+                "image/png"
+            };
+
+            if (!imageTypes.Contains(viewModel.ImageFile.ContentType))
+                ModelState.AddModelError("ImageFile", "Định dạng ảnh không hợp lệ"); 
+
             if (ModelState.IsValid)
             {
-                db.NguoiDungs.Add(nguoiDung);
+                // Create new NguoiDung in db
+                var congDan = viewModel.NguoiDung;
+                db.NguoiDungs.Add(congDan);
+
+                if (viewModel.ImageFile != null && viewModel.ImageFile.ContentLength > 0)
+                {
+                    int unixTimestamp = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+                    var uploadDir = "/Content/avatar";
+                    var imageExtension = Path.GetExtension(viewModel.ImageFile.FileName);
+                    var imageName = unixTimestamp.ToString() + imageExtension;
+                    var imagePath = Path.Combine(Server.MapPath(uploadDir), imageName);
+                    var imageUrl = Path.Combine(uploadDir, imageName);
+
+                    // Save to directory
+                    viewModel.ImageFile.SaveAs(imagePath);
+
+                    congDan.Avatar = imageUrl;
+                }
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            var viewModel = new AddCongDanViewModel
+            var view = new AddCongDanViewModel
             {
-                NguoiDung = nguoiDung,
+                NguoiDung = viewModel.NguoiDung,
                 ChucVus = db.ChucVus.ToList()
             };
 
-            return View(viewModel);
+            return View(view);
         }
 
         [Route("Edit")]

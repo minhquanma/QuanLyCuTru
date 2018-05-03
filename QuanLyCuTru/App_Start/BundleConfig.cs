@@ -29,7 +29,9 @@ namespace QuanLyCuTru
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.pulse.min.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/PagedList.css"));
+
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
               "~/Content/themes/base/core.css",

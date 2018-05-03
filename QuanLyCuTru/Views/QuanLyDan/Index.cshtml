@@ -1,5 +1,6 @@
 ﻿@model QuanLyCuTru.Models.TimNguoiDungViewModel
-
+@using PagedList.Mvc;
+ 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -86,12 +87,17 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => congDan.HoTen)
+                @if (congDan.ChucVuId != 4)
+                {
+                    <span class="badge badge-secondary">Cán bộ</span>
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => congDan.StringGioiTinh)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => congDan.SinhNhat)
+                (@congDan.Tuoi)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => congDan.NoiSinh)
@@ -129,5 +135,11 @@
         });
     </script>
 }
+@Html.PagedListPager(Model.CongDans, page => Url.Action("Index",
+    new { page = page,
+        TimKiem = Model.TimKiem,
+        LoaiTimKiemId = Model.LoaiTimKiemId,
+        LoaiTaiKhoanId = Model.LoaiTaiKhoanId,
+        LoaiGioiTinhId = Model.LoaiGioiTinhId}))
 
 

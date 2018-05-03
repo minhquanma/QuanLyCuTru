@@ -21,6 +21,7 @@ namespace QuanLyCuTru.Controllers
 
         public CongDanController()
         {
+            ViewBag.PageTitle = "Công dân";
             db = new ApplicationDbContext();
         }
 

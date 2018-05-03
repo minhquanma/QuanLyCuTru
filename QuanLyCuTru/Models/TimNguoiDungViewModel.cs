@@ -1,4 +1,5 @@
-﻿ using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -52,7 +53,7 @@ namespace QuanLyCuTru.Models
             }
         }
 
-        public List<NguoiDung> CongDans { get; set; }
+        public IPagedList<NguoiDung> CongDans { get; set; }
         [Required]
         public string TimKiem { get; set; }
     }

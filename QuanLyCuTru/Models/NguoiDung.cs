@@ -130,5 +130,11 @@ namespace QuanLyCuTru.Models
         {
             get { return GioiTinh ? "Nam" : "Nữ"; }
         }
+
+        [NotMapped]
+        public int Tuoi
+        {
+            get { return DateTime.Now.Year - SinhNhat.Year; }
+        }
     }
 }

@@ -38,12 +38,12 @@ namespace QuanLyCuTru.Controllers
         // GET: Admin/CongDan
         public ActionResult CongDan()
         {
-            var congDans = db.NguoiDungs.Include(m => m.ChucVu).ToList();
-            var viewModel = new TimNguoiDungViewModel
-            {
-                CongDans = congDans
-            };
-            return View(viewModel);
+            //var congDans = db.NguoiDungs.Include(m => m.ChucVu).ToList();
+            //var viewModel = new TimNguoiDungViewModel
+            //{
+            //    CongDans = congDans
+            //};
+            return View();
         }
 
         // GET: Admin/ChiTietCongDan/id

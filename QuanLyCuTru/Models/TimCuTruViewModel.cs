@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -70,7 +71,7 @@ namespace QuanLyCuTru.Models
                 };
             }
         }
-        public List<CuTru> CuTrus { get; set; }
+        public IPagedList<CuTru> CuTrus { get; set; }
 
         [Required]
         public string TimKiem { get; set; }

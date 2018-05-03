@@ -1,4 +1,5 @@
 ﻿@model QuanLyCuTru.Models.TimCuTruViewModel
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Index";
@@ -116,3 +117,13 @@
         });
     </script>
 }
+@Html.PagedListPager(Model.CuTrus, page => Url.Action("Index",
+    new
+    {
+        page = page,
+        TimKiem = Model.TimKiem,
+        LoaiTimKiemId = Model.LoaiTimKiemId,
+        LoaiCuTruId = Model.LoaiCuTruId,
+        LoaiHanId = Model.LoaiHanId,
+        LoaiTrangThai = Model.LoaiTrangThaiId
+    }))

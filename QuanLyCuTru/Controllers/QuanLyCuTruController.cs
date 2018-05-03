@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using Microsoft.AspNet.Identity;
 using System;
+using PagedList;
 
 namespace QuanLyCuTru.Controllers
 {
@@ -15,7 +16,9 @@ namespace QuanLyCuTru.Controllers
     [RoutePrefix("CanBo/QuanLyCuTru")]
     public class QuanLyCuTruController : Controller
     {
-        ApplicationDbContext db;
+        private ApplicationDbContext db;
+
+        private static int pageNumber = 5;
 
         public QuanLyCuTruController()
         {
@@ -142,7 +145,7 @@ namespace QuanLyCuTru.Controllers
 
         // GET: CanBo/QuanLyCuTru
         [Route("")]
-        public ActionResult Index(byte? LoaiTimKiemId, byte? LoaiCuTruId, byte? LoaiTrangThaiId, byte? LoaiHanId, string TimKiem)
+        public ActionResult Index(byte? LoaiTimKiemId, byte? LoaiCuTruId, byte? LoaiTrangThaiId, byte? LoaiHanId, string TimKiem, int? page)
         {
             // Get CuTru list
             IEnumerable<CuTru> cuTrus = SearchCuTru(LoaiTimKiemId,
@@ -154,7 +157,7 @@ namespace QuanLyCuTru.Controllers
             // Create TimCuTruViewModel based on params data
             var viewModel = new TimCuTruViewModel
             {
-                CuTrus = cuTrus.ToList(),
+                CuTrus = cuTrus.OrderBy(c => c.Id).ToPagedList(page ?? 1, pageNumber),
                 TimKiem = TimKiem,
                 LoaiTimKiemId = LoaiTimKiemId,
                 LoaiCuTruId = LoaiCuTruId,
@@ -176,6 +179,7 @@ namespace QuanLyCuTru.Controllers
         [Route("")]
         public ActionResult Index(TimCuTruViewModel viewModel)
         {
+            int? page = null;
             byte? LoaiTimKiemId = viewModel.LoaiTimKiemId;
             byte? LoaiCuTruId = viewModel.LoaiCuTruId;
             byte? LoaiTrangThaiId = viewModel.LoaiTrangThaiId;
@@ -186,7 +190,7 @@ namespace QuanLyCuTru.Controllers
                 LoaiCuTruId,
                 LoaiTrangThaiId,
                 LoaiHanId,
-                TimKiem).ToList();
+                TimKiem).OrderBy(c => c.Id).ToPagedList(page ?? 1, pageNumber);
 
             return View(viewModel);
         }
