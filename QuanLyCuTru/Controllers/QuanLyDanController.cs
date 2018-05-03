@@ -19,6 +19,14 @@ namespace QuanLyCuTru.Controllers
         private ApplicationDbContext db;
         private static int pageNumber = 5;
 
+        private string[] imageTypes = new string[]
+            {
+                "image/gif",
+                "image/jpeg",
+                "image/pjpeg",
+                "image/png"
+            };
+
         public QuanLyDanController()
         {
             db = new ApplicationDbContext();
@@ -159,13 +167,6 @@ namespace QuanLyCuTru.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult Create(AddCongDanViewModel viewModel)
         {
-            var imageTypes = new string[]
-            {
-                "image/gif",
-                "image/jpeg",
-                "image/pjpeg",
-                "image/png"
-            };
 
             if (!imageTypes.Contains(viewModel.ImageFile.ContentType))
                 ModelState.AddModelError("ImageFile", "Định dạng ảnh không hợp lệ"); 
@@ -224,20 +225,41 @@ namespace QuanLyCuTru.Controllers
         [HttpPost]
         [Route("Edit")]
         [Authorize(Roles = "Admin")]
-        public ActionResult Edit(NguoiDung nguoiDung)
+        public ActionResult Edit(AddCongDanViewModel viewModel)
         {
+            if (!imageTypes.Contains(viewModel.ImageFile.ContentType))
+                ModelState.AddModelError("ImageFile", "Định dạng ảnh không hợp lệ");
+
             if (ModelState.IsValid)
             {
-                db.Entry(nguoiDung).State = EntityState.Modified;
+                // Create new NguoiDung in db
+                var congDan = viewModel.NguoiDung;
+
+                if (viewModel.ImageFile != null && viewModel.ImageFile.ContentLength > 0)
+                {
+                    int unixTimestamp = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+                    var uploadDir = "/Content/avatar";
+                    var imageExtension = Path.GetExtension(viewModel.ImageFile.FileName);
+                    var imageName = unixTimestamp.ToString() + imageExtension;
+                    var imagePath = Path.Combine(Server.MapPath(uploadDir), imageName);
+                    var imageUrl = Path.Combine(uploadDir, imageName);
+
+                    // Save to directory
+                    viewModel.ImageFile.SaveAs(imagePath);
+
+                    congDan.Avatar = imageUrl;
+                }
+
+                db.Entry(congDan).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            var viewModel = new AddCongDanViewModel
+            var view = new AddCongDanViewModel
             {
-                NguoiDung = nguoiDung,
+                NguoiDung = viewModel.NguoiDung,
                 ChucVus = db.ChucVus.ToList()
             };
-            return View(viewModel);
+            return View(view);
         }
 
         [Route("Delete")]

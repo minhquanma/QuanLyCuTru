@@ -17,6 +17,8 @@ namespace QuanLyCuTru.Controllers
             ViewBag.PageTitle = "Cán bộ";   
         }
 
+        
+
         // GET: CanBo
         public ActionResult Index()
         {
