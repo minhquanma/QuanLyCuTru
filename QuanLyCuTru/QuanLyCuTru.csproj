@@ -315,6 +315,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.pulse.min.css" />
     <Content Include="Content\canbo.css" />
+    <Content Include="Content\contact.css" />
     <Content Include="Content\img\bg.jpg" />
     <Content Include="Content\img\favicons\android-chrome-192x192.png" />
     <Content Include="Content\img\favicons\android-chrome-512x512.png" />

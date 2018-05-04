@@ -42,8 +42,9 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">Liên hệ</a>
+                @Html.ActionLink("Liên hệ", "Contact", "Home", null, new { @class = "nav-link"})
             </li>
+            (
         </ul>
        @Html.Partial("_ProfileView")
     </div>
