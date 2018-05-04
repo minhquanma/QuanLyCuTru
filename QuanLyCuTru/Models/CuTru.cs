@@ -60,7 +60,7 @@ namespace QuanLyCuTru.Models
         public virtual LoaiCuTru LoaiCuTru { get; set; }
 
         // Cán bộ duyệt (many-to-1)
-        [Display(Name = "Cán bộ kiểm duyệt")]
+        [Display(Name = "Cán bộ đăng ký")]
         public int? CanBoId { get; set; }
         public virtual NguoiDung CanBo { get; set; }
 
