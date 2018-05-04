@@ -1,5 +1,5 @@
-﻿<div class="navigation-view d-flex mb-4">
-    <div class="side-navbar bg-light rounded mr-4 pt-3">
+﻿<div class="navigation-view d-md-flex mb-4">
+    <div class="side-navbar bg-light mb-4 mb-md-0 mr-md-4 pt-3 pb-1 pb-sm-0 pd-md-0 d-block d-sm-flex d-md-block justify-content-center">
         @if (User.IsInRole("Admin"))
         {
             <ul class="list-unstyled mb-3">
@@ -8,24 +8,24 @@
                 <li><a href="#" class="d-block text-success text-capitalize px-3">Quyền hạn</a></li>
             </ul>
         }
-        <ul class="list-unstyled mb-3">
+        <ul class="list-unstyled mb-3 order-1 order-md-0">
             <li class="text-muted text-uppercase px-3"><i class="fas fa-signal"></i>&nbsp;Thống kê</li>
             <li><a href="#" class="d-block text-success text-capitalize px-3">Tổng quan</a></li>
         </ul>
         <ul class="list-unstyled">
             <li class="text-muted text-uppercase px-3"><i class="fas fa-user"></i>&nbsp;Cán bộ quản lý</li>
-            <li><a href="#" class="d-block text-success text-capitalize px-3">Quản lý cư trú</a></li>
-            <li><a href="#" class="d-block text-success text-capitalize px-3">Quản lý công dân</a></li>
+            <li>@Html.ActionLink("quản lý cư trú", "QuanLyCuTru", "CanBo", null, new { @class = "d-block text-success text-capitalize px-3" })</li>
+            <li>@Html.ActionLink("quản lý công dân", "QuanLyDan", "CanBo", null, new { @class = "d-block text-success text-capitalize px-3" })</li>
             <li><a href="#" class="d-block text-success text-capitalize px-3"></a></li>
         </ul>
     </div>
-    <div class="side-jumbo jumbotron mb-0 px-5">
-        <h1 class="display-5 font-weight-bold text-capitalize">Xin chào cán bộ</h1>
-        <p class="text-justify">
+    <div class="side-jumbo jumbotron text-center text-md-left mb-0 px-sm-5">
+        <h1 class="font-weight-bold text-capitalize">Xin chào cán bộ</h1>
+        <p class="text-center text-md-left">
             Hệ thống website quản lý thông tin cư trú tại địa phương
         </p>
-        @Html.ActionLink("quản lý cư trú", "QuanLyCuTru", "CanBo", null, new { @class = "btn btn-success text-capitalize" })
-        @Html.ActionLink("quản lý công dân", "QuanLyDan", "CanBo", null, new { @class = "btn btn-primary text-capitalize" })
+        @Html.ActionLink("quản lý cư trú", "QuanLyCuTru", "CanBo", null, new { @class = "btn btn-success text-capitalize mb-2 mb-sm-0" })
+        @Html.ActionLink("quản lý công dân", "QuanLyDan", "CanBo", null, new { @class = "btn btn-primary text-capitalize mb-2 mb-sm-0" })
 
     </div>
 </div>

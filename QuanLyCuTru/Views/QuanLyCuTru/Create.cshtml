@@ -120,6 +120,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 ">
+                @Html.ActionLink("Trở về", "Index", null, new { @class = "btn btn-primary d-inline-block d-md-none" })
                 <input id="buttonSend" type="submit" value="Tạo mới" class="btn btn-success" />
             </div>
         </div>
@@ -127,7 +128,7 @@
 </div>
 }
 
-<div>
+<div class="d-none d-md-block">
     @Html.ActionLink("Trở về", "Index", null, new { @class = "btn btn-primary" })
 </div>
 

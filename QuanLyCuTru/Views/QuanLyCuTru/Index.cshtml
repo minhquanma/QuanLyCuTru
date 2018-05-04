@@ -7,107 +7,115 @@
 }
 
 <br />
-<h2>Quản lý cư trú</h2>
+<h2 class="mb-3">Quản lý cư trú</h2>
 @using (Html.BeginForm("Index", "QuanLyCuTru", FormMethod.Post, new { @class = "mb-4" }))
 {
     // First line
     <div class="form-inline">
-        <label class="mr-sm-2" for="inlineFormCustomSelect">Tìm kiếm</label>
+        <label class="mr-2 mb-2 mb-sm-0" for="inlineFormCustomSelect">Tìm kiếm</label>
         @Html.DropDownListFor(m => m.LoaiTimKiemId,
         new SelectList(Model.LoaiTimKiems, "Id", "Name"),
-        new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
+        new { @class = "custom-select mb-2 mr-2 mb-sm-0" })
 
         @Html.TextBoxFor(m => m.TimKiem,
         new
         {
-            @class = "form-control mb-2 mr-sm-2 mb-sm-0",
+            @class = "form-control mb-2 mr-2 mb-sm-0",
             @placeholder = "Nhập dữ liệu muốn tìm"
         })
 
-        <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+        <button type="submit" class="btn btn-primary mb-2 mb-sm-0">Tìm kiếm</button>
     </div>
     <br/>
    // Second line
     <div class="form-inline">
-        <label class="mr-sm-2" for="inlineFormCustomSelect">Loại cư trú</label>
-        @Html.DropDownListFor(m => m.LoaiCuTruId,
-         new SelectList(Model.LoaiCuTrus, "Id", "Name"),
-         new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
+        <div class="filter-group d-block d-sm-flex mb-2 mr-2">
+            <label class="mr-2 mb-2 mb-sm-0" for="inlineFormCustomSelect">Loại cư trú</label>
+            @Html.DropDownListFor(m => m.LoaiCuTruId,
+           new SelectList(Model.LoaiCuTrus, "Id", "Name"),
+           new { @class = "custom-select mr-sm-2 mb-sm-0" })
+        </div>
 
-        <label class="mr-sm-2" for="inlineFormCustomSelect">Thời hạn</label>
-        @Html.DropDownListFor(m => m.LoaiHanId,
-         new SelectList(Model.LoaiHans, "Id", "Name"),
-         new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
+        <div class="filter-group d-block d-sm-flex mb-2 mr-2">
+            <label class="mr-2 mb-2 mb-sm-0" for="inlineFormCustomSelect">Thời hạn</label>
+            @Html.DropDownListFor(m => m.LoaiHanId,
+           new SelectList(Model.LoaiHans, "Id", "Name"),
+           new { @class = "custom-select mr-sm-2 mb-sm-0" })
+        </div>
 
-        <label class="mr-sm-2" for="inlineFormCustomSelect">Trạng thái</label>
-        @Html.DropDownListFor(m => m.LoaiTrangThaiId,
-         new SelectList(Model.LoaiTrangThais, "Id", "Name"),
-         new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
+        <div class="filter-group d-block d-sm-flex mb-2 mr-2">
+            <label class="mr-2 mb-2 mb-sm-0" for="inlineFormCustomSelect">Trạng thái</label>
+            @Html.DropDownListFor(m => m.LoaiTrangThaiId,
+           new SelectList(Model.LoaiTrangThais, "Id", "Name"),
+           new { @class = "custom-select mr-sm-2 mb-sm-0" })
+        </div>
 
-        <div class="ml-auto">
+        <div class="ml-auto mb-2 taomoi-btn">
             @Html.ActionLink("Tạo mới", "Create", null, new { @class = "btn btn-success" })
         </div>
     </div>
 }
 
-<table class="table text-center table-hover">
-    <thead>
-        <th>
-            @Html.DisplayNameFor(model => model.CuTrus[0].Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CuTrus[0].LoaiCuTru.Ten)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CuTrus[0].NgayDangKy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CuTrus[0].NgayHetHan)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CuTrus[0].DiaChi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CuTrus[0].DaDuyet)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CuTrus[0].ThoiHan)
-        </th>
-        <th>Thao tác</th>
-    </thead>
+<div class="table-responsive">
+    <table class="table text-center table-hover" style="min-width:1120px;">
+        <thead>
+            <th>
+                @Html.DisplayNameFor(model => model.CuTrus[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuTrus[0].LoaiCuTru.Ten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuTrus[0].NgayDangKy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuTrus[0].NgayHetHan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuTrus[0].DiaChi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuTrus[0].DaDuyet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuTrus[0].ThoiHan)
+            </th>
+            <th>Thao tác</th>
+        </thead>
 
-@foreach (var item in Model.CuTrus)
-{
-    <tr class="clickable-row" data-href="@Url.Action("Details", new { id = item.Id })">
-        <td>
-            @Html.DisplayFor(modelItem => item.Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LoaiCuTru.Ten)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayDangKy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayHetHan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DiaChi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DaDuyet)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DisplayThoiHan)
-        </td>
-        <td>
-            <a class="icon-link" href="@Url.Action("Edit", new { id = item.Id })"><i class="fas fa-edit"></i></a> |
-            <a class="icon-link" href="@Url.Action("Details", new { id = item.Id })"><i class="fas fa-list"></i></a> |
-            <a class="icon-link" href="@Url.Action("Delete", new { id = item.Id })"><i class="fas fa-trash-alt"></i></a>
-        </td>
-    </tr>
-}
-</table>
+        @foreach (var item in Model.CuTrus)
+        {
+            <tr class="clickable-row" data-href="@Url.Action("Details", new { id = item.Id })">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoaiCuTru.Ten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayDangKy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayHetHan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaChi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DaDuyet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DisplayThoiHan)
+                </td>
+                <td>
+                    <a class="icon-link" href="@Url.Action("Edit", new { id = item.Id })"><i class="fas fa-edit"></i></a> |
+                    <a class="icon-link" href="@Url.Action("Details", new { id = item.Id })"><i class="fas fa-list"></i></a> |
+                    <a class="icon-link" href="@Url.Action("Delete", new { id = item.Id })"><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
 @section Scripts {
     <script>
         jQuery(document).ready(function ($) {

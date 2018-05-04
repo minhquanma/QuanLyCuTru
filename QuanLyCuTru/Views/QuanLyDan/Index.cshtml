@@ -6,125 +6,132 @@
 }
 
 <br />
-<h2>Danh sách</h2>
+<h2 class="mb-3">Danh sách</h2>
 @using (Html.BeginForm("Index", "QuanLyDan", FormMethod.Post, new { @class = "mb-4" }))
 {
     // First line
     <div class="form-inline">
-        <label class="mr-sm-2" for="inlineFormCustomSelect">Tìm kiếm</label>
+        <label class="mr-2 mb-2 mb-sm-0" for="inlineFormCustomSelect">Tìm kiếm</label>
         @Html.DropDownListFor(m => m.LoaiTimKiemId,
                         new SelectList(Model.LoaiTimKiems, "Id", "Name"),
-                        new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
+                        new { @class = "custom-select mb-2 mr-2 mb-sm-0" })
 
         @Html.TextBoxFor(m => m.TimKiem,
                         new
                         {
-                            @class = "form-control mb-2 mr-sm-2 mb-sm-0",
+                            @class = "form-control mb-2 mr-2 mb-sm-0",
                             @placeholder = "Nhập dữ liệu muốn tìm"
                         })
 
-        <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+        <button type="submit" class="btn btn-primary mb-2 mb-sm-0">Tìm kiếm</button>
     </div>
     <br />
     // Second line
     <div class="form-inline">
-        <label class="mr-sm-2" for="inlineFormCustomSelect">Loại tài khoản</label>
-        @Html.DropDownListFor(m => m.LoaiTaiKhoanId,
-         new SelectList(Model.LoaiTaiKhoans, "Id", "Name"),
-         new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
+        <div class="filter-group d-block d-sm-flex mb-2 mr-2">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Loại tài khoản</label>
+            @Html.DropDownListFor(m => m.LoaiTaiKhoanId,
+           new SelectList(Model.LoaiTaiKhoans, "Id", "Name"),
+           new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
+        </div>
 
-        <label class="mr-sm-2" for="inlineFormCustomSelect">Giới tính</label>
-        @Html.DropDownListFor(m => m.LoaiGioiTinhId,
-         new SelectList(Model.LoaiGioiTinhs, "Id", "Name"),
-         new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
+        <div class="filter-group d-block d-sm-flex mb-2 mr-2">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Giới tính</label>
+            @Html.DropDownListFor(m => m.LoaiGioiTinhId,
+           new SelectList(Model.LoaiGioiTinhs, "Id", "Name"),
+           new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
+        </div>
+
+
 
         @if (User.IsInRole("Admin"))
-        {
-            <div class="ml-auto">
-                @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-success" })
-            </div>
-        }
+    {
+        <div class="ml-auto mb-2 taomoi-btn">
+            @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-success" })
+        </div>
+}
     </div>
 }
 
 <br />
 
-<table class="table table-hover text-center">
-    <thead>
-    <th>
-        @Html.DisplayNameFor(model => model.CongDans[0].Id)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.CongDans[0].HoTen)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.CongDans[0].GioiTinh)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.CongDans[0].SinhNhat)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.CongDans[0].NoiSinh)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.CongDans[0].QueQuan)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.CongDans[0].QuocTich)
-    </th>
-    @if (User.IsInRole("Admin"))
-    {
-        <th>Thao tác</th>
-    }
-    <th>Ảnh</th>
-    </thead>
-
-    @foreach (var congDan in Model.CongDans)
-    {
-        <tr class="clickable-row" data-href="@Url.Action("Details", "QuanLyDan", new { id = congDan.Id })">
-            <td>
-                @Html.DisplayFor(modelItem => congDan.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => congDan.HoTen)
-                @if (congDan.ChucVuId != 4)
-                {
-                    <span class="badge badge-secondary">Cán bộ</span>
-                }
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => congDan.StringGioiTinh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => congDan.SinhNhat)
-                (@congDan.Tuoi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => congDan.NoiSinh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => congDan.QueQuan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => congDan.QuocTich)
-            </td>
+<div class="table-responsive">
+    <table class="table table-hover text-center" style="min-width:1120px;">
+        <thead>
+            <th>
+                @Html.DisplayNameFor(model => model.CongDans[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CongDans[0].HoTen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CongDans[0].GioiTinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CongDans[0].SinhNhat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CongDans[0].NoiSinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CongDans[0].QueQuan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CongDans[0].QuocTich)
+            </th>
             @if (User.IsInRole("Admin"))
             {
-                <td>
-
-
-                    <a class="icon-link" href="@Url.Action("Edit", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-edit"></i></a> |
-                    <a class="icon-link" href="@Url.Action("Details", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-list"></i></a> |
-                    <a class="icon-link" href="@Url.Action("Delete", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-trash-alt"></i></a>
-
-                </td>
+                <th>Thao tác</th>
             }
-            <td>
-                <img src="@congDan.DisplayAvatar" alt="" style="width:50px; height:50px; border-radius: 50%; " />
-            </td>
-        </tr>
-    }
-</table>
+            <th>Ảnh</th>
+        </thead>
+
+        @foreach (var congDan in Model.CongDans)
+        {
+            <tr class="clickable-row" data-href="@Url.Action("Details", "QuanLyDan", new { id = congDan.Id })">
+                <td>
+                    @Html.DisplayFor(modelItem => congDan.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => congDan.HoTen)
+                    @if (congDan.ChucVuId != 4)
+                    {
+                        <span class="badge badge-secondary">Cán bộ</span>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => congDan.StringGioiTinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => congDan.SinhNhat)
+                    (@congDan.Tuoi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => congDan.NoiSinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => congDan.QueQuan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => congDan.QuocTich)
+                </td>
+                @if (User.IsInRole("Admin"))
+                {
+                    <td>
+
+                        <a class="icon-link" href="@Url.Action("Edit", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-edit"></i></a> |
+                        <a class="icon-link" href="@Url.Action("Details", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-list"></i></a> |
+                        <a class="icon-link" href="@Url.Action("Delete", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-trash-alt"></i></a>
+
+                    </td>
+                }
+                <td>
+                    <img src="@congDan.DisplayAvatar" alt="" style="width:50px; height:50px; border-radius: 50%; " />
+                </td>
+            </tr>
+        }
+    </table>
+</div>
 
 @section Scripts {
     <script>

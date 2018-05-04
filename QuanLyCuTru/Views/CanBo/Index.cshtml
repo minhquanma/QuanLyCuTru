@@ -14,7 +14,7 @@
     <title>@ViewBag.PageTitle</title>
 </head>
 <body>
-    <main class="p-4">
+    <main class="py-2">
         <div class="alert alert-success">
             <strong>Thông báo!</strong> Tin tức từ chỉ huy.
         </div>
@@ -23,30 +23,31 @@
             @*<div class="anonymous-view">&nbsp;</div>*@
             <div class="data-view">
                 <div class="statistic-view row">
-                    <div class="category col-3">
-                        <h5 class="text-capitalize font-weight-bold mb-0">Tổng số</h5>
+                    <div class="category col-12 col-sm-6 col-md-3 d-flex align-items-center justify-content-center">
+                        <h5 class="text-capitalize font-weight-bold mb-0" style="flex: 0 0 70%;">Tổng số</h5>
                         <h3><span class="badge badge-dark">@Model.TongSo</span></h3>
                     </div>
-                    <div class="category col-3">
-                        <h5 class="text-capitalize font-weight-bold mb-0">Đăng ký hôm nay</h5>
+                    <div class="category col-12 col-sm-6 col-md-3 d-flex align-items-center justify-content-center">
+                        <h5 class="text-capitalize font-weight-bold mb-0" style="flex: 0 0 70%;">Đăng ký hôm nay</h5>
                         <h3><span class="badge badge-dark">@Model.DangKyHomNay</span></h3>
                     </div>
-                    <div class="category col-3">
-                        <h5 class="text-capitalize font-weight-bold mb-0">Chờ duyệt</h5>
+                    <div class="category col-12 col-sm-6 col-md-3 d-flex align-items-center justify-content-center">
+                        <h5 class="text-capitalize font-weight-bold mb-0" style="flex: 0 0 70%;">Chờ duyệt</h5>
                         <h3><span class="badge badge-dark">@Model.ChoDuyet</span></h3>
                     </div>
-                    <div class="category col-3">
-                        <h5 class="text-capitalize font-weight-bold mb-0">Hết hạn</h5>
+                    <div class="category col-12 col-sm-6 col-md-3 d-flex align-items-center justify-content-center">
+                        <h5 class="text-capitalize font-weight-bold mb-0" style="flex: 0 0 70%;">Hết hạn</h5>
                         <h3><span class="badge badge-dark">@Model.HetHan</span></h3>
                     </div>
                 </div>
-                <h2 class="text-capitalize font-weight-bold mt-5 mb-0">
+                <h3 class="text-capitalize font-weight-bold text-center mt-5 mb-0">
                     Chờ duyệt
                     <span class="h5 d-inline-block text-muted">Duyệt hoặc từ chối</span>
-                </h2>
-                @Html.Action("_TableView")
+                </h3>
+
             </div>
         </div>
+        @Html.Action("_TableView")
     </main>
 </body>
 @section Scripts {
