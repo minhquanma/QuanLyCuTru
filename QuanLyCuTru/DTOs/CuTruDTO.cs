@@ -20,16 +20,22 @@ namespace QuanLyCuTru.DTOs
 
         public string Email { get; set; }
 
+        [Required]
         public string DienThoai { get; set; }
 
+        [Required]
         public string SoNha { get; set; }
 
+        [Required]
         public string Duong { get; set; }
 
+        [Required]
         public string Phuong { get; set; }
 
+        [Required]
         public string Quan { get; set; }
 
+        [Required]
         public string ThanhPho { get; set; }
 
         public bool DaDuyet { get; set; }
@@ -37,6 +43,8 @@ namespace QuanLyCuTru.DTOs
         public int LoaiCuTruId { get; set; }
 
         public int? CanBoId { get; set; }
+
+        public int[] CongDans { get; set; }
 
         public string DiaChi
         {

@@ -8,11 +8,14 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Http;
+using QuanLyCuTru.App_Start;
 
 namespace QuanLyCuTru
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        public object MapperConfig { get; private set; }
+
         protected void Application_Start()
         {
             // Ignore reference loop
@@ -20,6 +23,9 @@ namespace QuanLyCuTru
             config.Formatters.JsonFormatter
                        .SerializerSettings
                        .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
+            // AutoMapper
+            MappingConfig.RegisterMapping();
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
