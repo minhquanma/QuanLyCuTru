@@ -10,6 +10,7 @@ using AutoMapper;
 
 namespace QuanLyCuTru.Controllers.Api
 {
+    [RoutePrefix("api/QuanLyCuTru")]
     public class QuanLyCuTruController : ApiController
     {
         private ApplicationDbContext db;
@@ -20,7 +21,7 @@ namespace QuanLyCuTru.Controllers.Api
         }
 
         // GET /api/quanlycutru
-        [Route("api/QuanLyCuTru/")]
+        [Route("")]
         public IHttpActionResult GetCuTrus()    
         {
             var cuTrus = db.CuTrus.ToList().Select(Mapper.Map<CuTru, CuTruDTO>);
@@ -29,7 +30,7 @@ namespace QuanLyCuTru.Controllers.Api
         }
 
         // GET /api/quanlycutru/1
-        [Route("api/QuanLyCuTru/{id}")]
+        [Route("{id}")]
         public IHttpActionResult GetCuTru(int id)
         {
             var cuTru = db.CuTrus.SingleOrDefault(c => c.Id == id);
@@ -42,7 +43,7 @@ namespace QuanLyCuTru.Controllers.Api
 
         // POST /api/quanlycutru/
         [HttpPost]
-        [Route("api/QuanLyCuTru/")]
+        [Route("")]
         public IHttpActionResult CreateCuTru(CuTruDTO dto)
         {
             if (ModelState.IsValid)
@@ -57,7 +58,7 @@ namespace QuanLyCuTru.Controllers.Api
         }
 
         [HttpPut]
-        [Route("api/QuanLyCuTru/{id}")]
+        [Route("{id}")]
         public IHttpActionResult UpdateCuTru(int id, CuTruDTO dto)
         {
             if (ModelState.IsValid == false)
@@ -70,20 +71,20 @@ namespace QuanLyCuTru.Controllers.Api
 
             Mapper.Map(dto, cuTru);
 
-            // Perform update Cong Dan infos
-            foreach (int value in dto.CongDans)
-            {
-                // Query each congdan
-                var congDan = db.NguoiDungs.SingleOrDefault(c => c.Id == value);
+            //// Perform update Cong Dan infos
+            //foreach (int value in dto.CongDans)
+            //{
+            //    // Query each congdan
+            //    var congDan = db.NguoiDungs.SingleOrDefault(c => c.Id == value);
 
-                if (congDan == null)
-                {
-                    // Non existent
-                    return BadRequest();
-                }
+            //    if (congDan == null)
+            //    {
+            //        // Non existent
+            //        return BadRequest();
+            //    }
 
-                cuTru.CongDans.Add(congDan);
-            }
+            //    cuTru.CongDans.Add(congDan);
+            //}
 
 
             db.SaveChanges();

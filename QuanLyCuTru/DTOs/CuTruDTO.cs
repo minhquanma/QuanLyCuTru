@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuTru.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -44,7 +45,7 @@ namespace QuanLyCuTru.DTOs
 
         public int? CanBoId { get; set; }
 
-        public int[] CongDans { get; set; }
+        public virtual ICollection<NguoiDungDTO> CongDans { get; set; }
 
         public string DiaChi
         {
