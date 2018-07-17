@@ -19,10 +19,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
             crossorigin="anonymous"></script>
     @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/Site.css")
-    @Styles.Render("~/Content/themes/base/css")
-    @Scripts.Render("~/bundles/modernizr")
-
+    @Styles.Render("~/Content/jquery-ui/base/css")
 </head>
 <body>
     @Html.Action("Index", "Navbar", new { pageTitle = ViewBag.PageTitle })
@@ -34,10 +31,11 @@
             <p>&copy; @DateTime.Now.Year - Quản Lý Cư Trú</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery") 
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/popper")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Global javascript section -->
     <script>
         //overload unobtrusive JavaScript validation method for date
         $(document).ready(() => {
@@ -59,10 +57,10 @@
                 });
             });
         });
-        </script>
-    <!-- CDN -->
-    <!-- Manually add JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    
+        // back button
+        $("#backLink").on('click', () => window.history.back());
+    </script>
+    <!-- Page javascript section -->
+    @RenderSection("scripts", required: false);
 </body>
 </html>

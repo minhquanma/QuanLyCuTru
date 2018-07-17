@@ -66,10 +66,10 @@
                         <th class="border-0">@Html.DisplayNameFor(model => model.QuocTich)</th>
                         <td class="border-0">@Html.DisplayFor(model => model.QuocTich)</td>
                     </tr>
-                    @*<tr>
+                    <tr>
                     <th scope="row">@Html.DisplayNameFor(model => model.Avatar)</th>
                     <td>@Html.DisplayFor(model => model.Avatar)</td>
-                </tr>*@
+                </tr>
                 </tbody>
             </table>
 
@@ -80,5 +80,5 @@
 
 <p>
     @Html.ActionLink("Sửa", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
-    @Html.ActionLink("Trở về", "Index", null, new { @class = "btn btn-info" })
+    <a id="backLink" href="#" class="btn btn-info">Trở về</a>
 </p>
