@@ -7,10 +7,13 @@ using System.Web.Http;
 using QuanLyCuTru.Models;
 using QuanLyCuTru.DTOs;
 using AutoMapper;
+using Microsoft.AspNet.Identity;
+using System.Web;
 
 namespace QuanLyCuTru.Controllers.Api
 {
     [RoutePrefix("api/QuanLyCuTru")]
+    [Authorize(Roles = "Admin, CanhSatKhuVuc")]
     public class QuanLyCuTruController : ApiController
     {
         private ApplicationDbContext db;
@@ -93,14 +96,29 @@ namespace QuanLyCuTru.Controllers.Api
         }
 
         [HttpPatch]
+        [Route("Duyet/{id}")]
         public IHttpActionResult Duyet(int id)
         {
+            // Get CuTru entity from database
             var cuTru = db.CuTrus.SingleOrDefault(c => c.Id == id);
+
             if (cuTru == null)
                 return BadRequest();
 
             // Set DaDuyet to true
             cuTru.DaDuyet = true;
+
+            // Set CanBo duyet id 
+            var currentUserId = User.Identity.GetUserId();
+            var currentUserName = User.Identity.GetUserName();
+
+            if (currentUserId == null)
+                currentUserId = RequestContext.Principal.Identity.GetUserId();
+            // Get CanBo Entity
+            var canBo = db.NguoiDungs.SingleOrDefault(c => c.IdentityId.Equals(currentUserId));
+
+            cuTru.CanBoId = canBo.Id;
+
             db.SaveChanges();
 
             return Ok();

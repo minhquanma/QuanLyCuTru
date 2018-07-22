@@ -6,7 +6,6 @@
 }
 
 <h2>Thông tin chi tiết cư trú</h2>
-
 <div>
     <h4>Mã số: @Model.Id</h4>
     <hr />
@@ -98,7 +97,6 @@
                 {
                     @Html.DisplayFor(model => model.DaDuyet)
                 }
-
             </dd>
 
             <dt>
@@ -121,6 +119,7 @@
         $(document).ready(() => {
             $("#duyetButton").on("click", (e) => {
                 var id = $(e.target).attr("data-cutru-id");
+                console.log(id);
                 //confirm
                 bootbox.confirm("Bạn có chắc là muốn duyệt cư trú này?", (result) => {
                     if (result) {
@@ -129,6 +128,9 @@
                             method: "PATCH",
                             success: () => {
                                 window.location.replace("/CanBo/QuanLyCuTru");
+                            },
+                            error: () => {
+                                console.log("Lỗi" + this.url);
                             }
                         })
                     }

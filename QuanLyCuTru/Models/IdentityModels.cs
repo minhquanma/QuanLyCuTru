@@ -17,10 +17,8 @@ namespace QuanLyCuTru.Models
             // Add custom user claims here
             return userIdentity;
         }
-
         public virtual ICollection<NguoiDung> NguoiDungs { get; set; }
     }
-
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

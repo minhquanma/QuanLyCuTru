@@ -42,19 +42,16 @@
            new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
         </div>
 
-
-
+        <!-- The add new feature is only available for Admin -->
         @if (User.IsInRole("Admin"))
-    {
-        <div class="ml-auto mb-2 taomoi-btn">
-            @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-success" })
-        </div>
-}
+        {
+            <div class="ml-auto mb-2 taomoi-btn">
+                @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-success" })
+            </div>
+        }
     </div>
 }
-
 <br />
-
 <div class="table-responsive">
     <table class="table table-hover text-center" style="min-width:1120px;">
         <thead>
@@ -118,11 +115,9 @@
                 @if (User.IsInRole("Admin"))
                 {
                     <td>
-
                         <a class="icon-link" href="@Url.Action("Edit", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-edit"></i></a> |
                         <a class="icon-link" href="@Url.Action("Details", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-list"></i></a> |
                         <a class="icon-link" href="@Url.Action("Delete", "QuanLyDan", new { id = congDan.Id })"><i class="fas fa-trash-alt"></i></a>
-
                     </td>
                 }
                 <td>
@@ -132,7 +127,6 @@
         }
     </table>
 </div>
-
 @section Scripts {
     <script>
         jQuery(document).ready(function ($) {
@@ -142,6 +136,7 @@
         });
     </script>
 }
+<!-- Paging section -->
 @Html.PagedListPager(Model.CongDans, page => Url.Action("Index",
     new { page = page,
         TimKiem = Model.TimKiem,
