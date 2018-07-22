@@ -28,6 +28,10 @@
             <table class="table">
                 <tbody>
                     <tr>
+                        <th class="border-0">@Html.DisplayNameFor(model => model.Id)</th>
+                        <td class="border-0">@Html.DisplayFor(model => model.Id)</td>
+                    </tr>
+                    <tr>
                         <th class="border-0">@Html.DisplayNameFor(model => model.Email)</th>
                         <td class="border-0">
                             @if (Model.HasEmail)
@@ -67,15 +71,11 @@
                         <td class="border-0">@Html.DisplayFor(model => model.QuocTich)</td>
                     </tr>
                     <tr>
-                    <th scope="row">@Html.DisplayNameFor(model => model.Avatar)</th>
-                    <td>@Html.DisplayFor(model => model.Avatar)</td>
                 </tr>
                 </tbody>
             </table>
-
         </div>
     </div>
-    
 </div>
 
 <p>

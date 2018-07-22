@@ -33,7 +33,7 @@ namespace QuanLyCuTru
 
             // Bootstrap CSS
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.pulse.min.css",
+                      "~/Content/bootstrap.materia.min.css",
                       "~/Content/site.css",
                       "~/Content/PagedList.css"));
 

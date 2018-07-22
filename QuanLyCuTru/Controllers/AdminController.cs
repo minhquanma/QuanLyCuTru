@@ -61,7 +61,7 @@ namespace QuanLyCuTru.Controllers
             return View(nguoiDung);
         }
 
-        public ActionResult XoaCongDan(int id)
+        public ActionResult XoaCongDan(int? id)
         {
             if (id == null)
             {

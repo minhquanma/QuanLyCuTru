@@ -23,11 +23,19 @@ namespace QuanLyCuTru.Controllers.Api
             db = new ApplicationDbContext();
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            db.Dispose();
+        }
+
         // GET /api/quanlycutru
         [Route("")]
         public IHttpActionResult GetCuTrus()    
         {
-            var cuTrus = db.CuTrus.ToList().Select(Mapper.Map<CuTru, CuTruDTO>);
+            var cuTrus = db.CuTrus
+                .Select(Mapper.Map<CuTru, CuTruDTO>)
+                .ToList();
       
             return Ok(cuTrus);
         }
