@@ -167,18 +167,19 @@ namespace QuanLyCuTru.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult Create(AddCongDanViewModel viewModel)
         {
-
-            if (!imageTypes.Contains(viewModel.ImageFile.ContentType))
-                ModelState.AddModelError("ImageFile", "Định dạng ảnh không hợp lệ"); 
-
             if (ModelState.IsValid)
             {
-                // Create new NguoiDung in db
+                // Get user posted NguoiDung entity
                 var congDan = viewModel.NguoiDung;
-                db.NguoiDungs.Add(congDan);
 
                 if (viewModel.ImageFile != null && viewModel.ImageFile.ContentLength > 0)
                 {
+                    if (!imageTypes.Contains(viewModel.ImageFile.ContentType))
+                    {
+                        ModelState.AddModelError("ImageFile", "Định dạng ảnh không hợp lệ");
+                        goto ModelStateIsNotValid;
+                    }
+
                     int unixTimestamp = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
                     var uploadDir = "/Content/avatar";
                     var imageExtension = Path.GetExtension(viewModel.ImageFile.FileName);
@@ -188,14 +189,15 @@ namespace QuanLyCuTru.Controllers
 
                     // Save to directory
                     viewModel.ImageFile.SaveAs(imagePath);
-
+                   
                     congDan.Avatar = imageUrl;
                 }
-
+                db.NguoiDungs.Add(congDan);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
+            ModelStateIsNotValid:
             var view = new AddCongDanViewModel
             {
                 NguoiDung = viewModel.NguoiDung,
@@ -226,17 +228,20 @@ namespace QuanLyCuTru.Controllers
         [Route("Edit")]
         [Authorize(Roles = "Admin")]
         public ActionResult Edit(AddCongDanViewModel viewModel)
-        {
-            if (!imageTypes.Contains(viewModel.ImageFile.ContentType))
-                ModelState.AddModelError("ImageFile", "Định dạng ảnh không hợp lệ");
-
+        { 
             if (ModelState.IsValid)
             {
-                // Create new NguoiDung in db
+                // Get user posted NguoiDung entity
                 var congDan = viewModel.NguoiDung;
 
                 if (viewModel.ImageFile != null && viewModel.ImageFile.ContentLength > 0)
                 {
+                    if (!imageTypes.Contains(viewModel.ImageFile.ContentType))
+                    {
+                        ModelState.AddModelError("ImageFile", "Định dạng ảnh không hợp lệ");
+                        goto ModelStateIsNotValid;
+                    }
+
                     int unixTimestamp = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
                     var uploadDir = "/Content/avatar";
                     var imageExtension = Path.GetExtension(viewModel.ImageFile.FileName);
@@ -247,6 +252,7 @@ namespace QuanLyCuTru.Controllers
                     // Save to directory
                     viewModel.ImageFile.SaveAs(imagePath);
 
+                    // Assign new avatar url
                     congDan.Avatar = imageUrl;
                 }
 
@@ -254,6 +260,7 @@ namespace QuanLyCuTru.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ModelStateIsNotValid:
             var view = new AddCongDanViewModel
             {
                 NguoiDung = viewModel.NguoiDung,
@@ -263,7 +270,7 @@ namespace QuanLyCuTru.Controllers
         }
 
         [Route("Delete")]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -277,10 +284,11 @@ namespace QuanLyCuTru.Controllers
             return View(nguoiDung);
         }
 
+        [Route("Delete")]
         [HttpPost, ActionName("Delete")]
-        public ActionResult _Delete(int id)
+        public ActionResult Delete(NguoiDung viewModel)
         {
-            var nguoiDung = db.NguoiDungs.Find(id);
+            var nguoiDung = db.NguoiDungs.Find(viewModel.Id);
             db.NguoiDungs.Remove(nguoiDung);
             db.SaveChanges();
             return RedirectToAction("Index");

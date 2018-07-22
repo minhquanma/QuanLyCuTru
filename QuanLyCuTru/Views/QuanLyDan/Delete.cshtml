@@ -52,10 +52,10 @@
         </dd>
     </dl>
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Delete", "QuanLyDan", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
-
+        @Html.HiddenFor(m => m.Id)
         <div class="form-actions no-color">
             <input type="submit" value="Xóa" class="btn btn-danger" /> 
             @Html.ActionLink("Trở về", "Index", null, new { @class = "btn btn-info" })

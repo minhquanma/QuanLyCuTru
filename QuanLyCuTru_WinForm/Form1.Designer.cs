@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.buttonGET = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.cuTruDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtAccount = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblUserName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuTruDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonGET
@@ -58,10 +55,6 @@
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(854, 318);
             this.dataGridView.TabIndex = 1;
-            // 
-            // cuTruDTOBindingSource
-            // 
-            this.cuTruDTOBindingSource.DataSource = typeof(QuanLyCuTru.DTOs.CuTruDTO);
             // 
             // txtAccount
             // 
@@ -110,7 +103,6 @@
             this.Name = "Form1";
             this.Text = "API Client";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuTruDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,7 +112,6 @@
 
         private System.Windows.Forms.Button buttonGET;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.BindingSource cuTruDTOBindingSource;
         private System.Windows.Forms.TextBox txtAccount;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
