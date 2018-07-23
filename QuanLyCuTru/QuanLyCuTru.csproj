@@ -354,6 +354,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.materia.min.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.pulse.min.css" />
     <Content Include="Content\canbo.css" />
     <Content Include="Content\contact.css" />
