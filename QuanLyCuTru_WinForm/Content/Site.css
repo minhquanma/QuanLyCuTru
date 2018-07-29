@@ -1,0 +1,119 @@
+﻿body {
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.table th, .table td { vertical-align: middle; }
+
+img {
+    object-fit: cover;
+}
+.avatar {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin: 2em;
+}
+
+.nav-avatar {
+    border-radius: 50%
+}
+
+.border {
+    border: 1px solid;
+    border-radius: 0.25rem;
+    border-color: #02B875 !important;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.list-group-item-action {
+    width: 100%;
+    color: #495057;
+    text-align: inherit;
+}
+.icon-link:link,
+.icon-link:visited{
+    color: black;
+}
+/* footer 
+position: absolute;
+bottom: 0;
+left: 0;
+width: 1120px;
+border-top: 1px solid #eee;
+padding-top: 5px;
+*/
+
+.list-congdan {
+    width: 62.2%;
+}
+
+@media only screen and (max-width: 1168px) {
+    .list-congdan {
+        width: 74.2%;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    .list-congdan {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .list-congdan {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 566px) {
+    .list-congdan {
+        width: 340px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .list-congdan {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 575px) {
+    .taomoi-btn {
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .filter-group {
+        width: 100%;
+    }
+}
