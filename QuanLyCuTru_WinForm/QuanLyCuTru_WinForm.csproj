@@ -133,6 +133,85 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Content\img\1525387737.jpg" />
+    <Content Include="Content\img\address-card-mi.png" />
+    <Content Include="Content\img\address-card-mini2.png" />
+    <Content Include="Content\img\address-card-mini3.png" />
+    <Content Include="Content\img\address-card-mini4.png" />
+    <Content Include="Content\img\address-card-mini5.png" />
+    <Content Include="Content\img\address-card-mini6.png" />
+    <Content Include="Content\img\address-card-mini7.png" />
+    <Content Include="Content\img\address-card.png" />
+    <Content Include="Content\img\address.png" />
+    <Content Include="Content\img\block.png" />
+    <Content Include="Content\img\call.png" />
+    <Content Include="Content\img\cerrar.png" />
+    <Content Include="Content\img\cerrar2-black.png" />
+    <Content Include="Content\img\cerrar2.png" />
+    <Content Include="Content\img\check-mini.png" />
+    <Content Include="Content\img\Contact-mini.png" />
+    <Content Include="Content\img\Hamburger_icon.svg.png" />
+    <Content Include="Content\img\Home-mini.png" />
+    <Content Include="Content\img\HuTech.png" />
+    <Content Include="Content\img\logomobile.png" />
+    <Content Include="Content\img\max-clack.png" />
+    <Content Include="Content\img\max.png" />
+    <Content Include="Content\img\minimazar-black.png" />
+    <Content Include="Content\img\minimazar.png" />
+    <Content Include="Content\img\opacity.png" />
+    <Content Include="Content\img\opacity1.png" />
+    <Content Include="Content\img\restore.png" />
+    <Content Include="Content\img\signal.png" />
+    <Content Include="Content\img\user.png" />
+    <Content Include="Content\img\users-mini.png" />
+    <Content Include="Content\img\users-mini1.png" />
+    <Content Include="Content\img\users-mini2.png" />
+    <Content Include="Content\img\wrench.png" />
+    <Content Include="Content\index.css" />
+    <Content Include="Content\jquery-ui\base\accordion.css" />
+    <Content Include="Content\jquery-ui\base\all.css" />
+    <Content Include="Content\jquery-ui\base\autocomplete.css" />
+    <Content Include="Content\jquery-ui\base\base.css" />
+    <Content Include="Content\jquery-ui\base\button.css" />
+    <Content Include="Content\jquery-ui\base\core.css" />
+    <Content Include="Content\jquery-ui\base\datepicker.css" />
+    <Content Include="Content\jquery-ui\base\dialog.css" />
+    <Content Include="Content\jquery-ui\base\draggable.css" />
+    <Content Include="Content\jquery-ui\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\jquery-ui\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui\base\jquery-ui.css" />
+    <Content Include="Content\jquery-ui\base\jquery-ui.min.css" />
+    <Content Include="Content\jquery-ui\base\menu.css" />
+    <Content Include="Content\jquery-ui\base\progressbar.css" />
+    <Content Include="Content\jquery-ui\base\resizable.css" />
+    <Content Include="Content\jquery-ui\base\selectable.css" />
+    <Content Include="Content\jquery-ui\base\selectmenu.css" />
+    <Content Include="Content\jquery-ui\base\slider.css" />
+    <Content Include="Content\jquery-ui\base\sortable.css" />
+    <Content Include="Content\jquery-ui\base\spinner.css" />
+    <Content Include="Content\jquery-ui\base\tabs.css" />
+    <Content Include="Content\jquery-ui\base\theme.css" />
+    <Content Include="Content\jquery-ui\base\tooltip.css" />
+    <Content Include="Content\landing.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Site.css" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +248,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Content Include="Content\img\favicons\site.webmanifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -183,7 +263,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Content\bootstrap.materia.min.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.pulse.min.css" />
+    <Content Include="Content\canbo.css" />
+    <Content Include="Content\contact.css" />
+    <Content Include="Content\img\bg.jpg" />
+    <Content Include="Content\img\favicons\android-chrome-192x192.png" />
+    <Content Include="Content\img\favicons\android-chrome-512x512.png" />
+    <Content Include="Content\img\favicons\apple-touch-icon.png" />
+    <Content Include="Content\img\favicons\browserconfig.xml" />
+    <Content Include="Content\img\favicons\favicon-16x16.png" />
+    <Content Include="Content\img\favicons\favicon-32x32.png" />
+    <Content Include="Content\img\favicons\favicon.ico" />
+    <Content Include="Content\img\favicons\mstile-150x150.png" />
+    <Content Include="Content\img\favicons\safari-pinned-tab.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\avatar\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
