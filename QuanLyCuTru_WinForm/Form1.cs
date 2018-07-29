@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuTru.DTOs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,7 +62,6 @@ namespace QuanLyCuTru_WinForm
         {
             var formCanbo = new FormCanBoQuanLy();
             formCanbo.Show();
-            
         }
     }
 }
