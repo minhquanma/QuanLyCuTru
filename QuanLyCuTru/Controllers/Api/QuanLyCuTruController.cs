@@ -13,7 +13,7 @@ using System.Web;
 namespace QuanLyCuTru.Controllers.Api
 {
     [RoutePrefix("api/QuanLyCuTru")]
-    [Authorize(Roles = "Admin, CanhSatKhuVuc")]
+    //[Authorize(Roles = "Admin, CanhSatKhuVuc")]
     public class QuanLyCuTruController : ApiController
     {
         private ApplicationDbContext db;
@@ -37,6 +37,18 @@ namespace QuanLyCuTru.Controllers.Api
                 .Select(Mapper.Map<CuTru, CuTruDTO>)
                 .ToList();
       
+            return Ok(cuTrus);
+        }
+
+        // GET /api/quanlycutru/duyet/true
+        [Route("Duyet/{duyet:bool?}")]
+        public IHttpActionResult GetCuTrusByState(bool duyet)
+        {
+            var cuTrus = db.CuTrus
+                .Where(c => c.DaDuyet == duyet)
+                .Select(Mapper.Map<CuTru, CuTruDTO>)
+                .ToList();
+
             return Ok(cuTrus);
         }
 

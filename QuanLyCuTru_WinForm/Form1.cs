@@ -1,100 +1,67 @@
-﻿using Newtonsoft.Json;
-using QuanLyCuTru.DTOs;
-using QuanLyCuTru.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyCuTru_WinForm
 {
-    public partial class Form1 : Form
+    public partial class BackgroundImage : Form
     {
-        private HttpClient client;
 
-        public Form1()
+        public BackgroundImage()
         {
             InitializeComponent();
-
-            // Init HttpClient
-            client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost:58360/");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
+            panelHeader.BackColor = Color.FromArgb(150, 1, 1, 1);
+            label3.BackColor = Color.Transparent;
+           
         }
 
-        private async Task<CuTruDTO> GetCuTruAsync(int id)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            CuTruDTO cuTru = null;
-            HttpResponseMessage res = await client.GetAsync("api/QuanLyCuTru/" + id.ToString());
-            if (res.IsSuccessStatusCode)
+
+        }
+
+        private void BackgroundImage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_DragDrop(object sender, DragEventArgs e)
+        {
+
+        }
+        private bool MouseDown;
+        private Point lastLocation;
+        private void panelHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            MouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void panelHeader_MouseUp(object sender, MouseEventArgs e)
+        {
+            MouseDown = false;
+        }
+
+        private void panelHeader_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MouseDown)
             {
-                cuTru = await res.Content.ReadAsAsync<CuTruDTO>();
+                this.Location = new Point((this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+                this.Update();
             }
-            return cuTru;
         }
 
-        private async Task<IEnumerable<CuTruDTO>> GetCuTrusAsync()
+        private void button1_Click(object sender, EventArgs e)
         {
-            IEnumerable<CuTruDTO> cuTru = null;
-
-            HttpResponseMessage res = await client.GetAsync("api/QuanLyCuTru/");
-            if (res.IsSuccessStatusCode)
-            {
-                cuTru = await res.Content.ReadAsAsync<IEnumerable<CuTruDTO>>();
-            }
-            return cuTru;
-        }
-
-        private async Task Login(string username, string password)
-        {
-            // Login 
-            var login = new Dictionary<string, string>
-            {
-                { "grant_type", "password" },
-                { "username", username },
-                { "password", password }
-            };
-
-            HttpResponseMessage response = await client.PostAsync("token", new FormUrlEncodedContent(login));
-
-            // Get token
-            dynamic data = JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result);
-
-            if (response.IsSuccessStatusCode)
-            {
-                lblUserName.Text = data.user_name;
-            }
-            else if (response.StatusCode == HttpStatusCode.BadRequest)
-            {
-                lblUserName.Text = data.error_description;
-            }         
-        }
-
-        private async void buttonGET_Click(object sender, EventArgs e)
-        {
-            var cuTrus = await GetCuTrusAsync();
-
-            var cuTruId4 = cuTrus.SingleOrDefault(c => c.Id == 4);
-
-            MessageBox.Show(cuTruId4.Email);
-            dataGridView.DataSource = cuTrus;
-        }
-
-        private async void btnLogin_Click(object sender, EventArgs e)
-        {
-            var username = txtAccount.Text;
-            var password = txtPassword.Text;
-            await Login(username, password);
+            var formCanbo = new FormCanBoQuanLy();
+            formCanbo.Show();
+            
         }
     }
 }
