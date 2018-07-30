@@ -180,7 +180,7 @@
             // 
             this.panel2.Controls.Add(this.btnLienHe);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 328);
+            this.panel2.Location = new System.Drawing.Point(0, 323);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(230, 52);
             this.panel2.TabIndex = 5;
@@ -207,7 +207,7 @@
             // 
             this.panel12.Controls.Add(this.btnChoDuyet);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(0, 274);
+            this.panel12.Location = new System.Drawing.Point(0, 269);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(230, 54);
             this.panel12.TabIndex = 4;
@@ -236,7 +236,7 @@
             this.panelCongdan.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCongdan.Location = new System.Drawing.Point(0, 222);
             this.panelCongdan.Name = "panelCongdan";
-            this.panelCongdan.Size = new System.Drawing.Size(230, 52);
+            this.panelCongdan.Size = new System.Drawing.Size(230, 47);
             this.panelCongdan.TabIndex = 3;
             // 
             // MenuCongdan
@@ -283,6 +283,7 @@
             this.btnDaDangKyCongDan.Text = "Đã đăng ký";
             this.btnDaDangKyCongDan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDaDangKyCongDan.UseVisualStyleBackColor = false;
+            this.btnDaDangKyCongDan.Click += new System.EventHandler(this.btnDaDangKyCongDan_Click);
             // 
             // btnDanhSachCongDan
             // 
