@@ -44,11 +44,12 @@ namespace QuanLyCuTru.Controllers.Api
         [Route("Duyet/{duyet:bool?}")]
         public IHttpActionResult GetCuTrusByState(bool duyet)
         {
-            var cuTrus = db.CuTrus
-                .Where(c => c.DaDuyet == duyet)
-                .Select(Mapper.Map<CuTru, CuTruDTO>)
-                .ToList();
+            //var cuTrus = db.CuTrus
+            //    .Where(c => c.DaDuyet == duyet)
+            //    .Select(Mapper.Map<CuTru, CuTruDTO>)
+            //    .ToList();
 
+            var cuTrus = db.CuTrus.SqlQuery("Select * From CuTru").Select(Mapper.Map<CuTru, CuTruDTO>);
             return Ok(cuTrus);
         }
 
