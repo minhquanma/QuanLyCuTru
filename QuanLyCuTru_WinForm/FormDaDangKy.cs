@@ -10,10 +10,13 @@ using System.Windows.Forms;
 
 namespace QuanLyCuTru_WinForm
 {
+
     public partial class FormDaDangKy : Form
-    {
+    {        
+            
         public FormDaDangKy()
         {
+
             InitializeComponent();
         }
         class Student
@@ -29,7 +32,7 @@ namespace QuanLyCuTru_WinForm
 
         }
         private void dataGridViewDaDangKy_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {         
             List<Student> list = new List<Student>();
             int n = 10;
             for (int i = 0; i < n; i++)
@@ -40,6 +43,16 @@ namespace QuanLyCuTru_WinForm
                 list.Add(new Student("Viet", "nam"));
             }
             dataGridViewDaDangKy.DataSource = list;
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbGioiTinh_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            
         }
     }
 }

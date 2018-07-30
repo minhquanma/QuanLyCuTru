@@ -33,9 +33,9 @@
             this.dataGridViewDaDangKy = new System.Windows.Forms.DataGridView();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbTen = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -77,21 +77,24 @@
             // btnTimKiem
             // 
             this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnTimKiem.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.Transparent;
-            this.btnTimKiem.Location = new System.Drawing.Point(425, 62);
+            this.btnTimKiem.Location = new System.Drawing.Point(449, 62);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(100, 37);
             this.btnTimKiem.TabIndex = 42;
             this.btnTimKiem.Text = "TÌM KIẾM";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.Transparent;
             this.btnXoa.Location = new System.Drawing.Point(725, 415);
             this.btnXoa.Name = "btnXoa";
@@ -100,39 +103,46 @@
             this.btnXoa.Text = "XÓA";
             this.btnXoa.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // cbbTen
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(23, 67);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 36;
-            this.comboBox1.Text = "Tên";
+            this.cbbTen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbTen.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbTen.FormattingEnabled = true;
+            this.cbbTen.Location = new System.Drawing.Point(31, 66);
+            this.cbbTen.Name = "cbbTen";
+            this.cbbTen.Size = new System.Drawing.Size(100, 29);
+            this.cbbTen.TabIndex = 36;
+            this.cbbTen.Text = "Tên";
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(243, 67);
+            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.Location = new System.Drawing.Point(243, 62);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(176, 32);
+            this.txtTimKiem.Size = new System.Drawing.Size(200, 37);
             this.txtTimKiem.TabIndex = 38;
             this.txtTimKiem.Text = "Nhập dữ liệu tìm kiếm";
             // 
-            // comboBox3
+            // cbbGioiTinh
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(137, 67);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(100, 21);
-            this.comboBox3.TabIndex = 41;
-            this.comboBox3.Text = "Giới Tính";
+            this.cbbGioiTinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbGioiTinh.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbGioiTinh.FormattingEnabled = true;
+            this.cbbGioiTinh.ItemHeight = 21;
+            this.cbbGioiTinh.Location = new System.Drawing.Point(137, 66);
+            this.cbbGioiTinh.Name = "cbbGioiTinh";
+            this.cbbGioiTinh.Size = new System.Drawing.Size(100, 29);
+            this.cbbGioiTinh.TabIndex = 41;
+            this.cbbGioiTinh.Text = "Giới Tính";
+            this.cbbGioiTinh.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cbbGioiTinh_DrawItem);
             // 
             // btnThem
             // 
             this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnThem.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.Transparent;
             this.btnThem.Location = new System.Drawing.Point(725, 120);
             this.btnThem.Name = "btnThem";
@@ -144,8 +154,9 @@
             // btnXem
             // 
             this.btnXem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnXem.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
             this.btnXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnXem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXem.ForeColor = System.Drawing.Color.Transparent;
             this.btnXem.Location = new System.Drawing.Point(725, 206);
             this.btnXem.Name = "btnXem";
@@ -157,8 +168,9 @@
             // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnSua.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.Transparent;
             this.btnSua.Location = new System.Drawing.Point(725, 163);
             this.btnSua.Name = "btnSua";
@@ -172,9 +184,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 481);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cbbGioiTinh);
             this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbbTen);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXem);
             this.Controls.Add(this.btnXoa);
@@ -200,9 +212,9 @@
         private System.Windows.Forms.DataGridView dataGridViewDaDangKy;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbTen;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbbGioiTinh;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.Button btnSua;
