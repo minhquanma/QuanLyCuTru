@@ -169,5 +169,10 @@ namespace QuanLyCuTru_WinForm
                 panelCongdan.Height = 54;
             }
         }
+
+        private void btnDaDangKyCongDan_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormDaDangKy());
+        }
     }
 }

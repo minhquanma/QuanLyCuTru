@@ -115,6 +115,12 @@
     <Compile Include="FormChoDuyet.Designer.cs">
       <DependentUpon>FormChoDuyet.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDaDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaDangKy.Designer.cs">
+      <DependentUpon>FormDaDangKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDangKyCuTru.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormChoDuyet.resx">
       <DependentUpon>FormChoDuyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaDangKy.resx">
+      <DependentUpon>FormDaDangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangKyCuTru.resx">
       <DependentUpon>FormDangKyCuTru.cs</DependentUpon>
