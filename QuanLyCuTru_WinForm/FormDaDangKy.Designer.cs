@@ -155,6 +155,7 @@
             this.btnThem.TabIndex = 33;
             this.btnThem.Text = "THÊM MỚI";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXem
             // 

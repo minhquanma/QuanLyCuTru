@@ -54,5 +54,11 @@ namespace QuanLyCuTru_WinForm
         {
             
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            FormThemCongDan form = new FormThemCongDan();
+            form.Show();
+        }
     }
 }

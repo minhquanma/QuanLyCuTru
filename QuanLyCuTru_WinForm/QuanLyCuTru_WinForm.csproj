@@ -139,6 +139,12 @@
     <Compile Include="FormSuaCongDan.Designer.cs">
       <DependentUpon>FormSuaCongDan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThemCongDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemCongDan.Designer.cs">
+      <DependentUpon>FormThemCongDan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSuaCongDan.resx">
       <DependentUpon>FormSuaCongDan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemCongDan.resx">
+      <DependentUpon>FormThemCongDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTrangChu.resx">
       <DependentUpon>FormTrangChu.cs</DependentUpon>
