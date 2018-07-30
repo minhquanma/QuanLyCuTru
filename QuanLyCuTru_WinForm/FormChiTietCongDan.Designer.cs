@@ -65,7 +65,7 @@
             this.ptbThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ptbThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbThoat.Image = ((System.Drawing.Image)(resources.GetObject("ptbThoat.Image")));
-            this.ptbThoat.Location = new System.Drawing.Point(807, 3);
+            this.ptbThoat.Location = new System.Drawing.Point(902, 3);
             this.ptbThoat.Name = "ptbThoat";
             this.ptbThoat.Size = new System.Drawing.Size(35, 35);
             this.ptbThoat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -79,7 +79,7 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(854, 43);
+            this.panelTop.Size = new System.Drawing.Size(949, 43);
             this.panelTop.TabIndex = 26;
             this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
             // 
@@ -110,7 +110,7 @@
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 43);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(854, 472);
+            this.panelContent.Size = new System.Drawing.Size(949, 472);
             this.panelContent.TabIndex = 27;
             // 
             // linklabelEmail
@@ -288,7 +288,7 @@
             // 
             this.line2.Location = new System.Drawing.Point(3, 450);
             this.line2.Name = "line2";
-            this.line2.Size = new System.Drawing.Size(855, 10);
+            this.line2.Size = new System.Drawing.Size(945, 10);
             this.line2.TabIndex = 28;
             this.line2.Text = "line2";
             // 
@@ -296,7 +296,7 @@
             // 
             this.line1.Location = new System.Drawing.Point(0, 44);
             this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(854, 10);
+            this.line1.Size = new System.Drawing.Size(947, 10);
             this.line1.TabIndex = 27;
             this.line1.Text = "line1";
             // 
@@ -338,7 +338,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(854, 515);
+            this.ClientSize = new System.Drawing.Size(949, 515);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
