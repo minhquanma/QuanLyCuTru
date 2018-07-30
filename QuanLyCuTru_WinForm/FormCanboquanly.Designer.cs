@@ -87,9 +87,9 @@
             this.iconminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconminimizar.Image = ((System.Drawing.Image)(resources.GetObject("iconminimizar.Image")));
             this.iconminimizar.InitialImage = null;
-            this.iconminimizar.Location = new System.Drawing.Point(750, 3);
+            this.iconminimizar.Location = new System.Drawing.Point(780, 4);
             this.iconminimizar.Name = "iconminimizar";
-            this.iconminimizar.Size = new System.Drawing.Size(35, 35);
+            this.iconminimizar.Size = new System.Drawing.Size(25, 25);
             this.iconminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.iconminimizar.TabIndex = 12;
             this.iconminimizar.TabStop = false;
@@ -100,9 +100,9 @@
             this.iconmaxi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconmaxi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconmaxi.Image = ((System.Drawing.Image)(resources.GetObject("iconmaxi.Image")));
-            this.iconmaxi.Location = new System.Drawing.Point(791, 3);
+            this.iconmaxi.Location = new System.Drawing.Point(811, 4);
             this.iconmaxi.Name = "iconmaxi";
-            this.iconmaxi.Size = new System.Drawing.Size(35, 35);
+            this.iconmaxi.Size = new System.Drawing.Size(25, 25);
             this.iconmaxi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.iconmaxi.TabIndex = 13;
             this.iconmaxi.TabStop = false;
@@ -113,9 +113,9 @@
             this.iconcerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconcerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconcerrar.Image")));
-            this.iconcerrar.Location = new System.Drawing.Point(832, 3);
+            this.iconcerrar.Location = new System.Drawing.Point(842, 4);
             this.iconcerrar.Name = "iconcerrar";
-            this.iconcerrar.Size = new System.Drawing.Size(35, 35);
+            this.iconcerrar.Size = new System.Drawing.Size(25, 25);
             this.iconcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.iconcerrar.TabIndex = 11;
             this.iconcerrar.TabStop = false;
@@ -131,7 +131,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(230, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(870, 44);
+            this.panel1.Size = new System.Drawing.Size(870, 32);
             this.panel1.TabIndex = 16;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
@@ -140,9 +140,9 @@
             this.iconrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconrestaurar.Image = ((System.Drawing.Image)(resources.GetObject("iconrestaurar.Image")));
-            this.iconrestaurar.Location = new System.Drawing.Point(791, 3);
+            this.iconrestaurar.Location = new System.Drawing.Point(811, 4);
             this.iconrestaurar.Name = "iconrestaurar";
-            this.iconrestaurar.Size = new System.Drawing.Size(35, 35);
+            this.iconrestaurar.Size = new System.Drawing.Size(25, 25);
             this.iconrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.iconrestaurar.TabIndex = 14;
             this.iconrestaurar.TabStop = false;
@@ -154,7 +154,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(6, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -172,7 +172,7 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(230, 564);
+            this.MenuVertical.Size = new System.Drawing.Size(230, 570);
             this.MenuVertical.TabIndex = 15;
             this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuVertical_Paint);
             // 
@@ -492,10 +492,10 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(3, 3);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(251, 29);
+            this.label12.Size = new System.Drawing.Size(184, 21);
             this.label12.TabIndex = 5;
             this.label12.Text = "© 2018 - Quản Lý Cư Trú";
             // 
@@ -503,9 +503,9 @@
             // 
             this.panel6.Controls.Add(this.label12);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 564);
+            this.panel6.Location = new System.Drawing.Point(0, 570);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1100, 36);
+            this.panel6.Size = new System.Drawing.Size(1100, 30);
             this.panel6.TabIndex = 14;
             // 
             // panelContent
@@ -513,9 +513,9 @@
             this.panelContent.BackColor = System.Drawing.Color.White;
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.ForeColor = System.Drawing.Color.White;
-            this.panelContent.Location = new System.Drawing.Point(230, 44);
+            this.panelContent.Location = new System.Drawing.Point(230, 32);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(870, 520);
+            this.panelContent.Size = new System.Drawing.Size(870, 538);
             this.panelContent.TabIndex = 29;
             this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContent_Paint);
             // 

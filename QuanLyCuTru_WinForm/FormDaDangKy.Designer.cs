@@ -67,6 +67,9 @@
             // 
             // dataGridViewDaDangKy
             // 
+            this.dataGridViewDaDangKy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewDaDangKy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDaDangKy.Location = new System.Drawing.Point(23, 120);
             this.dataGridViewDaDangKy.Name = "dataGridViewDaDangKy";
@@ -91,6 +94,7 @@
             // 
             // btnXoa
             // 
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -139,6 +143,7 @@
             // 
             // btnThem
             // 
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnThem.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -153,6 +158,7 @@
             // 
             // btnXem
             // 
+            this.btnXem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnXem.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
             this.btnXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -167,6 +173,7 @@
             // 
             // btnSua
             // 
+            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnSua.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
