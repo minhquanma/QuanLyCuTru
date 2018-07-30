@@ -36,6 +36,7 @@ namespace QuanLyCuTru_WinForm
         {
 
         }
+
         private bool MouseDown;
         private Point lastLocation;
         private void panelHeader_MouseDown(object sender, MouseEventArgs e)
