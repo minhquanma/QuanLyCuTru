@@ -9,6 +9,7 @@ using QuanLyCuTru.DTOs;
 using AutoMapper;
 using Microsoft.AspNet.Identity;
 using System.Web;
+using System.Web.Http.Description;
 
 namespace QuanLyCuTru.Controllers.Api
 {
@@ -29,7 +30,8 @@ namespace QuanLyCuTru.Controllers.Api
             db.Dispose();
         }
 
-        // GET /api/quanlycutru
+        // GET: /api/quanlycutru
+        [ResponseType(typeof(CuTru))]
         [Route("")]
         public IHttpActionResult GetCuTrus()    
         {
@@ -40,19 +42,8 @@ namespace QuanLyCuTru.Controllers.Api
             return Ok(cuTrus);
         }
 
-        // GET /api/quanlycutru/duyet/true
-        [Route("Duyet/{duyet:bool?}")]
-        public IHttpActionResult GetCuTrusByState(bool duyet)
-        {
-            var cuTrus = db.CuTrus
-                .Where(c => c.DaDuyet == duyet)
-                .Select(Mapper.Map<CuTru, CuTruDTO>)
-                .ToList();
-
-            return Ok(cuTrus);
-        }
-
-        // GET /api/quanlycutru/1
+        // GET: /api/quanlycutru/{id}
+        [ResponseType(typeof(CuTru))]
         [Route("{id}")]
         public IHttpActionResult GetCuTru(int id)
         {
@@ -64,9 +55,82 @@ namespace QuanLyCuTru.Controllers.Api
             return Ok(Mapper.Map<CuTru, CuTruDTO>(cuTru));
         }
 
-        // POST /api/quanlycutru/
+        // Tìm kiếm cư trú theo loại cư trú (Tạm vắng / Tạm trú)
+        // GET: /api/quanlycutru?loai=1|2
+        [Route("")]
+        [ResponseType(typeof(CuTru))]
+        public IHttpActionResult GetCuTrusByType(int loai)
+        {
+            var cuTrus = db.CuTrus
+                .Where(c => c.LoaiCuTruId == loai)
+                .Select(Mapper.Map<CuTru, CuTruDTO>)
+                .ToList();
+
+            return Ok(cuTrus);
+        }
+        // GET /api/quanlycutru?duyet=true|false
+        [Route("")]
+        [ResponseType(typeof(CuTru))]
+        public IHttpActionResult GetCuTrusByState(bool duyet)
+        {
+            var cuTrus = db.CuTrus
+                .Where(c => c.DaDuyet == duyet)
+                .Select(Mapper.Map<CuTru, CuTruDTO>)
+                .ToList();
+
+            return Ok(cuTrus);
+        }
+        
+        // Tìm kiếm cư trú theo tên công dân
+        // GET /api/quanlycutru?hoten="abc"
+        [Route("")]
+        [ResponseType(typeof(CuTru))]
+        public IHttpActionResult GetCuTrusByName(string hoTen)
+        {
+            var cuTrus = db.NguoiDungs
+                        .Where(c => c.HoTen.Contains(hoTen))
+                        .SelectMany(x => x.CuTrus)
+                        .Distinct()
+                        .Select(Mapper.Map<CuTru, CuTruDTO>);
+
+            return Ok(cuTrus);
+        }
+
+        // Tìm kiếm cư trú theo địa chỉ dân
+        // GET /api/quanlycutru?diachidan="abc"
+        [Route("")]
+        [ResponseType(typeof(CuTru))]
+        public IHttpActionResult GetCuTrusByPersonalAddress(string diaChiDan)
+        {
+            diaChiDan = diaChiDan.Trim();
+            var cuTrus = db.NguoiDungs
+                        .Where(c => (c.SoNha + " " + c.Duong + " " + c.Phuong + " " + c.Quan + " " + c.ThanhPho)
+                                    .Contains(diaChiDan))
+                        .SelectMany(x => x.CuTrus)
+                        .Select(Mapper.Map<CuTru, CuTruDTO>)
+                        .Distinct();
+
+            return Ok(cuTrus);
+        }
+
+        // Tìm kiếm cư trú theo địa chỉ cư trú
+        // GET: /api/quanlycutru?diachi="abc"
+        [Route("")]
+        [ResponseType(typeof(CuTru))]
+        public IHttpActionResult GetCuTrusByAddress(string diaChi)
+        {
+            diaChi = HttpUtility.UrlDecode(diaChi.Trim());
+            var cuTrus = db.CuTrus.Where(c => (c.SoNha + " " + c.Duong + " " + c.Phuong + " " + c.Quan + " " + c.ThanhPho)
+                .Contains(diaChi))
+                .Select(Mapper.Map<CuTru, CuTruDTO>);
+
+            return Ok(cuTrus);
+        }
+
+        // POST: /api/quanlycutru/
         [HttpPost]
         [Route("")]
+        [ResponseType(typeof(CuTru))]
         public IHttpActionResult CreateCuTru(CuTruDTO dto)
         {
             if (ModelState.IsValid)
@@ -80,6 +144,7 @@ namespace QuanLyCuTru.Controllers.Api
             return BadRequest();
         }
 
+        // POST: /api/quanlycutru/{id}
         [HttpPut]
         [Route("{id}")]
         public IHttpActionResult UpdateCuTru(int id, CuTruDTO dto)
@@ -125,20 +190,14 @@ namespace QuanLyCuTru.Controllers.Api
             if (cuTru == null)
                 return BadRequest();
 
-            // Set DaDuyet to true
-            cuTru.DaDuyet = true;
+            // Get the logged in CanBo's id
+            var currentId = User.Identity.GetUserId();
+        
+            // Get CanBo entity in db
+            var canBo = db.NguoiDungs.SingleOrDefault(c => c.IdentityId.Equals(currentId));
 
-            // Set CanBo duyet id 
-            var currentUserId = User.Identity.GetUserId();
-            var currentUserName = User.Identity.GetUserName();
-
-            if (currentUserId == null)
-                currentUserId = RequestContext.Principal.Identity.GetUserId();
-            // Get CanBo Entity
-            var canBo = db.NguoiDungs.SingleOrDefault(c => c.IdentityId.Equals(currentUserId));
-
-            cuTru.CanBoId = canBo.Id;
-
+            cuTru.DaDuyet = true; // Set DaDuyet state to true
+            cuTru.CanBoId = canBo.Id; // Set CanBo Duyet id
             db.SaveChanges();
 
             return Ok();

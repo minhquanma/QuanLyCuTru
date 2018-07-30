@@ -34,9 +34,36 @@ namespace QuanLyCuTru.Controllers.Api
 
         // GET: api/QuanLyDan
         [Route("")]
+        [ResponseType(typeof(NguoiDung))]
         public IHttpActionResult GetNguoiDungs()
         {
             var nguoiDungs = db.NguoiDungs
+                .Select(Mapper.Map<NguoiDung, NguoiDungDTO>)
+                .ToList();
+
+            return Ok(nguoiDungs);
+        }
+
+        // GET: api/QuanLyDan?HoTen="abc"
+        [ResponseType(typeof(NguoiDung))]
+        [Route("")]
+        public IHttpActionResult GetNguoiDungsByName(string hoTen)
+        {
+            var nguoiDungs = db.NguoiDungs
+                .Where(ng => ng.HoTen.Contains(hoTen))
+                .Select(Mapper.Map<NguoiDung, NguoiDungDTO>)
+                .ToList();
+
+            return Ok(nguoiDungs);
+        }
+
+        // GET: api/QuanLyDan?GioiTinh=true|false
+        [ResponseType(typeof(NguoiDung))]
+        [Route("")]
+        public IHttpActionResult GetNguoiDungsByGender(bool gioiTinh)
+        {
+            var nguoiDungs = db.NguoiDungs
+                .Where(ng => ng.GioiTinh == gioiTinh)
                 .Select(Mapper.Map<NguoiDung, NguoiDungDTO>)
                 .ToList();
 
