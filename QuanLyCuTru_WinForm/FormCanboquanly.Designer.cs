@@ -180,7 +180,7 @@
             // 
             this.panel2.Controls.Add(this.btnLienHe);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 323);
+            this.panel2.Location = new System.Drawing.Point(0, 331);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(230, 52);
             this.panel2.TabIndex = 5;
@@ -207,7 +207,7 @@
             // 
             this.panel12.Controls.Add(this.btnChoDuyet);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(0, 269);
+            this.panel12.Location = new System.Drawing.Point(0, 277);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(230, 54);
             this.panel12.TabIndex = 4;
@@ -222,7 +222,7 @@
             this.btnChoDuyet.ForeColor = System.Drawing.Color.White;
             this.btnChoDuyet.Image = ((System.Drawing.Image)(resources.GetObject("btnChoDuyet.Image")));
             this.btnChoDuyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChoDuyet.Location = new System.Drawing.Point(2, 8);
+            this.btnChoDuyet.Location = new System.Drawing.Point(2, 6);
             this.btnChoDuyet.Name = "btnChoDuyet";
             this.btnChoDuyet.Size = new System.Drawing.Size(230, 40);
             this.btnChoDuyet.TabIndex = 10;
@@ -234,9 +234,9 @@
             this.panelCongdan.Controls.Add(this.MenuCongdan);
             this.panelCongdan.Controls.Add(this.btnCongDan);
             this.panelCongdan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCongdan.Location = new System.Drawing.Point(0, 222);
+            this.panelCongdan.Location = new System.Drawing.Point(0, 226);
             this.panelCongdan.Name = "panelCongdan";
-            this.panelCongdan.Size = new System.Drawing.Size(230, 47);
+            this.panelCongdan.Size = new System.Drawing.Size(230, 51);
             this.panelCongdan.TabIndex = 3;
             // 
             // MenuCongdan
@@ -256,7 +256,7 @@
             this.btnChuaDangKyCongDan.FlatAppearance.BorderSize = 0;
             this.btnChuaDangKyCongDan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnChuaDangKyCongDan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChuaDangKyCongDan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChuaDangKyCongDan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChuaDangKyCongDan.ForeColor = System.Drawing.Color.White;
             this.btnChuaDangKyCongDan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChuaDangKyCongDan.Location = new System.Drawing.Point(51, 87);
@@ -273,7 +273,7 @@
             this.btnDaDangKyCongDan.FlatAppearance.BorderSize = 0;
             this.btnDaDangKyCongDan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnDaDangKyCongDan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDaDangKyCongDan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDaDangKyCongDan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDaDangKyCongDan.ForeColor = System.Drawing.Color.White;
             this.btnDaDangKyCongDan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDaDangKyCongDan.Location = new System.Drawing.Point(51, 45);
@@ -291,7 +291,7 @@
             this.btnDanhSachCongDan.FlatAppearance.BorderSize = 0;
             this.btnDanhSachCongDan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnDanhSachCongDan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDanhSachCongDan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDanhSachCongDan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhSachCongDan.ForeColor = System.Drawing.Color.White;
             this.btnDanhSachCongDan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhSachCongDan.Location = new System.Drawing.Point(51, -1);
@@ -328,7 +328,7 @@
             this.panelCutru.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCutru.Location = new System.Drawing.Point(0, 170);
             this.panelCutru.Name = "panelCutru";
-            this.panelCutru.Size = new System.Drawing.Size(230, 52);
+            this.panelCutru.Size = new System.Drawing.Size(230, 56);
             this.panelCutru.TabIndex = 2;
             // 
             // btnCuTru
@@ -368,7 +368,7 @@
             this.btnDaDuyetCuTru.FlatAppearance.BorderSize = 0;
             this.btnDaDuyetCuTru.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnDaDuyetCuTru.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDaDuyetCuTru.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDaDuyetCuTru.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDaDuyetCuTru.ForeColor = System.Drawing.Color.White;
             this.btnDaDuyetCuTru.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDaDuyetCuTru.Location = new System.Drawing.Point(44, 125);
@@ -385,7 +385,7 @@
             this.btnChuaDuyetCuTru.FlatAppearance.BorderSize = 0;
             this.btnChuaDuyetCuTru.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnChuaDuyetCuTru.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChuaDuyetCuTru.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChuaDuyetCuTru.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChuaDuyetCuTru.ForeColor = System.Drawing.Color.White;
             this.btnChuaDuyetCuTru.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChuaDuyetCuTru.Location = new System.Drawing.Point(43, 87);
@@ -402,7 +402,7 @@
             this.btnDanhSachCuTru.FlatAppearance.BorderSize = 0;
             this.btnDanhSachCuTru.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnDanhSachCuTru.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDanhSachCuTru.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDanhSachCuTru.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhSachCuTru.ForeColor = System.Drawing.Color.White;
             this.btnDanhSachCuTru.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhSachCuTru.Location = new System.Drawing.Point(44, 45);
@@ -419,7 +419,7 @@
             this.btnDangKyCuTru.FlatAppearance.BorderSize = 0;
             this.btnDangKyCuTru.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnDangKyCuTru.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangKyCuTru.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangKyCuTru.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangKyCuTru.ForeColor = System.Drawing.Color.White;
             this.btnDangKyCuTru.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDangKyCuTru.Location = new System.Drawing.Point(47, -1);

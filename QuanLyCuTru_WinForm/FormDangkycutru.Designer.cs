@@ -36,10 +36,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(403, 43);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(220, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 25);
+            this.label1.Size = new System.Drawing.Size(168, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐĂNG KÝ CƯ TRÚ";
             // 
@@ -60,7 +60,7 @@
             this.button8.Text = "Cư Trú";
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // FormDangkycutru
+            // FormDangKyCuTru
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -68,7 +68,7 @@
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormDangkycutru";
+            this.Name = "FormDangKyCuTru";
             this.Text = "FormDangkycutru";
             this.ResumeLayout(false);
             this.PerformLayout();

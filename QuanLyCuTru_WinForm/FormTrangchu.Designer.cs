@@ -93,7 +93,7 @@
             this.button6.BackColor = System.Drawing.Color.Transparent;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.button6.Location = new System.Drawing.Point(3, 270);
             this.button6.Name = "button6";
@@ -108,7 +108,7 @@
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.button5.Location = new System.Drawing.Point(3, 163);
             this.button5.Name = "button5";
@@ -145,7 +145,7 @@
             this.button7.BackColor = System.Drawing.Color.Transparent;
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.button7.Location = new System.Drawing.Point(3, 311);
             this.button7.Name = "button7";
@@ -160,7 +160,7 @@
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.button2.Location = new System.Drawing.Point(3, 53);
             this.button2.Name = "button2";
@@ -173,11 +173,11 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label15.Location = new System.Drawing.Point(40, 235);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(180, 29);
+            this.label15.Size = new System.Drawing.Size(183, 30);
             this.label15.TabIndex = 19;
             this.label15.Text = "CÁN BỘ QUẢN LÝ";
             // 
@@ -186,7 +186,7 @@
             this.button4.BackColor = System.Drawing.Color.Transparent;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.button4.Location = new System.Drawing.Point(3, 90);
             this.button4.Name = "button4";
@@ -199,11 +199,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label13.Location = new System.Drawing.Point(38, 21);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(162, 29);
+            this.label13.Size = new System.Drawing.Size(161, 30);
             this.label13.TabIndex = 8;
             this.label13.Text = "QUẢN TRỊ VIÊN";
             // 
@@ -221,11 +221,11 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label14.Location = new System.Drawing.Point(40, 131);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(116, 29);
+            this.label14.Size = new System.Drawing.Size(114, 30);
             this.label14.TabIndex = 18;
             this.label14.Text = "THỐNG KÊ";
             // 
@@ -263,11 +263,11 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label11.Location = new System.Drawing.Point(692, 25);
+            this.label11.Location = new System.Drawing.Point(694, 22);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 29);
+            this.label11.Size = new System.Drawing.Size(103, 32);
             this.label11.TabIndex = 6;
             this.label11.Text = "Hết Hạn";
             // 
@@ -288,11 +288,11 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label9.Location = new System.Drawing.Point(490, 25);
+            this.label9.Location = new System.Drawing.Point(492, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(117, 29);
+            this.label9.Size = new System.Drawing.Size(129, 32);
             this.label9.TabIndex = 4;
             this.label9.Text = "Chờ Duyệt";
             // 
@@ -303,7 +303,7 @@
             this.label6.BackColor = System.Drawing.Color.Black;
             this.label6.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.label6.Location = new System.Drawing.Point(431, 25);
+            this.label6.Location = new System.Drawing.Point(440, 25);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(25, 29);
             this.label6.TabIndex = 3;
@@ -313,11 +313,11 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label7.Location = new System.Drawing.Point(211, 25);
+            this.label7.Location = new System.Drawing.Point(213, 22);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(187, 29);
+            this.label7.Size = new System.Drawing.Size(212, 32);
             this.label7.TabIndex = 2;
             this.label7.Text = "Đăng Ký Hôm Nay";
             // 
@@ -328,7 +328,7 @@
             this.label5.BackColor = System.Drawing.Color.Black;
             this.label5.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.label5.Location = new System.Drawing.Point(131, 25);
+            this.label5.Location = new System.Drawing.Point(142, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 29);
             this.label5.TabIndex = 1;
@@ -338,11 +338,11 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label4.Location = new System.Drawing.Point(17, 25);
+            this.label4.Location = new System.Drawing.Point(19, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 29);
+            this.label4.Size = new System.Drawing.Size(104, 32);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tổng Số";
             // 
@@ -379,7 +379,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.button3.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(315, 222);
             this.button3.Name = "button3";
@@ -405,7 +405,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.button1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(77, 222);
             this.button1.Name = "button1";
@@ -419,11 +419,11 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label3.Location = new System.Drawing.Point(72, 174);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(488, 29);
+            this.label3.Size = new System.Drawing.Size(540, 32);
             this.label3.TabIndex = 1;
             this.label3.Text = "Hệ thống quản lý thông tin cư trú tại địa phương";
             // 
@@ -432,11 +432,11 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label2.Location = new System.Drawing.Point(64, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(464, 78);
+            this.label2.Size = new System.Drawing.Size(535, 86);
             this.label2.TabIndex = 0;
             this.label2.Text = "Xin Chào Cán Bộ";
             // 
@@ -454,11 +454,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(25, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 26);
+            this.label1.Size = new System.Drawing.Size(279, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông báo! Tin tức từ chỉ huy.";
             // 

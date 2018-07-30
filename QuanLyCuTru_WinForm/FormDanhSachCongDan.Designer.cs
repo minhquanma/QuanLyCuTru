@@ -50,7 +50,7 @@
             this.btnChon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnChon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnChon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChon.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChon.ForeColor = System.Drawing.Color.White;
             this.btnChon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChon.Location = new System.Drawing.Point(739, 433);
@@ -69,7 +69,7 @@
             this.btnHienThiDanhSach.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnHienThiDanhSach.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             this.btnHienThiDanhSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHienThiDanhSach.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHienThiDanhSach.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHienThiDanhSach.ForeColor = System.Drawing.Color.White;
             this.btnHienThiDanhSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHienThiDanhSach.Location = new System.Drawing.Point(614, 433);
