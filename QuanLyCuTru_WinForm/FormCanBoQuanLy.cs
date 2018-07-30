@@ -174,5 +174,10 @@ namespace QuanLyCuTru_WinForm
         {
             AbrirFormInPanel(new FormDaDangKy());
         }
+
+        private void btnChuaDangKyCongDan_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormChuaDangKy());
+        }
     }
 }

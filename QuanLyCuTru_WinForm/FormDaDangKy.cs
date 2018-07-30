@@ -60,5 +60,17 @@ namespace QuanLyCuTru_WinForm
             FormThemCongDan form = new FormThemCongDan();
             form.Show();
         }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            FormSuaCongDan form = new FormSuaCongDan();
+            form.Show();
+        }
+
+        private void btnXem_Click(object sender, EventArgs e)
+        {
+            FormChiTietCongDan form = new FormChiTietCongDan();
+            form.Show();
+        }
     }
 }

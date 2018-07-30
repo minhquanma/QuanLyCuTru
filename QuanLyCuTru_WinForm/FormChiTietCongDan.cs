@@ -25,16 +25,16 @@ namespace QuanLyCuTru_WinForm
         {
 
         }
-        private void AbrirFormInPanel(object ob)
-        {
-            this.panelContent.Controls.Clear();
-            Form form = ob as Form;
-            form.TopLevel = false;
-            form.AutoScroll = true;
-            form.Dock = DockStyle.Fill;
-            this.panelContent.Controls.Add(form);
-            form.Show();
-        }
+        //private void AbrirFormInPanel(object ob)
+        //{
+            //this.panelContent.Controls.Clear();
+            //Form form = ob as Form;
+            //form.TopLevel = false;
+            //form.AutoScroll = true;
+            //form.Dock = DockStyle.Fill;
+            //this.panelContent.Controls.Add(form);
+            //form.Show();
+        //}
 
 
         private void ptbThoat_Click(object sender, EventArgs e)
@@ -50,7 +50,14 @@ namespace QuanLyCuTru_WinForm
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new FormSuaCongDan());
+            this.Close();
+            FormSuaCongDan form = new FormSuaCongDan();
+            form.Show();
+        }
+
+        private void ptbThoat_Click_1(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
