@@ -42,7 +42,10 @@ namespace QuanLyCuTru_WinForm
             int n = 10;
             for (int i = 0; i<n; i++)
             {
-
+                list.Add(new Student("Luong", "nam"));
+                list.Add(new Student("Quan", "nam"));
+                list.Add(new Student("Tan", "nam"));
+                list.Add(new Student("Viet", "nam"));
             }
             dataGridViewX.DataSource = list;
         }
