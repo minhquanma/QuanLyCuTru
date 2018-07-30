@@ -53,9 +53,10 @@
             this.btnChon.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChon.ForeColor = System.Drawing.Color.White;
             this.btnChon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChon.Location = new System.Drawing.Point(739, 433);
+            this.btnChon.Location = new System.Drawing.Point(985, 533);
+            this.btnChon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(100, 35);
+            this.btnChon.Size = new System.Drawing.Size(133, 43);
             this.btnChon.TabIndex = 17;
             this.btnChon.Text = "CHỌN";
             this.btnChon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -72,9 +73,10 @@
             this.btnHienThiDanhSach.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHienThiDanhSach.ForeColor = System.Drawing.Color.White;
             this.btnHienThiDanhSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHienThiDanhSach.Location = new System.Drawing.Point(614, 433);
+            this.btnHienThiDanhSach.Location = new System.Drawing.Point(819, 533);
+            this.btnHienThiDanhSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHienThiDanhSach.Name = "btnHienThiDanhSach";
-            this.btnHienThiDanhSach.Size = new System.Drawing.Size(119, 35);
+            this.btnHienThiDanhSach.Size = new System.Drawing.Size(159, 43);
             this.btnHienThiDanhSach.TabIndex = 18;
             this.btnHienThiDanhSach.Text = "&HIỆN";
             this.btnHienThiDanhSach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -83,23 +85,24 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(9, 13);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(831, 53);
+            this.panel3.Size = new System.Drawing.Size(1139, 65);
             this.panel3.TabIndex = 29;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(25, 16);
+            this.label2.Location = new System.Drawing.Point(33, 16);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 26);
+            this.label2.Size = new System.Drawing.Size(132, 32);
             this.label2.TabIndex = 0;
             this.label2.Text = "Danh sách";
             // 
@@ -118,12 +121,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewX.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.dataGridViewX.Location = new System.Drawing.Point(9, 73);
+            this.dataGridViewX.Location = new System.Drawing.Point(16, 89);
+            this.dataGridViewX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewX.MultiSelect = false;
             this.dataGridViewX.Name = "dataGridViewX";
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             this.dataGridViewX.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewX.Size = new System.Drawing.Size(831, 355);
+            this.dataGridViewX.Size = new System.Drawing.Size(1108, 437);
             this.dataGridViewX.TabIndex = 30;
             // 
             // panelDanhSachCongDan
@@ -134,18 +138,20 @@
             this.panelDanhSachCongDan.Controls.Add(this.btnChon);
             this.panelDanhSachCongDan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDanhSachCongDan.Location = new System.Drawing.Point(0, 0);
+            this.panelDanhSachCongDan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelDanhSachCongDan.Name = "panelDanhSachCongDan";
-            this.panelDanhSachCongDan.Size = new System.Drawing.Size(854, 481);
+            this.panelDanhSachCongDan.Size = new System.Drawing.Size(1139, 592);
             this.panelDanhSachCongDan.TabIndex = 31;
             // 
             // FormDanhSachCongDan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(854, 481);
+            this.ClientSize = new System.Drawing.Size(1139, 592);
             this.Controls.Add(this.panelDanhSachCongDan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormDanhSachCongDan";
             this.Text = "FormDanhSachCongDan";
             this.panel3.ResumeLayout(false);
