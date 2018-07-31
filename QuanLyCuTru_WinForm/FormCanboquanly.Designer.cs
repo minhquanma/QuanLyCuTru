@@ -87,7 +87,7 @@
             this.iconminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconminimizar.Image = ((System.Drawing.Image)(resources.GetObject("iconminimizar.Image")));
             this.iconminimizar.InitialImage = null;
-            this.iconminimizar.Location = new System.Drawing.Point(780, 4);
+            this.iconminimizar.Location = new System.Drawing.Point(760, 4);
             this.iconminimizar.Name = "iconminimizar";
             this.iconminimizar.Size = new System.Drawing.Size(25, 25);
             this.iconminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -100,7 +100,7 @@
             this.iconmaxi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconmaxi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconmaxi.Image = ((System.Drawing.Image)(resources.GetObject("iconmaxi.Image")));
-            this.iconmaxi.Location = new System.Drawing.Point(811, 4);
+            this.iconmaxi.Location = new System.Drawing.Point(791, 4);
             this.iconmaxi.Name = "iconmaxi";
             this.iconmaxi.Size = new System.Drawing.Size(25, 25);
             this.iconmaxi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -113,7 +113,7 @@
             this.iconcerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconcerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconcerrar.Image")));
-            this.iconcerrar.Location = new System.Drawing.Point(842, 4);
+            this.iconcerrar.Location = new System.Drawing.Point(822, 4);
             this.iconcerrar.Name = "iconcerrar";
             this.iconcerrar.Size = new System.Drawing.Size(25, 25);
             this.iconcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -129,9 +129,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.iconcerrar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(230, 0);
+            this.panel1.Location = new System.Drawing.Point(250, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(870, 32);
+            this.panel1.Size = new System.Drawing.Size(850, 32);
             this.panel1.TabIndex = 16;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
@@ -140,7 +140,7 @@
             this.iconrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconrestaurar.Image = ((System.Drawing.Image)(resources.GetObject("iconrestaurar.Image")));
-            this.iconrestaurar.Location = new System.Drawing.Point(811, 4);
+            this.iconrestaurar.Location = new System.Drawing.Point(791, 4);
             this.iconrestaurar.Name = "iconrestaurar";
             this.iconrestaurar.Size = new System.Drawing.Size(25, 25);
             this.iconrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -172,7 +172,7 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(230, 570);
+            this.MenuVertical.Size = new System.Drawing.Size(250, 570);
             this.MenuVertical.TabIndex = 15;
             this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuVertical_Paint);
             // 
@@ -180,9 +180,9 @@
             // 
             this.panel2.Controls.Add(this.btnLienHe);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 332);
+            this.panel2.Location = new System.Drawing.Point(0, 328);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(230, 52);
+            this.panel2.Size = new System.Drawing.Size(250, 52);
             this.panel2.TabIndex = 5;
             // 
             // btnLienHe
@@ -207,9 +207,9 @@
             // 
             this.panel12.Controls.Add(this.btnChoDuyet);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(0, 278);
+            this.panel12.Location = new System.Drawing.Point(0, 274);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(230, 54);
+            this.panel12.Size = new System.Drawing.Size(250, 54);
             this.panel12.TabIndex = 4;
             // 
             // btnChoDuyet
@@ -228,6 +228,7 @@
             this.btnChoDuyet.TabIndex = 10;
             this.btnChoDuyet.Text = "      Chờ duyệt";
             this.btnChoDuyet.UseVisualStyleBackColor = false;
+            this.btnChoDuyet.Click += new System.EventHandler(this.btnChoDuyet_Click);
             // 
             // panelCongdan
             // 
@@ -236,7 +237,7 @@
             this.panelCongdan.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCongdan.Location = new System.Drawing.Point(0, 226);
             this.panelCongdan.Name = "panelCongdan";
-            this.panelCongdan.Size = new System.Drawing.Size(230, 52);
+            this.panelCongdan.Size = new System.Drawing.Size(250, 48);
             this.panelCongdan.TabIndex = 3;
             // 
             // MenuCongdan
@@ -329,7 +330,7 @@
             this.panelCutru.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCutru.Location = new System.Drawing.Point(0, 170);
             this.panelCutru.Name = "panelCutru";
-            this.panelCutru.Size = new System.Drawing.Size(230, 56);
+            this.panelCutru.Size = new System.Drawing.Size(250, 56);
             this.panelCutru.TabIndex = 2;
             // 
             // btnCuTru
@@ -344,7 +345,7 @@
             this.btnCuTru.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCuTru.Location = new System.Drawing.Point(0, 9);
             this.btnCuTru.Name = "btnCuTru";
-            this.btnCuTru.Size = new System.Drawing.Size(230, 40);
+            this.btnCuTru.Size = new System.Drawing.Size(230, 41);
             this.btnCuTru.TabIndex = 6;
             this.btnCuTru.Text = "Cư Trú";
             this.btnCuTru.UseVisualStyleBackColor = false;
@@ -379,6 +380,7 @@
             this.btnDaDuyetCuTru.Text = "Đã duyệt";
             this.btnDaDuyetCuTru.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDaDuyetCuTru.UseVisualStyleBackColor = false;
+            this.btnDaDuyetCuTru.Click += new System.EventHandler(this.btnDaDuyetCuTru_Click);
             // 
             // btnChuaDuyetCuTru
             // 
@@ -396,6 +398,7 @@
             this.btnChuaDuyetCuTru.Text = "Chưa duyệt";
             this.btnChuaDuyetCuTru.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChuaDuyetCuTru.UseVisualStyleBackColor = false;
+            this.btnChuaDuyetCuTru.Click += new System.EventHandler(this.btnChuaDuyetCuTru_Click);
             // 
             // btnDanhSachCuTru
             // 
@@ -413,6 +416,7 @@
             this.btnDanhSachCuTru.Text = "Danh sách";
             this.btnDanhSachCuTru.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhSachCuTru.UseVisualStyleBackColor = false;
+            this.btnDanhSachCuTru.Click += new System.EventHandler(this.btnDanhSachCuTru_Click);
             // 
             // btnDangKyCuTru
             // 
@@ -438,7 +442,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 118);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(230, 52);
+            this.panel9.Size = new System.Drawing.Size(250, 52);
             this.panel9.TabIndex = 1;
             // 
             // btnTrangChu
@@ -466,7 +470,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(230, 118);
+            this.panel7.Size = new System.Drawing.Size(250, 118);
             this.panel7.TabIndex = 0;
             // 
             // pictureBox8
@@ -514,9 +518,9 @@
             this.panelContent.BackColor = System.Drawing.Color.White;
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.ForeColor = System.Drawing.Color.White;
-            this.panelContent.Location = new System.Drawing.Point(230, 32);
+            this.panelContent.Location = new System.Drawing.Point(250, 32);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(870, 538);
+            this.panelContent.Size = new System.Drawing.Size(850, 538);
             this.panelContent.TabIndex = 29;
             this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContent_Paint);
             // 

@@ -158,6 +158,18 @@
     <Compile Include="FormDanhSachCongDan.Designer.cs">
       <DependentUpon>FormDanhSachCongDan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDanhSachCuTru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDanhSachCuTru.Designer.cs">
+      <DependentUpon>FormDanhSachCuTru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDanhSachCuTruChuaDuyet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDanhSachCuTruChuaDuyet.Designer.cs">
+      <DependentUpon>FormDanhSachCuTruChuaDuyet.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLienHe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +193,12 @@
     </Compile>
     <Compile Include="FormTrangChu.Designer.cs">
       <DependentUpon>FormTrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDanhSachCuTruDaDuyet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDanhSachCuTruDaDuyet.Designer.cs">
+      <DependentUpon>FormDanhSachCuTruDaDuyet.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -291,6 +309,12 @@
     <EmbeddedResource Include="FormDanhSachCongDan.resx">
       <DependentUpon>FormDanhSachCongDan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDanhSachCuTru.resx">
+      <DependentUpon>FormDanhSachCuTru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDanhSachCuTruChuaDuyet.resx">
+      <DependentUpon>FormDanhSachCuTruChuaDuyet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLienHe.resx">
       <DependentUpon>FormLienHe.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTrangChu.resx">
       <DependentUpon>FormTrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDanhSachCuTruDaDuyet.resx">
+      <DependentUpon>FormDanhSachCuTruDaDuyet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -16,5 +16,87 @@ namespace QuanLyCuTru_WinForm
         {
             InitializeComponent();
         }
+
+        private void btnNhapLai_Click(object sender, EventArgs e)
+        {
+            DateTime localDate = DateTime.Now;
+            foreach (TextBox tb in this.Controls.OfType<TextBox>())
+            {
+                tb.Text="";
+            }
+            foreach (DateTimePicker tb in this.Controls.OfType<DateTimePicker>())
+            {
+                tb.Value = localDate;
+            }
+            txtNhapMaCongDan.Text = "Nhập mã công dân";
+            dgvLoaiCuTru.DataSource = null;
+        }
+
+        private void txtNhapMaCongDan_Click(object sender, EventArgs e)
+        {
+            txtNhapMaCongDan.Text="";           
+        }
+        class NhapMaCongDan
+        {
+            public int maCongDan { get; set; }
+            public NhapMaCongDan() { }
+            public NhapMaCongDan(int maCongDan)
+            {
+                this.maCongDan = maCongDan;
+            }
+
+        }
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtNhapMaCongDan.Text))
+            {
+                MessageBox.Show("Chưa nhập mã số công dân", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                var maCongDan = int.Parse(txtNhapMaCongDan.Text);
+                List <NhapMaCongDan> list = new List<NhapMaCongDan> { };
+                list.Add(new NhapMaCongDan(maCongDan));
+                dgvLoaiCuTru.DataSource = list;
+            }
+        }
+
+        private void btnTaoMoi_Click(object sender, EventArgs e)
+        {
+            bool txtCompleted = true;
+            string errorMessage = "Nhập đầy đủ thông tin rồi thử lại";
+            string successMessage = "Thành công";
+            //Kiểm tra textbox có rỗng ko
+            foreach (Control c in Controls)
+            {
+                if (c is TextBox)
+                {
+                    if (String.IsNullOrEmpty(c.Text))
+                    {
+                        txtCompleted = false;
+                    }
+                }
+            }
+            if (txtCompleted == false)
+            {
+                MessageBox.Show(errorMessage, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (txtCompleted == true)
+            {
+                MessageBox.Show(successMessage, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            //Đổi màu textbox rỗng
+            foreach (TextBox tb in this.Controls.OfType<TextBox>())
+            {
+                if (String.IsNullOrEmpty(tb.Text))
+                {
+                    tb.BackColor = Color.FromArgb(255, 235, 238);
+                }
+                else
+                {
+                    tb.BackColor = System.Drawing.Color.White;
+                }
+            }
+        }
     }
 }
