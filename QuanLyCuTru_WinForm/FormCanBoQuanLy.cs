@@ -35,7 +35,25 @@ namespace QuanLyCuTru_WinForm
 
         private void iconcerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            string message = "Bạn muốn thoát?";
+            string caption = "Thông báo";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            // Displays the MessageBox.
+
+            result = MessageBox.Show(this, message, caption, buttons,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.RightAlign);
+
+            if (result == DialogResult.Yes)
+            {
+
+                // Closes the parent form.
+
+                Application.Exit();
+
+            }          
         }
 
         private void iconmaxi_Click(object sender, EventArgs e)
@@ -74,11 +92,6 @@ namespace QuanLyCuTru_WinForm
             form.Show();
 
         }
-        private void btncutrudanhsach_Click(object sender, EventArgs e)
-        {
-            AbrirFormInPanel(new FormDanhSachCongDan());
-        }
-
         private void MenuVertical_Paint(object sender, PaintEventArgs e)
         {
 
@@ -91,7 +104,7 @@ namespace QuanLyCuTru_WinForm
 
         private void btnlienhe_Click(object sender, EventArgs e)
         {
-
+            AbrirFormInPanel(new FormLienHe());
         }
 
         private void btncongdan_Click(object sender, EventArgs e)

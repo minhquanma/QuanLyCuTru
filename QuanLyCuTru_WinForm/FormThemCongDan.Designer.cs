@@ -36,7 +36,6 @@
             this.txtThanhPho = new System.Windows.Forms.TextBox();
             this.txtQuan = new System.Windows.Forms.TextBox();
             this.txtPhuong = new System.Windows.Forms.TextBox();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnChonTep = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -63,12 +62,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ptbThoat = new System.Windows.Forms.PictureBox();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.btnTaoMoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).BeginInit();
             this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtDuong
             // 
+            this.txtDuong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDuong.Location = new System.Drawing.Point(82, 339);
             this.txtDuong.Multiline = true;
             this.txtDuong.Name = "txtDuong";
@@ -85,6 +86,7 @@
             // 
             // txtQueQuan
             // 
+            this.txtQueQuan.BackColor = System.Drawing.Color.White;
             this.txtQueQuan.Location = new System.Drawing.Point(546, 269);
             this.txtQueQuan.Multiline = true;
             this.txtQueQuan.Name = "txtQueQuan";
@@ -123,18 +125,6 @@
             this.txtPhuong.Size = new System.Drawing.Size(267, 37);
             this.txtPhuong.TabIndex = 58;
             // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(710, 396);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(115, 41);
-            this.btnSua.TabIndex = 57;
-            this.btnSua.Text = "TẠO MỚI";
-            this.btnSua.UseVisualStyleBackColor = false;
-            // 
             // btnChonTep
             // 
             this.btnChonTep.Location = new System.Drawing.Point(546, 353);
@@ -148,7 +138,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label15.Location = new System.Drawing.Point(462, 350);
+            this.label15.Location = new System.Drawing.Point(456, 353);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(45, 17);
             this.label15.TabIndex = 55;
@@ -391,11 +381,26 @@
             this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
             this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
             // 
+            // btnTaoMoi
+            // 
+            this.btnTaoMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnTaoMoi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnTaoMoi.ForeColor = System.Drawing.Color.White;
+            this.btnTaoMoi.Location = new System.Drawing.Point(715, 396);
+            this.btnTaoMoi.Name = "btnTaoMoi";
+            this.btnTaoMoi.Size = new System.Drawing.Size(98, 41);
+            this.btnTaoMoi.TabIndex = 67;
+            this.btnTaoMoi.Text = "TẠO MỚI";
+            this.btnTaoMoi.UseVisualStyleBackColor = false;
+            this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
+            // 
             // FormThemCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(837, 438);
+            this.Controls.Add(this.btnTaoMoi);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.txtDuong);
             this.Controls.Add(this.txtQuocTich);
@@ -404,7 +409,6 @@
             this.Controls.Add(this.txtThanhPho);
             this.Controls.Add(this.txtQuan);
             this.Controls.Add(this.txtPhuong);
-            this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnChonTep);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -448,7 +452,6 @@
         private System.Windows.Forms.TextBox txtThanhPho;
         private System.Windows.Forms.TextBox txtQuan;
         private System.Windows.Forms.TextBox txtPhuong;
-        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnChonTep;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -475,5 +478,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox ptbThoat;
         private System.Windows.Forms.Panel panelTop;
+        private System.Windows.Forms.Button btnTaoMoi;
     }
 }

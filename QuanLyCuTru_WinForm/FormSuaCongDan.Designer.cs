@@ -298,6 +298,7 @@
             this.btnSua.TabIndex = 24;
             this.btnSua.Text = "SỬA";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // txtPhuong
             // 
@@ -387,9 +388,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 25);
+            this.label1.Size = new System.Drawing.Size(134, 25);
             this.label1.TabIndex = 33;
-            this.label1.Text = "Thông tin chi tiết";
+            this.label1.Text = "Sửa thông tin";
             // 
             // FormSuaCongDan
             // 

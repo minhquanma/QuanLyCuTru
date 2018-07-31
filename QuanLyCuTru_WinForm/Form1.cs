@@ -64,5 +64,25 @@ namespace QuanLyCuTru_WinForm
             var formCanbo = new FormCanBoQuanLy();
             formCanbo.Show();
         }
+
+        private void panelHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

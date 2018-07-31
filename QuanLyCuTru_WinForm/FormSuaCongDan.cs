@@ -26,12 +26,6 @@ namespace QuanLyCuTru_WinForm
         {
 
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -47,5 +41,56 @@ namespace QuanLyCuTru_WinForm
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-    }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            bool txtCompleted = true;
+            string errorMessage = "Nhập đầy đủ thông tin rồi thử lại";
+            string successMessage = "Thành công";
+            //Kiểm tra textbox có rỗng ko
+            foreach (Control c in Controls)
+            {
+                if (c is TextBox)
+                {
+                    if (String.IsNullOrEmpty(c.Text))
+                    {
+                        txtCompleted = false;
+                    }
+                }
+            }
+            if (txtCompleted == false)
+            {
+                MessageBox.Show(errorMessage, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            if (txtCompleted == true)
+            {
+                //
+                MessageBox.Show(successMessage, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            //Đổi màu textbox rỗng
+            foreach (TextBox tb in this.Controls.OfType<TextBox>())
+            {
+                if (String.IsNullOrEmpty(tb.Text))
+                {
+                    tb.BackColor = Color.FromArgb(255, 235, 238);
+                }
+                else
+                {
+                    tb.BackColor = System.Drawing.Color.White;
+                }
+            }
+            //Đổi màu checkbox chưa checked
+            if (chkNam.Checked == false && chkNu.Checked == false)
+            {
+                chkNam.ForeColor = System.Drawing.Color.Red;
+                chkNu.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                chkNam.ForeColor = this.ForeColor;
+                chkNu.ForeColor = this.ForeColor;
+            }
+        }
+    }  
 }
