@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChiTietCongDan));
             this.panelContent = new System.Windows.Forms.Panel();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.panelTop = new System.Windows.Forms.Panel();
+            this.ptbThoat = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.linklabelEmail = new System.Windows.Forms.LinkLabel();
             this.labelQuocTich = new System.Windows.Forms.Label();
             this.labelQueQuan = new System.Windows.Forms.Label();
@@ -51,17 +55,15 @@
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.ptbAvatar = new System.Windows.Forms.PictureBox();
             this.btnSua = new System.Windows.Forms.Button();
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.ptbThoat = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.panelContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContent
             // 
+            this.panelContent.Controls.Add(this.btnXoa);
             this.panelContent.Controls.Add(this.panelTop);
             this.panelContent.Controls.Add(this.linklabelEmail);
             this.panelContent.Controls.Add(this.labelQuocTich);
@@ -89,6 +91,56 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(949, 515);
             this.panelContent.TabIndex = 27;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.Color.Brown;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(132, 394);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(94, 50);
+            this.btnXoa.TabIndex = 68;
+            this.btnXoa.Text = "XÓA";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // panelTop
+            // 
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(39)))), ((int)(((byte)(176)))));
+            this.panelTop.Controls.Add(this.ptbThoat);
+            this.panelTop.Controls.Add(this.label10);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(949, 30);
+            this.panelTop.TabIndex = 67;
+            this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
+            this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
+            // 
+            // ptbThoat
+            // 
+            this.ptbThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbThoat.Image = ((System.Drawing.Image)(resources.GetObject("ptbThoat.Image")));
+            this.ptbThoat.Location = new System.Drawing.Point(921, 2);
+            this.ptbThoat.Name = "ptbThoat";
+            this.ptbThoat.Size = new System.Drawing.Size(25, 25);
+            this.ptbThoat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbThoat.TabIndex = 65;
+            this.ptbThoat.TabStop = false;
+            this.ptbThoat.Click += new System.EventHandler(this.ptbThoat_Click_1);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(3, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(163, 25);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Thông tin chi tiết";
             // 
             // linklabelEmail
             // 
@@ -300,42 +352,6 @@
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // panelTop
-            // 
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(39)))), ((int)(((byte)(176)))));
-            this.panelTop.Controls.Add(this.ptbThoat);
-            this.panelTop.Controls.Add(this.label10);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(949, 30);
-            this.panelTop.TabIndex = 67;
-            this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
-            // 
-            // ptbThoat
-            // 
-            this.ptbThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbThoat.Image = ((System.Drawing.Image)(resources.GetObject("ptbThoat.Image")));
-            this.ptbThoat.Location = new System.Drawing.Point(921, 2);
-            this.ptbThoat.Name = "ptbThoat";
-            this.ptbThoat.Size = new System.Drawing.Size(25, 25);
-            this.ptbThoat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbThoat.TabIndex = 65;
-            this.ptbThoat.TabStop = false;
-            this.ptbThoat.Click += new System.EventHandler(this.ptbThoat_Click_1);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(3, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(163, 25);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Thông tin chi tiết";
-            // 
             // FormChiTietCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,10 +365,10 @@
             this.Load += new System.EventHandler(this.FormChiTietCongDan_Load);
             this.panelContent.ResumeLayout(false);
             this.panelContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -383,5 +399,6 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.PictureBox ptbThoat;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

@@ -11,10 +11,10 @@ using System.Windows.Forms;
 namespace QuanLyCuTru_WinForm
 {
 
-    public partial class FormDaDangKy : Form
+    public partial class FormDanhSachCongDanDaDangKy : Form
     {        
             
-        public FormDaDangKy()
+        public FormDanhSachCongDanDaDangKy()
         {
 
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace QuanLyCuTru_WinForm
                 list.Add(new Student("Tan", "nam"));
                 list.Add(new Student("Viet", "nam"));
             }
-            dataGridViewDaDangKy.DataSource = list;
+            dgvDanhSachCongDanDaDangKy.DataSource = list;
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -54,20 +54,7 @@ namespace QuanLyCuTru_WinForm
         {
             
         }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            FormThemCongDan form = new FormThemCongDan();
-            form.Show();
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            FormSuaCongDan form = new FormSuaCongDan();
-            form.Show();
-        }
-
-        private void btnXem_Click(object sender, EventArgs e)
+        private void btnChiTiet_Click(object sender, EventArgs e)
         {
             FormChiTietCongDan form = new FormChiTietCongDan();
             form.Show();

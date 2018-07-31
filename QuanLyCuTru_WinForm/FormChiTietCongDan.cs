@@ -13,14 +13,14 @@ namespace QuanLyCuTru_WinForm
 {
     public partial class FormChiTietCongDan : Form
     {
-        public FormChiTietCongDan()
-        {
-            InitializeComponent();
-        }
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+        public FormChiTietCongDan()
+        {
+            InitializeComponent();
+        }
         private void FormChiTietCongDan_Load(object sender, EventArgs e)
         {
 
@@ -58,6 +58,16 @@ namespace QuanLyCuTru_WinForm
         private void ptbThoat_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void panelTop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

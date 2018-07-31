@@ -69,9 +69,9 @@
             // 
             // line1
             // 
-            this.line1.Location = new System.Drawing.Point(1, 42);
+            this.line1.Location = new System.Drawing.Point(0, 33);
             this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(883, 8);
+            this.line1.Size = new System.Drawing.Size(837, 14);
             this.line1.TabIndex = 1;
             this.line1.Text = "line1";
             // 

@@ -15,9 +15,6 @@ namespace QuanLyCuTru_WinForm
 {
     public partial class FormDanhSachCongDan : Form
     {
-        int pageNumber = 1;
-        IPagedList<Student> list;
-
         public FormDanhSachCongDan()
         {
             InitializeComponent();   
@@ -47,25 +44,28 @@ namespace QuanLyCuTru_WinForm
                 list.Add(new Student("Tan", "nam"));
                 list.Add(new Student("Viet", "nam"));
             }
-            dataGridViewX.DataSource = list;
+            dgvDanhSachCongDan.DataSource = list;
         }
 
-        private void AbrirFormInPanel(object ob)
+        private void panelDanhSachCongDan_Paint(object sender, PaintEventArgs e)
         {
-            //truyền form vào panel
-            this.panelDanhSachCongDan.Controls.Clear();
-            Form form = ob as Form;
-            form.TopLevel = false;
-            form.AutoScroll = true;
-            form.Dock = DockStyle.Fill;
-            panelDanhSachCongDan.Controls.Add(form);
+
+        }
+
+        private void btnThemMoi_Click(object sender, EventArgs e)
+        {
+            FormThemCongDan form = new FormThemCongDan();
             form.Show();
         }
-
-        private async void btnChon_Click(object sender, EventArgs e)
+        private void btnChiTiet_Click(object sender, EventArgs e)
         {
             FormChiTietCongDan form = new FormChiTietCongDan();
             form.Show();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

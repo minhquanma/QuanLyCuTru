@@ -134,17 +134,17 @@
     <Compile Include="FormChoDuyet.Designer.cs">
       <DependentUpon>FormChoDuyet.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormChuaDangKy.cs">
+    <Compile Include="FormDanhSachCongDanChuaDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChuaDangKy.Designer.cs">
-      <DependentUpon>FormChuaDangKy.cs</DependentUpon>
+    <Compile Include="FormDanhSachCongDanChuaDangKy.Designer.cs">
+      <DependentUpon>FormDanhSachCongDanChuaDangKy.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDaDangKy.cs">
+    <Compile Include="FormDanhSachCongDanDaDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDaDangKy.Designer.cs">
-      <DependentUpon>FormDaDangKy.cs</DependentUpon>
+    <Compile Include="FormDanhSachCongDanDaDangKy.Designer.cs">
+      <DependentUpon>FormDanhSachCongDanDaDangKy.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDangKyCuTru.cs">
       <SubType>Form</SubType>
@@ -181,6 +181,12 @@
     </Compile>
     <Compile Include="FormSuaCongDan.Designer.cs">
       <DependentUpon>FormSuaCongDan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuaCuTru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuaCuTru.Designer.cs">
+      <DependentUpon>FormSuaCuTru.cs</DependentUpon>
     </Compile>
     <Compile Include="FormThemCongDan.cs">
       <SubType>Form</SubType>
@@ -297,11 +303,11 @@
     <EmbeddedResource Include="FormChoDuyet.resx">
       <DependentUpon>FormChoDuyet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChuaDangKy.resx">
-      <DependentUpon>FormChuaDangKy.cs</DependentUpon>
+    <EmbeddedResource Include="FormDanhSachCongDanChuaDangKy.resx">
+      <DependentUpon>FormDanhSachCongDanChuaDangKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDaDangKy.resx">
-      <DependentUpon>FormDaDangKy.cs</DependentUpon>
+    <EmbeddedResource Include="FormDanhSachCongDanDaDangKy.resx">
+      <DependentUpon>FormDanhSachCongDanDaDangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangKyCuTru.resx">
       <DependentUpon>FormDangKyCuTru.cs</DependentUpon>
@@ -320,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSuaCongDan.resx">
       <DependentUpon>FormSuaCongDan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuaCuTru.resx">
+      <DependentUpon>FormSuaCuTru.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemCongDan.resx">
       <DependentUpon>FormThemCongDan.cs</DependentUpon>

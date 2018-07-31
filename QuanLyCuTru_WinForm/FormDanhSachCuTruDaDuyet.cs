@@ -16,8 +16,10 @@ namespace QuanLyCuTru_WinForm
         {
             InitializeComponent();
         }
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnChiTiet_Click(object sender, EventArgs e)
         {
+            FormChiTietCuTru form= new FormChiTietCuTru();
+            form.Show();
         }
     }
 }

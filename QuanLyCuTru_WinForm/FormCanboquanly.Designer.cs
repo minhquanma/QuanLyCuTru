@@ -52,7 +52,6 @@
             this.btnDaDuyetCuTru = new System.Windows.Forms.Button();
             this.btnChuaDuyetCuTru = new System.Windows.Forms.Button();
             this.btnDanhSachCuTru = new System.Windows.Forms.Button();
-            this.btnDangKyCuTru = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnTrangChu = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -180,7 +179,7 @@
             // 
             this.panel2.Controls.Add(this.btnLienHe);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 328);
+            this.panel2.Location = new System.Drawing.Point(0, 327);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 52);
             this.panel2.TabIndex = 5;
@@ -207,7 +206,7 @@
             // 
             this.panel12.Controls.Add(this.btnChoDuyet);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(0, 274);
+            this.panel12.Location = new System.Drawing.Point(0, 273);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(250, 54);
             this.panel12.TabIndex = 4;
@@ -235,7 +234,7 @@
             this.panelCongdan.Controls.Add(this.MenuCongdan);
             this.panelCongdan.Controls.Add(this.btnCongDan);
             this.panelCongdan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCongdan.Location = new System.Drawing.Point(0, 226);
+            this.panelCongdan.Location = new System.Drawing.Point(0, 225);
             this.panelCongdan.Name = "panelCongdan";
             this.panelCongdan.Size = new System.Drawing.Size(250, 48);
             this.panelCongdan.TabIndex = 3;
@@ -330,7 +329,7 @@
             this.panelCutru.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCutru.Location = new System.Drawing.Point(0, 170);
             this.panelCutru.Name = "panelCutru";
-            this.panelCutru.Size = new System.Drawing.Size(250, 56);
+            this.panelCutru.Size = new System.Drawing.Size(250, 55);
             this.panelCutru.TabIndex = 2;
             // 
             // btnCuTru
@@ -356,10 +355,9 @@
             this.MenuCutru.Controls.Add(this.btnDaDuyetCuTru);
             this.MenuCutru.Controls.Add(this.btnChuaDuyetCuTru);
             this.MenuCutru.Controls.Add(this.btnDanhSachCuTru);
-            this.MenuCutru.Controls.Add(this.btnDangKyCuTru);
             this.MenuCutru.Location = new System.Drawing.Point(53, 55);
             this.MenuCutru.Name = "MenuCutru";
-            this.MenuCutru.Size = new System.Drawing.Size(177, 153);
+            this.MenuCutru.Size = new System.Drawing.Size(177, 120);
             this.MenuCutru.TabIndex = 10;
             this.MenuCutru.Visible = false;
             this.MenuCutru.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuCutru_Paint);
@@ -373,7 +371,7 @@
             this.btnDaDuyetCuTru.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDaDuyetCuTru.ForeColor = System.Drawing.Color.White;
             this.btnDaDuyetCuTru.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDaDuyetCuTru.Location = new System.Drawing.Point(44, 125);
+            this.btnDaDuyetCuTru.Location = new System.Drawing.Point(43, 83);
             this.btnDaDuyetCuTru.Name = "btnDaDuyetCuTru";
             this.btnDaDuyetCuTru.Size = new System.Drawing.Size(132, 40);
             this.btnDaDuyetCuTru.TabIndex = 14;
@@ -391,7 +389,7 @@
             this.btnChuaDuyetCuTru.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChuaDuyetCuTru.ForeColor = System.Drawing.Color.White;
             this.btnChuaDuyetCuTru.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChuaDuyetCuTru.Location = new System.Drawing.Point(43, 87);
+            this.btnChuaDuyetCuTru.Location = new System.Drawing.Point(42, 45);
             this.btnChuaDuyetCuTru.Name = "btnChuaDuyetCuTru";
             this.btnChuaDuyetCuTru.Size = new System.Drawing.Size(132, 40);
             this.btnChuaDuyetCuTru.TabIndex = 13;
@@ -409,7 +407,7 @@
             this.btnDanhSachCuTru.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhSachCuTru.ForeColor = System.Drawing.Color.White;
             this.btnDanhSachCuTru.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDanhSachCuTru.Location = new System.Drawing.Point(44, 45);
+            this.btnDanhSachCuTru.Location = new System.Drawing.Point(43, 3);
             this.btnDanhSachCuTru.Name = "btnDanhSachCuTru";
             this.btnDanhSachCuTru.Size = new System.Drawing.Size(132, 40);
             this.btnDanhSachCuTru.TabIndex = 12;
@@ -417,24 +415,6 @@
             this.btnDanhSachCuTru.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhSachCuTru.UseVisualStyleBackColor = false;
             this.btnDanhSachCuTru.Click += new System.EventHandler(this.btnDanhSachCuTru_Click);
-            // 
-            // btnDangKyCuTru
-            // 
-            this.btnDangKyCuTru.BackColor = System.Drawing.Color.Transparent;
-            this.btnDangKyCuTru.FlatAppearance.BorderSize = 0;
-            this.btnDangKyCuTru.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnDangKyCuTru.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangKyCuTru.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangKyCuTru.ForeColor = System.Drawing.Color.White;
-            this.btnDangKyCuTru.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangKyCuTru.Location = new System.Drawing.Point(47, -1);
-            this.btnDangKyCuTru.Name = "btnDangKyCuTru";
-            this.btnDangKyCuTru.Size = new System.Drawing.Size(132, 40);
-            this.btnDangKyCuTru.TabIndex = 11;
-            this.btnDangKyCuTru.Text = "Đăng ký";
-            this.btnDangKyCuTru.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangKyCuTru.UseVisualStyleBackColor = false;
-            this.btnDangKyCuTru.Click += new System.EventHandler(this.btnDangKyCuTru_Click);
             // 
             // panel9
             // 
@@ -577,7 +557,6 @@
         private System.Windows.Forms.Button btnLienHe;
         private System.Windows.Forms.Button btnCongDan;
         private System.Windows.Forms.Panel MenuCutru;
-        private System.Windows.Forms.Button btnDangKyCuTru;
         private System.Windows.Forms.Button btnDaDuyetCuTru;
         private System.Windows.Forms.Button btnChuaDuyetCuTru;
         private System.Windows.Forms.Button btnDanhSachCuTru;

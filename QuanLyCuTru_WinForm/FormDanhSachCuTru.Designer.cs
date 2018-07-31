@@ -31,13 +31,13 @@
             this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.cbbTen = new System.Windows.Forms.ComboBox();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXem = new System.Windows.Forms.Button();
+            this.btnChiTiet = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.dgvDaDangKy = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnThemMoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDaDangKy)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -74,41 +74,27 @@
             this.cbbTen.TabIndex = 49;
             this.cbbTen.Text = "Tên";
             // 
-            // btnSua
+            // btnChiTiet
             // 
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnSua.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSua.Location = new System.Drawing.Point(741, 144);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(100, 37);
-            this.btnSua.TabIndex = 48;
-            this.btnSua.Text = "SỬA";
-            this.btnSua.UseVisualStyleBackColor = false;
-            // 
-            // btnXem
-            // 
-            this.btnXem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnXem.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
-            this.btnXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXem.ForeColor = System.Drawing.Color.Transparent;
-            this.btnXem.Location = new System.Drawing.Point(741, 187);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(100, 37);
-            this.btnXem.TabIndex = 46;
-            this.btnXem.Text = "XEM";
-            this.btnXem.UseVisualStyleBackColor = false;
+            this.btnChiTiet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChiTiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnChiTiet.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
+            this.btnChiTiet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChiTiet.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChiTiet.ForeColor = System.Drawing.Color.Transparent;
+            this.btnChiTiet.Location = new System.Drawing.Point(741, 187);
+            this.btnChiTiet.Name = "btnChiTiet";
+            this.btnChiTiet.Size = new System.Drawing.Size(100, 37);
+            this.btnChiTiet.TabIndex = 46;
+            this.btnChiTiet.Text = "CHI TIẾT";
+            this.btnChiTiet.UseVisualStyleBackColor = false;
+            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
+            this.btnXoa.BackColor = System.Drawing.Color.Brown;
+            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.Transparent;
@@ -118,6 +104,7 @@
             this.btnXoa.TabIndex = 47;
             this.btnXoa.Text = "XÓA";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnTimKiem
             // 
@@ -165,16 +152,32 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Danh sách cư trú";
             // 
+            // btnThemMoi
+            // 
+            this.btnThemMoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnThemMoi.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
+            this.btnThemMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemMoi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemMoi.ForeColor = System.Drawing.Color.Transparent;
+            this.btnThemMoi.Location = new System.Drawing.Point(741, 144);
+            this.btnThemMoi.Name = "btnThemMoi";
+            this.btnThemMoi.Size = new System.Drawing.Size(100, 37);
+            this.btnThemMoi.TabIndex = 53;
+            this.btnThemMoi.Text = "THÊM MỚI";
+            this.btnThemMoi.UseVisualStyleBackColor = false;
+            this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
+            // 
             // FormDanhSachCuTru
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 538);
+            this.Controls.Add(this.btnThemMoi);
             this.Controls.Add(this.cbbGioiTinh);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.cbbTen);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnXem);
+            this.Controls.Add(this.btnChiTiet);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.dgvDaDangKy);
@@ -182,6 +185,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDanhSachCuTru";
             this.Text = "FormDanhSachCuTru";
+            this.Load += new System.EventHandler(this.FormDanhSachCuTru_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDaDangKy)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -195,12 +199,12 @@
         private System.Windows.Forms.ComboBox cbbGioiTinh;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.ComboBox cbbTen;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXem;
+        private System.Windows.Forms.Button btnChiTiet;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.DataGridView dgvDaDangKy;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnThemMoi;
     }
 }
