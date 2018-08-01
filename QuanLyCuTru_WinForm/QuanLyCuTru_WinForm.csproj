@@ -206,6 +206,8 @@
     <Compile Include="FormDanhSachCuTruDaDuyet.Designer.cs">
       <DependentUpon>FormDanhSachCuTruDaDuyet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CuTruRepository.cs" />
+    <Compile Include="Models\Server.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Content\img\1525387737.jpg" />

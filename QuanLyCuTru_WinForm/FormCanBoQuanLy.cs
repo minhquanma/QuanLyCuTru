@@ -13,15 +13,15 @@ namespace QuanLyCuTru_WinForm
 {
     public partial class FormCanBoQuanLy : Form
     {
-        public FormCanBoQuanLy()
-        {
-            InitializeComponent();
-        }
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
+        public FormCanBoQuanLy()
+        {
+            InitializeComponent();
+        } 
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -35,24 +35,20 @@ namespace QuanLyCuTru_WinForm
 
         private void iconcerrar_Click(object sender, EventArgs e)
         {
-            string message = "Bạn muốn thoát?";
+            string message = "Bạn có muốn thoát?";
             string caption = "Thông báo";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
             // Displays the MessageBox.
-
             result = MessageBox.Show(this, message, caption, buttons,
                 MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,
                 MessageBoxOptions.RightAlign);
 
             if (result == DialogResult.Yes)
             {
-
                 // Closes the parent form.
-
                 Application.Exit();
-
             }          
         }
 
@@ -80,6 +76,7 @@ namespace QuanLyCuTru_WinForm
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
         private void AbrirFormInPanel(object ob)
         {
             if (this.panelContent.Controls.Count > 0)
@@ -92,6 +89,7 @@ namespace QuanLyCuTru_WinForm
             form.Show();
 
         }
+
         private void MenuVertical_Paint(object sender, PaintEventArgs e)
         {
 
