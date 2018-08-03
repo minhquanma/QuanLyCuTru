@@ -42,6 +42,7 @@ namespace QuanLyCuTru.DTOs
         public bool DaDuyet { get; set; }
 
         public int LoaiCuTruId { get; set; }
+        public string LoaiCuTru { get; set; }
 
         public int? CanBoId { get; set; }
 

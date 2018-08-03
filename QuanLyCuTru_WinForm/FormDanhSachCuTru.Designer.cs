@@ -34,11 +34,11 @@
             this.btnChiTiet = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.dgvDaDangKy = new System.Windows.Forms.DataGridView();
+            this.dgvCuTrus = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnThemMoi = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDaDangKy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCuTrus)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,16 +120,16 @@
             this.btnTimKiem.Text = "TÌM KIẾM";
             this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
-            // dgvDaDangKy
+            // dgvCuTrus
             // 
-            this.dgvDaDangKy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvCuTrus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDaDangKy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDaDangKy.Location = new System.Drawing.Point(23, 144);
-            this.dgvDaDangKy.Name = "dgvDaDangKy";
-            this.dgvDaDangKy.Size = new System.Drawing.Size(684, 369);
-            this.dgvDaDangKy.TabIndex = 44;
+            this.dgvCuTrus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCuTrus.Location = new System.Drawing.Point(23, 144);
+            this.dgvCuTrus.Name = "dgvCuTrus";
+            this.dgvCuTrus.Size = new System.Drawing.Size(684, 369);
+            this.dgvCuTrus.TabIndex = 44;
             // 
             // panel3
             // 
@@ -180,13 +180,13 @@
             this.Controls.Add(this.btnChiTiet);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnTimKiem);
-            this.Controls.Add(this.dgvDaDangKy);
+            this.Controls.Add(this.dgvCuTrus);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDanhSachCuTru";
             this.Text = "FormDanhSachCuTru";
             this.Load += new System.EventHandler(this.FormDanhSachCuTru_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDaDangKy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCuTrus)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -202,7 +202,7 @@
         private System.Windows.Forms.Button btnChiTiet;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.DataGridView dgvDaDangKy;
+        private System.Windows.Forms.DataGridView dgvCuTrus;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnThemMoi;

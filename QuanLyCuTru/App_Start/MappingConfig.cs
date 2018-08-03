@@ -25,6 +25,10 @@ namespace QuanLyCuTru.App_Start
                     .ForMember(
                         dest => dest.CongDans,
                         option => option.MapFrom(f => f.CongDans.Select(Mapper.Map<NguoiDung, NguoiDungDTO>))
+                    )
+                    .ForMember(
+                        dest => dest.LoaiCuTru,
+                        option => option.MapFrom(f => f.LoaiCuTru.Ten)
                     );
                 config.CreateMap<CuTruDTO, CuTru>();
 

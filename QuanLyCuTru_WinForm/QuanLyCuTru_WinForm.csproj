@@ -104,6 +104,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingSources\CuTruBindingSource.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,8 +207,10 @@
     <Compile Include="FormDanhSachCuTruDaDuyet.Designer.cs">
       <DependentUpon>FormDanhSachCuTruDaDuyet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\CuTruRepository.cs" />
-    <Compile Include="Models\Server.cs" />
+    <Compile Include="Services\CuTruRepository.cs" />
+    <Compile Include="Services\NguoiDungRepository.cs" />
+    <Compile Include="Services\Repository.cs" />
+    <Compile Include="Services\Server.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Content\img\1525387737.jpg" />

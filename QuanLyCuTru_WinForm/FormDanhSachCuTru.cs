@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyCuTru_WinForm.BindingSources;
+using QuanLyCuTru_WinForm.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +14,17 @@ namespace QuanLyCuTru_WinForm
 {
     public partial class FormDanhSachCuTru : Form
     {
+        CuTruRepository repo = new CuTruRepository();
+
         public FormDanhSachCuTru()
         {
             InitializeComponent();
         }
 
-        private void FormDanhSachCuTru_Load(object sender, EventArgs e)
+        private async void FormDanhSachCuTru_Load(object sender, EventArgs e)
         {
-
+            var list = await repo.GetAll();
+            CuTruBindingSource.Bind(list, dgvCuTrus);
         }
 
         private void btnThemMoi_Click(object sender, EventArgs e)

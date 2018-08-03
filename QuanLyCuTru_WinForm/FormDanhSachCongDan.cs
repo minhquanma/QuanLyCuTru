@@ -10,11 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PagedList;
+using QuanLyCuTru_WinForm.Models;
 
 namespace QuanLyCuTru_WinForm
 {
     public partial class FormDanhSachCongDan : Form
     {
+        CuTruRepository repo = new CuTruRepository();
+
         public FormDanhSachCongDan()
         {
             InitializeComponent();   
@@ -34,17 +37,7 @@ namespace QuanLyCuTru_WinForm
         }
         private async void btnHienThiDanhSach_Click(object sender, EventArgs e)
         {
-           
-            List<Student> list = new List<Student>();
-            int n = 10;
-            for (int i = 0; i<n; i++)
-            {
-                list.Add(new Student("Luong", "nam"));
-                list.Add(new Student("Quan", "nam"));
-                list.Add(new Student("Tan", "nam"));
-                list.Add(new Student("Viet", "nam"));
-            }
-            dgvDanhSachCongDan.DataSource = list;
+            dgvDanhSachCongDan.DataSource = await repo.GetAll();
         }
 
         private void panelDanhSachCongDan_Paint(object sender, PaintEventArgs e)

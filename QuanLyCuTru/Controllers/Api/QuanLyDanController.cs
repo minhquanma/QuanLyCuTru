@@ -16,7 +16,7 @@ using AutoMapper;
 namespace QuanLyCuTru.Controllers.Api
 {
     [RoutePrefix("api/QuanLyDan")]
-    [Authorize(Roles = "Admin, CanhSatKhuVuc")]
+    //[Authorize(Roles = "Admin, CanhSatKhuVuc")]
     public class QuanLyDanController : ApiController
     {
         private ApplicationDbContext db;
