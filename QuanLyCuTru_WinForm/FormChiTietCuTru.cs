@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuTru.DTOs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,25 @@ namespace QuanLyCuTru_WinForm
 {
     public partial class FormChiTietCuTru : Form
     {
+        public CuTruDTO CuTru { get; set; }
+
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+        public void LoadCuTruData()
+        {
+            this.lbDiaChi.Text = CuTru.DiaChi;
+        }
+
+        public FormChiTietCuTru(CuTruDTO cuTru)
+        {
+            CuTru = cuTru;
+            InitializeComponent();
+            LoadCuTruData();
+        }
+
         public FormChiTietCuTru()
         {
             InitializeComponent();

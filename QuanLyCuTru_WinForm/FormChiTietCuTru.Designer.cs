@@ -38,6 +38,7 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvDanhSachCongDan = new System.Windows.Forms.DataGridView();
@@ -64,7 +65,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).BeginInit();
             this.panel2.SuspendLayout();
@@ -173,6 +173,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(949, 60);
             this.panel1.TabIndex = 94;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.Color.Brown;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(843, 8);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(94, 50);
+            this.btnXoa.TabIndex = 93;
+            this.btnXoa.Text = "XÓA";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // line1
             // 
@@ -307,7 +320,7 @@
             // 
             this.lbDiaChi.AutoSize = true;
             this.lbDiaChi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDiaChi.Location = new System.Drawing.Point(161, 15);
+            this.lbDiaChi.Location = new System.Drawing.Point(161, 17);
             this.lbDiaChi.Name = "lbDiaChi";
             this.lbDiaChi.Size = new System.Drawing.Size(311, 17);
             this.lbDiaChi.TabIndex = 105;
@@ -452,19 +465,6 @@
             this.label2.Size = new System.Drawing.Size(56, 20);
             this.label2.TabIndex = 90;
             this.label2.Text = "Địa chỉ";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BackColor = System.Drawing.Color.Brown;
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(843, 8);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(94, 50);
-            this.btnXoa.TabIndex = 93;
-            this.btnXoa.Text = "XÓA";
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // FormChiTietCuTru
             // 

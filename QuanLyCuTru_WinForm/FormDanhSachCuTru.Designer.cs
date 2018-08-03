@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.cbbTen = new System.Windows.Forms.ComboBox();
             this.btnChiTiet = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.dgvCuTrus = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnThemMoi = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCuTrus)).BeginInit();
+            this.dgvCuTru = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCuTru)).BeginInit();
             this.SuspendLayout();
             // 
             // cbbGioiTinh
@@ -120,17 +122,6 @@
             this.btnTimKiem.Text = "TÌM KIẾM";
             this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
-            // dgvCuTrus
-            // 
-            this.dgvCuTrus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCuTrus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCuTrus.Location = new System.Drawing.Point(23, 144);
-            this.dgvCuTrus.Name = "dgvCuTrus";
-            this.dgvCuTrus.Size = new System.Drawing.Size(684, 369);
-            this.dgvCuTrus.TabIndex = 44;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
@@ -168,11 +159,34 @@
             this.btnThemMoi.UseVisualStyleBackColor = false;
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
+            // dgvCuTru
+            // 
+            this.dgvCuTru.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCuTru.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCuTru.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCuTru.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dgvCuTru.Location = new System.Drawing.Point(31, 144);
+            this.dgvCuTru.Name = "dgvCuTru";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dgvCuTru.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCuTru.Size = new System.Drawing.Size(687, 369);
+            this.dgvCuTru.TabIndex = 54;
+            // 
             // FormDanhSachCuTru
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 538);
+            this.Controls.Add(this.dgvCuTru);
             this.Controls.Add(this.btnThemMoi);
             this.Controls.Add(this.cbbGioiTinh);
             this.Controls.Add(this.txtTimKiem);
@@ -180,15 +194,14 @@
             this.Controls.Add(this.btnChiTiet);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnTimKiem);
-            this.Controls.Add(this.dgvCuTrus);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDanhSachCuTru";
             this.Text = "FormDanhSachCuTru";
             this.Load += new System.EventHandler(this.FormDanhSachCuTru_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCuTrus)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCuTru)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,9 +215,9 @@
         private System.Windows.Forms.Button btnChiTiet;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.DataGridView dgvCuTrus;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnThemMoi;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dgvCuTru;
     }
 }

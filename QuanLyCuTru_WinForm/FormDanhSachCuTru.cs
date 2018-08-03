@@ -1,4 +1,5 @@
-﻿using QuanLyCuTru_WinForm.BindingSources;
+﻿using QuanLyCuTru.DTOs;
+using QuanLyCuTru_WinForm.BindingSources;
 using QuanLyCuTru_WinForm.Models;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace QuanLyCuTru_WinForm
         private async void FormDanhSachCuTru_Load(object sender, EventArgs e)
         {
             var list = await repo.GetAll();
-            CuTruBindingSource.Bind(list, dgvCuTrus);
+            CuTruBindingSource.Bind(list, dgvCuTru);
         }
 
         private void btnThemMoi_Click(object sender, EventArgs e)
@@ -35,8 +36,24 @@ namespace QuanLyCuTru_WinForm
 
         private void btnChiTiet_Click(object sender, EventArgs e)
         {
-            FormChiTietCuTru form = new FormChiTietCuTru();
-            form.Show();
+            var selectedCuTrus = new List<CuTruDTO>();
+
+            for (int i = 0; i < dgvCuTru.SelectedRows.Count; i++)
+            {
+                var selectedRows = dgvCuTru.SelectedRows[i];
+                var cuTru = (CuTruDTO)selectedRows.DataBoundItem;
+
+                selectedCuTrus.Add(cuTru);
+            }
+
+            var single = selectedCuTrus.SingleOrDefault();
+
+            if (single != null)
+            {
+                FormChiTietCuTru form = new FormChiTietCuTru(single);
+                form.Show();
+            }
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
