@@ -11,8 +11,8 @@ namespace QuanLyCuTru_WinForm.Models
     abstract class Repository
     {
         // Get server configuration data from Server class
-        protected string host;
-        protected HttpClient client;
+        protected static string host;
+        protected static HttpClient client;
         protected abstract void DefineHost();
 
         private string loginToken; // this var stores login token for auth

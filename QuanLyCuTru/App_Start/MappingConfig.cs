@@ -42,12 +42,16 @@ namespace QuanLyCuTru.App_Start
                 //        option => option.MapFrom(f => f.CongDans.Select(c => c.Id))
                 //     );
 
-                //config.CreateMap<CuTruDTO, CuTru>()
-                //    .ForMember(dest => dest.Id, option => option.Ignore())
-                //    .ForMember(
-                //        dest => dest.CongDans,
-                //        option => option.Ignore()
-                //    );
+                config.CreateMap<CuTruDTO, CuTru>()
+                    .ForMember(dest => dest.Id, option => option.Ignore())
+                    .ForMember(
+                        dest => dest.CongDans,
+                        option => option.Ignore()
+                    )
+                    .ForMember(
+                        dest => dest.LoaiCuTru,
+                        option => option.Ignore()
+                    );
             });
         }
     }

@@ -81,7 +81,14 @@ namespace QuanLyCuTru.Models
             get
             {
                 // Get the number of CongDans in this CuTru object
-                int numberOfCongDans = CongDans.Count();
+                int numberOfCongDans;
+                try
+                {
+                    numberOfCongDans = CongDans.Count();
+                } catch (Exception e)
+                {
+                    numberOfCongDans = 0;
+                }
 
                 switch(numberOfCongDans)
                 {

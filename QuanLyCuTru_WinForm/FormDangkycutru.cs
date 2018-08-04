@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyCuTru.DTOs;
+using QuanLyCuTru_WinForm.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +15,13 @@ namespace QuanLyCuTru_WinForm
 {
     public partial class FormDangKyCuTru : Form
     {
+        CuTruRepository repo = CuTruRepository.Instance;
+
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
         public FormDangKyCuTru()
         {
             InitializeComponent();
@@ -41,6 +46,7 @@ namespace QuanLyCuTru_WinForm
         {
             txtNhapMaCongDan.Text = "";
         }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtNhapMaCongDan.Text))
@@ -57,11 +63,40 @@ namespace QuanLyCuTru_WinForm
             }
         }
 
+        public async void CreateCuTru()
+        {
+            var listCongDan = (List<int>)lbMaCongDan.DataSource;
+            var cuTru = new CuTruDTO
+            {
+                NgayDangKy = dtpNgayDangKy.Value,
+                NgayHetHan = dtpNgayHetHan.Value,
+                NgayTao = dtpNgayTao.Value,
+                Email = txtEmail.Text,
+                DienThoai = txtDienThoai.Text,
+                SoNha = txtSoNha.Text,
+                Duong = txtDuong.Text,
+                Phuong = txtPhuong.Text,
+                Quan = txtQuan.Text,
+                ThanhPho = txtThanhPho.Text,
+                LoaiCuTruId = cbLoaiCuTru.SelectedIndex + 1,
+                CongDanIds = listCongDan
+            };
+
+            try
+            {
+                var url = await repo.CreateCuTruAsync(cuTru);
+                MessageBox.Show("Đã tạo thành công cư trú mới", url.ToString());
+            } catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
             bool txtCompleted = true;
             string errorMessage = "Nhập đầy đủ thông tin rồi thử lại";
             string successMessage = "Thành công";
+
             //Kiểm tra textbox có rỗng ko
             foreach (Control c in Controls)
             {
@@ -73,6 +108,7 @@ namespace QuanLyCuTru_WinForm
                     }
                 }
             }
+
             if (txtCompleted == false)
             {
                 MessageBox.Show(errorMessage, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -80,8 +116,10 @@ namespace QuanLyCuTru_WinForm
             if (txtCompleted == true)
             {
                 MessageBox.Show(successMessage, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CreateCuTru();
             }
-            //Đổi màu textbox rỗng
+
+            // Đổi màu textbox rỗng
             foreach (TextBox tb in this.Controls.OfType<TextBox>())
             {
                 if (String.IsNullOrEmpty(tb.Text))

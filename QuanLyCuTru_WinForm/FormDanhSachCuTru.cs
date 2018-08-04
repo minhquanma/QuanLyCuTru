@@ -15,7 +15,7 @@ namespace QuanLyCuTru_WinForm
 {
     public partial class FormDanhSachCuTru : Form
     {
-        CuTruRepository repo = new CuTruRepository();
+        CuTruRepository repo = CuTruRepository.Instance;
 
         public FormDanhSachCuTru()
         {
@@ -24,7 +24,7 @@ namespace QuanLyCuTru_WinForm
 
         private async void FormDanhSachCuTru_Load(object sender, EventArgs e)
         {
-            var list = await repo.GetAll();
+            var list = await repo.GetAllAsync();
             CuTruBindingSource.Bind(list, dgvCuTru);
           
         }

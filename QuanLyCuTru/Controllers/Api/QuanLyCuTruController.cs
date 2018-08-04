@@ -10,6 +10,7 @@ using AutoMapper;
 using Microsoft.AspNet.Identity;
 using System.Web;
 using System.Web.Http.Description;
+using System.Collections.ObjectModel;
 
 namespace QuanLyCuTru.Controllers.Api
 {
@@ -133,15 +134,30 @@ namespace QuanLyCuTru.Controllers.Api
         [ResponseType(typeof(CuTru))]
         public IHttpActionResult CreateCuTru(CuTruDTO dto)
         {
-            if (ModelState.IsValid)
-            {
-                var cuTru = Mapper.Map<CuTruDTO, CuTru>(dto);
-                db.CuTrus.Add(cuTru);
-                db.SaveChanges();
+            if (ModelState.IsValid == false)
+                return BadRequest();
+            
+            var cuTru = Mapper.Map<CuTruDTO, CuTru>(dto);
 
-                return Created(new Uri(Request.RequestUri + "/" + cuTru.Id), cuTru);
+            // Create an empty CongDans instance
+            cuTru.CongDans = new Collection<NguoiDung>();
+
+            // Add CongDan entities into posted CuTru
+            foreach (var id in dto.CongDanIds)
+            {
+                // Query each congdan
+                var congDan = db.NguoiDungs.SingleOrDefault(c => c.Id == id);
+
+                if (congDan == null)
+                    return BadRequest();
+
+                cuTru.CongDans.Add(congDan);
             }
-            return BadRequest();
+
+            db.CuTrus.Add(cuTru);
+            db.SaveChanges();
+
+            return Created(new Uri(Request.RequestUri + "" + cuTru.Id), cuTru);
         }
 
         // POST: /api/quanlycutru/{id}

@@ -37,7 +37,7 @@ namespace QuanLyCuTru_WinForm
         }
         private async void btnHienThiDanhSach_Click(object sender, EventArgs e)
         {
-            dgvDanhSachCongDan.DataSource = await repo.GetAll();
+            dgvDanhSachCongDan.DataSource = await repo.GetAllAsync();
         }
 
         private void panelDanhSachCongDan_Paint(object sender, PaintEventArgs e)

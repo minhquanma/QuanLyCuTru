@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyCuTru_WinForm.Models
 {
-    class CuTruRepository : Repository
+    sealed class CuTruRepository : Repository
     {
         protected override void DefineHost()
         {
@@ -22,7 +22,10 @@ namespace QuanLyCuTru_WinForm.Models
 
         }
 
-        public async Task<List<CuTruDTO>> GetAll()
+        private static readonly CuTruRepository instance = new CuTruRepository();
+        public static CuTruRepository Instance => instance;
+
+        public async Task<List<CuTruDTO>> GetAllAsync()
         {
             List<CuTruDTO> cuTrus = null;
 
@@ -35,7 +38,7 @@ namespace QuanLyCuTru_WinForm.Models
             return cuTrus;
         }
 
-        public async Task<List<CuTruDTO>> GetByAddress(string diaChi)
+        public async Task<List<CuTruDTO>> GetByAddressAsync(string diaChi)
         {
             List<CuTruDTO> cuTrus = null;
 
@@ -51,7 +54,7 @@ namespace QuanLyCuTru_WinForm.Models
             return cuTrus;
         }
 
-        public async Task<List<CuTruDTO>> GetByType(int loai)
+        public async Task<List<CuTruDTO>> GetByTypeAsync(int loai)
         {
             List<CuTruDTO> cuTrus = null;
 
@@ -67,7 +70,7 @@ namespace QuanLyCuTru_WinForm.Models
             return cuTrus;
         }
 
-        public async Task<CuTruDTO> GetById(int id)
+        public async Task<CuTruDTO> GetByIdAsync(int id)
         {
             CuTruDTO cuTru = null;
 
@@ -80,5 +83,12 @@ namespace QuanLyCuTru_WinForm.Models
             return cuTru;
         }
 
+        public async Task<Uri> CreateCuTruAsync(CuTruDTO cuTru)
+        {
+            HttpResponseMessage res = await client.PostAsJsonAsync(host, cuTru);
+            res.EnsureSuccessStatusCode();
+
+            return res.Headers.Location;
+        }
     }
 }
