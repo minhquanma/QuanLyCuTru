@@ -26,6 +26,7 @@ namespace QuanLyCuTru_WinForm
         {
             var list = await repo.GetAll();
             CuTruBindingSource.Bind(list, dgvCuTru);
+          
         }
 
         private void btnThemMoi_Click(object sender, EventArgs e)
@@ -38,18 +39,28 @@ namespace QuanLyCuTru_WinForm
         {
             var selectedCuTrus = new List<CuTruDTO>();
 
+            // Đổ danh sách các Cư Trú đã chọn vào List
             for (int i = 0; i < dgvCuTru.SelectedRows.Count; i++)
             {
+                // Lấy ra dòng thứ i
                 var selectedRows = dgvCuTru.SelectedRows[i];
+
+                // Downcast nó sang kiểu CuTruDTO, vì DataBoundItem là kiểu object
                 var cuTru = (CuTruDTO)selectedRows.DataBoundItem;
 
                 selectedCuTrus.Add(cuTru);
             }
 
-            var single = selectedCuTrus.SingleOrDefault();
+            // Lấy ra 1 Cứ Trú đầu tiên trong danh sách
+            var single = selectedCuTrus.FirstOrDefault();
 
-            if (single != null)
+            if (single == null)
             {
+                MessageBox.Show("Vui lòng chọn 1 dòng", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                // Tạo form Chi Tiết đồng thời truyền object CuTru qua
                 FormChiTietCuTru form = new FormChiTietCuTru(single);
                 form.Show();
             }

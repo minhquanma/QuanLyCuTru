@@ -45,6 +45,7 @@ namespace QuanLyCuTru.DTOs
         public string LoaiCuTru { get; set; }
 
         public int? CanBoId { get; set; }
+        public string CanBoDuyet { get; set; }
 
         public virtual ICollection<NguoiDungDTO> CongDans { get; set; }
 

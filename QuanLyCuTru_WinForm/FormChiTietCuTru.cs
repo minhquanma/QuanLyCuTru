@@ -1,4 +1,5 @@
 ﻿using QuanLyCuTru.DTOs;
+using QuanLyCuTru_WinForm.BindingSources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +24,19 @@ namespace QuanLyCuTru_WinForm
 
         public void LoadCuTruData()
         {
-            this.lbDiaChi.Text = CuTru.DiaChi;
+            lbID.Text = CuTru.Id.ToString();
+            lbDiaChi.Text = CuTru.DiaChi;
+            lbLoaiCuTru.Text = CuTru.LoaiCuTru;
+            lbNgayTao.Text = CuTru.NgayTao.ToShortDateString();
+            lbEmail.Text = CuTru.Email;
+            lbDienThoai.Text = CuTru.DienThoai;
+            lbCanBoDangKy.Text = CuTru.CanBoDuyet;
+
+            // Load danh sách công dân
+            if (CuTru.CongDans != null)
+            {
+                NguoiDungBindingSource.Bind(CuTru.CongDans, dgvDanhSachCongDan);
+            }
         }
 
         public FormChiTietCuTru(CuTruDTO cuTru)

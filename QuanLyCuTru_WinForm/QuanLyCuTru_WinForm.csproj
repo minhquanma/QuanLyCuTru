@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BindingSources\CuTruBindingSource.cs" />
+    <Compile Include="BindingSources\NguoiDungBindingSource.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
