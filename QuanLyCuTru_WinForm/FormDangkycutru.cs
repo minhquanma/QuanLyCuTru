@@ -27,29 +27,19 @@ namespace QuanLyCuTru_WinForm
             DateTime localDate = DateTime.Now;
             foreach (TextBox tb in this.Controls.OfType<TextBox>())
             {
-                tb.Text="";
+                tb.Text = "";
             }
             foreach (DateTimePicker tb in this.Controls.OfType<DateTimePicker>())
             {
                 tb.Value = localDate;
             }
             txtNhapMaCongDan.Text = "Nhập mã công dân";
-            dgvLoaiCuTru.DataSource = null;
+            lbMaCongDan.DataSource = null;
         }
 
         private void txtNhapMaCongDan_Click(object sender, EventArgs e)
         {
-            txtNhapMaCongDan.Text="";           
-        }
-        class NhapMaCongDan
-        {
-            public int maCongDan { get; set; }
-            public NhapMaCongDan() { }
-            public NhapMaCongDan(int maCongDan)
-            {
-                this.maCongDan = maCongDan;
-            }
-
+            txtNhapMaCongDan.Text = "";
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -59,10 +49,11 @@ namespace QuanLyCuTru_WinForm
             }
             else
             {
-                var maCongDan = int.Parse(txtNhapMaCongDan.Text);
-                List <NhapMaCongDan> list = new List<NhapMaCongDan> { };
-                list.Add(new NhapMaCongDan(maCongDan));
-                dgvLoaiCuTru.DataSource = list;
+                List<int> list = new List<int>();
+                list.Add(int.Parse(txtNhapMaCongDan.Text));
+                
+                lbMaCongDan.DataSource = list;
+                
             }
         }
 
@@ -113,6 +104,11 @@ namespace QuanLyCuTru_WinForm
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }     
+
+        }
+        private void panelTop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

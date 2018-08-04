@@ -54,11 +54,12 @@
             this.txtDuong = new System.Windows.Forms.TextBox();
             this.txtNhapMaCongDan = new System.Windows.Forms.TextBox();
             this.btnThem = new System.Windows.Forms.Button();
-            this.dgvLoaiCuTru = new System.Windows.Forms.DataGridView();
             this.panelTop = new System.Windows.Forms.Panel();
             this.ptbThoat = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiCuTru)).BeginInit();
+            this.cbLoaiCuTru = new System.Windows.Forms.ComboBox();
+            this.lbMaCongDan = new System.Windows.Forms.ListBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +67,7 @@
             // dtpNgayTao
             // 
             this.dtpNgayTao.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtpNgayTao.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayTao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayTao.Location = new System.Drawing.Point(112, 78);
             this.dtpNgayTao.Name = "dtpNgayTao";
@@ -289,7 +291,7 @@
             this.btnTaoMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaoMoi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnTaoMoi.ForeColor = System.Drawing.Color.White;
-            this.btnTaoMoi.Location = new System.Drawing.Point(533, 471);
+            this.btnTaoMoi.Location = new System.Drawing.Point(173, 471);
             this.btnTaoMoi.Name = "btnTaoMoi";
             this.btnTaoMoi.Size = new System.Drawing.Size(100, 37);
             this.btnTaoMoi.TabIndex = 13;
@@ -304,7 +306,7 @@
             this.btnNhapLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNhapLai.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnNhapLai.ForeColor = System.Drawing.Color.White;
-            this.btnNhapLai.Location = new System.Drawing.Point(639, 471);
+            this.btnNhapLai.Location = new System.Drawing.Point(279, 471);
             this.btnNhapLai.Name = "btnNhapLai";
             this.btnNhapLai.Size = new System.Drawing.Size(100, 37);
             this.btnNhapLai.TabIndex = 14;
@@ -327,7 +329,7 @@
             this.txtNhapMaCongDan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtNhapMaCongDan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNhapMaCongDan.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhapMaCongDan.Location = new System.Drawing.Point(469, 407);
+            this.txtNhapMaCongDan.Location = new System.Drawing.Point(469, 416);
             this.txtNhapMaCongDan.Multiline = true;
             this.txtNhapMaCongDan.Name = "txtNhapMaCongDan";
             this.txtNhapMaCongDan.Size = new System.Drawing.Size(207, 37);
@@ -342,23 +344,13 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(673, 407);
+            this.btnThem.Location = new System.Drawing.Point(669, 417);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(66, 37);
             this.btnThem.TabIndex = 12;
             this.btnThem.Text = "THÊM";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // dgvLoaiCuTru
-            // 
-            this.dgvLoaiCuTru.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvLoaiCuTru.BackgroundColor = System.Drawing.Color.White;
-            this.dgvLoaiCuTru.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLoaiCuTru.Location = new System.Drawing.Point(469, 257);
-            this.dgvLoaiCuTru.Name = "dgvLoaiCuTru";
-            this.dgvLoaiCuTru.Size = new System.Drawing.Size(267, 136);
-            this.dgvLoaiCuTru.TabIndex = 35;
             // 
             // panelTop
             // 
@@ -370,6 +362,7 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(870, 30);
             this.panelTop.TabIndex = 68;
+            this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
             this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
             // 
             // ptbThoat
@@ -396,13 +389,41 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Đăng ký cư trú";
             // 
+            // cbLoaiCuTru
+            // 
+            this.cbLoaiCuTru.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLoaiCuTru.FormattingEnabled = true;
+            this.cbLoaiCuTru.Location = new System.Drawing.Point(469, 267);
+            this.cbLoaiCuTru.Name = "cbLoaiCuTru";
+            this.cbLoaiCuTru.Size = new System.Drawing.Size(267, 33);
+            this.cbLoaiCuTru.TabIndex = 69;
+            // 
+            // lbMaCongDan
+            // 
+            this.lbMaCongDan.FormattingEnabled = true;
+            this.lbMaCongDan.Location = new System.Drawing.Point(469, 328);
+            this.lbMaCongDan.Name = "lbMaCongDan";
+            this.lbMaCongDan.Size = new System.Drawing.Size(267, 82);
+            this.lbMaCongDan.TabIndex = 71;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(466, 308);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(89, 13);
+            this.label13.TabIndex = 72;
+            this.label13.Text = "Danh sách cư trú";
+            // 
             // FormDangKyCuTru
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 520);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.lbMaCongDan);
+            this.Controls.Add(this.cbLoaiCuTru);
             this.Controls.Add(this.panelTop);
-            this.Controls.Add(this.dgvLoaiCuTru);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtNhapMaCongDan);
             this.Controls.Add(this.txtDuong);
@@ -431,7 +452,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDangKyCuTru";
             this.Text = "FormDangkycutru";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiCuTru)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).EndInit();
@@ -466,9 +486,11 @@
         private System.Windows.Forms.TextBox txtDuong;
         private System.Windows.Forms.TextBox txtNhapMaCongDan;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DataGridView dgvLoaiCuTru;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.PictureBox ptbThoat;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbLoaiCuTru;
+        private System.Windows.Forms.ListBox lbMaCongDan;
+        private System.Windows.Forms.Label label13;
     }
 }

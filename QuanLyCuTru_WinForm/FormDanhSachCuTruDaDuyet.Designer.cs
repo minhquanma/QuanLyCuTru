@@ -36,6 +36,7 @@
             this.cbbTen = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuTruDaDuyet)).BeginInit();
             this.SuspendLayout();
@@ -94,7 +95,7 @@
             this.btnChiTiet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChiTiet.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChiTiet.ForeColor = System.Drawing.Color.Transparent;
-            this.btnChiTiet.Location = new System.Drawing.Point(727, 489);
+            this.btnChiTiet.Location = new System.Drawing.Point(621, 491);
             this.btnChiTiet.Name = "btnChiTiet";
             this.btnChiTiet.Size = new System.Drawing.Size(100, 35);
             this.btnChiTiet.TabIndex = 57;
@@ -134,11 +135,27 @@
             this.cbbGioiTinh.TabIndex = 61;
             this.cbbGioiTinh.Text = "Giới tính";
             // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa.BackColor = System.Drawing.Color.Brown;
+            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.Transparent;
+            this.btnXoa.Location = new System.Drawing.Point(727, 491);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(100, 35);
+            this.btnXoa.TabIndex = 63;
+            this.btnXoa.Text = "XÓA";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            // 
             // FormDanhSachCuTruDaDuyet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 538);
+            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.cbbGioiTinh);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.cbbTen);
@@ -166,5 +183,6 @@
         private System.Windows.Forms.ComboBox cbbTen;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.ComboBox cbbGioiTinh;
+        private System.Windows.Forms.Button btnXoa;
     }
 }
