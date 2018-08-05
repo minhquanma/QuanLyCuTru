@@ -1,5 +1,6 @@
 ﻿using QuanLyCuTru.DTOs;
 using QuanLyCuTru.Models;
+using QuanLyCuTru_WinForm.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,26 +11,20 @@ using System.Threading.Tasks;
 
 namespace QuanLyCuTru_WinForm.Models
 {
-    sealed class CuTruRepository : Repository
+    class CuTruService
     {
-        protected override void DefineHost()
+        private string host = HttpService.CuTru;
+        private HttpClient client = HttpService.Client;
+
+        public CuTruService()
         {
-            host = Server.CuTru;
         }
-
-        public CuTruRepository():base()
-        {
-
-        }
-
-        private static readonly CuTruRepository instance = new CuTruRepository();
-        public static CuTruRepository Instance => instance;
 
         public async Task<List<CuTruDTO>> GetAllAsync()
         {
             List<CuTruDTO> cuTrus = null;
 
-            HttpResponseMessage res = await client.GetAsync(host);
+            HttpResponseMessage res = await HttpService.Client.GetAsync(host);
             if (res.IsSuccessStatusCode)
             {
                 cuTrus = await res.Content.ReadAsAsync<List<CuTruDTO>>();

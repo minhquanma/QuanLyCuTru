@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuTru.DTOs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,19 @@ namespace QuanLyCuTru_WinForm
 {
     public partial class FormSuaCongDan : Form
     {
+        public NguoiDungDTO CongDan { get; set; }
+
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+        public FormSuaCongDan(NguoiDungDTO congDan)
+        {
+            CongDan = congDan;
+            InitializeComponent();
+        }
+
         public FormSuaCongDan()
         {
             InitializeComponent();
@@ -24,8 +34,19 @@ namespace QuanLyCuTru_WinForm
 
         private void FormSuaCongDan_Load(object sender, EventArgs e)
         {
+            txtHoTen.Text = CongDan.HoTen;
 
+            txtDienThoai.Text = CongDan.DienThoai;
+            txtSoNha.Text = CongDan.SoNha;
+            txtDuong.Text = CongDan.Duong;
+            txtPhuong.Text = CongDan.Phuong;
+            txtQuan.Text = CongDan.Quan;
+            txtThanhPho.Text = CongDan.ThanhPho;
+            txtNoiSinh.Text = CongDan.NoiSinh;
+            txtQuocTich.Text = CongDan.QuocTich;
+            txtQueQuan.Text = CongDan.QueQuan;
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
 

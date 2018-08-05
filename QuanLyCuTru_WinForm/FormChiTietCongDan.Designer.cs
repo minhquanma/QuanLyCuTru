@@ -34,14 +34,14 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.ptbThoat = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.linklabelEmail = new System.Windows.Forms.LinkLabel();
-            this.labelQuocTich = new System.Windows.Forms.Label();
-            this.labelQueQuan = new System.Windows.Forms.Label();
-            this.labelNoiSinh = new System.Windows.Forms.Label();
-            this.labelDiaChi = new System.Windows.Forms.Label();
-            this.labelSinhNhat = new System.Windows.Forms.Label();
-            this.labelGioiTinh = new System.Windows.Forms.Label();
-            this.labelID = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.LinkLabel();
+            this.lbQuocTich = new System.Windows.Forms.Label();
+            this.lbQueQuan = new System.Windows.Forms.Label();
+            this.lbNoiSinh = new System.Windows.Forms.Label();
+            this.lbDiaChi = new System.Windows.Forms.Label();
+            this.lbSinhNhat = new System.Windows.Forms.Label();
+            this.lbGioiTinh = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbTen = new System.Windows.Forms.Label();
+            this.lbHoTen = new System.Windows.Forms.Label();
             this.line2 = new DevComponents.DotNetBar.Controls.Line();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.ptbAvatar = new System.Windows.Forms.PictureBox();
@@ -65,14 +65,14 @@
             // 
             this.panelContent.Controls.Add(this.btnXoa);
             this.panelContent.Controls.Add(this.panelTop);
-            this.panelContent.Controls.Add(this.linklabelEmail);
-            this.panelContent.Controls.Add(this.labelQuocTich);
-            this.panelContent.Controls.Add(this.labelQueQuan);
-            this.panelContent.Controls.Add(this.labelNoiSinh);
-            this.panelContent.Controls.Add(this.labelDiaChi);
-            this.panelContent.Controls.Add(this.labelSinhNhat);
-            this.panelContent.Controls.Add(this.labelGioiTinh);
-            this.panelContent.Controls.Add(this.labelID);
+            this.panelContent.Controls.Add(this.lbEmail);
+            this.panelContent.Controls.Add(this.lbQuocTich);
+            this.panelContent.Controls.Add(this.lbQueQuan);
+            this.panelContent.Controls.Add(this.lbNoiSinh);
+            this.panelContent.Controls.Add(this.lbDiaChi);
+            this.panelContent.Controls.Add(this.lbSinhNhat);
+            this.panelContent.Controls.Add(this.lbGioiTinh);
+            this.panelContent.Controls.Add(this.lbID);
             this.panelContent.Controls.Add(this.label9);
             this.panelContent.Controls.Add(this.label8);
             this.panelContent.Controls.Add(this.label7);
@@ -81,7 +81,7 @@
             this.panelContent.Controls.Add(this.label4);
             this.panelContent.Controls.Add(this.label3);
             this.panelContent.Controls.Add(this.label2);
-            this.panelContent.Controls.Add(this.lbTen);
+            this.panelContent.Controls.Add(this.lbHoTen);
             this.panelContent.Controls.Add(this.line2);
             this.panelContent.Controls.Add(this.line1);
             this.panelContent.Controls.Add(this.ptbAvatar);
@@ -142,92 +142,92 @@
             this.label10.TabIndex = 33;
             this.label10.Text = "Thông tin chi tiết";
             // 
-            // linklabelEmail
+            // lbEmail
             // 
-            this.linklabelEmail.AutoSize = true;
-            this.linklabelEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.linklabelEmail.Location = new System.Drawing.Point(517, 145);
-            this.linklabelEmail.Name = "linklabelEmail";
-            this.linklabelEmail.Size = new System.Drawing.Size(128, 17);
-            this.linklabelEmail.TabIndex = 45;
-            this.linklabelEmail.TabStop = true;
-            this.linklabelEmail.Text = "Click vào để đăng ký";
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lbEmail.Location = new System.Drawing.Point(517, 142);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(128, 17);
+            this.lbEmail.TabIndex = 45;
+            this.lbEmail.TabStop = true;
+            this.lbEmail.Text = "Click vào để đăng ký";
             // 
-            // labelQuocTich
+            // lbQuocTich
             // 
-            this.labelQuocTich.AutoSize = true;
-            this.labelQuocTich.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuocTich.Location = new System.Drawing.Point(517, 358);
-            this.labelQuocTich.Name = "labelQuocTich";
-            this.labelQuocTich.Size = new System.Drawing.Size(61, 17);
-            this.labelQuocTich.TabIndex = 44;
-            this.labelQuocTich.Text = "Nhật Bản";
+            this.lbQuocTich.AutoSize = true;
+            this.lbQuocTich.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuocTich.Location = new System.Drawing.Point(517, 361);
+            this.lbQuocTich.Name = "lbQuocTich";
+            this.lbQuocTich.Size = new System.Drawing.Size(61, 17);
+            this.lbQuocTich.TabIndex = 44;
+            this.lbQuocTich.Text = "Nhật Bản";
             // 
-            // labelQueQuan
+            // lbQueQuan
             // 
-            this.labelQueQuan.AutoSize = true;
-            this.labelQueQuan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQueQuan.Location = new System.Drawing.Point(517, 326);
-            this.labelQueQuan.Name = "labelQueQuan";
-            this.labelQueQuan.Size = new System.Drawing.Size(61, 17);
-            this.labelQueQuan.TabIndex = 43;
-            this.labelQueQuan.Text = "Nhật Bản";
+            this.lbQueQuan.AutoSize = true;
+            this.lbQueQuan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQueQuan.Location = new System.Drawing.Point(517, 326);
+            this.lbQueQuan.Name = "lbQueQuan";
+            this.lbQueQuan.Size = new System.Drawing.Size(61, 17);
+            this.lbQueQuan.TabIndex = 43;
+            this.lbQueQuan.Text = "Nhật Bản";
             // 
-            // labelNoiSinh
+            // lbNoiSinh
             // 
-            this.labelNoiSinh.AutoSize = true;
-            this.labelNoiSinh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoiSinh.Location = new System.Drawing.Point(517, 290);
-            this.labelNoiSinh.Name = "labelNoiSinh";
-            this.labelNoiSinh.Size = new System.Drawing.Size(55, 17);
-            this.labelNoiSinh.TabIndex = 42;
-            this.labelNoiSinh.Text = "Fukuoka";
+            this.lbNoiSinh.AutoSize = true;
+            this.lbNoiSinh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNoiSinh.Location = new System.Drawing.Point(517, 290);
+            this.lbNoiSinh.Name = "lbNoiSinh";
+            this.lbNoiSinh.Size = new System.Drawing.Size(55, 17);
+            this.lbNoiSinh.TabIndex = 42;
+            this.lbNoiSinh.Text = "Fukuoka";
             // 
-            // labelDiaChi
+            // lbDiaChi
             // 
-            this.labelDiaChi.AutoSize = true;
-            this.labelDiaChi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDiaChi.Location = new System.Drawing.Point(517, 252);
-            this.labelDiaChi.Name = "labelDiaChi";
-            this.labelDiaChi.Size = new System.Drawing.Size(338, 17);
-            this.labelDiaChi.TabIndex = 41;
-            this.labelDiaChi.Text = "178 Trần Quang Khải, Phường Tân Định, Quận 1, TP.HCM";
+            this.lbDiaChi.AutoSize = true;
+            this.lbDiaChi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDiaChi.Location = new System.Drawing.Point(517, 254);
+            this.lbDiaChi.Name = "lbDiaChi";
+            this.lbDiaChi.Size = new System.Drawing.Size(338, 17);
+            this.lbDiaChi.TabIndex = 41;
+            this.lbDiaChi.Text = "178 Trần Quang Khải, Phường Tân Định, Quận 1, TP.HCM";
             // 
-            // labelSinhNhat
+            // lbSinhNhat
             // 
-            this.labelSinhNhat.AutoSize = true;
-            this.labelSinhNhat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSinhNhat.Location = new System.Drawing.Point(517, 216);
-            this.labelSinhNhat.Name = "labelSinhNhat";
-            this.labelSinhNhat.Size = new System.Drawing.Size(74, 17);
-            this.labelSinhNhat.TabIndex = 40;
-            this.labelSinhNhat.Text = "26/10/1999";
+            this.lbSinhNhat.AutoSize = true;
+            this.lbSinhNhat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSinhNhat.Location = new System.Drawing.Point(517, 219);
+            this.lbSinhNhat.Name = "lbSinhNhat";
+            this.lbSinhNhat.Size = new System.Drawing.Size(74, 17);
+            this.lbSinhNhat.TabIndex = 40;
+            this.lbSinhNhat.Text = "26/10/1999";
             // 
-            // labelGioiTinh
+            // lbGioiTinh
             // 
-            this.labelGioiTinh.AutoSize = true;
-            this.labelGioiTinh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGioiTinh.Location = new System.Drawing.Point(517, 182);
-            this.labelGioiTinh.Name = "labelGioiTinh";
-            this.labelGioiTinh.Size = new System.Drawing.Size(26, 17);
-            this.labelGioiTinh.TabIndex = 39;
-            this.labelGioiTinh.Text = "Nữ";
+            this.lbGioiTinh.AutoSize = true;
+            this.lbGioiTinh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGioiTinh.Location = new System.Drawing.Point(517, 181);
+            this.lbGioiTinh.Name = "lbGioiTinh";
+            this.lbGioiTinh.Size = new System.Drawing.Size(26, 17);
+            this.lbGioiTinh.TabIndex = 39;
+            this.lbGioiTinh.Text = "Nữ";
             // 
-            // labelID
+            // lbID
             // 
-            this.labelID.AutoSize = true;
-            this.labelID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelID.Location = new System.Drawing.Point(517, 105);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(22, 17);
-            this.labelID.TabIndex = 38;
-            this.labelID.Text = "10";
+            this.lbID.AutoSize = true;
+            this.lbID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.Location = new System.Drawing.Point(517, 103);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(22, 17);
+            this.lbID.TabIndex = 38;
+            this.lbID.Text = "10";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(409, 356);
+            this.label9.Location = new System.Drawing.Point(411, 358);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 20);
             this.label9.TabIndex = 37;
@@ -237,7 +237,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(410, 324);
+            this.label8.Location = new System.Drawing.Point(410, 323);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 20);
             this.label8.TabIndex = 36;
@@ -247,7 +247,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(409, 288);
+            this.label7.Location = new System.Drawing.Point(410, 289);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 20);
             this.label7.TabIndex = 35;
@@ -257,7 +257,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(410, 250);
+            this.label6.Location = new System.Drawing.Point(410, 252);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 20);
             this.label6.TabIndex = 34;
@@ -267,7 +267,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(409, 214);
+            this.label5.Location = new System.Drawing.Point(410, 216);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 20);
             this.label5.TabIndex = 33;
@@ -277,7 +277,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(409, 179);
+            this.label4.Location = new System.Drawing.Point(410, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 20);
             this.label4.TabIndex = 32;
@@ -303,15 +303,15 @@
             this.label2.TabIndex = 30;
             this.label2.Text = "Mã số";
             // 
-            // lbTen
+            // lbHoTen
             // 
-            this.lbTen.AutoSize = true;
-            this.lbTen.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTen.Location = new System.Drawing.Point(3, 33);
-            this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(155, 25);
-            this.lbTen.TabIndex = 29;
-            this.lbTen.Text = "Tsukiashi Amane";
+            this.lbHoTen.AutoSize = true;
+            this.lbHoTen.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHoTen.Location = new System.Drawing.Point(3, 33);
+            this.lbHoTen.Name = "lbHoTen";
+            this.lbHoTen.Size = new System.Drawing.Size(155, 25);
+            this.lbHoTen.TabIndex = 29;
+            this.lbHoTen.Text = "Tsukiashi Amane";
             // 
             // line2
             // 
@@ -331,11 +331,12 @@
             // 
             // ptbAvatar
             // 
+            this.ptbAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ptbAvatar.Image = ((System.Drawing.Image)(resources.GetObject("ptbAvatar.Image")));
-            this.ptbAvatar.Location = new System.Drawing.Point(152, 140);
+            this.ptbAvatar.Location = new System.Drawing.Point(107, 131);
             this.ptbAvatar.Name = "ptbAvatar";
-            this.ptbAvatar.Size = new System.Drawing.Size(148, 154);
-            this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbAvatar.Size = new System.Drawing.Size(191, 191);
+            this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbAvatar.TabIndex = 25;
             this.ptbAvatar.TabStop = false;
             // 
@@ -375,14 +376,14 @@
 
         #endregion
         private System.Windows.Forms.Panel panelContent;
-        private System.Windows.Forms.LinkLabel linklabelEmail;
-        private System.Windows.Forms.Label labelQuocTich;
-        private System.Windows.Forms.Label labelQueQuan;
-        private System.Windows.Forms.Label labelNoiSinh;
-        private System.Windows.Forms.Label labelDiaChi;
-        private System.Windows.Forms.Label labelSinhNhat;
-        private System.Windows.Forms.Label labelGioiTinh;
-        private System.Windows.Forms.Label labelID;
+        private System.Windows.Forms.LinkLabel lbEmail;
+        private System.Windows.Forms.Label lbQuocTich;
+        private System.Windows.Forms.Label lbQueQuan;
+        private System.Windows.Forms.Label lbNoiSinh;
+        private System.Windows.Forms.Label lbDiaChi;
+        private System.Windows.Forms.Label lbSinhNhat;
+        private System.Windows.Forms.Label lbGioiTinh;
+        private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -391,7 +392,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbTen;
+        private System.Windows.Forms.Label lbHoTen;
         private DevComponents.DotNetBar.Controls.Line line2;
         private DevComponents.DotNetBar.Controls.Line line1;
         private System.Windows.Forms.PictureBox ptbAvatar;

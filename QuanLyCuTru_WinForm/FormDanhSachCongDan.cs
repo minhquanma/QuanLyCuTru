@@ -11,36 +11,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PagedList;
 using QuanLyCuTru_WinForm.Models;
+using QuanLyCuTru_WinForm.Services;
+using QuanLyCuTru_WinForm.BindingSources;
+using QuanLyCuTru.DTOs;
 
 namespace QuanLyCuTru_WinForm
 {
     public partial class FormDanhSachCongDan : Form
     {
-        CuTruRepository repo = new CuTruRepository();
+        NguoiDungService repo = new NguoiDungService();
 
         public FormDanhSachCongDan()
         {
             InitializeComponent();   
         }
 
-        class Student
+        private async void FormDanhSachCongDan_Load(object sender, EventArgs e)
         {
-            public string Ten { get; set; }
-            public string GioiTinh { get; set; }           
-            public Student() {}
-            public Student(string Ten, string GioiTinh)
-            {
-                this.Ten = Ten;
-                this.GioiTinh = GioiTinh;
-            }
-
-        }
-        private async void btnHienThiDanhSach_Click(object sender, EventArgs e)
-        {
-            dgvDanhSachCongDan.DataSource = await repo.GetAllAsync();
+            NguoiDungBindingSource.Bind(await repo.GetAllAsync(), dgvDanhSachCongDan);
         }
 
-        private void panelDanhSachCongDan_Paint(object sender, PaintEventArgs e)
+        private void btnHienThiDanhSach_Click(object sender, EventArgs e)
         {
 
         }
@@ -50,15 +41,29 @@ namespace QuanLyCuTru_WinForm
             FormThemCongDan form = new FormThemCongDan();
             form.Show();
         }
+
         private void btnChiTiet_Click(object sender, EventArgs e)
         {
-            FormChiTietCongDan form = new FormChiTietCongDan();
-            form.Show();
+            //// Lấy ra 1 Công Dân đầu tiên trong danh sách
+            var selectedRow = dgvDanhSachCongDan.SelectedRows[0];
+            var selectedCongDan = (NguoiDungDTO)selectedRow.DataBoundItem;
+
+            if (selectedCongDan == null)
+            {
+                MessageBox.Show("Vui lòng chọn 1 dòng", "Huhuhu", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                // Tạo form Chi Tiết đồng thời truyền object CuTru qua
+                FormChiTietCongDan form = new FormChiTietCongDan(selectedCongDan);
+                form.Show();
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
     }
 }

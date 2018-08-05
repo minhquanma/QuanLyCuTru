@@ -15,7 +15,7 @@ namespace QuanLyCuTru_WinForm
 {
     public partial class FormDangKyCuTru : Form
     {
-        CuTruRepository repo = CuTruRepository.Instance;
+        CuTruService repo = new CuTruService();
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();

@@ -1,6 +1,7 @@
 ﻿using QuanLyCuTru.DTOs;
 using QuanLyCuTru_WinForm.BindingSources;
 using QuanLyCuTru_WinForm.Models;
+using QuanLyCuTru_WinForm.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace QuanLyCuTru_WinForm
 {
     public partial class FormDanhSachCuTru : Form
     {
-        CuTruRepository repo = CuTruRepository.Instance;
+        CuTruService repo = new CuTruService();
 
         public FormDanhSachCuTru()
         {
@@ -25,8 +26,7 @@ namespace QuanLyCuTru_WinForm
         private async void FormDanhSachCuTru_Load(object sender, EventArgs e)
         {
             var list = await repo.GetAllAsync();
-            CuTruBindingSource.Bind(list, dgvCuTru);
-          
+            CuTruBindingSource.Bind(list, dgvCuTru); 
         }
 
         private void btnThemMoi_Click(object sender, EventArgs e)
@@ -37,31 +37,32 @@ namespace QuanLyCuTru_WinForm
 
         private void btnChiTiet_Click(object sender, EventArgs e)
         {
-            var selectedCuTrus = new List<CuTruDTO>();
+            //var selectedCuTrus = new List<CuTruDTO>();
 
-            // Đổ danh sách các Cư Trú đã chọn vào List
-            for (int i = 0; i < dgvCuTru.SelectedRows.Count; i++)
+            //// Đổ danh sách các Cư Trú đã chọn vào List
+            //for (int i = 0; i < dgvCuTru.SelectedRows.Count; i++)
+            //{
+            //    // Lấy ra dòng thứ i
+            //    var selectedRows = dgvCuTru.SelectedRows[i];
+
+            //    // Downcast nó sang kiểu CuTruDTO, vì DataBoundItem là kiểu object
+            //    var cuTru = (CuTruDTO)selectedRows.DataBoundItem;
+
+            //    selectedCuTrus.Add(cuTru);
+            //}
+
+            // Lấy ra 1 Cư Trú đầu tiên trong danh sách
+            var selectedRow = dgvCuTru.SelectedRows[0];
+            var selectedCuTru = (CuTruDTO)selectedRow.DataBoundItem;
+
+            if (selectedCuTru == null)
             {
-                // Lấy ra dòng thứ i
-                var selectedRows = dgvCuTru.SelectedRows[i];
-
-                // Downcast nó sang kiểu CuTruDTO, vì DataBoundItem là kiểu object
-                var cuTru = (CuTruDTO)selectedRows.DataBoundItem;
-
-                selectedCuTrus.Add(cuTru);
-            }
-
-            // Lấy ra 1 Cứ Trú đầu tiên trong danh sách
-            var single = selectedCuTrus.FirstOrDefault();
-
-            if (single == null)
-            {
-                MessageBox.Show("Vui lòng chọn 1 dòng", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Vui lòng chọn 1 dòng", "Huhu", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
                 // Tạo form Chi Tiết đồng thời truyền object CuTru qua
-                FormChiTietCuTru form = new FormChiTietCuTru(single);
+                FormChiTietCuTru form = new FormChiTietCuTru(selectedCuTru);
                 form.Show();
             }
             

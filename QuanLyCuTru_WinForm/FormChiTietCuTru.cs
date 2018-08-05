@@ -1,5 +1,6 @@
 ﻿using QuanLyCuTru.DTOs;
 using QuanLyCuTru_WinForm.BindingSources;
+using QuanLyCuTru_WinForm.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,6 +72,11 @@ namespace QuanLyCuTru_WinForm
         private void btnXoa_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void panelTop_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

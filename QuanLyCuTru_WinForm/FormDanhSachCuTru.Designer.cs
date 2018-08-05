@@ -1,4 +1,6 @@
-﻿namespace QuanLyCuTru_WinForm
+﻿using System.Windows.Forms;
+
+namespace QuanLyCuTru_WinForm
 {
     partial class FormDanhSachCuTru
     {
@@ -180,6 +182,7 @@
             this.dgvCuTru.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCuTru.Size = new System.Drawing.Size(687, 369);
             this.dgvCuTru.TabIndex = 54;
+            this.dgvCuTru.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             // 
             // FormDanhSachCuTru
             // 
