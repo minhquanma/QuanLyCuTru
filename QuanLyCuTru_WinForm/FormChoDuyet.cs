@@ -1,4 +1,7 @@
-﻿using System;
+﻿using QuanLyCuTru.DTOs;
+using QuanLyCuTru_WinForm.BindingSources;
+using QuanLyCuTru_WinForm.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,27 +17,47 @@ namespace QuanLyCuTru_WinForm
 {
     public partial class FormChoDuyet : Form
     {
-        private HttpClient client;
+        CuTruService repo = new CuTruService();
+
         public FormChoDuyet()
         {
             InitializeComponent();
-            // Initialize HttpClient
-            client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost:58360");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "Uyi1bj34Gl0ZabPiTdvlKCA8gp2yi1QZjD7h-cto9F-TSN_V-elmy_9BLMeKPWhJZRIaSPr98NOh8WM7sxyMsncGAyhhyCGyPBfVd_QlfLh65h4BY_T4NOENfgWyzS2d3Y8uau2hCUnS3d1luIiwLIXRXzlZSCFU5xCbttULNkYFqITjG8lVcwRu4i-0h-O7VVPL-nul7LZ_QWPPxtGJv_YUfCLaXtbNTVDC6pkB84qUFYzXKMqosalsZZEpKQrLwdMIzWt99I0RphDoONtQQU4fiBPry6tU_hQe84wL_wcn679I6yaQLZLwtpqaCngaW76WDyicS6a6bUbM9a22JTYOEn-8UQ9amzF4wb4mwvMv7jdpqN7iysNzyOgWtWrOmjxJLM82JwPUrb42wU-SaNf4VaVKGc1w1HuGga7e2xM");
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async void FormChoDuyet_Load(object sender, EventArgs e)
+        {
+            CuTruBindingSource.Bind(await repo.GetByState(false), dgvDanhSachChoDuyet);
+        }
+
+        private void btnDuyet_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoadDetailedData(CuTruDTO cuTru)
+        {
+            txtId.Text = cuTru.Id.ToString();
+            txtEmail.Text = cuTru.Email;
+            txtDienThoai.Text = cuTru.DienThoai;
+            txtNgayDangKy.Text = cuTru.NgayDangKy.ToShortDateString();
+            txtLoaiCuTru.Text = cuTru.LoaiCuTru;
+            txtDiaChi.Text = cuTru.DiaChi;
+        }
+
+        private void dgvDanhSachChoDuyet_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvDanhSachChoDuyet.SelectedRows.Count > 0)
+            {
+                var selectedRow = dgvDanhSachChoDuyet.SelectedRows[0];
+                var selectedCuTru = (CuTruDTO)selectedRow.DataBoundItem;
+
+                LoadDetailedData(selectedCuTru);
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyCuTru_WinForm.Models
 {
@@ -33,6 +34,11 @@ namespace QuanLyCuTru_WinForm.Models
             return cuTrus;
         }
 
+        internal Task<List<CuTruDTO>> GetByState(bool v, DataGridView dgvDanhSachChoDuyet)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<CuTruDTO>> GetByAddressAsync(string diaChi)
         {
             List<CuTruDTO> cuTrus = null;
@@ -55,6 +61,22 @@ namespace QuanLyCuTru_WinForm.Models
 
             // Request url template
             var url = $"{host}?loai={loai}";
+
+            HttpResponseMessage res = await client.GetAsync(url);
+            if (res.IsSuccessStatusCode)
+            {
+                cuTrus = await res.Content.ReadAsAsync<List<CuTruDTO>>();
+            }
+
+            return cuTrus;
+        }
+
+        public async Task<List<CuTruDTO>> GetByState(bool daDuyet)
+        {
+            List<CuTruDTO> cuTrus = null;
+
+            // Request url template
+            var url = $"{host}?duyet={daDuyet.ToString()}";
 
             HttpResponseMessage res = await client.GetAsync(url);
             if (res.IsSuccessStatusCode)

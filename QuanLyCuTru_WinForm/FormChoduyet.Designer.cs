@@ -28,19 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvDanhSachChoDuyet = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtid = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtTen = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtLoaiCuTru = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -94,7 +89,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 32);
+            this.label1.Size = new System.Drawing.Size(151, 37);
             this.label1.TabIndex = 13;
             this.label1.Text = "Chờ Duyệt";
             // 
@@ -105,7 +100,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(136, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 21);
+            this.label2.Size = new System.Drawing.Size(176, 25);
             this.label2.TabIndex = 19;
             this.label2.Text = " Duyệt Hoặc Từ Chối";
             // 
@@ -118,61 +113,25 @@
             this.dgvDanhSachChoDuyet.BackgroundColor = System.Drawing.Color.White;
             this.dgvDanhSachChoDuyet.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDanhSachChoDuyet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSachChoDuyet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
             this.dgvDanhSachChoDuyet.Location = new System.Drawing.Point(3, 50);
             this.dgvDanhSachChoDuyet.Name = "dgvDanhSachChoDuyet";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvDanhSachChoDuyet.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDanhSachChoDuyet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhSachChoDuyet.Size = new System.Drawing.Size(483, 389);
             this.dgvDanhSachChoDuyet.TabIndex = 20;
-            this.dgvDanhSachChoDuyet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.dgvDanhSachChoDuyet.SelectionChanged += new System.EventHandler(this.dgvDanhSachChoDuyet_SelectionChanged);
             // 
-            // id
+            // txtId
             // 
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Tên";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Địa chỉ";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Điện thoại";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column4.HeaderText = "Ngày đăng ký";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 99;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Loại cư trú";
-            this.Column5.Name = "Column5";
-            // 
-            // txtid
-            // 
-            this.txtid.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtid.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtid.Location = new System.Drawing.Point(113, 66);
-            this.txtid.Multiline = true;
-            this.txtid.Name = "txtid";
-            this.txtid.ReadOnly = true;
-            this.txtid.Size = new System.Drawing.Size(244, 41);
-            this.txtid.TabIndex = 53;
+            this.txtId.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(113, 66);
+            this.txtId.Multiline = true;
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(244, 41);
+            this.txtId.TabIndex = 53;
             // 
             // label7
             // 
@@ -180,21 +139,21 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(11, 260);
+            this.label7.Location = new System.Drawing.Point(8, 258);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.Size = new System.Drawing.Size(82, 20);
             this.label7.TabIndex = 56;
             this.label7.Text = "Loại cư trú:";
             // 
-            // txtTen
+            // txtEmail
             // 
-            this.txtTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTen.Location = new System.Drawing.Point(113, 118);
-            this.txtTen.Multiline = true;
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(244, 41);
-            this.txtTen.TabIndex = 43;
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(113, 118);
+            this.txtEmail.Multiline = true;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(244, 41);
+            this.txtEmail.TabIndex = 43;
             // 
             // txtLoaiCuTru
             // 
@@ -222,9 +181,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(11, 66);
+            this.label5.Location = new System.Drawing.Point(8, 66);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 17);
+            this.label5.Size = new System.Drawing.Size(24, 20);
             this.label5.TabIndex = 54;
             this.label5.Text = "ID";
             // 
@@ -262,6 +221,7 @@
             this.btnSua.TabIndex = 52;
             this.btnSua.Text = "SỬA";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // label6
             // 
@@ -269,11 +229,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(11, 118);
+            this.label6.Location = new System.Drawing.Point(8, 118);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 17);
+            this.label6.Size = new System.Drawing.Size(49, 20);
             this.label6.TabIndex = 47;
-            this.label6.Text = "Tên:";
+            this.label6.Text = "Email:";
             // 
             // btnDuyet
             // 
@@ -289,6 +249,7 @@
             this.btnDuyet.TabIndex = 51;
             this.btnDuyet.Text = "DUYỆT";
             this.btnDuyet.UseVisualStyleBackColor = false;
+            this.btnDuyet.Click += new System.EventHandler(this.btnDuyet_Click);
             // 
             // label3
             // 
@@ -296,9 +257,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(11, 308);
+            this.label3.Location = new System.Drawing.Point(8, 308);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 17);
+            this.label3.Size = new System.Drawing.Size(58, 20);
             this.label3.TabIndex = 48;
             this.label3.Text = "Địa chỉ:";
             // 
@@ -310,7 +271,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(8, 212);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 17);
+            this.label4.Size = new System.Drawing.Size(103, 20);
             this.label4.TabIndex = 50;
             this.label4.Text = "Ngày đăng ký:";
             // 
@@ -320,9 +281,9 @@
             this.txtpreciofff.AutoSize = true;
             this.txtpreciofff.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpreciofff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtpreciofff.Location = new System.Drawing.Point(11, 165);
+            this.txtpreciofff.Location = new System.Drawing.Point(8, 165);
             this.txtpreciofff.Name = "txtpreciofff";
-            this.txtpreciofff.Size = new System.Drawing.Size(70, 17);
+            this.txtpreciofff.Size = new System.Drawing.Size(81, 20);
             this.txtpreciofff.TabIndex = 49;
             this.txtpreciofff.Text = "Điện thoại:";
             // 
@@ -366,7 +327,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(23, 14);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 21);
+            this.label8.Size = new System.Drawing.Size(95, 25);
             this.label8.TabIndex = 20;
             this.label8.Text = "Danh sách";
             // 
@@ -378,11 +339,11 @@
             this.panel2.Controls.Add(this.txtLoaiCuTru);
             this.panel2.Controls.Add(this.txtpreciofff);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtid);
+            this.panel2.Controls.Add(this.txtId);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.btnDuyet);
-            this.panel2.Controls.Add(this.txtTen);
+            this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.txtDiaChi);
@@ -412,7 +373,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(10, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 21);
+            this.label9.Size = new System.Drawing.Size(93, 25);
             this.label9.TabIndex = 21;
             this.label9.Text = "Thông tin";
             // 
@@ -429,6 +390,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormChoDuyet";
             this.Text = "FormChoduyet";
+            this.Load += new System.EventHandler(this.FormChoDuyet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachChoDuyet)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -449,9 +411,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvDanhSachChoDuyet;
-        public System.Windows.Forms.TextBox txtid;
+        public System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.TextBox txtTen;
+        public System.Windows.Forms.TextBox txtEmail;
         public System.Windows.Forms.TextBox txtLoaiCuTru;
         public System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label label5;
@@ -470,11 +432,5 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

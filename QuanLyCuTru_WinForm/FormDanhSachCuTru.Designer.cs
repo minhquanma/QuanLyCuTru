@@ -54,10 +54,10 @@ namespace QuanLyCuTru_WinForm
             this.cbbGioiTinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbbGioiTinh.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGioiTinh.FormattingEnabled = true;
-            this.cbbGioiTinh.ItemHeight = 21;
+            this.cbbGioiTinh.ItemHeight = 25;
             this.cbbGioiTinh.Location = new System.Drawing.Point(137, 90);
             this.cbbGioiTinh.Name = "cbbGioiTinh";
-            this.cbbGioiTinh.Size = new System.Drawing.Size(100, 29);
+            this.cbbGioiTinh.Size = new System.Drawing.Size(100, 33);
             this.cbbGioiTinh.TabIndex = 51;
             this.cbbGioiTinh.Text = "Giới tính";
             // 
@@ -77,7 +77,7 @@ namespace QuanLyCuTru_WinForm
             this.cbbTen.FormattingEnabled = true;
             this.cbbTen.Location = new System.Drawing.Point(31, 90);
             this.cbbTen.Name = "cbbTen";
-            this.cbbTen.Size = new System.Drawing.Size(100, 29);
+            this.cbbTen.Size = new System.Drawing.Size(100, 33);
             this.cbbTen.TabIndex = 49;
             this.cbbTen.Text = "Tên";
             // 
@@ -105,7 +105,7 @@ namespace QuanLyCuTru_WinForm
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.Transparent;
-            this.btnXoa.Location = new System.Drawing.Point(741, 478);
+            this.btnXoa.Location = new System.Drawing.Point(741, 463);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(100, 35);
             this.btnXoa.TabIndex = 47;
@@ -144,7 +144,7 @@ namespace QuanLyCuTru_WinForm
             this.lbTieuDe.ForeColor = System.Drawing.Color.White;
             this.lbTieuDe.Location = new System.Drawing.Point(25, 13);
             this.lbTieuDe.Name = "lbTieuDe";
-            this.lbTieuDe.Size = new System.Drawing.Size(161, 25);
+            this.lbTieuDe.Size = new System.Drawing.Size(179, 30);
             this.lbTieuDe.TabIndex = 0;
             this.lbTieuDe.Text = "Danh sách cư trú";
             // 
@@ -179,7 +179,7 @@ namespace QuanLyCuTru_WinForm
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCuTru.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCuTru.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.dgvCuTru.Location = new System.Drawing.Point(48, 129);
+            this.dgvCuTru.Location = new System.Drawing.Point(30, 129);
             this.dgvCuTru.Name = "dgvCuTru";
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             this.dgvCuTru.RowsDefaultCellStyle = dataGridViewCellStyle2;
@@ -191,7 +191,7 @@ namespace QuanLyCuTru_WinForm
             // 
             this.ptbLoading.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ptbLoading.Image = ((System.Drawing.Image)(resources.GetObject("ptbLoading.Image")));
-            this.ptbLoading.Location = new System.Drawing.Point(267, 219);
+            this.ptbLoading.Location = new System.Drawing.Point(278, 224);
             this.ptbLoading.Name = "ptbLoading";
             this.ptbLoading.Size = new System.Drawing.Size(212, 188);
             this.ptbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

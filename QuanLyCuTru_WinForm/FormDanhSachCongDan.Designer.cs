@@ -37,13 +37,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvDanhSachCongDan = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.panelDanhSachCongDan = new System.Windows.Forms.Panel();
+            this.ptbLoading = new System.Windows.Forms.PictureBox();
             this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.cbbTen = new System.Windows.Forms.ComboBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnChiTiet = new System.Windows.Forms.Button();
-            this.ptbLoading = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachCongDan)).BeginInit();
             this.panelDanhSachCongDan.SuspendLayout();
@@ -107,7 +107,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(25, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 25);
+            this.label2.Size = new System.Drawing.Size(114, 30);
             this.label2.TabIndex = 0;
             this.label2.Text = "Danh sách";
             // 
@@ -155,15 +155,26 @@
             this.panelDanhSachCongDan.Size = new System.Drawing.Size(854, 481);
             this.panelDanhSachCongDan.TabIndex = 31;
             // 
+            // ptbLoading
+            // 
+            this.ptbLoading.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ptbLoading.Image = ((System.Drawing.Image)(resources.GetObject("ptbLoading.Image")));
+            this.ptbLoading.Location = new System.Drawing.Point(243, 197);
+            this.ptbLoading.Name = "ptbLoading";
+            this.ptbLoading.Size = new System.Drawing.Size(200, 188);
+            this.ptbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbLoading.TabIndex = 56;
+            this.ptbLoading.TabStop = false;
+            // 
             // cbbGioiTinh
             // 
             this.cbbGioiTinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbbGioiTinh.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGioiTinh.FormattingEnabled = true;
-            this.cbbGioiTinh.ItemHeight = 21;
+            this.cbbGioiTinh.ItemHeight = 25;
             this.cbbGioiTinh.Location = new System.Drawing.Point(137, 66);
             this.cbbGioiTinh.Name = "cbbGioiTinh";
-            this.cbbGioiTinh.Size = new System.Drawing.Size(100, 29);
+            this.cbbGioiTinh.Size = new System.Drawing.Size(100, 33);
             this.cbbGioiTinh.TabIndex = 45;
             this.cbbGioiTinh.Text = "Giới Tính";
             // 
@@ -183,7 +194,7 @@
             this.cbbTen.FormattingEnabled = true;
             this.cbbTen.Location = new System.Drawing.Point(31, 66);
             this.cbbTen.Name = "cbbTen";
-            this.cbbTen.Size = new System.Drawing.Size(100, 29);
+            this.cbbTen.Size = new System.Drawing.Size(100, 33);
             this.cbbTen.TabIndex = 43;
             this.cbbTen.Text = "Tên";
             // 
@@ -242,17 +253,6 @@
             this.btnChiTiet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChiTiet.UseVisualStyleBackColor = false;
             this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
-            // 
-            // ptbLoading
-            // 
-            this.ptbLoading.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ptbLoading.Image = ((System.Drawing.Image)(resources.GetObject("ptbLoading.Image")));
-            this.ptbLoading.Location = new System.Drawing.Point(231, 196);
-            this.ptbLoading.Name = "ptbLoading";
-            this.ptbLoading.Size = new System.Drawing.Size(212, 188);
-            this.ptbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbLoading.TabIndex = 56;
-            this.ptbLoading.TabStop = false;
             // 
             // FormDanhSachCongDan
             // 

@@ -44,7 +44,10 @@ namespace QuanLyCuTru_WinForm
             lbNoiSinh.Text = CongDan.NoiSinh;
             lbQueQuan.Text = CongDan.QueQuan;
             lbQuocTich.Text = CongDan.QuocTich;
-            ptbAvatar.LoadAsync(HttpService.Server + CongDan.Avatar);
+            try
+            {
+                ptbAvatar.LoadAsync(HttpService.Server + CongDan.Avatar);
+            } catch (Exception) { }
         }
 
         //private void AbrirFormInPanel(object ob)
