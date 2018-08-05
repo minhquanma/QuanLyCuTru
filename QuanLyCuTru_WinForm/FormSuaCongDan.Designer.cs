@@ -33,14 +33,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.labelGioiTinh = new System.Windows.Forms.Label();
-            this.chkNam = new System.Windows.Forms.CheckBox();
-            this.chkNu = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtSinhNhat = new System.Windows.Forms.TextBox();
             this.txtChucVu = new System.Windows.Forms.TextBox();
             this.txtDienThoai = new System.Windows.Forms.TextBox();
             this.txtSoNha = new System.Windows.Forms.TextBox();
@@ -63,6 +60,9 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.ptbThoat = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.rbNam = new System.Windows.Forms.RadioButton();
+            this.rbNu = new System.Windows.Forms.RadioButton();
+            this.dtpSinhNhat = new System.Windows.Forms.DateTimePicker();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).BeginInit();
             this.SuspendLayout();
@@ -87,6 +87,7 @@
             // 
             // txtHoTen
             // 
+            this.txtHoTen.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtHoTen.Location = new System.Drawing.Point(82, 56);
             this.txtHoTen.Multiline = true;
             this.txtHoTen.Name = "txtHoTen";
@@ -102,28 +103,6 @@
             this.labelGioiTinh.Size = new System.Drawing.Size(56, 17);
             this.labelGioiTinh.TabIndex = 4;
             this.labelGioiTinh.Text = "Giới tính";
-            // 
-            // chkNam
-            // 
-            this.chkNam.AutoSize = true;
-            this.chkNam.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.chkNam.Location = new System.Drawing.Point(82, 115);
-            this.chkNam.Name = "chkNam";
-            this.chkNam.Size = new System.Drawing.Size(55, 21);
-            this.chkNam.TabIndex = 5;
-            this.chkNam.Text = "Nam";
-            this.chkNam.UseVisualStyleBackColor = true;
-            // 
-            // chkNu
-            // 
-            this.chkNu.AutoSize = true;
-            this.chkNu.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.chkNu.Location = new System.Drawing.Point(82, 142);
-            this.chkNu.Name = "chkNu";
-            this.chkNu.Size = new System.Drawing.Size(45, 21);
-            this.chkNu.TabIndex = 6;
-            this.chkNu.Text = "Nữ";
-            this.chkNu.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -175,16 +154,9 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Đường";
             // 
-            // txtSinhNhat
-            // 
-            this.txtSinhNhat.Location = new System.Drawing.Point(82, 170);
-            this.txtSinhNhat.Multiline = true;
-            this.txtSinhNhat.Name = "txtSinhNhat";
-            this.txtSinhNhat.Size = new System.Drawing.Size(267, 37);
-            this.txtSinhNhat.TabIndex = 12;
-            // 
             // txtChucVu
             // 
+            this.txtChucVu.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtChucVu.Location = new System.Drawing.Point(82, 213);
             this.txtChucVu.Multiline = true;
             this.txtChucVu.Name = "txtChucVu";
@@ -193,6 +165,7 @@
             // 
             // txtDienThoai
             // 
+            this.txtDienThoai.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtDienThoai.Location = new System.Drawing.Point(82, 256);
             this.txtDienThoai.Multiline = true;
             this.txtDienThoai.Name = "txtDienThoai";
@@ -201,6 +174,7 @@
             // 
             // txtSoNha
             // 
+            this.txtSoNha.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtSoNha.Location = new System.Drawing.Point(82, 299);
             this.txtSoNha.Multiline = true;
             this.txtSoNha.Name = "txtSoNha";
@@ -302,6 +276,7 @@
             // 
             // txtPhuong
             // 
+            this.txtPhuong.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtPhuong.Location = new System.Drawing.Point(546, 56);
             this.txtPhuong.Multiline = true;
             this.txtPhuong.Name = "txtPhuong";
@@ -310,6 +285,7 @@
             // 
             // txtQuan
             // 
+            this.txtQuan.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtQuan.Location = new System.Drawing.Point(546, 99);
             this.txtQuan.Multiline = true;
             this.txtQuan.Name = "txtQuan";
@@ -318,6 +294,7 @@
             // 
             // txtThanhPho
             // 
+            this.txtThanhPho.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtThanhPho.Location = new System.Drawing.Point(546, 143);
             this.txtThanhPho.Multiline = true;
             this.txtThanhPho.Name = "txtThanhPho";
@@ -326,6 +303,7 @@
             // 
             // txtNoiSinh
             // 
+            this.txtNoiSinh.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtNoiSinh.Location = new System.Drawing.Point(546, 186);
             this.txtNoiSinh.Multiline = true;
             this.txtNoiSinh.Name = "txtNoiSinh";
@@ -334,6 +312,7 @@
             // 
             // txtQueQuan
             // 
+            this.txtQueQuan.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtQueQuan.Location = new System.Drawing.Point(546, 272);
             this.txtQueQuan.Multiline = true;
             this.txtQueQuan.Name = "txtQueQuan";
@@ -342,6 +321,7 @@
             // 
             // txtQuocTich
             // 
+            this.txtQuocTich.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtQuocTich.Location = new System.Drawing.Point(546, 229);
             this.txtQuocTich.Multiline = true;
             this.txtQuocTich.Name = "txtQuocTich";
@@ -350,6 +330,7 @@
             // 
             // txtDuong
             // 
+            this.txtDuong.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtDuong.Location = new System.Drawing.Point(82, 342);
             this.txtDuong.Multiline = true;
             this.txtDuong.Name = "txtDuong";
@@ -392,12 +373,47 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Sửa thông tin";
             // 
+            // rbNam
+            // 
+            this.rbNam.AutoSize = true;
+            this.rbNam.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.rbNam.Location = new System.Drawing.Point(93, 101);
+            this.rbNam.Name = "rbNam";
+            this.rbNam.Size = new System.Drawing.Size(54, 21);
+            this.rbNam.TabIndex = 69;
+            this.rbNam.TabStop = true;
+            this.rbNam.Text = "Nam";
+            this.rbNam.UseVisualStyleBackColor = true;
+            // 
+            // rbNu
+            // 
+            this.rbNu.AutoSize = true;
+            this.rbNu.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.rbNu.Location = new System.Drawing.Point(93, 128);
+            this.rbNu.Name = "rbNu";
+            this.rbNu.Size = new System.Drawing.Size(44, 21);
+            this.rbNu.TabIndex = 70;
+            this.rbNu.TabStop = true;
+            this.rbNu.Text = "Nữ";
+            this.rbNu.UseVisualStyleBackColor = true;
+            // 
+            // dtpSinhNhat
+            // 
+            this.dtpSinhNhat.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dtpSinhNhat.Location = new System.Drawing.Point(82, 167);
+            this.dtpSinhNhat.Name = "dtpSinhNhat";
+            this.dtpSinhNhat.Size = new System.Drawing.Size(267, 29);
+            this.dtpSinhNhat.TabIndex = 71;
+            // 
             // FormSuaCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(837, 438);
+            this.Controls.Add(this.dtpSinhNhat);
+            this.Controls.Add(this.rbNu);
+            this.Controls.Add(this.rbNam);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.txtDuong);
             this.Controls.Add(this.txtQuocTich);
@@ -418,14 +434,11 @@
             this.Controls.Add(this.txtSoNha);
             this.Controls.Add(this.txtDienThoai);
             this.Controls.Add(this.txtChucVu);
-            this.Controls.Add(this.txtSinhNhat);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.chkNu);
-            this.Controls.Add(this.chkNam);
             this.Controls.Add(this.labelGioiTinh);
             this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.label2);
@@ -447,14 +460,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label labelGioiTinh;
-        private System.Windows.Forms.CheckBox chkNam;
-        private System.Windows.Forms.CheckBox chkNu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtSinhNhat;
         private System.Windows.Forms.TextBox txtChucVu;
         private System.Windows.Forms.TextBox txtDienThoai;
         private System.Windows.Forms.TextBox txtSoNha;
@@ -477,5 +487,8 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.PictureBox ptbThoat;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton rbNam;
+        private System.Windows.Forms.RadioButton rbNu;
+        private System.Windows.Forms.DateTimePicker dtpSinhNhat;
     }
 }

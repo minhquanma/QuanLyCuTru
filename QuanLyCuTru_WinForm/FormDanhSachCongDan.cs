@@ -28,7 +28,18 @@ namespace QuanLyCuTru_WinForm
 
         private async void FormDanhSachCongDan_Load(object sender, EventArgs e)
         {
-            NguoiDungBindingSource.Bind(await repo.GetAllAsync(), dgvDanhSachCongDan);
+            var list = await repo.GetAllAsync();
+            ptbLoading.Show();
+            ptbLoading.Update();
+            try
+            {
+                NguoiDungBindingSource.Bind(await repo.GetAllAsync(), dgvDanhSachCongDan);
+            }
+            catch (Exception ex)
+            {
+                //Handle Exception
+            }
+            ptbLoading.Hide();          
         }
 
         private void btnHienThiDanhSach_Click(object sender, EventArgs e)

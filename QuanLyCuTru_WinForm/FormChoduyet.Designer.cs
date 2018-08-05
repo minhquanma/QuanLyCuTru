@@ -31,7 +31,7 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDanhSachChoDuyet = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,15 +40,15 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtid = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtcategoria = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtdescrip = new System.Windows.Forms.TextBox();
+            this.txtTen = new System.Windows.Forms.TextBox();
+            this.txtLoaiCuTru = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtprecio = new System.Windows.Forms.TextBox();
-            this.txtstock = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtDienThoai = new System.Windows.Forms.TextBox();
+            this.txtNgayDangKy = new System.Windows.Forms.TextBox();
+            this.btnSua = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDuyet = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtpreciofff = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachChoDuyet)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -109,27 +109,27 @@
             this.label2.TabIndex = 19;
             this.label2.Text = " Duyệt Hoặc Từ Chối";
             // 
-            // dataGridView1
+            // dgvDanhSachChoDuyet
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvDanhSachChoDuyet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDanhSachChoDuyet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDanhSachChoDuyet.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDanhSachChoDuyet.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDanhSachChoDuyet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDanhSachChoDuyet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(483, 389);
-            this.dataGridView1.TabIndex = 20;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.dgvDanhSachChoDuyet.Location = new System.Drawing.Point(3, 50);
+            this.dgvDanhSachChoDuyet.Name = "dgvDanhSachChoDuyet";
+            this.dgvDanhSachChoDuyet.Size = new System.Drawing.Size(483, 389);
+            this.dgvDanhSachChoDuyet.TabIndex = 20;
+            this.dgvDanhSachChoDuyet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // id
             // 
@@ -186,35 +186,35 @@
             this.label7.TabIndex = 56;
             this.label7.Text = "Loại cư trú:";
             // 
-            // txtcategoria
+            // txtTen
             // 
-            this.txtcategoria.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtcategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcategoria.Location = new System.Drawing.Point(113, 118);
-            this.txtcategoria.Multiline = true;
-            this.txtcategoria.Name = "txtcategoria";
-            this.txtcategoria.Size = new System.Drawing.Size(244, 41);
-            this.txtcategoria.TabIndex = 43;
+            this.txtTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTen.Location = new System.Drawing.Point(113, 118);
+            this.txtTen.Multiline = true;
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(244, 41);
+            this.txtTen.TabIndex = 43;
             // 
-            // textBox1
+            // txtLoaiCuTru
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(113, 258);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(244, 41);
-            this.textBox1.TabIndex = 55;
+            this.txtLoaiCuTru.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtLoaiCuTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoaiCuTru.Location = new System.Drawing.Point(113, 258);
+            this.txtLoaiCuTru.Multiline = true;
+            this.txtLoaiCuTru.Name = "txtLoaiCuTru";
+            this.txtLoaiCuTru.Size = new System.Drawing.Size(244, 41);
+            this.txtLoaiCuTru.TabIndex = 55;
             // 
-            // txtdescrip
+            // txtDiaChi
             // 
-            this.txtdescrip.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtdescrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdescrip.Location = new System.Drawing.Point(113, 305);
-            this.txtdescrip.Multiline = true;
-            this.txtdescrip.Name = "txtdescrip";
-            this.txtdescrip.Size = new System.Drawing.Size(244, 83);
-            this.txtdescrip.TabIndex = 44;
+            this.txtDiaChi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChi.Location = new System.Drawing.Point(113, 305);
+            this.txtDiaChi.Multiline = true;
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(244, 83);
+            this.txtDiaChi.TabIndex = 44;
             // 
             // label5
             // 
@@ -228,40 +228,40 @@
             this.label5.TabIndex = 54;
             this.label5.Text = "ID";
             // 
-            // txtprecio
+            // txtDienThoai
             // 
-            this.txtprecio.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtprecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtprecio.Location = new System.Drawing.Point(113, 165);
-            this.txtprecio.Multiline = true;
-            this.txtprecio.Name = "txtprecio";
-            this.txtprecio.Size = new System.Drawing.Size(244, 41);
-            this.txtprecio.TabIndex = 45;
+            this.txtDienThoai.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDienThoai.Location = new System.Drawing.Point(113, 165);
+            this.txtDienThoai.Multiline = true;
+            this.txtDienThoai.Name = "txtDienThoai";
+            this.txtDienThoai.Size = new System.Drawing.Size(244, 41);
+            this.txtDienThoai.TabIndex = 45;
             // 
-            // txtstock
+            // txtNgayDangKy
             // 
-            this.txtstock.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtstock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtstock.Location = new System.Drawing.Point(113, 212);
-            this.txtstock.Multiline = true;
-            this.txtstock.Name = "txtstock";
-            this.txtstock.Size = new System.Drawing.Size(244, 41);
-            this.txtstock.TabIndex = 46;
+            this.txtNgayDangKy.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNgayDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgayDangKy.Location = new System.Drawing.Point(113, 212);
+            this.txtNgayDangKy.Multiline = true;
+            this.txtNgayDangKy.Name = "txtNgayDangKy";
+            this.txtNgayDangKy.Size = new System.Drawing.Size(244, 41);
+            this.txtNgayDangKy.TabIndex = 46;
             // 
-            // btnCancelar
+            // btnSua
             // 
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(250, 394);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(107, 35);
-            this.btnCancelar.TabIndex = 52;
-            this.btnCancelar.Text = "SỬA";
-            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.Color.White;
+            this.btnSua.Location = new System.Drawing.Point(250, 394);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(107, 35);
+            this.btnSua.TabIndex = 52;
+            this.btnSua.Text = "SỬA";
+            this.btnSua.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -275,20 +275,20 @@
             this.label6.TabIndex = 47;
             this.label6.Text = "Tên:";
             // 
-            // button1
+            // btnDuyet
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(113, 394);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 35);
-            this.button1.TabIndex = 51;
-            this.button1.Text = "DUYỆT";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnDuyet.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDuyet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnDuyet.FlatAppearance.BorderSize = 0;
+            this.btnDuyet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDuyet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDuyet.ForeColor = System.Drawing.Color.White;
+            this.btnDuyet.Location = new System.Drawing.Point(113, 394);
+            this.btnDuyet.Name = "btnDuyet";
+            this.btnDuyet.Size = new System.Drawing.Size(131, 35);
+            this.btnDuyet.TabIndex = 51;
+            this.btnDuyet.Text = "DUYỆT";
+            this.btnDuyet.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -343,7 +343,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvDanhSachChoDuyet);
             this.panel1.Location = new System.Drawing.Point(12, 65);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(486, 442);
@@ -375,20 +375,20 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtLoaiCuTru);
             this.panel2.Controls.Add(this.txtpreciofff);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtid);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.txtcategoria);
+            this.panel2.Controls.Add(this.btnDuyet);
+            this.panel2.Controls.Add(this.txtTen);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.btnCancelar);
-            this.panel2.Controls.Add(this.txtdescrip);
-            this.panel2.Controls.Add(this.txtstock);
+            this.panel2.Controls.Add(this.btnSua);
+            this.panel2.Controls.Add(this.txtDiaChi);
+            this.panel2.Controls.Add(this.txtNgayDangKy);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.txtprecio);
+            this.panel2.Controls.Add(this.txtDienThoai);
             this.panel2.Location = new System.Drawing.Point(504, 65);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(366, 442);
@@ -429,7 +429,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormChoDuyet";
             this.Text = "FormChoduyet";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachChoDuyet)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -448,18 +448,18 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDanhSachChoDuyet;
         public System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.TextBox txtcategoria;
-        public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.TextBox txtdescrip;
+        public System.Windows.Forms.TextBox txtTen;
+        public System.Windows.Forms.TextBox txtLoaiCuTru;
+        public System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox txtprecio;
-        public System.Windows.Forms.TextBox txtstock;
-        private System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.TextBox txtDienThoai;
+        public System.Windows.Forms.TextBox txtNgayDangKy;
+        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDuyet;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label txtpreciofff;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDanhSachCuTruChuaDuyet));
             this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.cbbTen = new System.Windows.Forms.ComboBox();
@@ -37,8 +38,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnChiTiet = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.ptbLoading = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuTruChuaDuyet)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // cbbGioiTinh
@@ -150,11 +153,23 @@
             this.btnXoa.Text = "XÓA";
             this.btnXoa.UseVisualStyleBackColor = false;
             // 
+            // ptbLoading
+            // 
+            this.ptbLoading.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ptbLoading.Image = ((System.Drawing.Image)(resources.GetObject("ptbLoading.Image")));
+            this.ptbLoading.Location = new System.Drawing.Point(293, 191);
+            this.ptbLoading.Name = "ptbLoading";
+            this.ptbLoading.Size = new System.Drawing.Size(212, 188);
+            this.ptbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbLoading.TabIndex = 75;
+            this.ptbLoading.TabStop = false;
+            // 
             // FormDanhSachCuTruChuaDuyet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 538);
+            this.Controls.Add(this.ptbLoading);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnChiTiet);
             this.Controls.Add(this.cbbGioiTinh);
@@ -166,9 +181,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDanhSachCuTruChuaDuyet";
             this.Text = "FormDanhSachCuTruChuaDuyet";
+            this.Load += new System.EventHandler(this.FormDanhSachCuTruChuaDuyet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuTruChuaDuyet)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLoading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +202,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnChiTiet;
         private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.PictureBox ptbLoading;
     }
 }
