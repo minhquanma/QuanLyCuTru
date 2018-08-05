@@ -26,7 +26,17 @@ namespace QuanLyCuTru_WinForm
         private async void FormDanhSachCuTru_Load(object sender, EventArgs e)
         {
             var list = await repo.GetAllAsync();
-            CuTruBindingSource.Bind(list, dgvCuTru); 
+            ptbLoading.Show();
+            ptbLoading.Update();
+            try
+            {
+                CuTruBindingSource.Bind(list, dgvCuTru);
+            }
+            catch (Exception ex)
+            {
+                //Handle Exception
+            }
+            ptbLoading.Hide();
         }
 
         private void btnThemMoi_Click(object sender, EventArgs e)
@@ -72,5 +82,6 @@ namespace QuanLyCuTru_WinForm
         {
             MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
     }
 }

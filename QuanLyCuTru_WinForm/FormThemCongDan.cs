@@ -75,15 +75,15 @@ namespace QuanLyCuTru_WinForm
             }
             //Đổi màu checkbox chưa checked
 
-            if (chkNam.Checked == false && chkNu.Checked == false)
+            if (rbNam.Checked == false && rbNu.Checked == false)
             {
-                chkNam.ForeColor = System.Drawing.Color.Red;
-                chkNu.ForeColor = System.Drawing.Color.Red;
+                rbNam.ForeColor = System.Drawing.Color.Red;
+                rbNu.ForeColor = System.Drawing.Color.Red;
             }
             else
             {
-                chkNam.ForeColor = this.ForeColor;
-                chkNu.ForeColor = this.ForeColor;
+                rbNam.ForeColor = this.ForeColor;
+                rbNu.ForeColor = this.ForeColor;
             }
             }
         }

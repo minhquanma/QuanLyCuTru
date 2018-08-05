@@ -32,6 +32,7 @@ namespace QuanLyCuTru_WinForm
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDanhSachCuTru));
             this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.cbbTen = new System.Windows.Forms.ComboBox();
@@ -42,8 +43,10 @@ namespace QuanLyCuTru_WinForm
             this.lbTieuDe = new System.Windows.Forms.Label();
             this.btnThemMoi = new System.Windows.Forms.Button();
             this.dgvCuTru = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.ptbLoading = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuTru)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // cbbGioiTinh
@@ -176,19 +179,31 @@ namespace QuanLyCuTru_WinForm
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCuTru.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCuTru.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.dgvCuTru.Location = new System.Drawing.Point(31, 144);
+            this.dgvCuTru.Location = new System.Drawing.Point(48, 129);
             this.dgvCuTru.Name = "dgvCuTru";
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             this.dgvCuTru.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCuTru.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCuTru.Size = new System.Drawing.Size(687, 369);
             this.dgvCuTru.TabIndex = 54;
-            this.dgvCuTru.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            // 
+            // ptbLoading
+            // 
+            this.ptbLoading.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ptbLoading.Image = ((System.Drawing.Image)(resources.GetObject("ptbLoading.Image")));
+            this.ptbLoading.Location = new System.Drawing.Point(267, 219);
+            this.ptbLoading.Name = "ptbLoading";
+            this.ptbLoading.Size = new System.Drawing.Size(212, 188);
+            this.ptbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbLoading.TabIndex = 55;
+            this.ptbLoading.TabStop = false;
             // 
             // FormDanhSachCuTru
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 538);
+            this.Controls.Add(this.ptbLoading);
             this.Controls.Add(this.dgvCuTru);
             this.Controls.Add(this.btnThemMoi);
             this.Controls.Add(this.cbbGioiTinh);
@@ -205,6 +220,7 @@ namespace QuanLyCuTru_WinForm
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuTru)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLoading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +238,6 @@ namespace QuanLyCuTru_WinForm
         private System.Windows.Forms.Label lbTieuDe;
         private System.Windows.Forms.Button btnThemMoi;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgvCuTru;
+        private PictureBox ptbLoading;
     }
 }

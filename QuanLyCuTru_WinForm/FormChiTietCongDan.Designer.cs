@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChiTietCongDan));
             this.panelContent = new System.Windows.Forms.Panel();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
             this.ptbThoat = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -63,7 +62,6 @@
             // 
             // panelContent
             // 
-            this.panelContent.Controls.Add(this.btnXoa);
             this.panelContent.Controls.Add(this.panelTop);
             this.panelContent.Controls.Add(this.lbEmail);
             this.panelContent.Controls.Add(this.lbQuocTich);
@@ -91,19 +89,6 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(949, 515);
             this.panelContent.TabIndex = 27;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BackColor = System.Drawing.Color.Brown;
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(132, 394);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(94, 50);
-            this.btnXoa.TabIndex = 68;
-            this.btnXoa.Text = "XÓA";
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // panelTop
             // 
@@ -400,6 +385,5 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.PictureBox ptbThoat;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnXoa;
     }
 }

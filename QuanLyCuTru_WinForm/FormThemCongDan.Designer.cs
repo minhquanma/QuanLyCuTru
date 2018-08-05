@@ -47,14 +47,11 @@
             this.txtSoNha = new System.Windows.Forms.TextBox();
             this.txtDienThoai = new System.Windows.Forms.TextBox();
             this.txtChucVu = new System.Windows.Forms.TextBox();
-            this.txtSinhNhat = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.chkNu = new System.Windows.Forms.CheckBox();
-            this.chkNam = new System.Windows.Forms.CheckBox();
             this.labelGioiTinh = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,6 +60,9 @@
             this.ptbThoat = new System.Windows.Forms.PictureBox();
             this.panelTop = new System.Windows.Forms.Panel();
             this.btnTaoMoi = new System.Windows.Forms.Button();
+            this.rbNu = new System.Windows.Forms.RadioButton();
+            this.rbNam = new System.Windows.Forms.RadioButton();
+            this.dtpSinhNhat = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).BeginInit();
             this.panelTop.SuspendLayout();
             this.SuspendLayout();
@@ -228,14 +228,6 @@
             this.txtChucVu.Size = new System.Drawing.Size(267, 37);
             this.txtChucVu.TabIndex = 46;
             // 
-            // txtSinhNhat
-            // 
-            this.txtSinhNhat.Location = new System.Drawing.Point(82, 167);
-            this.txtSinhNhat.Multiline = true;
-            this.txtSinhNhat.Name = "txtSinhNhat";
-            this.txtSinhNhat.Size = new System.Drawing.Size(267, 37);
-            this.txtSinhNhat.TabIndex = 45;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -285,28 +277,6 @@
             this.label4.Size = new System.Drawing.Size(61, 17);
             this.label4.TabIndex = 40;
             this.label4.Text = "Sinh nhật";
-            // 
-            // chkNu
-            // 
-            this.chkNu.AutoSize = true;
-            this.chkNu.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.chkNu.Location = new System.Drawing.Point(82, 139);
-            this.chkNu.Name = "chkNu";
-            this.chkNu.Size = new System.Drawing.Size(45, 21);
-            this.chkNu.TabIndex = 39;
-            this.chkNu.Text = "Nữ";
-            this.chkNu.UseVisualStyleBackColor = true;
-            // 
-            // chkNam
-            // 
-            this.chkNam.AutoSize = true;
-            this.chkNam.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.chkNam.Location = new System.Drawing.Point(82, 112);
-            this.chkNam.Name = "chkNam";
-            this.chkNam.Size = new System.Drawing.Size(55, 21);
-            this.chkNam.TabIndex = 38;
-            this.chkNam.Text = "Nam";
-            this.chkNam.UseVisualStyleBackColor = true;
             // 
             // labelGioiTinh
             // 
@@ -394,12 +364,47 @@
             this.btnTaoMoi.UseVisualStyleBackColor = false;
             this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
             // 
+            // rbNu
+            // 
+            this.rbNu.AutoSize = true;
+            this.rbNu.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.rbNu.Location = new System.Drawing.Point(95, 125);
+            this.rbNu.Name = "rbNu";
+            this.rbNu.Size = new System.Drawing.Size(44, 21);
+            this.rbNu.TabIndex = 72;
+            this.rbNu.TabStop = true;
+            this.rbNu.Text = "Nữ";
+            this.rbNu.UseVisualStyleBackColor = true;
+            // 
+            // rbNam
+            // 
+            this.rbNam.AutoSize = true;
+            this.rbNam.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.rbNam.Location = new System.Drawing.Point(95, 98);
+            this.rbNam.Name = "rbNam";
+            this.rbNam.Size = new System.Drawing.Size(54, 21);
+            this.rbNam.TabIndex = 71;
+            this.rbNam.TabStop = true;
+            this.rbNam.Text = "Nam";
+            this.rbNam.UseVisualStyleBackColor = true;
+            // 
+            // dtpSinhNhat
+            // 
+            this.dtpSinhNhat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpSinhNhat.Location = new System.Drawing.Point(82, 164);
+            this.dtpSinhNhat.Name = "dtpSinhNhat";
+            this.dtpSinhNhat.Size = new System.Drawing.Size(267, 29);
+            this.dtpSinhNhat.TabIndex = 73;
+            // 
             // FormThemCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(837, 438);
+            this.Controls.Add(this.dtpSinhNhat);
+            this.Controls.Add(this.rbNu);
+            this.Controls.Add(this.rbNam);
             this.Controls.Add(this.btnTaoMoi);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.txtDuong);
@@ -420,14 +425,11 @@
             this.Controls.Add(this.txtSoNha);
             this.Controls.Add(this.txtDienThoai);
             this.Controls.Add(this.txtChucVu);
-            this.Controls.Add(this.txtSinhNhat);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.chkNu);
-            this.Controls.Add(this.chkNam);
             this.Controls.Add(this.labelGioiTinh);
             this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.label2);
@@ -463,14 +465,11 @@
         private System.Windows.Forms.TextBox txtSoNha;
         private System.Windows.Forms.TextBox txtDienThoai;
         private System.Windows.Forms.TextBox txtChucVu;
-        private System.Windows.Forms.TextBox txtSinhNhat;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox chkNu;
-        private System.Windows.Forms.CheckBox chkNam;
         private System.Windows.Forms.Label labelGioiTinh;
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label label2;
@@ -479,5 +478,8 @@
         private System.Windows.Forms.PictureBox ptbThoat;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Button btnTaoMoi;
+        private System.Windows.Forms.RadioButton rbNu;
+        private System.Windows.Forms.RadioButton rbNam;
+        private System.Windows.Forms.DateTimePicker dtpSinhNhat;
     }
 }

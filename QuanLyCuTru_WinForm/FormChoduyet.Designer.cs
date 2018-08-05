@@ -31,16 +31,16 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvCuTru = new System.Windows.Forms.DataGridView();
+            this.dgvDanhSachChoDuyet = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtid = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtHoTen = new System.Windows.Forms.TextBox();
+            this.txtTen = new System.Windows.Forms.TextBox();
             this.txtLoaiCuTru = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCuTru)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachChoDuyet)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -109,27 +109,27 @@
             this.label2.TabIndex = 19;
             this.label2.Text = " Duyệt Hoặc Từ Chối";
             // 
-            // dgvCuTru
+            // dgvDanhSachChoDuyet
             // 
-            this.dgvCuTru.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvDanhSachChoDuyet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCuTru.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCuTru.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCuTru.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCuTru.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCuTru.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDanhSachChoDuyet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDanhSachChoDuyet.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDanhSachChoDuyet.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDanhSachChoDuyet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDanhSachChoDuyet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dgvCuTru.Location = new System.Drawing.Point(3, 50);
-            this.dgvCuTru.Name = "dgvCuTru";
-            this.dgvCuTru.Size = new System.Drawing.Size(483, 389);
-            this.dgvCuTru.TabIndex = 20;
-            this.dgvCuTru.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.dgvDanhSachChoDuyet.Location = new System.Drawing.Point(3, 50);
+            this.dgvDanhSachChoDuyet.Name = "dgvDanhSachChoDuyet";
+            this.dgvDanhSachChoDuyet.Size = new System.Drawing.Size(483, 389);
+            this.dgvDanhSachChoDuyet.TabIndex = 20;
+            this.dgvDanhSachChoDuyet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // id
             // 
@@ -163,16 +163,16 @@
             this.Column5.HeaderText = "Loại cư trú";
             this.Column5.Name = "Column5";
             // 
-            // txtId
+            // txtid
             // 
-            this.txtId.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(113, 66);
-            this.txtId.Multiline = true;
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(244, 41);
-            this.txtId.TabIndex = 53;
+            this.txtid.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtid.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtid.Location = new System.Drawing.Point(113, 66);
+            this.txtid.Multiline = true;
+            this.txtid.Name = "txtid";
+            this.txtid.ReadOnly = true;
+            this.txtid.Size = new System.Drawing.Size(244, 41);
+            this.txtid.TabIndex = 53;
             // 
             // label7
             // 
@@ -186,15 +186,15 @@
             this.label7.TabIndex = 56;
             this.label7.Text = "Loại cư trú:";
             // 
-            // txtHoTen
+            // txtTen
             // 
-            this.txtHoTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoTen.Location = new System.Drawing.Point(113, 118);
-            this.txtHoTen.Multiline = true;
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(244, 41);
-            this.txtHoTen.TabIndex = 43;
+            this.txtTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTen.Location = new System.Drawing.Point(113, 118);
+            this.txtTen.Multiline = true;
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(244, 41);
+            this.txtTen.TabIndex = 43;
             // 
             // txtLoaiCuTru
             // 
@@ -308,7 +308,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(11, 212);
+            this.label4.Location = new System.Drawing.Point(8, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 17);
             this.label4.TabIndex = 50;
@@ -343,7 +343,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.dgvCuTru);
+            this.panel1.Controls.Add(this.dgvDanhSachChoDuyet);
             this.panel1.Location = new System.Drawing.Point(12, 65);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(486, 442);
@@ -378,11 +378,11 @@
             this.panel2.Controls.Add(this.txtLoaiCuTru);
             this.panel2.Controls.Add(this.txtpreciofff);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtId);
+            this.panel2.Controls.Add(this.txtid);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.btnDuyet);
-            this.panel2.Controls.Add(this.txtHoTen);
+            this.panel2.Controls.Add(this.txtTen);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.txtDiaChi);
@@ -429,7 +429,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormChoDuyet";
             this.Text = "FormChoduyet";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCuTru)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachChoDuyet)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -448,10 +448,10 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvCuTru;
-        public System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.DataGridView dgvDanhSachChoDuyet;
+        public System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.TextBox txtHoTen;
+        public System.Windows.Forms.TextBox txtTen;
         public System.Windows.Forms.TextBox txtLoaiCuTru;
         public System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label label5;
