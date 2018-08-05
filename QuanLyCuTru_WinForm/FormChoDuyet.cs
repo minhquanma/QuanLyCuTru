@@ -18,6 +18,7 @@ namespace QuanLyCuTru_WinForm
     public partial class FormChoDuyet : Form
     {
         CuTruService repo = new CuTruService();
+        private CuTruDTO SelectedCuTru { get; set; }
 
         public FormChoDuyet()
         {
@@ -29,9 +30,23 @@ namespace QuanLyCuTru_WinForm
             CuTruBindingSource.Bind(await repo.GetByState(false), dgvDanhSachChoDuyet);
         }
 
-        private void btnDuyet_Click(object sender, EventArgs e)
+        private async void btnDuyet_Click(object sender, EventArgs e)
         {
+            var dialogResult = MessageBox.Show("Bạn có muốn duyệt cư trú này?", "Hahaha",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (dialogResult == DialogResult.Yes)
+            {
+                var selectedRow = dgvDanhSachChoDuyet.SelectedRows[0];
+                var selectedCuTru = (CuTruDTO)selectedRow.DataBoundItem;
+
+                var result = await repo.DuyetCuTru(SelectedCuTru.Id);
+
+                if (result == true)
+                    MessageBox.Show("Đã duyệt thành công!", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Đã có lỗi xảy ra!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -54,9 +69,9 @@ namespace QuanLyCuTru_WinForm
             if (dgvDanhSachChoDuyet.SelectedRows.Count > 0)
             {
                 var selectedRow = dgvDanhSachChoDuyet.SelectedRows[0];
-                var selectedCuTru = (CuTruDTO)selectedRow.DataBoundItem;
+                SelectedCuTru = (CuTruDTO)selectedRow.DataBoundItem;
 
-                LoadDetailedData(selectedCuTru);
+                LoadDetailedData(SelectedCuTru);
             }
         }
     }

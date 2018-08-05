@@ -41,9 +41,7 @@ namespace QuanLyCuTru_WinForm
             DialogResult result;
 
             // Displays the MessageBox.
-            result = MessageBox.Show(this, message, caption, buttons,
-                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,
-                MessageBoxOptions.RightAlign);
+            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {

@@ -107,5 +107,39 @@ namespace QuanLyCuTru_WinForm.Models
 
             return res.Headers.Location;
         }
+
+        //[HttpPatch]
+        //[Route("Duyet/{id}")]
+        //public IHttpActionResult Duyet(int id)
+        //{
+        //    // Get CuTru entity from database
+        //    var cuTru = db.CuTrus.SingleOrDefault(c => c.Id == id);
+
+        //    if (cuTru == null)
+        //        return BadRequest();
+
+        //    // Get the logged in CanBo's id
+        //    var currentId = User.Identity.GetUserId();
+
+        //    // Get CanBo entity in db
+        //    var canBo = db.NguoiDungs.SingleOrDefault(c => c.IdentityId.Equals(currentId));
+
+        //    cuTru.DaDuyet = true; // Set DaDuyet state to true
+        //    cuTru.CanBoId = canBo.Id; // Set CanBo Duyet id
+        //    db.SaveChanges();
+
+        //    return Ok();
+        //}
+
+        public async Task<bool> DuyetCuTru(int id)
+        {
+            var url = host + "Duyet/" + id.ToString();
+            HttpRequestMessage req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            HttpResponseMessage res = await client.SendAsync(req);
+
+            if (res.IsSuccessStatusCode)
+                return true;
+            return false;
+        }
     }
 }
