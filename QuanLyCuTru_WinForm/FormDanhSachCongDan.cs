@@ -23,12 +23,16 @@ namespace QuanLyCuTru_WinForm
 
         public FormDanhSachCongDan()
         {
-            InitializeComponent();   
+            InitializeComponent();
+            // Hiện "Loading"
         }
 
         private async void FormDanhSachCongDan_Load(object sender, EventArgs e)
         {
+            
             NguoiDungBindingSource.Bind(await repo.GetAllAsync(), dgvDanhSachCongDan);
+
+            // Ẩn "Loading"
         }
 
         private void btnHienThiDanhSach_Click(object sender, EventArgs e)
