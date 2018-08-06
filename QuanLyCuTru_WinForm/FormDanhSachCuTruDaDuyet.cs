@@ -39,5 +39,11 @@ namespace QuanLyCuTru_WinForm
             }
             ptbLoading.Hide();
         }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            FormSuaCuTru form = new FormSuaCuTru();
+            form.Show();
+        }
     }
 }

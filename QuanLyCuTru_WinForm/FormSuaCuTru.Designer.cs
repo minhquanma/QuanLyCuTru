@@ -54,6 +54,11 @@
             this.dtpNgayHetHan = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayDangKy = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayTao = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lbMaCongDan = new System.Windows.Forms.ListBox();
+            this.cbLoaiCuTru = new System.Windows.Forms.ComboBox();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.txtNhapMaCongDan = new System.Windows.Forms.TextBox();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).BeginInit();
             this.SuspendLayout();
@@ -338,12 +343,74 @@
             this.dtpNgayTao.Size = new System.Drawing.Size(267, 29);
             this.dtpNgayTao.TabIndex = 69;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(466, 300);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(134, 19);
+            this.label13.TabIndex = 100;
+            this.label13.Text = "Danh sách công dân";
+            // 
+            // lbMaCongDan
+            // 
+            this.lbMaCongDan.FormattingEnabled = true;
+            this.lbMaCongDan.Location = new System.Drawing.Point(469, 320);
+            this.lbMaCongDan.Name = "lbMaCongDan";
+            this.lbMaCongDan.Size = new System.Drawing.Size(267, 82);
+            this.lbMaCongDan.TabIndex = 99;
+            // 
+            // cbLoaiCuTru
+            // 
+            this.cbLoaiCuTru.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLoaiCuTru.FormattingEnabled = true;
+            this.cbLoaiCuTru.Items.AddRange(new object[] {
+            "Tạm vắng",
+            "Tạm trú"});
+            this.cbLoaiCuTru.Location = new System.Drawing.Point(469, 259);
+            this.cbLoaiCuTru.Name = "cbLoaiCuTru";
+            this.cbLoaiCuTru.Size = new System.Drawing.Size(267, 33);
+            this.cbLoaiCuTru.TabIndex = 98;
+            this.cbLoaiCuTru.Text = "(Chọn loại cư trú)";
+            // 
+            // btnThem
+            // 
+            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(39)))), ((int)(((byte)(176)))));
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Location = new System.Drawing.Point(669, 409);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(66, 37);
+            this.btnThem.TabIndex = 97;
+            this.btnThem.Text = "THÊM";
+            this.btnThem.UseVisualStyleBackColor = false;
+            // 
+            // txtNhapMaCongDan
+            // 
+            this.txtNhapMaCongDan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNhapMaCongDan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNhapMaCongDan.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNhapMaCongDan.Location = new System.Drawing.Point(469, 408);
+            this.txtNhapMaCongDan.Multiline = true;
+            this.txtNhapMaCongDan.Name = "txtNhapMaCongDan";
+            this.txtNhapMaCongDan.Size = new System.Drawing.Size(207, 37);
+            this.txtNhapMaCongDan.TabIndex = 96;
+            this.txtNhapMaCongDan.Text = "Nhập mã công dân";
+            // 
             // FormSuaCuTru
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(870, 520);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.lbMaCongDan);
+            this.Controls.Add(this.cbLoaiCuTru);
+            this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.txtNhapMaCongDan);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.txtDuong);
             this.Controls.Add(this.btnSua);
@@ -405,5 +472,10 @@
         private System.Windows.Forms.DateTimePicker dtpNgayHetHan;
         private System.Windows.Forms.DateTimePicker dtpNgayDangKy;
         private System.Windows.Forms.DateTimePicker dtpNgayTao;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ListBox lbMaCongDan;
+        private System.Windows.Forms.ComboBox cbLoaiCuTru;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.TextBox txtNhapMaCongDan;
     }
 }
