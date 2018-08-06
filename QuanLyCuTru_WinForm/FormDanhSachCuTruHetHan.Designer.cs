@@ -2,7 +2,7 @@
 
 namespace QuanLyCuTru_WinForm
 {
-    partial class FormDanhSachCuTru
+    partial class FormDanhSachCuTruHetHan
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace QuanLyCuTru_WinForm
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDanhSachCuTru));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDanhSachCuTruHetHan));
             this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.cbbTen = new System.Windows.Forms.ComboBox();
@@ -41,9 +41,6 @@ namespace QuanLyCuTru_WinForm
             this.lbTieuDe = new System.Windows.Forms.Label();
             this.dgvCuTru = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.ptbLoading = new System.Windows.Forms.PictureBox();
-            this.btnThemMoi = new System.Windows.Forms.Button();
-            this.btnChiTiet = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuTru)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbLoading)).BeginInit();
@@ -112,9 +109,9 @@ namespace QuanLyCuTru_WinForm
             this.lbTieuDe.ForeColor = System.Drawing.Color.White;
             this.lbTieuDe.Location = new System.Drawing.Point(25, 13);
             this.lbTieuDe.Name = "lbTieuDe";
-            this.lbTieuDe.Size = new System.Drawing.Size(161, 25);
+            this.lbTieuDe.Size = new System.Drawing.Size(232, 25);
             this.lbTieuDe.TabIndex = 0;
-            this.lbTieuDe.Text = "Danh sách cư trú";
+            this.lbTieuDe.Text = "Danh sách cư trú hết hạn";
             // 
             // dgvCuTru
             // 
@@ -136,85 +133,34 @@ namespace QuanLyCuTru_WinForm
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             this.dgvCuTru.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCuTru.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCuTru.Size = new System.Drawing.Size(677, 380);
+            this.dgvCuTru.Size = new System.Drawing.Size(802, 380);
             this.dgvCuTru.TabIndex = 54;
             // 
             // ptbLoading
             // 
             this.ptbLoading.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ptbLoading.Image = ((System.Drawing.Image)(resources.GetObject("ptbLoading.Image")));
-            this.ptbLoading.Location = new System.Drawing.Point(278, 224);
+            this.ptbLoading.Location = new System.Drawing.Point(337, 210);
             this.ptbLoading.Name = "ptbLoading";
             this.ptbLoading.Size = new System.Drawing.Size(212, 188);
             this.ptbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbLoading.TabIndex = 55;
             this.ptbLoading.TabStop = false;
             // 
-            // btnThemMoi
-            // 
-            this.btnThemMoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnThemMoi.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
-            this.btnThemMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemMoi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemMoi.ForeColor = System.Drawing.Color.Transparent;
-            this.btnThemMoi.Location = new System.Drawing.Point(725, 118);
-            this.btnThemMoi.Name = "btnThemMoi";
-            this.btnThemMoi.Size = new System.Drawing.Size(100, 37);
-            this.btnThemMoi.TabIndex = 53;
-            this.btnThemMoi.Text = "THÊM MỚI";
-            this.btnThemMoi.UseVisualStyleBackColor = false;
-            this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
-            // 
-            // btnChiTiet
-            // 
-            this.btnChiTiet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChiTiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnChiTiet.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
-            this.btnChiTiet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChiTiet.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChiTiet.ForeColor = System.Drawing.Color.Transparent;
-            this.btnChiTiet.Location = new System.Drawing.Point(725, 163);
-            this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(100, 37);
-            this.btnChiTiet.TabIndex = 46;
-            this.btnChiTiet.Text = "CHI TIẾT";
-            this.btnChiTiet.UseVisualStyleBackColor = false;
-            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnSua.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSua.Location = new System.Drawing.Point(725, 442);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(100, 37);
-            this.btnSua.TabIndex = 56;
-            this.btnSua.Text = "SỬA";
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // FormDanhSachCuTru
+            // FormDanhSachCuTruHetHan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 530);
-            this.Controls.Add(this.btnSua);
             this.Controls.Add(this.ptbLoading);
             this.Controls.Add(this.dgvCuTru);
-            this.Controls.Add(this.btnThemMoi);
             this.Controls.Add(this.cbbGioiTinh);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.cbbTen);
-            this.Controls.Add(this.btnChiTiet);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormDanhSachCuTru";
+            this.Name = "FormDanhSachCuTruHetHan";
             this.Text = "FormDanhSachCuTru";
             this.Load += new System.EventHandler(this.FormDanhSachCuTru_Load);
             this.panel3.ResumeLayout(false);
@@ -236,8 +182,5 @@ namespace QuanLyCuTru_WinForm
         private System.Windows.Forms.Label lbTieuDe;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgvCuTru;
         private PictureBox ptbLoading;
-        private Button btnThemMoi;
-        private Button btnChiTiet;
-        private Button btnSua;
     }
 }

@@ -50,7 +50,7 @@
             this.btnCuTru = new System.Windows.Forms.Button();
             this.MenuCutru = new System.Windows.Forms.Panel();
             this.btnDaDuyetCuTru = new System.Windows.Forms.Button();
-            this.btnChuaDuyetCuTru = new System.Windows.Forms.Button();
+            this.btnHetHanCuTru = new System.Windows.Forms.Button();
             this.btnDanhSachCuTru = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnTrangChu = new System.Windows.Forms.Button();
@@ -86,7 +86,7 @@
             this.iconminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconminimizar.Image = ((System.Drawing.Image)(resources.GetObject("iconminimizar.Image")));
             this.iconminimizar.InitialImage = null;
-            this.iconminimizar.Location = new System.Drawing.Point(760, 4);
+            this.iconminimizar.Location = new System.Drawing.Point(780, 4);
             this.iconminimizar.Name = "iconminimizar";
             this.iconminimizar.Size = new System.Drawing.Size(25, 25);
             this.iconminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -99,7 +99,7 @@
             this.iconmaxi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconmaxi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconmaxi.Image = ((System.Drawing.Image)(resources.GetObject("iconmaxi.Image")));
-            this.iconmaxi.Location = new System.Drawing.Point(791, 4);
+            this.iconmaxi.Location = new System.Drawing.Point(811, 4);
             this.iconmaxi.Name = "iconmaxi";
             this.iconmaxi.Size = new System.Drawing.Size(25, 25);
             this.iconmaxi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -112,7 +112,7 @@
             this.iconcerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconcerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconcerrar.Image")));
-            this.iconcerrar.Location = new System.Drawing.Point(822, 4);
+            this.iconcerrar.Location = new System.Drawing.Point(842, 4);
             this.iconcerrar.Name = "iconcerrar";
             this.iconcerrar.Size = new System.Drawing.Size(25, 25);
             this.iconcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -130,7 +130,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(250, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(850, 32);
+            this.panel1.Size = new System.Drawing.Size(870, 32);
             this.panel1.TabIndex = 16;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
@@ -139,7 +139,7 @@
             this.iconrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconrestaurar.Image = ((System.Drawing.Image)(resources.GetObject("iconrestaurar.Image")));
-            this.iconrestaurar.Location = new System.Drawing.Point(791, 4);
+            this.iconrestaurar.Location = new System.Drawing.Point(811, 4);
             this.iconrestaurar.Name = "iconrestaurar";
             this.iconrestaurar.Size = new System.Drawing.Size(25, 25);
             this.iconrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -353,7 +353,7 @@
             // MenuCutru
             // 
             this.MenuCutru.Controls.Add(this.btnDaDuyetCuTru);
-            this.MenuCutru.Controls.Add(this.btnChuaDuyetCuTru);
+            this.MenuCutru.Controls.Add(this.btnHetHanCuTru);
             this.MenuCutru.Controls.Add(this.btnDanhSachCuTru);
             this.MenuCutru.Location = new System.Drawing.Point(53, 55);
             this.MenuCutru.Name = "MenuCutru";
@@ -380,23 +380,23 @@
             this.btnDaDuyetCuTru.UseVisualStyleBackColor = false;
             this.btnDaDuyetCuTru.Click += new System.EventHandler(this.btnDaDuyetCuTru_Click);
             // 
-            // btnChuaDuyetCuTru
+            // btnHetHanCuTru
             // 
-            this.btnChuaDuyetCuTru.BackColor = System.Drawing.Color.Transparent;
-            this.btnChuaDuyetCuTru.FlatAppearance.BorderSize = 0;
-            this.btnChuaDuyetCuTru.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnChuaDuyetCuTru.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChuaDuyetCuTru.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChuaDuyetCuTru.ForeColor = System.Drawing.Color.White;
-            this.btnChuaDuyetCuTru.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChuaDuyetCuTru.Location = new System.Drawing.Point(42, 45);
-            this.btnChuaDuyetCuTru.Name = "btnChuaDuyetCuTru";
-            this.btnChuaDuyetCuTru.Size = new System.Drawing.Size(132, 40);
-            this.btnChuaDuyetCuTru.TabIndex = 13;
-            this.btnChuaDuyetCuTru.Text = "Chưa duyệt";
-            this.btnChuaDuyetCuTru.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChuaDuyetCuTru.UseVisualStyleBackColor = false;
-            this.btnChuaDuyetCuTru.Click += new System.EventHandler(this.btnChuaDuyetCuTru_Click);
+            this.btnHetHanCuTru.BackColor = System.Drawing.Color.Transparent;
+            this.btnHetHanCuTru.FlatAppearance.BorderSize = 0;
+            this.btnHetHanCuTru.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnHetHanCuTru.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHetHanCuTru.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHetHanCuTru.ForeColor = System.Drawing.Color.White;
+            this.btnHetHanCuTru.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHetHanCuTru.Location = new System.Drawing.Point(42, 45);
+            this.btnHetHanCuTru.Name = "btnHetHanCuTru";
+            this.btnHetHanCuTru.Size = new System.Drawing.Size(132, 40);
+            this.btnHetHanCuTru.TabIndex = 13;
+            this.btnHetHanCuTru.Text = "Hết hạn";
+            this.btnHetHanCuTru.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHetHanCuTru.UseVisualStyleBackColor = false;
+            this.btnHetHanCuTru.Click += new System.EventHandler(this.btnHetHanCuTru_Click);
             // 
             // btnDanhSachCuTru
             // 
@@ -490,7 +490,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel6.Location = new System.Drawing.Point(0, 570);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1100, 30);
+            this.panel6.Size = new System.Drawing.Size(1120, 30);
             this.panel6.TabIndex = 14;
             // 
             // panelContent
@@ -500,7 +500,7 @@
             this.panelContent.ForeColor = System.Drawing.Color.White;
             this.panelContent.Location = new System.Drawing.Point(250, 32);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(850, 538);
+            this.panelContent.Size = new System.Drawing.Size(870, 538);
             this.panelContent.TabIndex = 29;
             this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContent_Paint);
             // 
@@ -509,7 +509,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1100, 600);
+            this.ClientSize = new System.Drawing.Size(1120, 600);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.MenuVertical);
@@ -558,7 +558,7 @@
         private System.Windows.Forms.Button btnCongDan;
         private System.Windows.Forms.Panel MenuCutru;
         private System.Windows.Forms.Button btnDaDuyetCuTru;
-        private System.Windows.Forms.Button btnChuaDuyetCuTru;
+        private System.Windows.Forms.Button btnHetHanCuTru;
         private System.Windows.Forms.Button btnDanhSachCuTru;
         private System.Windows.Forms.Panel MenuCongdan;
         private System.Windows.Forms.Button btnChuaDangKyCongDan;

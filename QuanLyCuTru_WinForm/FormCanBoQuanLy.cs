@@ -179,6 +179,11 @@ namespace QuanLyCuTru_WinForm
             }
         }
 
+        private void btnHetHanCuTru_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormDanhSachCuTruHetHan());
+        }
+
         private void btnDaDangKyCongDan_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new FormDanhSachCongDanDaDangKy());
@@ -192,11 +197,6 @@ namespace QuanLyCuTru_WinForm
         private void btnDanhSachCuTru_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new FormDanhSachCuTru());
-        }
-
-        private void btnChuaDuyetCuTru_Click(object sender, EventArgs e)
-        {
-            AbrirFormInPanel(new FormDanhSachCuTruChuaDuyet());
         }
 
         private void btnDaDuyetCuTru_Click(object sender, EventArgs e)

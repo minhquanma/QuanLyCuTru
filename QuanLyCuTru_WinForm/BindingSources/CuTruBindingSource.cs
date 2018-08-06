@@ -22,7 +22,9 @@ namespace QuanLyCuTru_WinForm.BindingSources
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Ngày hết hạn", DataPropertyName = "NgayHetHan" });
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Địa chỉ", DataPropertyName = "DiaChi" });
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Đã duyệt?", DataPropertyName = "DaDuyet" });
-            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời hạn", DataPropertyName = "ThoiHan", });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời hạn", DataPropertyName = "ThoiHan" });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Điện thoại", DataPropertyName = "DienThoai" });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Email", DataPropertyName = "Email" });
             dataGridView.DataSource = source;
         }
     }

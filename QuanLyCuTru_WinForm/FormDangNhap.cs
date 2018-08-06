@@ -75,6 +75,9 @@ namespace QuanLyCuTru_WinForm
             MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             FormCanBoQuanLy form = new FormCanBoQuanLy();
             form.Show();
+
+            // After logged in
+            this.Hide();
         }
     }
 }

@@ -89,7 +89,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 37);
+            this.label1.Size = new System.Drawing.Size(156, 38);
             this.label1.TabIndex = 13;
             this.label1.Text = "Chờ Duyệt";
             // 
@@ -98,9 +98,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(136, 16);
+            this.label2.Location = new System.Drawing.Point(174, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 25);
+            this.label2.Size = new System.Drawing.Size(184, 25);
             this.label2.TabIndex = 19;
             this.label2.Text = " Duyệt Hoặc Từ Chối";
             // 
@@ -327,7 +327,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(23, 14);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 25);
+            this.label8.Size = new System.Drawing.Size(101, 25);
             this.label8.TabIndex = 20;
             this.label8.Text = "Danh sách";
             // 
@@ -373,7 +373,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(10, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 25);
+            this.label9.Size = new System.Drawing.Size(94, 25);
             this.label9.TabIndex = 21;
             this.label9.Text = "Thông tin";
             // 

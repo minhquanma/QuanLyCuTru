@@ -71,7 +71,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDanhSachCongDanDaDangKy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSachCongDanDaDangKy.Location = new System.Drawing.Point(23, 105);
+            this.dgvDanhSachCongDanDaDangKy.Location = new System.Drawing.Point(23, 107);
             this.dgvDanhSachCongDanDaDangKy.Name = "dgvDanhSachCongDanDaDangKy";
             this.dgvDanhSachCongDanDaDangKy.Size = new System.Drawing.Size(804, 369);
             this.dgvDanhSachCongDanDaDangKy.TabIndex = 31;
@@ -84,7 +84,7 @@
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.Transparent;
-            this.btnTimKiem.Location = new System.Drawing.Point(449, 60);
+            this.btnTimKiem.Location = new System.Drawing.Point(449, 62);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(100, 37);
             this.btnTimKiem.TabIndex = 42;
@@ -113,7 +113,7 @@
             this.cbbTen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbbTen.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTen.FormattingEnabled = true;
-            this.cbbTen.Location = new System.Drawing.Point(31, 64);
+            this.cbbTen.Location = new System.Drawing.Point(23, 65);
             this.cbbTen.Name = "cbbTen";
             this.cbbTen.Size = new System.Drawing.Size(100, 29);
             this.cbbTen.TabIndex = 36;
@@ -122,7 +122,7 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(243, 60);
+            this.txtTimKiem.Location = new System.Drawing.Point(243, 62);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(200, 37);
@@ -134,7 +134,7 @@
             this.cbbGioiTinh.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGioiTinh.FormattingEnabled = true;
             this.cbbGioiTinh.ItemHeight = 21;
-            this.cbbGioiTinh.Location = new System.Drawing.Point(137, 64);
+            this.cbbGioiTinh.Location = new System.Drawing.Point(137, 66);
             this.cbbGioiTinh.Name = "cbbGioiTinh";
             this.cbbGioiTinh.Size = new System.Drawing.Size(100, 29);
             this.cbbGioiTinh.TabIndex = 41;

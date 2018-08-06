@@ -166,17 +166,17 @@
     <Compile Include="FormDanhSachCongDan.Designer.cs">
       <DependentUpon>FormDanhSachCongDan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDanhSachCuTruHetHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDanhSachCuTruHetHan.Designer.cs">
+      <DependentUpon>FormDanhSachCuTruHetHan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDanhSachCuTru.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDanhSachCuTru.Designer.cs">
       <DependentUpon>FormDanhSachCuTru.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormDanhSachCuTruChuaDuyet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDanhSachCuTruChuaDuyet.Designer.cs">
-      <DependentUpon>FormDanhSachCuTruChuaDuyet.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLienHe.cs">
       <SubType>Form</SubType>
@@ -304,6 +304,7 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\QuanLyCuTru.dll" />
+    <None Include="Resources\509551992.jpg" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,11 +335,11 @@
     <EmbeddedResource Include="FormDanhSachCongDan.resx">
       <DependentUpon>FormDanhSachCongDan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDanhSachCuTruHetHan.resx">
+      <DependentUpon>FormDanhSachCuTruHetHan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDanhSachCuTru.resx">
       <DependentUpon>FormDanhSachCuTru.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDanhSachCuTruChuaDuyet.resx">
-      <DependentUpon>FormDanhSachCuTruChuaDuyet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLienHe.resx">
       <DependentUpon>FormLienHe.cs</DependentUpon>
@@ -366,6 +367,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="Content\img\favicons\site.webmanifest" />
     <None Include="packages.config" />
