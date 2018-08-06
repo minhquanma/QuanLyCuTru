@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -8,23 +9,52 @@ using System.Threading.Tasks;
 
 namespace QuanLyCuTru_WinForm.Services
 {
-    class HttpService
+    static class HttpService
     {
         public const string CuTru = "api/QuanLyCuTru/";
         public const string CongDan = "api/QuanLyDan/";
         public const string Server = "http://localhost:58360";
-        public static HttpClient Client => InitHttpClient();
-        public static string Token { get; set; }
 
-        private static readonly HttpService instance;
-        public static HttpService Instance()
+        public static HttpClient Client { get; }
+        public static string Token { get; set; }
+        public static string UserName { get; set; }
+        public static string RoleName { get; set; }
+
+        static HttpService()
         {
-            if (instance == null)
+            Client = InitHttpClient();
+        }
+
+        public static async Task<bool> LoginAsync(string username, string password)
+        {
+            var data = new Dictionary<string, string>();
+            data.Add("grant_type", "password");
+            data.Add("username", username);
+            data.Add("password", password);
+
+            var req = new HttpRequestMessage(HttpMethod.Post, Server + "/Token") { Content = new FormUrlEncodedContent(data) };
+            var res = await Client.SendAsync(req);
+
+            if (res.IsSuccessStatusCode)
             {
-                InitHttpClient();
-                return new HttpService();
+                // Deserialize body responsed data
+                dynamic body = JsonConvert.DeserializeObject(res.Content.ReadAsStringAsync().Result);
+
+                // Assign data
+                Token = body.access_token;
+                UserName = body.user_name;
+                RoleName = body.role;
+
+                SetAuthentionToken();
+
+                return true;
             }
-            return instance;
+            return false;                                                                                                                                                                                                                                                                                                                                                                                                                                       
+        }
+
+        private static void SetAuthentionToken()
+        {
+            Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Token);
         }
 
         private static HttpClient InitHttpClient()

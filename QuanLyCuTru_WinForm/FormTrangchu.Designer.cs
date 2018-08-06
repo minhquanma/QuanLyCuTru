@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTrangChu));
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Lịch công tác tuần 32 của Thường trực UBND Thành phố");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("TP đẩy mạnh rà soát lại những thủ tục hành chính còn trì trệ");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("TPHCM: Đẩy mạnh triển khai thực hiện các chương trình trọng điểm");
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCanBoQuanLyCuTru = new System.Windows.Forms.Button();
             this.btnTongQuan = new System.Windows.Forms.Button();
@@ -53,19 +53,22 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbTongSo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.listViewEx1 = new DevComponents.DotNetBar.Controls.ListViewEx();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbUsername = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.listViewTinTuc = new DevComponents.DotNetBar.Controls.ListViewEx();
+            this.ptbLoading = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -145,7 +148,7 @@
             this.btnCanBoQuanLyCongDan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCanBoQuanLyCongDan.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCanBoQuanLyCongDan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnCanBoQuanLyCongDan.Location = new System.Drawing.Point(3, 311);
+            this.btnCanBoQuanLyCongDan.Location = new System.Drawing.Point(3, 308);
             this.btnCanBoQuanLyCongDan.Name = "btnCanBoQuanLyCongDan";
             this.btnCanBoQuanLyCongDan.Size = new System.Drawing.Size(177, 32);
             this.btnCanBoQuanLyCongDan.TabIndex = 24;
@@ -186,7 +189,7 @@
             this.btnQuyenHan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuyenHan.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuyenHan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnQuyenHan.Location = new System.Drawing.Point(3, 90);
+            this.btnQuyenHan.Location = new System.Drawing.Point(3, 87);
             this.btnQuyenHan.Name = "btnQuyenHan";
             this.btnQuyenHan.Size = new System.Drawing.Size(177, 32);
             this.btnQuyenHan.TabIndex = 21;
@@ -253,7 +256,7 @@
             this.lbHetHan.BackColor = System.Drawing.Color.Black;
             this.lbHetHan.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHetHan.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lbHetHan.Location = new System.Drawing.Point(797, 22);
+            this.lbHetHan.Location = new System.Drawing.Point(797, 19);
             this.lbHetHan.Name = "lbHetHan";
             this.lbHetHan.Size = new System.Drawing.Size(25, 29);
             this.lbHetHan.TabIndex = 7;
@@ -267,7 +270,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label11.Location = new System.Drawing.Point(689, 21);
+            this.label11.Location = new System.Drawing.Point(682, 19);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 30);
             this.label11.TabIndex = 6;
@@ -282,7 +285,7 @@
             this.lbChoDuyet.BackColor = System.Drawing.Color.Black;
             this.lbChoDuyet.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbChoDuyet.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lbChoDuyet.Location = new System.Drawing.Point(630, 21);
+            this.lbChoDuyet.Location = new System.Drawing.Point(620, 19);
             this.lbChoDuyet.Name = "lbChoDuyet";
             this.lbChoDuyet.Size = new System.Drawing.Size(25, 29);
             this.lbChoDuyet.TabIndex = 5;
@@ -325,7 +328,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label7.Location = new System.Drawing.Point(214, 19);
+            this.label7.Location = new System.Drawing.Point(213, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(184, 30);
             this.label7.TabIndex = 2;
@@ -360,47 +363,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Tổng Số";
             // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Controls.Add(this.listViewEx1);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(248, 62);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(620, 376);
-            this.panel4.TabIndex = 29;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label3.Location = new System.Drawing.Point(38, 90);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(467, 30);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Hệ thống quản lý thông tin cư trú tại địa phương";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label2.Location = new System.Drawing.Point(32, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(400, 65);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Xin Chào Cán Bộ";
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
@@ -422,29 +384,96 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông báo! Tin tức từ chỉ huy.";
             // 
-            // listViewEx1
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label2.Location = new System.Drawing.Point(42, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(309, 50);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Xin Chào Cán Bộ";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label3.Location = new System.Drawing.Point(333, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(229, 21);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Tin tức mới nhất UBND TP.HCM";
+            // 
+            // lbUsername
+            // 
+            this.lbUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbUsername.AutoSize = true;
+            this.lbUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsername.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbUsername.Location = new System.Drawing.Point(46, 79);
+            this.lbUsername.Name = "lbUsername";
+            this.lbUsername.Size = new System.Drawing.Size(286, 25);
+            this.lbUsername.TabIndex = 3;
+            this.lbUsername.Text = "username@gmail.com (ChucVu)";
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Controls.Add(this.ptbLoading);
+            this.panel4.Controls.Add(this.lbUsername);
+            this.panel4.Controls.Add(this.listViewTinTuc);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Location = new System.Drawing.Point(248, 62);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(620, 376);
+            this.panel4.TabIndex = 29;
+            // 
+            // listViewTinTuc
             // 
             // 
             // 
             // 
-            this.listViewEx1.Border.Class = "ListViewBorder";
-            this.listViewEx1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.listViewEx1.DisabledBackColor = System.Drawing.Color.Empty;
-            listViewGroup1.Header = "ListViewGroup";
-            listViewGroup1.Name = "listViewGroup1";
-            listViewGroup2.Header = "ListViewGroup";
-            listViewGroup2.Name = "listViewGroup2";
-            listViewGroup3.Header = "ListViewGroup";
-            listViewGroup3.Name = "listViewGroup3";
-            this.listViewEx1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3});
-            this.listViewEx1.Location = new System.Drawing.Point(43, 144);
-            this.listViewEx1.Name = "listViewEx1";
-            this.listViewEx1.Size = new System.Drawing.Size(541, 210);
-            this.listViewEx1.TabIndex = 2;
-            this.listViewEx1.UseCompatibleStateImageBehavior = false;
+            this.listViewTinTuc.Border.Class = "ListViewBorder";
+            this.listViewTinTuc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.listViewTinTuc.DisabledBackColor = System.Drawing.Color.Empty;
+            this.listViewTinTuc.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewTinTuc.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.listViewTinTuc.FullRowSelect = true;
+            this.listViewTinTuc.GridLines = true;
+            this.listViewTinTuc.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
+            this.listViewTinTuc.Location = new System.Drawing.Point(51, 153);
+            this.listViewTinTuc.Name = "listViewTinTuc";
+            this.listViewTinTuc.Size = new System.Drawing.Size(511, 210);
+            this.listViewTinTuc.TabIndex = 2;
+            this.listViewTinTuc.UseCompatibleStateImageBehavior = false;
+            this.listViewTinTuc.View = System.Windows.Forms.View.List;
+            // 
+            // ptbLoading
+            // 
+            this.ptbLoading.BackColor = System.Drawing.Color.White;
+            this.ptbLoading.Image = ((System.Drawing.Image)(resources.GetObject("ptbLoading.Image")));
+            this.ptbLoading.Location = new System.Drawing.Point(205, 163);
+            this.ptbLoading.Name = "ptbLoading";
+            this.ptbLoading.Size = new System.Drawing.Size(212, 188);
+            this.ptbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbLoading.TabIndex = 56;
+            this.ptbLoading.TabStop = false;
             // 
             // FormTrangChu
             // 
@@ -466,10 +495,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLoading)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -497,11 +527,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbTongSo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private DevComponents.DotNetBar.Controls.ListViewEx listViewEx1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbUsername;
+        private System.Windows.Forms.Panel panel4;
+        private DevComponents.DotNetBar.Controls.ListViewEx listViewTinTuc;
+        private System.Windows.Forms.PictureBox ptbLoading;
     }
 }

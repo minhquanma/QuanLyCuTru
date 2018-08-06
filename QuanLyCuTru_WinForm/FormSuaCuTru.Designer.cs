@@ -355,10 +355,12 @@
             // 
             // lbMaCongDan
             // 
+            this.lbMaCongDan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMaCongDan.FormattingEnabled = true;
+            this.lbMaCongDan.ItemHeight = 20;
             this.lbMaCongDan.Location = new System.Drawing.Point(469, 320);
             this.lbMaCongDan.Name = "lbMaCongDan";
-            this.lbMaCongDan.Size = new System.Drawing.Size(267, 82);
+            this.lbMaCongDan.Size = new System.Drawing.Size(267, 64);
             this.lbMaCongDan.TabIndex = 99;
             // 
             // cbLoaiCuTru

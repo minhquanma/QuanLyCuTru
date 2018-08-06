@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuTru_WinForm.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -70,14 +71,28 @@ namespace QuanLyCuTru_WinForm
             }
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
+        private async void btnDangNhap_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            FormCanBoQuanLy form = new FormCanBoQuanLy();
-            form.Show();
+            // Hiện loading 
+            // Disable nút DangNhap
 
-            // After logged in
-            this.Hide();
+            // Chức năng đăng nhập
+            var loginResult = true;
+            // var loginResult = await HttpService.LoginAsync(txtUsername.Text, txtPassword.Text);
+
+            if (loginResult)
+            {
+                // Ẩn loading đi 
+                MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FormCanBoQuanLy form = new FormCanBoQuanLy();
+                form.Show();
+
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Đăng nhập thất bại, vui lòng thử lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -295,6 +295,7 @@
     <Compile Include="Controllers\QuanLyCuTruController.cs" />
     <Compile Include="Controllers\QuanLyDanController.cs" />
     <Compile Include="DTOs\CuTruDTO.cs" />
+    <Compile Include="DTOs\LoaiCuTruDTO.cs" />
     <Compile Include="DTOs\NguoiDungDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
