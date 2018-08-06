@@ -55,7 +55,7 @@
             this.dtpNgayDangKy = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayTao = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
-            this.lbMaCongDan = new System.Windows.Forms.ListBox();
+            this.lstBoxMaCongDan = new System.Windows.Forms.ListBox();
             this.cbLoaiCuTru = new System.Windows.Forms.ComboBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.txtNhapMaCongDan = new System.Windows.Forms.TextBox();
@@ -353,15 +353,15 @@
             this.label13.TabIndex = 100;
             this.label13.Text = "Danh sách công dân";
             // 
-            // lbMaCongDan
+            // lstBoxMaCongDan
             // 
-            this.lbMaCongDan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaCongDan.FormattingEnabled = true;
-            this.lbMaCongDan.ItemHeight = 20;
-            this.lbMaCongDan.Location = new System.Drawing.Point(469, 320);
-            this.lbMaCongDan.Name = "lbMaCongDan";
-            this.lbMaCongDan.Size = new System.Drawing.Size(267, 64);
-            this.lbMaCongDan.TabIndex = 99;
+            this.lstBoxMaCongDan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstBoxMaCongDan.FormattingEnabled = true;
+            this.lstBoxMaCongDan.ItemHeight = 20;
+            this.lstBoxMaCongDan.Location = new System.Drawing.Point(469, 320);
+            this.lstBoxMaCongDan.Name = "lstBoxMaCongDan";
+            this.lstBoxMaCongDan.Size = new System.Drawing.Size(267, 64);
+            this.lstBoxMaCongDan.TabIndex = 99;
             // 
             // cbLoaiCuTru
             // 
@@ -389,6 +389,7 @@
             this.btnThem.TabIndex = 97;
             this.btnThem.Text = "THÊM";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtNhapMaCongDan
             // 
@@ -409,7 +410,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(870, 520);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.lbMaCongDan);
+            this.Controls.Add(this.lstBoxMaCongDan);
             this.Controls.Add(this.cbLoaiCuTru);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtNhapMaCongDan);
@@ -475,7 +476,7 @@
         private System.Windows.Forms.DateTimePicker dtpNgayDangKy;
         private System.Windows.Forms.DateTimePicker dtpNgayTao;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ListBox lbMaCongDan;
+        private System.Windows.Forms.ListBox lstBoxMaCongDan;
         private System.Windows.Forms.ComboBox cbLoaiCuTru;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.TextBox txtNhapMaCongDan;

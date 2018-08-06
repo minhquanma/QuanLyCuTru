@@ -38,7 +38,6 @@ namespace QuanLyCuTru_WinForm
 
         private void btnChiTiet_Click(object sender, EventArgs e)
         {
-
             // Lấy ra 1 Cư Trú đầu tiên trong danh sách
             var selectedRow = dgvCuTru.SelectedRows[0];
             var selectedCuTru = (CuTruDTO)selectedRow.DataBoundItem;
@@ -62,7 +61,11 @@ namespace QuanLyCuTru_WinForm
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            FormSuaCuTru form = new FormSuaCuTru();
+            // Lấy ra 1 Cư Trú đầu tiên trong danh sách
+            var selectedRow = dgvCuTru.SelectedRows[0];
+            var selectedCuTru = (CuTruDTO)selectedRow.DataBoundItem;
+
+            FormSuaCuTru form = new FormSuaCuTru(selectedCuTru);
             form.Show();
         }
     }

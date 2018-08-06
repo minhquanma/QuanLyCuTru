@@ -190,7 +190,7 @@ namespace QuanLyCuTru_WinForm
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSua.Location = new System.Drawing.Point(725, 442);
+            this.btnSua.Location = new System.Drawing.Point(725, 459);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(100, 37);
             this.btnSua.TabIndex = 56;

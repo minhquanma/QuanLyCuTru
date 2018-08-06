@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuTru.DTOs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,10 +18,36 @@ namespace QuanLyCuTru_WinForm
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+        public CuTruDTO CuTru { get; set; }
+
+        public FormSuaCuTru(CuTruDTO cuTru)
+        {
+            CuTru = cuTru;
+            InitializeComponent();
+            LoadCuTruData();
+        }
+
         public FormSuaCuTru()
         {
             InitializeComponent();
         }
+
+        public void LoadCuTruData()
+        {
+            dtpNgayTao.Value = CuTru.NgayTao;
+            dtpNgayDangKy.Value = CuTru.NgayDangKy;
+            dtpNgayHetHan.Value = CuTru.NgayHetHan;
+            txtEmail.Text = CuTru.Email;
+            txtDienThoai.Text = CuTru.DienThoai;
+            txtSoNha.Text = CuTru.SoNha;
+            txtDuong.Text = CuTru.Duong;
+            txtPhuong.Text = CuTru.Phuong;
+            txtQuan.Text = CuTru.Quan;
+            txtThanhPho.Text = CuTru.ThanhPho;
+            cbLoaiCuTru.SelectedIndex = CuTru.LoaiCuTruId - 1;
+        }
+
         private void panelTop_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -34,6 +61,11 @@ namespace QuanLyCuTru_WinForm
         private void ptbThoat_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            lstBoxMaCongDan.Items.Add(txtNhapMaCongDan.Text);
         }
     }
 }
