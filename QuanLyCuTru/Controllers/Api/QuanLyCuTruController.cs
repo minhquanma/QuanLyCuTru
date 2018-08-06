@@ -69,6 +69,7 @@ namespace QuanLyCuTru.Controllers.Api
 
             return Ok(cuTrus);
         }
+
         // GET /api/quanlycutru?duyet=true|false
         [Route("")]
         [ResponseType(typeof(CuTru))]
@@ -81,7 +82,20 @@ namespace QuanLyCuTru.Controllers.Api
 
             return Ok(cuTrus);
         }
-        
+
+        // GET /api/quanlycutru?hethan=true|false
+        [Route("hethan")]
+        [ResponseType(typeof(CuTru))]
+        public IHttpActionResult GetExpiredCuTrus()
+        {
+            var cuTrus = db.CuTrus
+                    .Where(c => DateTime.Now > c.NgayHetHan)
+                    .Select(Mapper.Map<CuTru, CuTruDTO>)
+                    .ToList();
+
+            return Ok(cuTrus);
+        }
+
         // Tìm kiếm cư trú theo tên công dân
         // GET /api/quanlycutru?hoten="abc"
         [Route("")]

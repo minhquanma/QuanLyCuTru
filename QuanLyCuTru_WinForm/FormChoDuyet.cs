@@ -27,7 +27,7 @@ namespace QuanLyCuTru_WinForm
 
         private async void FormChoDuyet_Load(object sender, EventArgs e)
         {
-            CuTruBindingSource.Bind(await repo.GetByState(false), dgvDanhSachChoDuyet);
+            CuTruBindingSource.Bind(await repo.GetByStateAsync(false), dgvDanhSachChoDuyet);
         }
 
         private async void btnDuyet_Click(object sender, EventArgs e)

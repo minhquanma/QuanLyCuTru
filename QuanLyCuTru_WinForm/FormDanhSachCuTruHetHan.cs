@@ -26,7 +26,7 @@ namespace QuanLyCuTru_WinForm
         private async void FormDanhSachCuTru_Load(object sender, EventArgs e)
         {
             ptbLoading.Show();
-            CuTruBindingSource.Bind(await repo.GetAllAsync(), dgvCuTru);
+            CuTruBindingSource.Bind(await repo.GetExpiredAsync(), dgvCuTru);
             ptbLoading.Hide();
         }
 

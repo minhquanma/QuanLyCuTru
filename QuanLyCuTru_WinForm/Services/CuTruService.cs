@@ -71,12 +71,29 @@ namespace QuanLyCuTru_WinForm.Models
             return cuTrus;
         }
 
-        public async Task<List<CuTruDTO>> GetByState(bool daDuyet)
+        public async Task<List<CuTruDTO>> GetByStateAsync(bool daDuyet)
         {
             List<CuTruDTO> cuTrus = null;
 
             // Request url template
             var url = $"{host}?duyet={daDuyet.ToString()}";
+
+            HttpResponseMessage res = await client.GetAsync(url);
+            if (res.IsSuccessStatusCode)
+            {
+                cuTrus = await res.Content.ReadAsAsync<List<CuTruDTO>>();
+            }
+
+            return cuTrus;
+        }
+
+        // GET /api/quanlycutru?hethan=true|false
+        public async Task<List<CuTruDTO>> GetExpiredAsync()
+        {
+            List<CuTruDTO> cuTrus = null;
+
+            // Request url template
+            var url = $"{host}/hethan";
 
             HttpResponseMessage res = await client.GetAsync(url);
             if (res.IsSuccessStatusCode)
