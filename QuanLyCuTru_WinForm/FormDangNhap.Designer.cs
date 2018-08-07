@@ -36,7 +36,9 @@
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.ptbExit = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.ptbloading = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbloading)).BeginInit();
             this.SuspendLayout();
             // 
             // line1
@@ -57,7 +59,7 @@
             this.txtUsername.ForeColor = System.Drawing.Color.LightGray;
             this.txtUsername.Location = new System.Drawing.Point(68, 64);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(375, 29);
+            this.txtUsername.Size = new System.Drawing.Size(375, 26);
             this.txtUsername.TabIndex = 1;
             this.txtUsername.Text = "Username";
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
@@ -80,7 +82,7 @@
             this.label1.ForeColor = System.Drawing.Color.LightGray;
             this.label1.Location = new System.Drawing.Point(212, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 42);
+            this.label1.Size = new System.Drawing.Size(95, 37);
             this.label1.TabIndex = 4;
             this.label1.Text = "LOGIN";
             // 
@@ -120,11 +122,22 @@
             this.txtPassword.ForeColor = System.Drawing.Color.LightGray;
             this.txtPassword.Location = new System.Drawing.Point(68, 141);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(375, 29);
+            this.txtPassword.Size = new System.Drawing.Size(375, 26);
             this.txtPassword.TabIndex = 7;
             this.txtPassword.Text = "Password";
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
+            // 
+            // ptbloading
+            // 
+            this.ptbloading.BackColor = System.Drawing.Color.Transparent;
+            this.ptbloading.Image = ((System.Drawing.Image)(resources.GetObject("ptbloading.Image")));
+            this.ptbloading.Location = new System.Drawing.Point(66, 64);
+            this.ptbloading.Name = "ptbloading";
+            this.ptbloading.Size = new System.Drawing.Size(392, 112);
+            this.ptbloading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbloading.TabIndex = 8;
+            this.ptbloading.TabStop = false;
             // 
             // FormDangNhap
             // 
@@ -132,6 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(514, 291);
+            this.Controls.Add(this.ptbloading);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.ptbExit);
             this.Controls.Add(this.btnDangNhap);
@@ -148,6 +162,7 @@
             this.Text = "FormDangNhap";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDangNhap_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbloading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +177,6 @@
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.PictureBox ptbExit;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.PictureBox ptbloading;
     }
 }

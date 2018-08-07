@@ -243,6 +243,8 @@
     <Content Include="Content\img\loadding.gif" />
     <Content Include="Content\img\loading %282%29.gif" />
     <Content Include="Content\img\loading.gif" />
+    <Content Include="Content\img\loadingLogin.gif" />
+    <Content Include="Content\img\loadingLogin2.gif" />
     <Content Include="Content\img\logomobile.png" />
     <Content Include="Content\img\max-clack.png" />
     <Content Include="Content\img\max.png" />
@@ -250,8 +252,10 @@
     <Content Include="Content\img\minimazar.png" />
     <Content Include="Content\img\opacity.png" />
     <Content Include="Content\img\opacity1.png" />
+    <Content Include="Content\img\ProgressImage.gif" />
     <Content Include="Content\img\restore.png" />
     <Content Include="Content\img\signal.png" />
+    <Content Include="Content\img\SkinnySeveralAsianlion.gif" />
     <Content Include="Content\img\transparent-loading-gif-images-6.gif" />
     <Content Include="Content\img\user.png" />
     <Content Include="Content\img\users-mini.png" />

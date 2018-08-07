@@ -21,6 +21,7 @@ namespace QuanLyCuTru_WinForm
         public FormDangNhap()
         {
             InitializeComponent();
+            ptbloading.Hide();
         }
 
         private void ptbExit_Click(object sender, EventArgs e)
@@ -74,15 +75,17 @@ namespace QuanLyCuTru_WinForm
         private async void btnDangNhap_Click(object sender, EventArgs e)
         {
             // Hiện loading 
+            ptbloading.Show();
             // Disable nút DangNhap
-
+            btnDangNhap.Enabled = false;
             // Chức năng đăng nhập
             var loginResult = true;
             // var loginResult = await HttpService.LoginAsync(txtUsername.Text, txtPassword.Text);
 
             if (loginResult)
             {
-                // Ẩn loading đi 
+                // Ẩn loading đi
+                
                 MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FormCanBoQuanLy form = new FormCanBoQuanLy();
                 form.Show();
@@ -91,6 +94,7 @@ namespace QuanLyCuTru_WinForm
             }
             else
             {
+                ptbloading.Hide();
                 MessageBox.Show("Đăng nhập thất bại, vui lòng thử lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
