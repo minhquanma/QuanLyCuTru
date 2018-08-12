@@ -117,7 +117,7 @@ namespace QuanLyCuTru_WinForm.Models
             return cuTru;
         }
 
-        public async Task<Uri> CreateCuTruAsync(CuTruDTO cuTru)
+        public async Task<Uri> CreateAsync(CuTruDTO cuTru)
         {
             HttpResponseMessage res = await client.PostAsJsonAsync(host, cuTru);
             res.EnsureSuccessStatusCode();

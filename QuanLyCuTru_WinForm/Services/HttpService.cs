@@ -49,6 +49,7 @@ namespace QuanLyCuTru_WinForm.Services
 
                 return true;
             }
+            // If authentication failed
             return false;                                                                                                                                                                                                                                                                                                                                                                                                                                       
         }
 

@@ -23,11 +23,16 @@ namespace QuanLyCuTru_WinForm
             InitializeComponent();
         }
 
-        private async void FormDanhSachCuTru_Load(object sender, EventArgs e)
+        public async void LoadDanhSach()
         {
             ptbLoading.Show();
             CuTruBindingSource.Bind(await repo.GetAllAsync(), dgvCuTru);
             ptbLoading.Hide();
+        }
+
+        private async void FormDanhSachCuTru_Load(object sender, EventArgs e)
+        {
+            LoadDanhSach();
         }
 
         private void btnThemMoi_Click(object sender, EventArgs e)
@@ -67,6 +72,11 @@ namespace QuanLyCuTru_WinForm
 
             FormSuaCuTru form = new FormSuaCuTru(selectedCuTru);
             form.Show();
+        }
+
+        private void btnTaiLai_Click(object sender, EventArgs e)
+        {
+            LoadDanhSach();
         }
     }
 }

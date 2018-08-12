@@ -19,7 +19,8 @@ namespace QuanLyCuTru.App_Start
             Mapper.Initialize(config =>
             {
                 config.CreateMap<NguoiDung, NguoiDungDTO>();
-                config.CreateMap<NguoiDungDTO, NguoiDung>();
+                config.CreateMap<NguoiDungDTO, NguoiDung>()
+                    .ForMember(dest => dest.Id, option => option.Ignore());
 
                 config.CreateMap<CuTru, CuTruDTO>()
                     .ForMember(

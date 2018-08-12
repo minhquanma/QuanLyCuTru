@@ -1,5 +1,6 @@
 ﻿using QuanLyCuTru.DTOs;
 using QuanLyCuTru_WinForm.Models;
+using QuanLyCuTru_WinForm.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace QuanLyCuTru_WinForm
     public partial class FormDangKyCuTru : Form
     {
         CuTruService repo = new CuTruService();
+        List<int> danhSachCongDan = new List<int>();
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -25,6 +27,9 @@ namespace QuanLyCuTru_WinForm
         public FormDangKyCuTru()
         {
             InitializeComponent();
+
+            this.dtpNgayHetHan.Value = DateTime.Now.AddMonths(1);
+
         }
 
         private void btnNhapLai_Click(object sender, EventArgs e)
@@ -47,7 +52,7 @@ namespace QuanLyCuTru_WinForm
             txtNhapMaCongDan.Text = "";
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        private async void btnThem_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtNhapMaCongDan.Text))
             {
@@ -55,17 +60,28 @@ namespace QuanLyCuTru_WinForm
             }
             else
             {
-                List<int> list = new List<int>();
-                list.Add(int.Parse(txtNhapMaCongDan.Text));
-                
-                lbMaCongDan.DataSource = list;
-                
+                ptbLoading.Visible = true;
+                txtNhapMaCongDan.Enabled = false;
+
+                // Lay data tu server
+                var service = new NguoiDungService();
+                var congDan = await service.GetByIdAsync(txtNhapMaCongDan.Text);
+
+                if (congDan == null)
+                    MessageBox.Show($"Mã số công dân {txtNhapMaCongDan.Text} không tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    lbMaCongDan.Items.Add($"{congDan.Id} {congDan.HoTen} ({congDan.StringGioiTinh})");
+                    danhSachCongDan.Add(congDan.Id);
+                }
+
+                txtNhapMaCongDan.Enabled = true;
+                ptbLoading.Visible = false;
             }
         }
 
         public async void CreateCuTru()
         {
-            var listCongDan = (List<int>)lbMaCongDan.DataSource;
             var cuTru = new CuTruDTO
             {
                 NgayDangKy = dtpNgayDangKy.Value,
@@ -79,18 +95,19 @@ namespace QuanLyCuTru_WinForm
                 Quan = txtQuan.Text,
                 ThanhPho = txtThanhPho.Text,
                 LoaiCuTruId = cbLoaiCuTru.SelectedIndex + 1,
-                CongDanIds = listCongDan
+                CongDanIds = danhSachCongDan
             };
 
             try
             {
-                var url = await repo.CreateCuTruAsync(cuTru);
+                var url = await repo.CreateAsync(cuTru);
                 MessageBox.Show("Đã tạo thành công cư trú mới", url.ToString());
             } catch(Exception e)
             {
                 MessageBox.Show(e.Message);
             }
         }
+
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
             bool txtCompleted = true;

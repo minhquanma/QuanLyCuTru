@@ -86,24 +86,29 @@ namespace QuanLyCuTru.Controllers.Api
 
         // PUT: api/QuanLyDan/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutNguoiDung(int id, NguoiDung nguoiDung)
+        [Route("{id}")]
+        [HttpPut]
+        public async Task<IHttpActionResult> PutNguoiDung(int id, NguoiDungDTO dto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != nguoiDung.Id)
+            if (id != dto.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(nguoiDung).State = EntityState.Modified;
+            var nguoiDung = db.NguoiDungs.FirstOrDefault(c => c.Id == id);
+
+            Mapper.Map(dto, nguoiDung);
 
             try
             {
                 await db.SaveChangesAsync();
             }
+
             catch (DbUpdateConcurrencyException)
             {
                 if (!NguoiDungExists(id))

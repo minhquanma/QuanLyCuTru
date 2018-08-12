@@ -189,21 +189,17 @@ namespace QuanLyCuTru.Controllers.Api
 
             Mapper.Map(dto, cuTru);
 
-            //// Perform update Cong Dan infos
-            //foreach (int value in dto.CongDans)
-            //{
-            //    // Query each congdan
-            //    var congDan = db.NguoiDungs.SingleOrDefault(c => c.Id == value);
+            // Add CongDan entities into posted CuTru
+            foreach (var _id in dto.CongDanIds)
+            {
+                // Query each congdan
+                var congDan = db.NguoiDungs.SingleOrDefault(c => c.Id == _id);
 
-            //    if (congDan == null)
-            //    {
-            //        // Non existent
-            //        return BadRequest();
-            //    }
+                if (congDan == null)
+                    return BadRequest();
 
-            //    cuTru.CongDans.Add(congDan);
-            //}
-
+                cuTru.CongDans.Add(congDan);
+            }
 
             db.SaveChanges();
 

@@ -257,7 +257,6 @@ namespace QuanLyCuTru.Controllers
                 DaDuyet = DuocDuyet, 
                 CongDans = new Collection<NguoiDung>()
             };
-
            
             foreach (int value in viewModel.CongDans)
             {

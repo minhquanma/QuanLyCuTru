@@ -20,6 +20,7 @@ namespace QuanLyCuTru_WinForm.BindingSources
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Họ tên", DataPropertyName = "HoTen" });
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Giới tính", DataPropertyName = "StringGioiTinh" });
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Sinh nhật", DataPropertyName = "SinhNhat" });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Địa chỉ", DataPropertyName = "DiaChi" });
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Nơi sinh", DataPropertyName = "NoiSinh" });
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Quê quán", DataPropertyName = "QueQuan" });
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Quốc tịch", DataPropertyName = "QuocTich", });

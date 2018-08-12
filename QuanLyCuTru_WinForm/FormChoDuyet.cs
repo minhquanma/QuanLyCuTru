@@ -46,6 +46,9 @@ namespace QuanLyCuTru_WinForm
                     MessageBox.Show("Đã duyệt thành công!", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Đã có lỗi xảy ra!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+                // Tải lại danh sách
+                CuTruBindingSource.Bind(await repo.GetByStateAsync(false), dgvDanhSachChoDuyet);
             }
         }
 

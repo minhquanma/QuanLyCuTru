@@ -1,4 +1,5 @@
 ﻿using QuanLyCuTru.DTOs;
+using QuanLyCuTru_WinForm.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,10 +33,10 @@ namespace QuanLyCuTru_WinForm
             InitializeComponent();
         }
 
-        private void FormSuaCongDan_Load(object sender, EventArgs e)
+        public void LoadCongDanData()
         {
             txtHoTen.Text = CongDan.HoTen;
-
+            dtpSinhNhat.Value = CongDan.SinhNhat;
             txtDienThoai.Text = CongDan.DienThoai;
             txtSoNha.Text = CongDan.SoNha;
             txtDuong.Text = CongDan.Duong;
@@ -45,11 +46,30 @@ namespace QuanLyCuTru_WinForm
             txtNoiSinh.Text = CongDan.NoiSinh;
             txtQuocTich.Text = CongDan.QuocTich;
             txtQueQuan.Text = CongDan.QueQuan;
+            rbNam.Checked = CongDan.GioiTinh;
+            cmbChucVu.SelectedIndex = CongDan.ChucVuId - 1;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void GetCongDanFormInput()
         {
+            CongDan.HoTen = txtHoTen.Text;
+            CongDan.SinhNhat = dtpSinhNhat.Value;
+            CongDan.DienThoai = txtDienThoai.Text;
+            CongDan.SoNha = txtSoNha.Text;
+            CongDan.Duong = txtDuong.Text;
+            CongDan.Phuong = txtPhuong.Text;
+            CongDan.Quan = txtQuan.Text;
+            CongDan.ThanhPho = txtThanhPho.Text;
+            CongDan.NoiSinh = txtNoiSinh.Text;
+            CongDan.QuocTich = txtQuocTich.Text;
+            CongDan.QueQuan = txtQueQuan.Text;
+            CongDan.GioiTinh = rbNam.Checked ? true : false;
+            CongDan.ChucVuId = cmbChucVu.SelectedIndex + 1;
+        }
 
+        private void FormSuaCongDan_Load(object sender, EventArgs e)
+        {
+            LoadCongDanData();
         }
 
         private void ptbThoat_Click(object sender, EventArgs e)
@@ -63,11 +83,11 @@ namespace QuanLyCuTru_WinForm
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private async void btnSua_Click(object sender, EventArgs e)
         {
+            #region Form inputs validation logic (Logic xử lý lỗi đầu vào từ form)
             bool txtCompleted = true;
-            string errorMessage = "Nhập đầy đủ thông tin rồi thử lại";
-            string successMessage = "Thành công";
+
             //Kiểm tra textbox có rỗng ko
             foreach (Control c in Controls)
             {
@@ -79,17 +99,13 @@ namespace QuanLyCuTru_WinForm
                     }
                 }
             }
+
             if (txtCompleted == false)
             {
-                MessageBox.Show(errorMessage, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nhập đầy đủ thông tin rồi thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            if (txtCompleted == true)
-            {
-                //
-                MessageBox.Show(successMessage, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            //Đổi màu textbox rỗng
+            // Đổi màu textbox rỗng
             foreach (TextBox tb in this.Controls.OfType<TextBox>())
             {
                 if (String.IsNullOrEmpty(tb.Text))
@@ -101,6 +117,7 @@ namespace QuanLyCuTru_WinForm
                     tb.BackColor = System.Drawing.Color.White;
                 }
             }
+
             //Đổi màu checkbox chưa checked
             if (rbNam.Checked == false && rbNu.Checked == false)
             {
@@ -111,6 +128,27 @@ namespace QuanLyCuTru_WinForm
             {
                 rbNam.ForeColor = this.ForeColor;
                 rbNu.ForeColor = this.ForeColor;
+            }
+            #endregion
+
+            if (txtCompleted)
+            {
+                var repo = new NguoiDungService();
+
+                GetCongDanFormInput();
+
+                // Call API
+                bool result = await repo.UpdateAsync(CongDan);
+                if (result)
+                {
+                    MessageBox.Show("Đã cập nhật thành công", "Thành công",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thông tin thất bại", "Thất bại",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }  

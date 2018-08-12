@@ -60,8 +60,10 @@
             this.cbLoaiCuTru = new System.Windows.Forms.ComboBox();
             this.lbMaCongDan = new System.Windows.Forms.ListBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.ptbLoading = new System.Windows.Forms.PictureBox();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpNgayTao
@@ -70,7 +72,7 @@
             this.dtpNgayTao.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayTao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayTao.Location = new System.Drawing.Point(149, 96);
-            this.dtpNgayTao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpNgayTao.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayTao.Name = "dtpNgayTao";
             this.dtpNgayTao.Size = new System.Drawing.Size(355, 34);
             this.dtpNgayTao.TabIndex = 1;
@@ -80,7 +82,7 @@
             this.dtpNgayDangKy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpNgayDangKy.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.dtpNgayDangKy.Location = new System.Drawing.Point(149, 160);
-            this.dtpNgayDangKy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpNgayDangKy.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayDangKy.Name = "dtpNgayDangKy";
             this.dtpNgayDangKy.Size = new System.Drawing.Size(355, 34);
             this.dtpNgayDangKy.TabIndex = 2;
@@ -90,7 +92,7 @@
             this.dtpNgayHetHan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpNgayHetHan.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.dtpNgayHetHan.Location = new System.Drawing.Point(149, 224);
-            this.dtpNgayHetHan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpNgayHetHan.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayHetHan.Name = "dtpNgayHetHan";
             this.dtpNgayHetHan.Size = new System.Drawing.Size(355, 34);
             this.dtpNgayHetHan.TabIndex = 3;
@@ -243,7 +245,7 @@
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtEmail.Location = new System.Drawing.Point(149, 292);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(355, 45);
@@ -254,7 +256,7 @@
             this.txtDienThoai.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtDienThoai.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtDienThoai.Location = new System.Drawing.Point(149, 364);
-            this.txtDienThoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDienThoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtDienThoai.Multiline = true;
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(355, 45);
@@ -265,7 +267,7 @@
             this.txtSoNha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSoNha.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtSoNha.Location = new System.Drawing.Point(149, 438);
-            this.txtSoNha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoNha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoNha.Multiline = true;
             this.txtSoNha.Name = "txtSoNha";
             this.txtSoNha.Size = new System.Drawing.Size(355, 45);
@@ -276,7 +278,7 @@
             this.txtPhuong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPhuong.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtPhuong.Location = new System.Drawing.Point(625, 96);
-            this.txtPhuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhuong.Multiline = true;
             this.txtPhuong.Name = "txtPhuong";
             this.txtPhuong.Size = new System.Drawing.Size(355, 45);
@@ -287,7 +289,7 @@
             this.txtQuan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtQuan.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtQuan.Location = new System.Drawing.Point(625, 171);
-            this.txtQuan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtQuan.Margin = new System.Windows.Forms.Padding(4);
             this.txtQuan.Multiline = true;
             this.txtQuan.Name = "txtQuan";
             this.txtQuan.Size = new System.Drawing.Size(355, 45);
@@ -298,7 +300,7 @@
             this.txtThanhPho.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtThanhPho.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtThanhPho.Location = new System.Drawing.Point(625, 242);
-            this.txtThanhPho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtThanhPho.Margin = new System.Windows.Forms.Padding(4);
             this.txtThanhPho.Multiline = true;
             this.txtThanhPho.Name = "txtThanhPho";
             this.txtThanhPho.Size = new System.Drawing.Size(355, 45);
@@ -312,7 +314,7 @@
             this.btnTaoMoi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnTaoMoi.ForeColor = System.Drawing.Color.White;
             this.btnTaoMoi.Location = new System.Drawing.Point(231, 580);
-            this.btnTaoMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTaoMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnTaoMoi.Name = "btnTaoMoi";
             this.btnTaoMoi.Size = new System.Drawing.Size(133, 46);
             this.btnTaoMoi.TabIndex = 13;
@@ -328,7 +330,7 @@
             this.btnNhapLai.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnNhapLai.ForeColor = System.Drawing.Color.White;
             this.btnNhapLai.Location = new System.Drawing.Point(372, 580);
-            this.btnNhapLai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNhapLai.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapLai.Name = "btnNhapLai";
             this.btnNhapLai.Size = new System.Drawing.Size(133, 46);
             this.btnNhapLai.TabIndex = 14;
@@ -341,7 +343,7 @@
             this.txtDuong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtDuong.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtDuong.Location = new System.Drawing.Point(149, 512);
-            this.txtDuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtDuong.Multiline = true;
             this.txtDuong.Name = "txtDuong";
             this.txtDuong.Size = new System.Drawing.Size(355, 45);
@@ -353,7 +355,7 @@
             this.txtNhapMaCongDan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNhapMaCongDan.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNhapMaCongDan.Location = new System.Drawing.Point(625, 512);
-            this.txtNhapMaCongDan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNhapMaCongDan.Margin = new System.Windows.Forms.Padding(4);
             this.txtNhapMaCongDan.Multiline = true;
             this.txtNhapMaCongDan.Name = "txtNhapMaCongDan";
             this.txtNhapMaCongDan.Size = new System.Drawing.Size(276, 46);
@@ -369,7 +371,7 @@
             this.btnThem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Location = new System.Drawing.Point(892, 513);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(88, 46);
             this.btnThem.TabIndex = 12;
@@ -384,7 +386,7 @@
             this.panelTop.Controls.Add(this.label1);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1160, 37);
             this.panelTop.TabIndex = 68;
@@ -397,7 +399,7 @@
             this.ptbThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbThoat.Image = ((System.Drawing.Image)(resources.GetObject("ptbThoat.Image")));
             this.ptbThoat.Location = new System.Drawing.Point(1123, 2);
-            this.ptbThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ptbThoat.Margin = new System.Windows.Forms.Padding(4);
             this.ptbThoat.Name = "ptbThoat";
             this.ptbThoat.Size = new System.Drawing.Size(33, 31);
             this.ptbThoat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -425,7 +427,7 @@
             "Tạm vắng",
             "Tạm trú"});
             this.cbLoaiCuTru.Location = new System.Drawing.Point(625, 329);
-            this.cbLoaiCuTru.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbLoaiCuTru.Margin = new System.Windows.Forms.Padding(4);
             this.cbLoaiCuTru.Name = "cbLoaiCuTru";
             this.cbLoaiCuTru.Size = new System.Drawing.Size(355, 40);
             this.cbLoaiCuTru.TabIndex = 69;
@@ -436,7 +438,7 @@
             this.lbMaCongDan.FormattingEnabled = true;
             this.lbMaCongDan.ItemHeight = 16;
             this.lbMaCongDan.Location = new System.Drawing.Point(625, 404);
-            this.lbMaCongDan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbMaCongDan.Margin = new System.Windows.Forms.Padding(4);
             this.lbMaCongDan.Name = "lbMaCongDan";
             this.lbMaCongDan.Size = new System.Drawing.Size(355, 100);
             this.lbMaCongDan.TabIndex = 71;
@@ -452,11 +454,25 @@
             this.label13.TabIndex = 72;
             this.label13.Text = "Danh sách công dân";
             // 
+            // ptbLoading
+            // 
+            this.ptbLoading.BackColor = System.Drawing.SystemColors.Control;
+            this.ptbLoading.Image = ((System.Drawing.Image)(resources.GetObject("ptbLoading.Image")));
+            this.ptbLoading.Location = new System.Drawing.Point(981, 488);
+            this.ptbLoading.Margin = new System.Windows.Forms.Padding(4);
+            this.ptbLoading.Name = "ptbLoading";
+            this.ptbLoading.Size = new System.Drawing.Size(72, 97);
+            this.ptbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbLoading.TabIndex = 73;
+            this.ptbLoading.TabStop = false;
+            this.ptbLoading.Visible = false;
+            // 
             // FormDangKyCuTru
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1160, 640);
+            this.Controls.Add(this.ptbLoading);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.lbMaCongDan);
             this.Controls.Add(this.cbLoaiCuTru);
@@ -487,12 +503,13 @@
             this.Controls.Add(this.dtpNgayDangKy);
             this.Controls.Add(this.dtpNgayTao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormDangKyCuTru";
             this.Text = "FormDangkycutru";
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLoading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,5 +547,6 @@
         private System.Windows.Forms.ComboBox cbLoaiCuTru;
         private System.Windows.Forms.ListBox lbMaCongDan;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox ptbLoading;
     }
 }
