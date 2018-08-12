@@ -69,7 +69,19 @@ namespace QuanLyCuTru_WinForm
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-
+            switch(cbbLoaiTimKiem.SelectedIndex)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }
         }
     }
 }

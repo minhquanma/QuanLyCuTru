@@ -40,7 +40,7 @@
             this.ptbLoading = new System.Windows.Forms.PictureBox();
             this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.cbbTen = new System.Windows.Forms.ComboBox();
+            this.cbbLoaiTimKiem = new System.Windows.Forms.ComboBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnChiTiet = new System.Windows.Forms.Button();
@@ -148,7 +148,7 @@
             this.panelDanhSachCongDan.Controls.Add(this.ptbLoading);
             this.panelDanhSachCongDan.Controls.Add(this.cbbGioiTinh);
             this.panelDanhSachCongDan.Controls.Add(this.txtTimKiem);
-            this.panelDanhSachCongDan.Controls.Add(this.cbbTen);
+            this.panelDanhSachCongDan.Controls.Add(this.cbbLoaiTimKiem);
             this.panelDanhSachCongDan.Controls.Add(this.btnTimKiem);
             this.panelDanhSachCongDan.Controls.Add(this.btnXoa);
             this.panelDanhSachCongDan.Controls.Add(this.btnChiTiet);
@@ -167,7 +167,7 @@
             // 
             this.ptbLoading.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ptbLoading.Image = ((System.Drawing.Image)(resources.GetObject("ptbLoading.Image")));
-            this.ptbLoading.Location = new System.Drawing.Point(371, 230);
+            this.ptbLoading.Location = new System.Drawing.Point(371, 232);
             this.ptbLoading.Margin = new System.Windows.Forms.Padding(4);
             this.ptbLoading.Name = "ptbLoading";
             this.ptbLoading.Size = new System.Drawing.Size(267, 231);
@@ -181,34 +181,43 @@
             this.cbbGioiTinh.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGioiTinh.FormattingEnabled = true;
             this.cbbGioiTinh.ItemHeight = 28;
-            this.cbbGioiTinh.Location = new System.Drawing.Point(183, 81);
+            this.cbbGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbbGioiTinh.Location = new System.Drawing.Point(205, 81);
             this.cbbGioiTinh.Margin = new System.Windows.Forms.Padding(4);
             this.cbbGioiTinh.Name = "cbbGioiTinh";
             this.cbbGioiTinh.Size = new System.Drawing.Size(132, 36);
             this.cbbGioiTinh.TabIndex = 45;
-            this.cbbGioiTinh.Text = "Giới Tính";
+            this.cbbGioiTinh.Text = "(Giới tính)";
             // 
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(324, 76);
+            this.txtTimKiem.Location = new System.Drawing.Point(348, 76);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(265, 45);
             this.txtTimKiem.TabIndex = 44;
             // 
-            // cbbTen
+            // cbbLoaiTimKiem
             // 
-            this.cbbTen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbbTen.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbTen.FormattingEnabled = true;
-            this.cbbTen.Location = new System.Drawing.Point(41, 81);
-            this.cbbTen.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbTen.Name = "cbbTen";
-            this.cbbTen.Size = new System.Drawing.Size(132, 36);
-            this.cbbTen.TabIndex = 43;
-            this.cbbTen.Text = "Tên";
+            this.cbbLoaiTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbLoaiTimKiem.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbLoaiTimKiem.FormattingEnabled = true;
+            this.cbbLoaiTimKiem.Items.AddRange(new object[] {
+            "Tên",
+            "Nơi sinh",
+            "Quê quán",
+            "Quốc tịch",
+            "Địa chỉ"});
+            this.cbbLoaiTimKiem.Location = new System.Drawing.Point(41, 81);
+            this.cbbLoaiTimKiem.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbLoaiTimKiem.Name = "cbbLoaiTimKiem";
+            this.cbbLoaiTimKiem.Size = new System.Drawing.Size(154, 36);
+            this.cbbLoaiTimKiem.TabIndex = 43;
+            this.cbbLoaiTimKiem.Text = "(Loại tìm kiếm)";
             // 
             // btnTimKiem
             // 
@@ -217,7 +226,7 @@
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.Transparent;
-            this.btnTimKiem.Location = new System.Drawing.Point(599, 76);
+            this.btnTimKiem.Location = new System.Drawing.Point(622, 76);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(133, 46);
@@ -302,7 +311,7 @@
         private System.Windows.Forms.Button btnChiTiet;
         private System.Windows.Forms.ComboBox cbbGioiTinh;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.ComboBox cbbTen;
+        private System.Windows.Forms.ComboBox cbbLoaiTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.PictureBox ptbLoading;

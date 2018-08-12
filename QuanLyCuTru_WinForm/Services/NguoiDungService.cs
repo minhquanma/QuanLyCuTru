@@ -15,18 +15,30 @@ namespace QuanLyCuTru_WinForm.Services
         private string host = HttpService.CongDan;
         private HttpClient client = HttpService.Client;
 
-        // GET 
-        public async Task<List<NguoiDungDTO>> GetAllAsync()
+        public async Task<List<NguoiDungDTO>> GetDataAsync(string url)
         {
             List<NguoiDungDTO> congDans = null;
 
-            HttpResponseMessage res = await HttpService.Client.GetAsync(host);
+            HttpResponseMessage res = await HttpService.Client.GetAsync(url);
             if (res.IsSuccessStatusCode)
             {
                 congDans = await res.Content.ReadAsAsync<List<NguoiDungDTO>>();
             }
 
             return congDans;
+        }
+        // GET 
+        public async Task<List<NguoiDungDTO>> GetAllAsync()
+        {
+            return await GetDataAsync(host);
+        }
+
+        public async Task<List<NguoiDungDTO>> GetByName(string hoTen)
+        {
+            // Request url template
+            var url = $"{host}?hoten={hoTen}";
+
+            return await GetDataAsync(url);
         }
 
         // GET  /id
