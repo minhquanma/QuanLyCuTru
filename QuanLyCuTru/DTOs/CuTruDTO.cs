@@ -47,7 +47,10 @@ namespace QuanLyCuTru.DTOs
         public int? CanBoId { get; set; }
         public string CanBoDuyet { get; set; }
 
+        // Chứa danh sách Id Công Dân dùng để gửi dữ liệu lên server.
         public List<int> CongDanIds { get; set; }
+
+        // Chứa danh sách Công Dân dùng để gửi dữ liệu cho client.
         public virtual ICollection<NguoiDungDTO> CongDans { get; set; }
 
         public string DiaChi

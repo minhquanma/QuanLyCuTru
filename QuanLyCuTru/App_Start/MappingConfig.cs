@@ -35,7 +35,6 @@ namespace QuanLyCuTru.App_Start
                         dest => dest.CanBoDuyet,
                         option => option.MapFrom(f => f.CanBo.HoTen)
                     );
-                config.CreateMap<CuTruDTO, CuTru>();
 
                 //config.CreateMap<CuTru, CuTruDTO>()
                 //    .ForMember(

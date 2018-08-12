@@ -174,7 +174,7 @@ namespace QuanLyCuTru.Controllers.Api
             return Created(new Uri(Request.RequestUri + "" + cuTru.Id), cuTru);
         }
 
-        // POST: /api/quanlycutru/{id}
+        // PUT: /api/quanlycutru/{id}
         [HttpPut]
         [Route("{id}")]
         public IHttpActionResult UpdateCuTru(int id, CuTruDTO dto)
@@ -189,21 +189,9 @@ namespace QuanLyCuTru.Controllers.Api
 
             Mapper.Map(dto, cuTru);
 
-            // Add CongDan entities into posted CuTru
-            foreach (var _id in dto.CongDanIds)
-            {
-                // Query each congdan
-                var congDan = db.NguoiDungs.SingleOrDefault(c => c.Id == _id);
-
-                if (congDan == null)
-                    return BadRequest();
-
-                cuTru.CongDans.Add(congDan);
-            }
-
             db.SaveChanges();
 
-            return Ok();
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
         [HttpPatch]

@@ -65,7 +65,7 @@ namespace QuanLyCuTru_WinForm
         private void btnSua_Click(object sender, EventArgs e)
         {
             this.Close();
-            FormSuaCuTru form = new FormSuaCuTru();
+            FormSuaCuTru form = new FormSuaCuTru(CuTru);
             form.Show();
         }
 

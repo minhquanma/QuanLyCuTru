@@ -4,6 +4,7 @@ using QuanLyCuTru_WinForm.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -111,6 +112,16 @@ namespace QuanLyCuTru_WinForm.Models
             return res.Headers.Location;
         }
 
+        // PUT 
+        public async Task<bool> UpdateAsync(CuTruDTO cuTru)
+        {
+            HttpResponseMessage res = await client.PutAsJsonAsync(host + cuTru.Id, cuTru);
+
+            if (res.StatusCode == HttpStatusCode.NoContent)
+                return true;
+
+            return false;
+        }
         //[HttpPatch]
         //[Route("Duyet/{id}")]
         //public IHttpActionResult Duyet(int id)
