@@ -15,7 +15,7 @@ namespace QuanLyCuTru_WinForm.BindingSources
             BindingSource source = new BindingSource(list, null);
 
             dataGridView.AutoGenerateColumns = false;
-
+            dataGridView.Columns.Clear();
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã số", DataPropertyName = "Id" });
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Loại cư trú", DataPropertyName = "LoaiCuTru" });
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Ngày đăng ký", DataPropertyName = "NgayDangKy" });
