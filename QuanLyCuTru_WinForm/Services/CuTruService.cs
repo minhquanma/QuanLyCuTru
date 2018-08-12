@@ -21,11 +21,11 @@ namespace QuanLyCuTru_WinForm.Models
         {
         }
 
-        public async Task<List<CuTruDTO>> GetAllAsync()
+        public async Task<List<CuTruDTO>> GetDataAsync(string url)
         {
             List<CuTruDTO> cuTrus = null;
 
-            HttpResponseMessage res = await HttpService.Client.GetAsync(host);
+            HttpResponseMessage res = await client.GetAsync(url);
             if (res.IsSuccessStatusCode)
             {
                 cuTrus = await res.Content.ReadAsAsync<List<CuTruDTO>>();
@@ -34,74 +34,60 @@ namespace QuanLyCuTru_WinForm.Models
             return cuTrus;
         }
 
-        internal Task<List<CuTruDTO>> GetByState(bool v, DataGridView dgvDanhSachChoDuyet)
+        public async Task<List<CuTruDTO>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await GetDataAsync(host);
         }
 
         public async Task<List<CuTruDTO>> GetByAddressAsync(string diaChi)
         {
-            List<CuTruDTO> cuTrus = null;
-
             // Request url template
-            var url = $"{host}?diaChi={diaChi}";
+            var url = $"{host}?diachi={diaChi}";
 
-            HttpResponseMessage res = await client.GetAsync(url);
-            if (res.IsSuccessStatusCode)
-            {
-                cuTrus = await res.Content.ReadAsAsync<List<CuTruDTO>>();
-            }
-
-            return cuTrus;
+            return await GetDataAsync(url);
         }
+
+        public async Task<List<CuTruDTO>> GetByPersonalAddressAsync(string diaChi)
+        {
+            // Request url template
+            var url = $"{host}?diachidan={diaChi}";
+
+            return await GetDataAsync(url);
+        }
+
+        // GET /api/quanlycutru?hoten="abc"
+        public async Task<List<CuTruDTO>> GetByNameAsync(string hoTen)
+        {
+            // Request url template
+            var url = $"{host}?hoten={hoTen}";
+
+            return await GetDataAsync(url);
+        }
+
 
         public async Task<List<CuTruDTO>> GetByTypeAsync(int loai)
         {
-            List<CuTruDTO> cuTrus = null;
-
             // Request url template
             var url = $"{host}?loai={loai}";
 
-            HttpResponseMessage res = await client.GetAsync(url);
-            if (res.IsSuccessStatusCode)
-            {
-                cuTrus = await res.Content.ReadAsAsync<List<CuTruDTO>>();
-            }
-
-            return cuTrus;
+            return await GetDataAsync(url);
         }
 
         public async Task<List<CuTruDTO>> GetByStateAsync(bool daDuyet)
         {
-            List<CuTruDTO> cuTrus = null;
-
             // Request url template
             var url = $"{host}?duyet={daDuyet.ToString()}";
 
-            HttpResponseMessage res = await client.GetAsync(url);
-            if (res.IsSuccessStatusCode)
-            {
-                cuTrus = await res.Content.ReadAsAsync<List<CuTruDTO>>();
-            }
-
-            return cuTrus;
+            return await GetDataAsync(url);
         }
 
         // GET /api/quanlycutru?hethan=true|false
         public async Task<List<CuTruDTO>> GetExpiredAsync()
         {
-            List<CuTruDTO> cuTrus = null;
-
             // Request url template
             var url = $"{host}/hethan";
 
-            HttpResponseMessage res = await client.GetAsync(url);
-            if (res.IsSuccessStatusCode)
-            {
-                cuTrus = await res.Content.ReadAsAsync<List<CuTruDTO>>();
-            }
-
-            return cuTrus;
+            return await GetDataAsync(url);
         }
 
         public async Task<CuTruDTO> GetByIdAsync(int id)

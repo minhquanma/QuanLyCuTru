@@ -30,12 +30,14 @@ namespace QuanLyCuTru_WinForm
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDanhSachCuTru));
             this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.cbbTen = new System.Windows.Forms.ComboBox();
+            this.cbbLoaiTimKiem = new System.Windows.Forms.ComboBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbTieuDe = new System.Windows.Forms.Label();
@@ -56,34 +58,44 @@ namespace QuanLyCuTru_WinForm
             this.cbbGioiTinh.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGioiTinh.FormattingEnabled = true;
             this.cbbGioiTinh.ItemHeight = 28;
-            this.cbbGioiTinh.Location = new System.Drawing.Point(179, 87);
+            this.cbbGioiTinh.Items.AddRange(new object[] {
+            "Tạm vắng",
+            "Tạm trú"});
+            this.cbbGioiTinh.Location = new System.Drawing.Point(208, 87);
             this.cbbGioiTinh.Margin = new System.Windows.Forms.Padding(4);
             this.cbbGioiTinh.Name = "cbbGioiTinh";
             this.cbbGioiTinh.Size = new System.Drawing.Size(132, 36);
             this.cbbGioiTinh.TabIndex = 51;
-            this.cbbGioiTinh.Text = "Giới tính";
+            this.cbbGioiTinh.Text = "(Loại cư trú)";
             // 
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(324, 82);
+            this.txtTimKiem.Location = new System.Drawing.Point(348, 82);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(265, 45);
             this.txtTimKiem.TabIndex = 50;
             // 
-            // cbbTen
+            // cbbLoaiTimKiem
             // 
-            this.cbbTen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbbTen.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbTen.FormattingEnabled = true;
-            this.cbbTen.Location = new System.Drawing.Point(33, 87);
-            this.cbbTen.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbTen.Name = "cbbTen";
-            this.cbbTen.Size = new System.Drawing.Size(132, 36);
-            this.cbbTen.TabIndex = 49;
-            this.cbbTen.Text = "Tên";
+            this.cbbLoaiTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbLoaiTimKiem.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbLoaiTimKiem.FormattingEnabled = true;
+            this.cbbLoaiTimKiem.Items.AddRange(new object[] {
+            "Tên",
+            "Nơi sinh",
+            "Quê quán",
+            "Quốc tịch",
+            "Địa chỉ cư trú",
+            "Địa chỉ công dân"});
+            this.cbbLoaiTimKiem.Location = new System.Drawing.Point(33, 87);
+            this.cbbLoaiTimKiem.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbLoaiTimKiem.Name = "cbbLoaiTimKiem";
+            this.cbbLoaiTimKiem.Size = new System.Drawing.Size(167, 36);
+            this.cbbLoaiTimKiem.TabIndex = 49;
+            this.cbbLoaiTimKiem.Text = "(Loại tìm kiếm)";
             // 
             // btnTimKiem
             // 
@@ -92,13 +104,14 @@ namespace QuanLyCuTru_WinForm
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.Transparent;
-            this.btnTimKiem.Location = new System.Drawing.Point(599, 82);
+            this.btnTimKiem.Location = new System.Drawing.Point(621, 82);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(133, 46);
             this.btnTimKiem.TabIndex = 52;
             this.btnTimKiem.Text = "TÌM KIẾM";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // panel3
             // 
@@ -128,19 +141,36 @@ namespace QuanLyCuTru_WinForm
             this.dgvCuTru.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCuTru.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCuTru.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCuTru.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCuTru.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCuTru.EnableHeadersVisualStyles = false;
             this.dgvCuTru.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dgvCuTru.Location = new System.Drawing.Point(33, 143);
             this.dgvCuTru.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCuTru.Name = "dgvCuTru";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCuTru.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dgvCuTru.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCuTru.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -151,7 +181,7 @@ namespace QuanLyCuTru_WinForm
             // 
             this.ptbLoading.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ptbLoading.Image = ((System.Drawing.Image)(resources.GetObject("ptbLoading.Image")));
-            this.ptbLoading.Location = new System.Drawing.Point(366, 260);
+            this.ptbLoading.Location = new System.Drawing.Point(360, 260);
             this.ptbLoading.Margin = new System.Windows.Forms.Padding(4);
             this.ptbLoading.Name = "ptbLoading";
             this.ptbLoading.Size = new System.Drawing.Size(283, 231);
@@ -239,7 +269,7 @@ namespace QuanLyCuTru_WinForm
             this.Controls.Add(this.btnThemMoi);
             this.Controls.Add(this.cbbGioiTinh);
             this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.cbbTen);
+            this.Controls.Add(this.cbbLoaiTimKiem);
             this.Controls.Add(this.btnChiTiet);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.panel3);
@@ -261,7 +291,7 @@ namespace QuanLyCuTru_WinForm
 
         private System.Windows.Forms.ComboBox cbbGioiTinh;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.ComboBox cbbTen;
+        private System.Windows.Forms.ComboBox cbbLoaiTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbTieuDe;

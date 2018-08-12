@@ -78,5 +78,26 @@ namespace QuanLyCuTru_WinForm
         {
             LoadDanhSach();
         }
+
+        private async void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            switch (cbbLoaiTimKiem.SelectedIndex)
+            {
+                case 0:
+                    CuTruBindingSource.Bind(await repo.GetByNameAsync(txtTimKiem.Text), dgvCuTru);
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    CuTruBindingSource.Bind(await repo.GetByAddressAsync(txtTimKiem.Text), dgvCuTru);
+                    break;
+                case 5:
+                    break;
+            }
+        }
     }
 }

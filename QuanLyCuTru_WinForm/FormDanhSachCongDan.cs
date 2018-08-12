@@ -67,5 +67,9 @@ namespace QuanLyCuTru_WinForm
             MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
