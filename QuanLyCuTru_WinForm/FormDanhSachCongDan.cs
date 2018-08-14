@@ -20,22 +20,17 @@ namespace QuanLyCuTru_WinForm
     public partial class FormDanhSachCongDan : Form
     {
         NguoiDungService repo = new NguoiDungService();
-
+        private HttpClient client;
         public FormDanhSachCongDan()
         {
-            InitializeComponent();   
+            InitializeComponent();
         }
 
         private async void FormDanhSachCongDan_Load(object sender, EventArgs e)
         {
             ptbLoading.Show();
             NguoiDungBindingSource.Bind(await repo.GetAllAsync(), dgvDanhSachCongDan);
-            ptbLoading.Hide();          
-        }
-
-        private void btnHienThiDanhSach_Click(object sender, EventArgs e)
-        {
-
+            ptbLoading.Hide();
         }
 
         private void btnThemMoi_Click(object sender, EventArgs e)
@@ -69,7 +64,7 @@ namespace QuanLyCuTru_WinForm
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            switch(cbbLoaiTimKiem.SelectedIndex)
+            switch (cbbLoaiTimKiem.SelectedIndex)
             {
                 case 0:
                     break;
@@ -83,5 +78,24 @@ namespace QuanLyCuTru_WinForm
                     break;
             }
         }
+
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            var selectedRow = dgvDanhSachCongDan.SelectedRows[0];
+            var selectedCongDan = (NguoiDungDTO)selectedRow.DataBoundItem;
+
+            if (selectedCongDan == null)
+            {
+                MessageBox.Show("Vui lòng chọn 1 dòng", "Huhuhu", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                // Tạo form Chi Tiết đồng thời truyền object CuTru qua
+                FormPrint form = new FormPrint(selectedCongDan);
+                form.Show();
+            }
+        }
     }
 }
+

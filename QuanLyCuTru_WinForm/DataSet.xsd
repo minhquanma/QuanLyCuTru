@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet" targetNamespace="http://tempuri.org/DataSet.xsd" xmlns:mstns="http://tempuri.org/DataSet.xsd" xmlns="http://tempuri.org/DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet" msprop:Generator_UserDSName="DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="NguoiDungs" msprop:Generator_TableClassName="NguoiDungsDataTable" msprop:Generator_TableVarName="tableNguoiDungs" msprop:Generator_RowChangedName="NguoiDungsRowChanged" msprop:Generator_TablePropName="NguoiDungs" msprop:Generator_RowDeletingName="NguoiDungsRowDeleting" msprop:Generator_RowChangingName="NguoiDungsRowChanging" msprop:Generator_RowEvHandlerName="NguoiDungsRowChangeEventHandler" msprop:Generator_RowDeletedName="NguoiDungsRowDeleted" msprop:Generator_RowClassName="NguoiDungsRow" msprop:Generator_UserTableName="NguoiDungs" msprop:Generator_RowEvArgName="NguoiDungsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:string" minOccurs="0" />
+              <xs:element name="HoTen" msprop:Generator_ColumnVarNameInTable="columnHoTen" msprop:Generator_ColumnPropNameInRow="HoTen" msprop:Generator_ColumnPropNameInTable="HoTenColumn" msprop:Generator_UserColumnName="HoTen" type="xs:string" minOccurs="0" />
+              <xs:element name="GioiTinh" msprop:Generator_ColumnVarNameInTable="columnGioiTinh" msprop:Generator_ColumnPropNameInRow="GioiTinh" msprop:Generator_ColumnPropNameInTable="GioiTinhColumn" msprop:Generator_UserColumnName="GioiTinh" type="xs:string" minOccurs="0" />
+              <xs:element name="SinhNhat" msprop:Generator_ColumnVarNameInTable="columnSinhNhat" msprop:Generator_ColumnPropNameInRow="SinhNhat" msprop:Generator_ColumnPropNameInTable="SinhNhatColumn" msprop:Generator_UserColumnName="SinhNhat" type="xs:string" minOccurs="0" />
+              <xs:element name="DiaChi" msprop:Generator_ColumnVarNameInTable="columnDiaChi" msprop:Generator_ColumnPropNameInRow="DiaChi" msprop:Generator_ColumnPropNameInTable="DiaChiColumn" msprop:Generator_UserColumnName="DiaChi" type="xs:string" minOccurs="0" />
+              <xs:element name="NoiSinh" msprop:Generator_ColumnVarNameInTable="columnNoiSinh" msprop:Generator_ColumnPropNameInRow="NoiSinh" msprop:Generator_ColumnPropNameInTable="NoiSinhColumn" msprop:Generator_UserColumnName="NoiSinh" type="xs:string" minOccurs="0" />
+              <xs:element name="QueQuan" msprop:Generator_ColumnVarNameInTable="columnQueQuan" msprop:Generator_ColumnPropNameInRow="QueQuan" msprop:Generator_ColumnPropNameInTable="QueQuanColumn" msprop:Generator_UserColumnName="QueQuan" type="xs:string" minOccurs="0" />
+              <xs:element name="QuocTich" msprop:Generator_ColumnVarNameInTable="columnQuocTich" msprop:Generator_ColumnPropNameInRow="QuocTich" msprop:Generator_ColumnPropNameInTable="QuocTichColumn" msprop:Generator_UserColumnName="QuocTich" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -46,7 +46,6 @@ namespace QuanLyCuTru_WinForm
             // Lấy ra 1 Cư Trú đầu tiên trong danh sách
             var selectedRow = dgvCuTru.SelectedRows[0];
             var selectedCuTru = (CuTruDTO)selectedRow.DataBoundItem;
-
             if (selectedCuTru == null)
             {
                 MessageBox.Show("Vui lòng chọn 1 dòng", "Huhu", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -97,6 +96,22 @@ namespace QuanLyCuTru_WinForm
                     break;
                 case 5:
                     break;
+            }
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            var selectedRow = dgvCuTru.SelectedRows[0];
+            var selectedCuTru = (CuTruDTO)selectedRow.DataBoundItem;
+            if (selectedCuTru == null)
+            {
+                MessageBox.Show("Vui lòng chọn 1 dòng", "Huhu", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                // Tạo form Chi Tiết đồng thời truyền object CuTru qua
+                FormPrint form = new FormPrint(selectedCuTru);
+                form.ShowDialog();
             }
         }
     }
