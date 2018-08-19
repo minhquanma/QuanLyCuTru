@@ -1,6 +1,7 @@
 ﻿using QuanLyCuTru.DTOs;
 using QuanLyCuTru_WinForm.BindingSources;
 using QuanLyCuTru_WinForm.Models;
+using QuanLyCuTru_WinForm.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,10 +19,17 @@ namespace QuanLyCuTru_WinForm
     public partial class FormChoDuyet : Form
     {
         CuTruService repo = new CuTruService();
+
         private CuTruDTO SelectedCuTru { get; set; }
         public FormChoDuyet()
         {
             InitializeComponent();
+
+            // Xử lý nghiệp vụ
+            if (HttpService.RoleName == "BaoVeDanPho")
+            {
+                btnDuyet.Enabled = false;
+            }
         }
         private async void FormChoDuyet_Load(object sender, EventArgs e)
         {
@@ -49,10 +57,6 @@ namespace QuanLyCuTru_WinForm
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-
-        }
         private void LoadDetailedData(CuTruDTO cuTru)
         {
             txtId.Text = cuTru.Id.ToString();
@@ -61,6 +65,7 @@ namespace QuanLyCuTru_WinForm
             txtNgayDangKy.Text = cuTru.NgayDangKy.ToShortDateString();
             txtLoaiCuTru.Text = cuTru.LoaiCuTru;
             txtDiaChi.Text = cuTru.DiaChi;
+            lbSoNguoi.Text = cuTru.CongDans.Count.ToString();
         }
 
         private void dgvDanhSachChoDuyet_SelectionChanged(object sender, EventArgs e)
