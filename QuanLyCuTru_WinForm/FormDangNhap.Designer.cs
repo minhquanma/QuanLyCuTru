@@ -139,7 +139,7 @@
             // 
             this.ptbloading.BackColor = System.Drawing.Color.Transparent;
             this.ptbloading.Image = ((System.Drawing.Image)(resources.GetObject("ptbloading.Image")));
-            this.ptbloading.Location = new System.Drawing.Point(303, 125);
+            this.ptbloading.Location = new System.Drawing.Point(304, 119);
             this.ptbloading.Margin = new System.Windows.Forms.Padding(4);
             this.ptbloading.Name = "ptbloading";
             this.ptbloading.Size = new System.Drawing.Size(77, 74);
