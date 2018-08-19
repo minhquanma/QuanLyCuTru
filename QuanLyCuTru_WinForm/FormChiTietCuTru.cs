@@ -38,6 +38,18 @@ namespace QuanLyCuTru_WinForm
             {
                 NguoiDungBindingSource.Bind(CuTru.CongDans, dgvDanhSachCongDan);
             }
+
+            // Xử lý trạng thái duyệt của cư trú
+            if (CuTru.DaDuyet)
+            {
+                // ẩn nút duyệt đi
+                btnDuyetCuTru.Hide();
+                chkDaDuyet.Checked = CuTru.DaDuyet;
+            }
+            else
+            {
+                chkDaDuyet.Visible = false;
+            }
         }
 
         public FormChiTietCuTru(CuTruDTO cuTru)

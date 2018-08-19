@@ -18,10 +18,10 @@ namespace QuanLyCuTru_WinForm
     public partial class FormPrint : Form
     {
         public CuTruDTO _CuTru { get; set; }
-        public NguoiDungDTO _nguoiDungs { get; set; }           
+        public NguoiDungDTO _nguoiDungs { get; set; }
+        private List<CuTruDTO> _list { get; set; }
         public void LoadCuTruData()
         {
-
             rptChiTietCuTru.SetParameterValue("pMaSo", _CuTru.Id.ToString());
             rptChiTietCuTru.SetParameterValue("pDiaChi", _CuTru.DiaChi);
             rptChiTietCuTru.SetParameterValue("pLoaiCuTru", _CuTru.LoaiCuTru);
@@ -36,25 +36,15 @@ namespace QuanLyCuTru_WinForm
         }
         public void LoadCongDanData()
         {
-            string _GioiTinh;
-
-            if (_nguoiDungs.GioiTinh == true)
-            {
-                _GioiTinh = "Nam";
-            }
-            else
-            {
-                _GioiTinh = "Nữ";
-            }
             rptChiTietCongDan.SetParameterValue("pMaSo", _nguoiDungs.Id);
             rptChiTietCongDan.SetParameterValue("pName", _nguoiDungs.HoTen);
             rptChiTietCongDan.SetParameterValue("pNamSinh", _nguoiDungs.SinhNhat);
             rptChiTietCongDan.SetParameterValue("pDiaChi", _nguoiDungs.DiaChi);
-            rptChiTietCongDan.SetParameterValue("pGioiTinh", _GioiTinh);
+            rptChiTietCongDan.SetParameterValue("pGioiTinh", _nguoiDungs.StringGioiTinh);
             rptChiTietCongDan.SetParameterValue("pQuocTich", _nguoiDungs.QuocTich);
             rptChiTietCongDan.SetParameterValue("pQueQuan", _nguoiDungs.QueQuan);      
-                crystalReportViewer.ReportSource = rptChiTietCongDan;
-                crystalReportViewer.Refresh();
+            crystalReportViewer.ReportSource = rptChiTietCongDan;
+            crystalReportViewer.Refresh();
         }
         public FormPrint()
         {
@@ -62,7 +52,6 @@ namespace QuanLyCuTru_WinForm
         }
         public FormPrint(NguoiDungDTO nguoiDungs)
         {
-
             _nguoiDungs = nguoiDungs;
             InitializeComponent();
         }
@@ -84,7 +73,6 @@ namespace QuanLyCuTru_WinForm
             {
                 LoadCongDanData();
             }
-
         }
     }
 }

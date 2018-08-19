@@ -20,7 +20,7 @@ namespace QuanLyCuTru_WinForm
     public partial class FormDanhSachCongDan : Form
     {
         NguoiDungService repo = new NguoiDungService();
-        private HttpClient client;
+      
         public FormDanhSachCongDan()
         {
             InitializeComponent();
@@ -78,7 +78,6 @@ namespace QuanLyCuTru_WinForm
                     break;
             }
         }
-
 
         private void btnIn_Click(object sender, EventArgs e)
         {

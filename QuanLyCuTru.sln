@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuTru", "QuanLyCuTru\QuanLyCuTru.csproj", "{E8D2D4DD-E5C9-4587-9674-11D9042202DC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C8AD766F-B799-4A9B-BC98-E3A672BAABA7} = {C8AD766F-B799-4A9B-BC98-E3A672BAABA7}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuTru_WinForm", "QuanLyCuTru_WinForm\QuanLyCuTru_WinForm.csproj", "{C8AD766F-B799-4A9B-BC98-E3A672BAABA7}"
 EndProject

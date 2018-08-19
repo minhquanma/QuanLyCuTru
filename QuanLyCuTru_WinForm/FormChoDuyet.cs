@@ -19,12 +19,10 @@ namespace QuanLyCuTru_WinForm
     {
         CuTruService repo = new CuTruService();
         private CuTruDTO SelectedCuTru { get; set; }
-
         public FormChoDuyet()
         {
             InitializeComponent();
         }
-
         private async void FormChoDuyet_Load(object sender, EventArgs e)
         {
             CuTruBindingSource.Bind(await repo.GetByStateAsync(false), dgvDanhSachChoDuyet);
@@ -45,8 +43,7 @@ namespace QuanLyCuTru_WinForm
                 if (result == true)
                     MessageBox.Show("Đã duyệt thành công!", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
-                    MessageBox.Show("Đã có lỗi xảy ra!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+                    MessageBox.Show("Đã có lỗi xảy ra!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);              
                 // Tải lại danh sách
                 CuTruBindingSource.Bind(await repo.GetByStateAsync(false), dgvDanhSachChoDuyet);
             }
@@ -56,7 +53,6 @@ namespace QuanLyCuTru_WinForm
         {
 
         }
-
         private void LoadDetailedData(CuTruDTO cuTru)
         {
             txtId.Text = cuTru.Id.ToString();
@@ -73,7 +69,6 @@ namespace QuanLyCuTru_WinForm
             {
                 var selectedRow = dgvDanhSachChoDuyet.SelectedRows[0];
                 SelectedCuTru = (CuTruDTO)selectedRow.DataBoundItem;
-
                 LoadDetailedData(SelectedCuTru);
             }
         }

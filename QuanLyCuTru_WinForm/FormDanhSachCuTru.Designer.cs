@@ -83,12 +83,10 @@ namespace QuanLyCuTru_WinForm
             this.cbbLoaiTimKiem.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbLoaiTimKiem.FormattingEnabled = true;
             this.cbbLoaiTimKiem.Items.AddRange(new object[] {
-            "Tên",
-            "Nơi sinh",
-            "Quê quán",
-            "Quốc tịch",
-            "Địa chỉ cư trú",
-            "Địa chỉ công dân"});
+            "Id",
+            "Cán bộ duyệt",
+            "Email",
+            "Số điện thoại"});
             this.cbbLoaiTimKiem.Location = new System.Drawing.Point(25, 71);
             this.cbbLoaiTimKiem.Name = "cbbLoaiTimKiem";
             this.cbbLoaiTimKiem.Size = new System.Drawing.Size(126, 29);

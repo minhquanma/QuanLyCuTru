@@ -79,8 +79,8 @@ namespace QuanLyCuTru_WinForm
             // Disable nút DangNhap
             btnDangNhap.Enabled = false;
             // Chức năng đăng nhập
-            var loginResult = true;
-            // var loginResult = await HttpService.LoginAsync(txtUsername.Text, txtPassword.Text);
+            //var loginResult = true;
+            var loginResult = await HttpService.LoginAsync(txtUsername.Text, txtPassword.Text);
 
             if (loginResult)
             {
@@ -89,7 +89,6 @@ namespace QuanLyCuTru_WinForm
                 MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FormCanBoQuanLy form = new FormCanBoQuanLy();
                 form.Show();
-
                 this.Hide();
             }
             else
@@ -97,6 +96,8 @@ namespace QuanLyCuTru_WinForm
                 ptbloading.Hide();
                 MessageBox.Show("Đăng nhập thất bại, vui lòng thử lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            // Disable nút DangNhap
+            btnDangNhap.Enabled = true;
         }
     }
 }

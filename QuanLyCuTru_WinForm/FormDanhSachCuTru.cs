@@ -82,18 +82,27 @@ namespace QuanLyCuTru_WinForm
         {
             switch (cbbLoaiTimKiem.SelectedIndex)
             {
+                // Ten
                 case 0:
                     CuTruBindingSource.Bind(await repo.GetByNameAsync(txtTimKiem.Text), dgvCuTru);
                     break;
+                // Noi sinh
                 case 1:
+                    CuTruBindingSource.Bind(await repo.GetByBirthPlaceAsync(txtTimKiem.Text), dgvCuTru);
                     break;
+                // Que quan
                 case 2:
+                    CuTruBindingSource.Bind(await repo.GetByHometownAsync(txtTimKiem.Text), dgvCuTru);
                     break;
+                // Quoc tich
                 case 3:
+                    CuTruBindingSource.Bind(await repo.GetByNationAsync(txtTimKiem.Text), dgvCuTru);
                     break;
+                // Dia chi cu tru
                 case 4:
                     CuTruBindingSource.Bind(await repo.GetByAddressAsync(txtTimKiem.Text), dgvCuTru);
                     break;
+                // Dia chi cong dan
                 case 5:
                     break;
             }

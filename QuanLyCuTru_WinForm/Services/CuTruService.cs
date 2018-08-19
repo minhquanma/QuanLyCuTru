@@ -48,6 +48,22 @@ namespace QuanLyCuTru_WinForm.Models
             return await GetDataAsync(url);
         }
 
+        public async Task<CuTruDTO> GetByIdAsync(int id)
+        {
+            CuTruDTO cuTru = null;
+
+            // Request url template
+            var url = $"{host}/{id}";
+
+            HttpResponseMessage res = await client.GetAsync(url);
+            if (res.IsSuccessStatusCode)
+            {
+                cuTru = await res.Content.ReadAsAsync<CuTruDTO>();
+            }
+
+            return cuTru;
+        }
+
         public async Task<List<CuTruDTO>> GetByPersonalAddressAsync(string diaChi)
         {
             // Request url template
@@ -64,6 +80,34 @@ namespace QuanLyCuTru_WinForm.Models
 
             return await GetDataAsync(url);
         }
+
+        // GET/api/quanlycutri?noisinh="abc
+        public async Task<List<CuTruDTO>> GetByBirthPlaceAsync(string noiSinh)
+        {
+            // Request url template
+            var url = $"{host}?noisinh={noiSinh}";
+
+            return await GetDataAsync(url);
+        }
+
+        //GET/api/quanlycutri?quequan="abc
+        public async Task<List<CuTruDTO>> GetByHometownAsync(string queQuan)
+        {
+            // Request url template
+            var url = $"{host}?quequan={queQuan}";
+
+            return await GetDataAsync(url);
+        }
+
+        //GET/api/quanlycutri?quoctich="abc
+        public async Task<List<CuTruDTO>> GetByNationAsync(string quocTich)
+        {
+            // Request url template
+            var url = $"{host}?quoctich={quocTich}";
+
+            return await GetDataAsync(url);
+        }
+
 
 
         public async Task<List<CuTruDTO>> GetByTypeAsync(int loai)
@@ -89,19 +133,6 @@ namespace QuanLyCuTru_WinForm.Models
             var url = $"{host}/hethan";
 
             return await GetDataAsync(url);
-        }
-
-        public async Task<CuTruDTO> GetByIdAsync(int id)
-        {
-            CuTruDTO cuTru = null;
-
-            HttpResponseMessage res = await client.GetAsync(host + id.ToString());
-            if (res.IsSuccessStatusCode)
-            {
-                cuTru = await res.Content.ReadAsAsync<CuTruDTO>();
-            }
-
-            return cuTru;
         }
 
         public async Task<Uri> CreateAsync(CuTruDTO cuTru)

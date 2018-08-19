@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using QuanLyCuTru.Models;
 using QuanLyCuTru.DTOs;
 using AutoMapper;
-using Microsoft.AspNet.Identity;
 using System.Web;
 using System.Web.Http.Description;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace QuanLyCuTru.Controllers.Api
 {
@@ -52,10 +51,19 @@ namespace QuanLyCuTru.Controllers.Api
 
             if (cuTru == null)
                 return NotFound();
-
             return Ok(Mapper.Map<CuTru, CuTruDTO>(cuTru));
         }
+        [Route("")]
+        [ResponseType(typeof(CuTru))]
+        public IHttpActionResult GetByCuTrusIdAsync(int id)
+        {
+            var cuTrus = db.CuTrus
+                .Where(c => c.Id == id)
+                .Select(Mapper.Map<CuTru, CuTruDTO>)
+                .ToList();
 
+            return Ok(cuTrus);
+        }
         // Tìm kiếm cư trú theo loại cư trú (Tạm vắng / Tạm trú)
         // GET: /api/quanlycutru?loai=1|2
         [Route("")]
@@ -111,6 +119,51 @@ namespace QuanLyCuTru.Controllers.Api
             return Ok(cuTrus);
         }
 
+        // Tìm kiếm cư trú theo nơi sinh
+        // GET: /api/quanlycutru?noisinh="abc"
+        [Route("")]
+        [ResponseType(typeof(CuTru))]
+        public IHttpActionResult GetCuTrusByBirthPlace(string noiSinh)
+        { 
+            var cuTrus = db.NguoiDungs
+                        .Where(c => c.NoiSinh.Contains(noiSinh))
+                        .SelectMany(x => x.CuTrus)
+                        .Select(Mapper.Map<CuTru, CuTruDTO>)
+                        .Distinct();
+
+            return Ok(cuTrus);
+        }
+
+        // Tìm kiếm cu trứ theo quê quán
+        // GET: /api/quanlycutru?quequan="abc"
+        [Route("")]
+        [ResponseType(typeof(CuTru))]
+        public IHttpActionResult GetCuTrusByHometown(string queQuan)
+        {
+            var cuTrus = db.NguoiDungs
+                        .Where(c => c.QueQuan.Contains(queQuan))
+                        .SelectMany(x => x.CuTrus)
+                        .Select(Mapper.Map<CuTru, CuTruDTO>)
+                        .Distinct();
+
+            return Ok(cuTrus);
+        }
+
+        // Tìm kiếm cu trứ theo quốc tịch
+        // GET: /api/quanlycutru?quoctich="abc"
+        [Route("")]
+        [ResponseType(typeof(CuTru))]
+        public IHttpActionResult GetCuTrusByNation(string quocTich)
+        {
+            var cuTrus = db.NguoiDungs
+                        .Where(c => c.QuocTich.Contains(quocTich))
+                        .SelectMany(x => x.CuTrus)
+                        .Select(Mapper.Map<CuTru, CuTruDTO>)
+                        .Distinct();
+
+            return Ok(cuTrus);
+        }
+    
         // Tìm kiếm cư trú theo địa chỉ dân
         // GET /api/quanlycutru?diachidan="abc"
         [Route("")]
@@ -141,6 +194,7 @@ namespace QuanLyCuTru.Controllers.Api
 
             return Ok(cuTrus);
         }
+
 
         // POST: /api/quanlycutru/
         [HttpPost]

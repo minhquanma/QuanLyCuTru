@@ -89,7 +89,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 38);
+            this.label1.Size = new System.Drawing.Size(134, 32);
             this.label1.TabIndex = 13;
             this.label1.Text = "Chờ Duyệt";
             // 
@@ -100,7 +100,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(174, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(184, 25);
+            this.label2.Size = new System.Drawing.Size(151, 21);
             this.label2.TabIndex = 19;
             this.label2.Text = " Duyệt Hoặc Từ Chối";
             // 
@@ -141,7 +141,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label7.Location = new System.Drawing.Point(8, 258);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 20);
+            this.label7.Size = new System.Drawing.Size(73, 17);
             this.label7.TabIndex = 56;
             this.label7.Text = "Loại cư trú:";
             // 
@@ -183,7 +183,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(8, 66);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 20);
+            this.label5.Size = new System.Drawing.Size(20, 17);
             this.label5.TabIndex = 54;
             this.label5.Text = "ID";
             // 
@@ -215,9 +215,9 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(250, 394);
+            this.btnSua.Location = new System.Drawing.Point(277, 394);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(107, 35);
+            this.btnSua.Size = new System.Drawing.Size(77, 35);
             this.btnSua.TabIndex = 52;
             this.btnSua.Text = "SỬA";
             this.btnSua.UseVisualStyleBackColor = false;
@@ -231,7 +231,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Location = new System.Drawing.Point(8, 118);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 20);
+            this.label6.Size = new System.Drawing.Size(42, 17);
             this.label6.TabIndex = 47;
             this.label6.Text = "Email:";
             // 
@@ -243,9 +243,9 @@
             this.btnDuyet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDuyet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDuyet.ForeColor = System.Drawing.Color.White;
-            this.btnDuyet.Location = new System.Drawing.Point(113, 394);
+            this.btnDuyet.Location = new System.Drawing.Point(194, 394);
             this.btnDuyet.Name = "btnDuyet";
-            this.btnDuyet.Size = new System.Drawing.Size(131, 35);
+            this.btnDuyet.Size = new System.Drawing.Size(77, 35);
             this.btnDuyet.TabIndex = 51;
             this.btnDuyet.Text = "DUYỆT";
             this.btnDuyet.UseVisualStyleBackColor = false;
@@ -259,7 +259,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(8, 308);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 20);
+            this.label3.Size = new System.Drawing.Size(50, 17);
             this.label3.TabIndex = 48;
             this.label3.Text = "Địa chỉ:";
             // 
@@ -271,7 +271,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(8, 212);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 20);
+            this.label4.Size = new System.Drawing.Size(92, 17);
             this.label4.TabIndex = 50;
             this.label4.Text = "Ngày đăng ký:";
             // 
@@ -283,7 +283,7 @@
             this.txtpreciofff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtpreciofff.Location = new System.Drawing.Point(8, 165);
             this.txtpreciofff.Name = "txtpreciofff";
-            this.txtpreciofff.Size = new System.Drawing.Size(81, 20);
+            this.txtpreciofff.Size = new System.Drawing.Size(70, 17);
             this.txtpreciofff.TabIndex = 49;
             this.txtpreciofff.Text = "Điện thoại:";
             // 
@@ -327,7 +327,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(23, 14);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 25);
+            this.label8.Size = new System.Drawing.Size(83, 21);
             this.label8.TabIndex = 20;
             this.label8.Text = "Danh sách";
             // 
@@ -373,7 +373,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(10, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 25);
+            this.label9.Size = new System.Drawing.Size(80, 21);
             this.label9.TabIndex = 21;
             this.label9.Text = "Thông tin";
             // 
