@@ -115,9 +115,17 @@ namespace QuanLyCuTru_WinForm
                 var selectedRow = dgvCuTru.SelectedRows[0];
                 var selectedCuTru = (CuTruDTO)selectedRow.DataBoundItem;
                                
-                // Tạo form Chi Tiết đồng thời truyền object CuTru qua
-                FormPrint form = new FormPrint(selectedCuTru);
-                form.ShowDialog();
+                if (selectedCuTru.CanBoDuyet == null)
+                {
+                    MessageBox.Show("Cư trú này chưa được duyệt, không thể in", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    // Tạo form Chi Tiết đồng thời truyền object CuTru qua
+                    FormPrint form = new FormPrint(selectedCuTru);
+                    form.ShowDialog();
+                }
+                
             }
             else
             {

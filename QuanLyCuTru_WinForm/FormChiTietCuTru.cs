@@ -1,5 +1,6 @@
 ﻿using QuanLyCuTru.DTOs;
 using QuanLyCuTru_WinForm.BindingSources;
+using QuanLyCuTru_WinForm.Models;
 using QuanLyCuTru_WinForm.Services;
 using System;
 using System.Collections.Generic;
@@ -39,16 +40,27 @@ namespace QuanLyCuTru_WinForm
                 NguoiDungBindingSource.Bind(CuTru.CongDans, dgvDanhSachCongDan);
             }
 
-            // Xử lý trạng thái duyệt của cư trú
+
+            // Nếu cư trú này đã được duyệt
             if (CuTru.DaDuyet)
             {
                 // ẩn nút duyệt đi
                 btnDuyetCuTru.Hide();
+
+                // hiện check box
+                chkDaDuyet.Visible = true;
                 chkDaDuyet.Checked = CuTru.DaDuyet;
+            }
+            else if (HttpService.RoleName == "BaoVeDanPho") // Nếu là BVDP
+            {
+                // ẩn nút duyệt đi
+                btnDuyetCuTru.Hide();
             }
             else
             {
+                // ẩn checkbox đi
                 chkDaDuyet.Visible = false;
+                chkDaDuyet.Checked = false;
             }
         }
 
@@ -89,6 +101,30 @@ namespace QuanLyCuTru_WinForm
         private void panelTop_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private async void btnDuyetCuTru_Click(object sender, EventArgs e)
+        {
+            var service = new CuTruService();
+
+            var dialogResult = MessageBox.Show("Bạn có muốn duyệt cư trú này?", "Hahaha",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                var result = await service.DuyetCuTru(CuTru.Id);
+
+                if (result == true)
+                {
+                    MessageBox.Show("Đã duyệt thành công!", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CuTru.DaDuyet = true;
+                }
+                else
+                    MessageBox.Show("Đã có lỗi xảy ra!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                // Tải lại form
+                LoadCuTruData();
+            }
         }
     }
 }

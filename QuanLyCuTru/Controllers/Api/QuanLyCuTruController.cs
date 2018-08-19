@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.Http.Description;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 
 namespace QuanLyCuTru.Controllers.Api
 {
@@ -222,6 +223,19 @@ namespace QuanLyCuTru.Controllers.Api
                 cuTru.CongDans.Add(congDan);
             }
 
+            // If CanhSatKhuVuc
+            if (User.IsInRole("CanhSatKhuVuc"))
+            {
+                // Get the logged in CanBo's id
+                var currentId = User.Identity.GetUserId();
+
+                // Get CanBo entity in db
+                var canBo = db.NguoiDungs.SingleOrDefault(c => c.IdentityId.Equals(currentId));
+
+                cuTru.DaDuyet = true; // Set DaDuyet state to true
+                cuTru.CanBoId = canBo.Id; // Set CanBo Duyet id
+            }
+
             db.CuTrus.Add(cuTru);
             db.SaveChanges();
 
@@ -259,13 +273,13 @@ namespace QuanLyCuTru.Controllers.Api
                 return BadRequest();
 
             // Get the logged in CanBo's id
-            //var currentId = User.Identity.GetUserId();
+            var currentId = User.Identity.GetUserId();
         
             // Get CanBo entity in db
-            //var canBo = db.NguoiDungs.SingleOrDefault(c => c.IdentityId.Equals(currentId));
+            var canBo = db.NguoiDungs.SingleOrDefault(c => c.IdentityId.Equals(currentId));
 
             cuTru.DaDuyet = true; // Set DaDuyet state to true
-            //cuTru.CanBoId = canBo.Id; // Set CanBo Duyet id
+            cuTru.CanBoId = canBo.Id; // Set CanBo Duyet id
             db.SaveChanges();
 
             return Ok();
