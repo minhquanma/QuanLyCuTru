@@ -16,7 +16,7 @@ namespace QuanLyCuTru_WinForm
 {
     public partial class FormDanhSachCuTru : Form
     {
-        CuTruService repo = new CuTruService();
+        CuTruService service = new CuTruService();
 
         public FormDanhSachCuTru()
         {
@@ -26,11 +26,11 @@ namespace QuanLyCuTru_WinForm
         public async void LoadDanhSach()
         {
             ptbLoading.Show();
-            CuTruBindingSource.Bind(await repo.GetAllAsync(), dgvCuTru);
+            CuTruBindingSource.Bind(await service.GetAllAsync(), dgvCuTru);
             ptbLoading.Hide();
         }
 
-        private async void FormDanhSachCuTru_Load(object sender, EventArgs e)
+        private void FormDanhSachCuTru_Load(object sender, EventArgs e)
         {
             LoadDanhSach();
         }
@@ -84,26 +84,27 @@ namespace QuanLyCuTru_WinForm
             {
                 // Ten
                 case 0:
-                    CuTruBindingSource.Bind(await repo.GetByNameAsync(txtTimKiem.Text), dgvCuTru);
+                    CuTruBindingSource.Bind(await service.GetByNameAsync(txtTimKiem.Text), dgvCuTru);
                     break;
                 // Noi sinh
                 case 1:
-                    CuTruBindingSource.Bind(await repo.GetByBirthPlaceAsync(txtTimKiem.Text), dgvCuTru);
+                    CuTruBindingSource.Bind(await service.GetByBirthPlaceAsync(txtTimKiem.Text), dgvCuTru);
                     break;
                 // Que quan
                 case 2:
-                    CuTruBindingSource.Bind(await repo.GetByHometownAsync(txtTimKiem.Text), dgvCuTru);
+                    CuTruBindingSource.Bind(await service.GetByHometownAsync(txtTimKiem.Text), dgvCuTru);
                     break;
                 // Quoc tich
                 case 3:
-                    CuTruBindingSource.Bind(await repo.GetByNationAsync(txtTimKiem.Text), dgvCuTru);
+                    CuTruBindingSource.Bind(await service.GetByNationAsync(txtTimKiem.Text), dgvCuTru);
                     break;
                 // Dia chi cu tru
                 case 4:
-                    CuTruBindingSource.Bind(await repo.GetByAddressAsync(txtTimKiem.Text), dgvCuTru);
+                    CuTruBindingSource.Bind(await service.GetByAddressAsync(txtTimKiem.Text), dgvCuTru);
                     break;
                 // Dia chi cong dan
                 case 5:
+                    CuTruBindingSource.Bind(await service.GetByPersonalAddressAsync(txtTimKiem.Text), dgvCuTru);
                     break;
             }
         }
