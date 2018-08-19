@@ -18,9 +18,23 @@ namespace QuanLyCuTru_WinForm
             InitializeComponent();
         }
 
+        private string GetRoleString()
+        {
+            switch (HttpService.RoleName)
+            {
+                case "Admin":
+                    return "Admin";
+                case "CanhSatKhuVuc":
+                    return "Cảnh Sát Khu Vực";
+                case "BaoVeDanPho":
+                    return "Bảo Vệ Dân Phố";
+                default:
+                    return "Không";
+            }
+        }
         private void FormTrangchu_Load(object sender, EventArgs e)
         {
-            lbUsername.Text = $"{HttpService.UserName} ({HttpService.RoleName})";
+            lbUsername.Text = $"{HttpService.UserName} ({GetRoleString()})";
 
             // Load tin tuc
             ptbLoading.Hide();

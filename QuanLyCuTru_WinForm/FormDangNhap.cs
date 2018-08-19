@@ -86,7 +86,7 @@ namespace QuanLyCuTru_WinForm
             {
                 // Ẩn loading đi
                 
-                MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FormCanBoQuanLy form = new FormCanBoQuanLy();
                 form.Show();
                 this.Hide();

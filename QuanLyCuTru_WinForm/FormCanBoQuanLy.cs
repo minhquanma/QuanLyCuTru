@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using QuanLyCuTru_WinForm.Services;
 
 namespace QuanLyCuTru_WinForm
 {
@@ -21,6 +22,13 @@ namespace QuanLyCuTru_WinForm
         public FormCanBoQuanLy()
         {
             InitializeComponent();
+
+            // Xử lý nghiệp vụ
+            if (HttpService.RoleName == "BaoVeDanPho")
+            {
+                panelCongdan.Visible = false;
+            }
+            
         } 
 
         private void pictureBox1_Click(object sender, EventArgs e)
