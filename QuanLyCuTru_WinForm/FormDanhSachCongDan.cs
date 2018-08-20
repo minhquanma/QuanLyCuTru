@@ -19,7 +19,7 @@ namespace QuanLyCuTru_WinForm
 {
     public partial class FormDanhSachCongDan : Form
     {
-        NguoiDungService repo = new NguoiDungService();
+        NguoiDungService service = new NguoiDungService();
       
         public FormDanhSachCongDan()
         {
@@ -29,7 +29,7 @@ namespace QuanLyCuTru_WinForm
         private async void FormDanhSachCongDan_Load(object sender, EventArgs e)
         {
             ptbLoading.Show();
-            NguoiDungBindingSource.Bind(await repo.GetAllAsync(), dgvDanhSachCongDan);
+            NguoiDungBindingSource.Bind(await service.GetAllAsync(), dgvDanhSachCongDan);
             ptbLoading.Hide();
         }
 
@@ -57,19 +57,29 @@ namespace QuanLyCuTru_WinForm
             }
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        private async void btnTimKiem_Click(object sender, EventArgs e)
         {
             switch (cbbLoaiTimKiem.SelectedIndex)
             {
+                // Tên
                 case 0:
+                    NguoiDungBindingSource.Bind(await service.GetByName(txtTimKiem.Text), dgvDanhSachCongDan);
                     break;
+                // Nơi sinh
                 case 1:
+                    NguoiDungBindingSource.Bind(await service.GetByBirthPlace(txtTimKiem.Text), dgvDanhSachCongDan);
                     break;
+                // Quê quán
                 case 2:
+                    NguoiDungBindingSource.Bind(await service.GetByHomeTown(txtTimKiem.Text), dgvDanhSachCongDan);
                     break;
+                // Quốc tịch
                 case 3:
+                    NguoiDungBindingSource.Bind(await service.GetByNation(txtTimKiem.Text), dgvDanhSachCongDan);
                     break;
+                // Địa chỉ
                 case 4:
+                    NguoiDungBindingSource.Bind(await service.GetByAddress(txtTimKiem.Text), dgvDanhSachCongDan);
                     break;
             }
         }
@@ -93,7 +103,7 @@ namespace QuanLyCuTru_WinForm
 
         private async void btnTaiLai_Click(object sender, EventArgs e)
         {
-            NguoiDungBindingSource.Bind(await repo.GetAllAsync(), dgvDanhSachCongDan);
+            NguoiDungBindingSource.Bind(await service.GetAllAsync(), dgvDanhSachCongDan);
         }
     }
 }

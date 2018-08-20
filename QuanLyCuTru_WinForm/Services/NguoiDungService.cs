@@ -41,6 +41,38 @@ namespace QuanLyCuTru_WinForm.Services
             return await GetDataAsync(url);
         }
 
+        public async Task<List<NguoiDungDTO>> GetByBirthPlace(string noiSinh)
+        {
+            // Request url template
+            var url = $"{host}?noiSinh={noiSinh}";
+
+            return await GetDataAsync(url);
+        }
+
+        public async Task<List<NguoiDungDTO>> GetByHomeTown(string queQuan)
+        {
+            // Request url template
+            var url = $"{host}?queQuan={queQuan}";
+
+            return await GetDataAsync(url);
+        }
+
+        public async Task<List<NguoiDungDTO>> GetByNation(string quocTich)
+        {
+            // Request url template
+            var url = $"{host}?quocTich={quocTich}";
+
+            return await GetDataAsync(url);
+        }
+
+        public async Task<List<NguoiDungDTO>> GetByAddress(string diaChi)
+        {
+            // Request url template
+            var url = $"{host}?diaChi={diaChi}";
+
+            return await GetDataAsync(url);
+        }
+
         // GET  /id
         public async Task<NguoiDungDTO> GetByIdAsync(string id)
         {
