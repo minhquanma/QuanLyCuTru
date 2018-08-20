@@ -35,14 +35,15 @@ namespace QuanLyCuTru_WinForm
         private void FormTrangchu_Load(object sender, EventArgs e)
         {
             lbUsername.Text = $"{HttpService.UserName} ({GetRoleString()})";
-
+            timer1.Enabled = true;
             // Load tin tuc
-            ptbLoading.Hide();
+
         }
 
-        private void lblHora_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-
+            lblHora.Text = DateTime.Now.ToString("hh:mm:ss");
+            lblFecha.Text = DateTime.Now.ToLongDateString();
         }
     }
 }
