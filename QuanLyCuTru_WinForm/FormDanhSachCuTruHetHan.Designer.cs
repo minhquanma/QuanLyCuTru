@@ -91,6 +91,7 @@ namespace QuanLyCuTru_WinForm
             this.btnTimKiem.TabIndex = 52;
             this.btnTimKiem.Text = "TÌM KIẾM";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // panel3
             // 

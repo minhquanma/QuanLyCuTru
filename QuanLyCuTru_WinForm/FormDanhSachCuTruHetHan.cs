@@ -65,5 +65,10 @@ namespace QuanLyCuTru_WinForm
             FormSuaCuTru form = new FormSuaCuTru();
             form.Show();
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

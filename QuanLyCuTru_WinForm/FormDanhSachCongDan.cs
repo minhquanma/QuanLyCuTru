@@ -57,11 +57,6 @@ namespace QuanLyCuTru_WinForm
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             switch (cbbLoaiTimKiem.SelectedIndex)
@@ -94,6 +89,11 @@ namespace QuanLyCuTru_WinForm
                 FormPrint form = new FormPrint(selectedCongDan);
                 form.Show();
             }
+        }
+
+        private async void btnTaiLai_Click(object sender, EventArgs e)
+        {
+            NguoiDungBindingSource.Bind(await repo.GetAllAsync(), dgvDanhSachCongDan);
         }
     }
 }

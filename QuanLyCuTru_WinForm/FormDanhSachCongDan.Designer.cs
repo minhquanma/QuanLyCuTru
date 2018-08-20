@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDanhSachCongDan));
             this.btnThemMoi = new System.Windows.Forms.Button();
             this.btnIn = new System.Windows.Forms.Button();
@@ -41,8 +41,8 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.cbbLoaiTimKiem = new System.Windows.Forms.ComboBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.btnChiTiet = new System.Windows.Forms.Button();
+            this.btnTaiLai = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachCongDan)).BeginInit();
             this.panelDanhSachCongDan.SuspendLayout();
@@ -80,7 +80,7 @@
             this.btnIn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIn.ForeColor = System.Drawing.Color.White;
             this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIn.Location = new System.Drawing.Point(725, 370);
+            this.btnIn.Location = new System.Drawing.Point(725, 415);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(100, 35);
             this.btnIn.TabIndex = 18;
@@ -117,20 +117,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDanhSachCongDan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachCongDan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDanhSachCongDan.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDanhSachCongDan.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDanhSachCongDan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dgvDanhSachCongDan.Location = new System.Drawing.Point(14, 120);
             this.dgvDanhSachCongDan.MultiSelect = false;
             this.dgvDanhSachCongDan.Name = "dgvDanhSachCongDan";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dgvDanhSachCongDan.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dgvDanhSachCongDan.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDanhSachCongDan.SelectAllSignVisible = false;
             this.dgvDanhSachCongDan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhSachCongDan.Size = new System.Drawing.Size(692, 330);
@@ -139,11 +139,11 @@
             // panelDanhSachCongDan
             // 
             this.panelDanhSachCongDan.BackColor = System.Drawing.SystemColors.Control;
+            this.panelDanhSachCongDan.Controls.Add(this.btnTaiLai);
             this.panelDanhSachCongDan.Controls.Add(this.ptbLoading);
             this.panelDanhSachCongDan.Controls.Add(this.txtTimKiem);
             this.panelDanhSachCongDan.Controls.Add(this.cbbLoaiTimKiem);
             this.panelDanhSachCongDan.Controls.Add(this.btnTimKiem);
-            this.panelDanhSachCongDan.Controls.Add(this.btnXoa);
             this.panelDanhSachCongDan.Controls.Add(this.btnChiTiet);
             this.panelDanhSachCongDan.Controls.Add(this.dgvDanhSachCongDan);
             this.panelDanhSachCongDan.Controls.Add(this.panel3);
@@ -208,27 +208,6 @@
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // btnXoa
-            // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.BackColor = System.Drawing.Color.Brown;
-            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(725, 411);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(100, 37);
-            this.btnXoa.TabIndex = 32;
-            this.btnXoa.Text = "XÓA";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
             // btnChiTiet
             // 
             this.btnChiTiet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -249,6 +228,22 @@
             this.btnChiTiet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChiTiet.UseVisualStyleBackColor = false;
             this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
+            // 
+            // btnTaiLai
+            // 
+            this.btnTaiLai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTaiLai.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnTaiLai.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
+            this.btnTaiLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaiLai.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaiLai.ForeColor = System.Drawing.Color.Transparent;
+            this.btnTaiLai.Location = new System.Drawing.Point(725, 206);
+            this.btnTaiLai.Name = "btnTaiLai";
+            this.btnTaiLai.Size = new System.Drawing.Size(100, 37);
+            this.btnTaiLai.TabIndex = 58;
+            this.btnTaiLai.Text = "TẢI LẠI";
+            this.btnTaiLai.UseVisualStyleBackColor = false;
+            this.btnTaiLai.Click += new System.EventHandler(this.btnTaiLai_Click);
             // 
             // FormDanhSachCongDan
             // 
@@ -282,7 +277,7 @@
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.ComboBox cbbLoaiTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.PictureBox ptbLoading;
+        private System.Windows.Forms.Button btnTaiLai;
     }
 }
