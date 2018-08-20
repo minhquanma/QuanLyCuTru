@@ -160,7 +160,7 @@ namespace QuanLyCuTru_WinForm
             if (MenuCutru.Visible == false)
             {
                 MenuCutru.Visible = true;
-                panelCutru.Height = 144;
+                panelCutru.Height = 178;
                 MenuCongdan.Visible = false;
                 panelCongdan.Height = 54;
             }
@@ -176,7 +176,7 @@ namespace QuanLyCuTru_WinForm
             if (MenuCongdan.Visible == false)
             {
                 MenuCongdan.Visible = true;
-                panelCongdan.Height = 94;
+                panelCongdan.Height = 95;
                 MenuCutru.Visible = false;
                 panelCutru.Height = 54;
             }
