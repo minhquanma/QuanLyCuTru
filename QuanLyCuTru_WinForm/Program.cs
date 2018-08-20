@@ -17,7 +17,7 @@ namespace QuanLyCuTru_WinForm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new BackgroundImage());
-            Application.Run(new FormDangNhap());
+            Application.Run(new FormCanBoQuanLy());
         }
     }
 }

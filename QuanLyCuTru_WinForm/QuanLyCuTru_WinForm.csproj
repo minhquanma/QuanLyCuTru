@@ -121,12 +121,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormCanBoQuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,9 +368,6 @@
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
     <None Include="Resources\509551992.jpg" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormCanBoQuanLy.resx">
       <DependentUpon>FormCanBoQuanLy.cs</DependentUpon>
     </EmbeddedResource>
