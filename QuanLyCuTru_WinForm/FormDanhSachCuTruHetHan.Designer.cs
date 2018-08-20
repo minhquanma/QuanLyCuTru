@@ -118,6 +118,7 @@ namespace QuanLyCuTru_WinForm
             this.dgvCuTru.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCuTru.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCuTru.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -138,6 +139,7 @@ namespace QuanLyCuTru_WinForm
             // 
             // ptbLoading
             // 
+            this.ptbLoading.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ptbLoading.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ptbLoading.Image = ((System.Drawing.Image)(resources.GetObject("ptbLoading.Image")));
             this.ptbLoading.Location = new System.Drawing.Point(337, 209);

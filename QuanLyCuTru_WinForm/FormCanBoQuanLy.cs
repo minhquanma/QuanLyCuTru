@@ -160,7 +160,7 @@ namespace QuanLyCuTru_WinForm
             if (MenuCutru.Visible == false)
             {
                 MenuCutru.Visible = true;
-                panelCutru.Height = 181;
+                panelCutru.Height = 144;
                 MenuCongdan.Visible = false;
                 panelCongdan.Height = 54;
             }
@@ -176,7 +176,7 @@ namespace QuanLyCuTru_WinForm
             if (MenuCongdan.Visible == false)
             {
                 MenuCongdan.Visible = true;
-                panelCongdan.Height = 178;
+                panelCongdan.Height = 94;
                 MenuCutru.Visible = false;
                 panelCutru.Height = 54;
             }
@@ -191,25 +191,9 @@ namespace QuanLyCuTru_WinForm
         {
             AbrirFormInPanel(new FormDanhSachCuTruHetHan());
         }
-
-        private void btnDaDangKyCongDan_Click(object sender, EventArgs e)
-        {
-            AbrirFormInPanel(new FormDanhSachCongDanDaDangKy());
-        }
-
-        private void btnChuaDangKyCongDan_Click(object sender, EventArgs e)
-        {
-            AbrirFormInPanel(new FormDanhSachCongDanChuaDangKy());
-        }
-
         private void btnDanhSachCuTru_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new FormDanhSachCuTru());
-        }
-
-        private void btnDaDuyetCuTru_Click(object sender, EventArgs e)
-        {
-            AbrirFormInPanel(new FormDanhSachCuTruDaDuyet());
         }
 
         private void btnChoDuyet_Click(object sender, EventArgs e)
