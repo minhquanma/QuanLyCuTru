@@ -16,7 +16,7 @@ namespace QuanLyCuTru_WinForm
 {
     public partial class FormDanhSachCuTruHetHan : Form
     {
-        CuTruService repo = new CuTruService();
+        CuTruService service = new CuTruService();
 
         public FormDanhSachCuTruHetHan()
         {
@@ -26,7 +26,7 @@ namespace QuanLyCuTru_WinForm
         private async void FormDanhSachCuTru_Load(object sender, EventArgs e)
         {
             ptbLoading.Show();
-            CuTruBindingSource.Bind(await repo.GetExpiredAsync(), dgvCuTru);
+            CuTruBindingSource.Bind(await service.GetExpiredAsync(), dgvCuTru);
             ptbLoading.Hide();
         }
 
@@ -66,9 +66,35 @@ namespace QuanLyCuTru_WinForm
             form.Show();
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        private async void btnTimKiem_Click(object sender, EventArgs e)
         {
-
+            switch (cbbTen.SelectedIndex)
+            {
+                // Ten
+                case 0:
+                    CuTruBindingSource.Bind(await service.GetByNameAsync(txtTimKiem.Text), dgvCuTru);
+                    break;
+                // Noi sinh
+                case 1:
+                    CuTruBindingSource.Bind(await service.GetByBirthPlaceAsync(txtTimKiem.Text), dgvCuTru);
+                    break;
+                // Que quan
+                case 2:
+                    CuTruBindingSource.Bind(await service.GetByHometownAsync(txtTimKiem.Text), dgvCuTru);
+                    break;
+                // Quoc tich
+                case 3:
+                    CuTruBindingSource.Bind(await service.GetByNationAsync(txtTimKiem.Text), dgvCuTru);
+                    break;
+                // Dia chi cu tru
+                case 4:
+                    CuTruBindingSource.Bind(await service.GetByAddressAsync(txtTimKiem.Text), dgvCuTru);
+                    break;
+                // Dia chi cong dan
+                case 5:
+                    CuTruBindingSource.Bind(await service.GetByPersonalAddressAsync(txtTimKiem.Text), dgvCuTru);
+                    break;
+            }
         }
     }
 }
