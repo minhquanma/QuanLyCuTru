@@ -1,4 +1,5 @@
 ﻿using QuanLyCuTru.DTOs;
+using QuanLyCuTru.Global;
 using QuanLyCuTru_WinForm.Services;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ namespace QuanLyCuTru_WinForm
             txtNoiSinh.Text = CongDan.NoiSinh;
             txtQuocTich.Text = CongDan.QuocTich;
             txtQueQuan.Text = CongDan.QueQuan;
-            rbNam.Checked = CongDan.GioiTinh;
+            rbNam.Checked = CongDan.GioiTinh == GioiTinh.Nam;
             cmbChucVu.SelectedIndex = CongDan.ChucVuId - 1;
         }
 
@@ -63,7 +64,7 @@ namespace QuanLyCuTru_WinForm
             CongDan.NoiSinh = txtNoiSinh.Text;
             CongDan.QuocTich = txtQuocTich.Text;
             CongDan.QueQuan = txtQueQuan.Text;
-            CongDan.GioiTinh = rbNam.Checked ? true : false;
+            CongDan.GioiTinh = rbNam.Checked ? GioiTinh.Nam : GioiTinh.Nu;
             CongDan.ChucVuId = cmbChucVu.SelectedIndex + 1;
         }
 
@@ -150,6 +151,11 @@ namespace QuanLyCuTru_WinForm
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnChonTep_Click(object sender, EventArgs e)
+        {
+
         }
     }  
 }

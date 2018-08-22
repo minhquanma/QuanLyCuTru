@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -18,10 +19,51 @@ namespace QuanLyCuTru_WinForm
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+        string configPath = Path.GetFullPath(".") + "\\config.mmq";
+        string savedUserName = "";
+        bool isSaved = false;
+
         public FormDangNhap()
         {
             InitializeComponent();
+            LoadConfigData();
+            // Hide loading icon
             ptbloading.Hide();
+        }
+
+        private void LoadConfigData()
+        {
+            using (StreamReader sr = File.OpenText(configPath))
+            {
+                isSaved = bool.Parse(sr.ReadLine());
+                savedUserName = sr.ReadLine();
+            }
+
+            if (!string.IsNullOrEmpty(savedUserName))
+            {
+                txtUsername.Text = savedUserName;
+            }
+
+            chkLuu.Checked = isSaved;
+        }
+
+        private void SaveConfigData()
+        {
+            using (StreamWriter sw = File.CreateText(configPath))
+            {
+                sw.WriteLine(isSaved);
+                sw.WriteLine(txtUsername.Text);
+            }
+        }
+
+        private void ClearConfigData()
+        {
+            using (StreamWriter sw = File.CreateText(configPath))
+            {
+                sw.WriteLine(false);
+                sw.WriteLine("");
+            }
         }
 
         private void ptbExit_Click(object sender, EventArgs e)
@@ -37,7 +79,7 @@ namespace QuanLyCuTru_WinForm
 
         private void txtUsername_Enter(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "Username")
+            if (txtUsername.Text == "Tài khoản")
             {
                 txtUsername.Text = "";
                 txtUsername.ForeColor = Color.LightGray;
@@ -48,14 +90,14 @@ namespace QuanLyCuTru_WinForm
         {
             if (txtUsername.Text == "")
             {
-                txtUsername.Text = "Username";
+                txtUsername.Text = "Tài khoản";
                 txtUsername.ForeColor = Color.DimGray;
             }
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "Password")
+            if (txtPassword.Text == "Mật khẩu")
             {
                 txtPassword.Text = "";
                 txtPassword.ForeColor = Color.LightGray;
@@ -66,7 +108,7 @@ namespace QuanLyCuTru_WinForm
         {
             if (txtPassword.Text == "")
             {
-                txtPassword.Text = "Password";
+                txtPassword.Text = "Mật khẩu";
                 txtPassword.ForeColor = Color.DimGray;
                 txtPassword.UseSystemPasswordChar = false;
             }
@@ -83,19 +125,23 @@ namespace QuanLyCuTru_WinForm
             var loginResult = await HttpService.LoginAsync(txtUsername.Text, txtPassword.Text);
 
             if (loginResult)
-            {
-                // Ẩn loading đi
-                
-                // MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {   
                 FormCanBoQuanLy form = new FormCanBoQuanLy();
                 form.Show();
-                this.Hide();
+
+                if (chkLuu.Checked)
+                    SaveConfigData();
+                else
+                    ClearConfigData();
+
+                Hide();
             }
             else
             {
                 ptbloading.Hide();
                 MessageBox.Show("Đăng nhập thất bại, vui lòng thử lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             // Disable nút DangNhap
             btnDangNhap.Enabled = true;
         }

@@ -19,7 +19,7 @@ namespace QuanLyCuTru.Models
 
         [Required]
         [Display(Name = "Giới tính")]
-        public bool GioiTinh { get; set; }
+        public short GioiTinh { get; set; }
 
         [Required(ErrorMessage = "Sinh nhật không được để trống")]
         [Display(Name = "Sinh nhật")]
@@ -128,7 +128,17 @@ namespace QuanLyCuTru.Models
         [Display(Name = "Giới tính")]
         public string StringGioiTinh
         {
-            get { return GioiTinh ? "Nam" : "Nữ"; }
+            get {
+                switch(GioiTinh)
+                {
+                    case Global.GioiTinh.Nam:
+                        return "Nam";
+                    case Global.GioiTinh.Nu:
+                        return "Nữ";
+                    default:
+                        return "Không biết";
+                }
+            }
         }
 
         [NotMapped]

@@ -40,6 +40,7 @@ namespace QuanLyCuTru.DTOs
         public string ThanhPho { get; set; }
 
         public bool DaDuyet { get; set; }
+        public string TrangThai => DaDuyet ? "Đã duyệt" : "Chưa duyệt";
 
         public int LoaiCuTruId { get; set; }
         public string LoaiCuTru { get; set; }

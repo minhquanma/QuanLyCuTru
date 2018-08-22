@@ -29,11 +29,11 @@
                 <div class="col-md-10">
                     <div class="custom-control custom-radio">
                         <!-- Male button is checked by default-->
-                        @Html.RadioButtonFor(model => model.NguoiDung.GioiTinh, true, new { @checked = "checked" })
+                        @Html.RadioButtonFor(model => model.NguoiDung.GioiTinh, 1, new { @checked = "checked" })
                         @Html.LabelFor(model => model.NguoiDung.GioiTinh, "Nam")
                     </div>
                     <div class="custom-control custom-radio">
-                        @Html.RadioButtonFor(model => model.NguoiDung.GioiTinh, false)
+                        @Html.RadioButtonFor(model => model.NguoiDung.GioiTinh, 0)
                         @Html.LabelFor(model => model.NguoiDung.GioiTinh, "Nữ")
                     </div>
                 </div>

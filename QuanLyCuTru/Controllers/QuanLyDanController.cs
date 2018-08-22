@@ -93,10 +93,10 @@ namespace QuanLyCuTru.Controllers
                 case 1:
                     break;
                 case 2:
-                    congDans = congDans.Where(d => d.GioiTinh == true);
+                    congDans = congDans.Where(d => d.GioiTinh == 1);
                     break;
                 case 3:
-                    congDans = congDans.Where(d => d.GioiTinh == false);
+                    congDans = congDans.Where(d => d.GioiTinh == 0);
                     break;
             }
             return congDans;

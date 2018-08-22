@@ -300,6 +300,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Global\GioiTinh.cs" />
     <Compile Include="Migrations\201804051853001_UpdateIdentity.cs" />
     <Compile Include="Migrations\201804051853001_UpdateIdentity.Designer.cs">
       <DependentUpon>201804051853001_UpdateIdentity.cs</DependentUpon>
@@ -331,6 +332,10 @@
     <Compile Include="Migrations\201804170725539_UpdateCuTruModel.cs" />
     <Compile Include="Migrations\201804170725539_UpdateCuTruModel.Designer.cs">
       <DependentUpon>201804170725539_UpdateCuTruModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808221021179_Changed NguoiDung.GioiTinh.cs" />
+    <Compile Include="Migrations\201808221021179_Changed NguoiDung.GioiTinh.Designer.cs">
+      <DependentUpon>201808221021179_Changed NguoiDung.GioiTinh.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -577,6 +582,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804170725539_UpdateCuTruModel.resx">
       <DependentUpon>201804170725539_UpdateCuTruModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808221021179_Changed NguoiDung.GioiTinh.resx">
+      <DependentUpon>201808221021179_Changed NguoiDung.GioiTinh.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

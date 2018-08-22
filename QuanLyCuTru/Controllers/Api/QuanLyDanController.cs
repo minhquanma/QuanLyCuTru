@@ -111,18 +111,18 @@ namespace QuanLyCuTru.Controllers.Api
             return Ok(nguoiDungs);
         }
 
-        // GET: api/quanlydan?gioitinh=true|false
-        [ResponseType(typeof(NguoiDungDTO))]
-        [Route("")]
-        public IHttpActionResult GetNguoiDungsByGender(bool gioiTinh)
-        {
-            var nguoiDungs = db.NguoiDungs
-                .Where(ng => ng.GioiTinh == gioiTinh)
-                .Select(Mapper.Map<NguoiDung, NguoiDungDTO>)
-                .ToList();
+        //// GET: api/quanlydan?gioitinh=true|false
+        //[ResponseType(typeof(NguoiDungDTO))]
+        //[Route("")]
+        //public IHttpActionResult GetNguoiDungsByGender(bool gioiTinh)
+        //{
+        //    var nguoiDungs = db.NguoiDungs
+        //        .Where(ng => ng.GioiTinh == gioiTinh)
+        //        .Select(Mapper.Map<NguoiDung, NguoiDungDTO>)
+        //        .ToList();
 
-            return Ok(nguoiDungs);
-        }
+        //    return Ok(nguoiDungs);
+        //}
 
         // GET: api/quanlydan/5
         [ResponseType(typeof(NguoiDungDTO))]

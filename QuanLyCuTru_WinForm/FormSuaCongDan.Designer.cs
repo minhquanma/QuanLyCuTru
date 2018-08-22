@@ -269,6 +269,7 @@
             this.btnChonTep.TabIndex = 23;
             this.btnChonTep.Text = "Chọn tệp";
             this.btnChonTep.UseVisualStyleBackColor = true;
+            this.btnChonTep.Click += new System.EventHandler(this.btnChonTep_Click);
             // 
             // btnSua
             // 

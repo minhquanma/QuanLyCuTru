@@ -37,9 +37,8 @@ namespace QuanLyCuTru_WinForm
             // Load danh sách công dân
             if (CuTru.CongDans != null)
             {
-                NguoiDungBindingSource.Bind(CuTru.CongDans, dgvDanhSachCongDan);
+                NguoiDungBindingSource.BindCuTru(CuTru.CongDans, dgvDanhSachCongDan);
             }
-
 
             // Nếu cư trú này đã được duyệt
             if (CuTru.DaDuyet)

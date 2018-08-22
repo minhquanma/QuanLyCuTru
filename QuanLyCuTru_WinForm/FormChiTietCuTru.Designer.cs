@@ -46,7 +46,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbCanBoDangKy = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.chkDaDuyet = new System.Windows.Forms.CheckBox();
             this.label14 = new System.Windows.Forms.Label();
             this.lbNgayTao = new System.Windows.Forms.Label();
             this.lbDiaChi = new System.Windows.Forms.Label();
@@ -63,6 +62,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDuyetCuTru = new System.Windows.Forms.Button();
+            this.chkDaDuyet = new System.Windows.Forms.CheckBox();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).BeginInit();
             this.panel2.SuspendLayout();
@@ -80,7 +80,7 @@
             this.panelTop.Controls.Add(this.label10);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1265, 37);
             this.panelTop.TabIndex = 90;
@@ -93,7 +93,7 @@
             this.ptbThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbThoat.Image = ((System.Drawing.Image)(resources.GetObject("ptbThoat.Image")));
             this.ptbThoat.Location = new System.Drawing.Point(1228, 2);
-            this.ptbThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ptbThoat.Margin = new System.Windows.Forms.Padding(4);
             this.ptbThoat.Name = "ptbThoat";
             this.ptbThoat.Size = new System.Drawing.Size(33, 31);
             this.ptbThoat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -138,7 +138,7 @@
             // line2
             // 
             this.line2.Location = new System.Drawing.Point(0, 43);
-            this.line2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.line2.Margin = new System.Windows.Forms.Padding(4);
             this.line2.Name = "line2";
             this.line2.Size = new System.Drawing.Size(1268, 12);
             this.line2.TabIndex = 72;
@@ -150,7 +150,7 @@
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Location = new System.Drawing.Point(1129, 10);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(125, 62);
             this.btnSua.TabIndex = 69;
@@ -165,7 +165,7 @@
             this.panel2.Controls.Add(this.line2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 37);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1265, 52);
             this.panel2.TabIndex = 93;
@@ -176,7 +176,7 @@
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 560);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1265, 74);
             this.panel1.TabIndex = 94;
@@ -184,7 +184,7 @@
             // line1
             // 
             this.line1.Location = new System.Drawing.Point(0, 0);
-            this.line1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.line1.Margin = new System.Windows.Forms.Padding(4);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(1268, 12);
             this.line1.TabIndex = 92;
@@ -196,7 +196,7 @@
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 89);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(488, 471);
             this.panel3.TabIndex = 95;
@@ -206,10 +206,11 @@
             this.dgvDanhSachCongDan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDanhSachCongDan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvDanhSachCongDan.BackgroundColor = System.Drawing.Color.White;
             this.dgvDanhSachCongDan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachCongDan.Location = new System.Drawing.Point(3, 66);
-            this.dgvDanhSachCongDan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDanhSachCongDan.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDanhSachCongDan.Name = "dgvDanhSachCongDan";
             this.dgvDanhSachCongDan.Size = new System.Drawing.Size(483, 405);
             this.dgvDanhSachCongDan.TabIndex = 1;
@@ -220,7 +221,7 @@
             this.panel4.Controls.Add(this.label1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(488, 64);
             this.panel4.TabIndex = 0;
@@ -261,7 +262,7 @@
             this.panel5.Controls.Add(this.chkDaDuyet);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(488, 89);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(777, 471);
             this.panel5.TabIndex = 96;
@@ -287,17 +288,6 @@
             this.label15.Size = new System.Drawing.Size(146, 25);
             this.label15.TabIndex = 110;
             this.label15.Text = "Cán bộ đăng ký";
-            // 
-            // chkDaDuyet
-            // 
-            this.chkDaDuyet.AutoSize = true;
-            this.chkDaDuyet.Enabled = false;
-            this.chkDaDuyet.Location = new System.Drawing.Point(217, 361);
-            this.chkDaDuyet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.chkDaDuyet.Name = "chkDaDuyet";
-            this.chkDaDuyet.Size = new System.Drawing.Size(18, 17);
-            this.chkDaDuyet.TabIndex = 109;
-            this.chkDaDuyet.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
@@ -472,13 +462,24 @@
             this.btnDuyetCuTru.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnDuyetCuTru.ForeColor = System.Drawing.Color.White;
             this.btnDuyetCuTru.Location = new System.Drawing.Point(217, 344);
-            this.btnDuyetCuTru.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDuyetCuTru.Margin = new System.Windows.Forms.Padding(4);
             this.btnDuyetCuTru.Name = "btnDuyetCuTru";
             this.btnDuyetCuTru.Size = new System.Drawing.Size(293, 47);
             this.btnDuyetCuTru.TabIndex = 94;
             this.btnDuyetCuTru.Text = "CLICK VÀO ĐÂY ĐỂ DUYỆT CƯ TRÚ";
             this.btnDuyetCuTru.UseVisualStyleBackColor = false;
             this.btnDuyetCuTru.Click += new System.EventHandler(this.btnDuyetCuTru_Click);
+            // 
+            // chkDaDuyet
+            // 
+            this.chkDaDuyet.AutoSize = true;
+            this.chkDaDuyet.Enabled = false;
+            this.chkDaDuyet.Location = new System.Drawing.Point(217, 361);
+            this.chkDaDuyet.Margin = new System.Windows.Forms.Padding(4);
+            this.chkDaDuyet.Name = "chkDaDuyet";
+            this.chkDaDuyet.Size = new System.Drawing.Size(18, 17);
+            this.chkDaDuyet.TabIndex = 109;
+            this.chkDaDuyet.UseVisualStyleBackColor = true;
             // 
             // FormChiTietCuTru
             // 
@@ -491,7 +492,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormChiTietCuTru";
             this.Text = "FormChiTietCuTru";
             this.panelTop.ResumeLayout(false);

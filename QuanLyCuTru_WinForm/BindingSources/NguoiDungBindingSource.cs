@@ -26,5 +26,17 @@ namespace QuanLyCuTru_WinForm.BindingSources
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Quốc tịch", DataPropertyName = "QuocTich", });
             dataGridView.DataSource = source;
         }
+
+        public static void BindCuTru(ICollection<NguoiDungDTO> list, DataGridView dataGridView)
+        {
+            BindingSource source = new BindingSource(list, null);
+
+            dataGridView.AutoGenerateColumns = false;
+            dataGridView.Columns.Clear();
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã số", DataPropertyName = "Id" });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Họ tên", DataPropertyName = "HoTen" });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Giới tính", DataPropertyName = "StringGioiTinh" });
+            dataGridView.DataSource = source;
+        }
     }
 }
