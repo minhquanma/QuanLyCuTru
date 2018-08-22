@@ -28,6 +28,7 @@ namespace QuanLyCuTru_WinForm
         {
             InitializeComponent();
             LoadConfigData();
+
             // Hide loading icon
             ptbloading.Hide();
         }
@@ -52,7 +53,7 @@ namespace QuanLyCuTru_WinForm
         {
             using (StreamWriter sw = File.CreateText(configPath))
             {
-                sw.WriteLine(isSaved);
+                sw.WriteLine(chkLuu.Checked);
                 sw.WriteLine(txtUsername.Text);
             }
         }
