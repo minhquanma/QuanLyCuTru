@@ -78,6 +78,8 @@ namespace QuanLyCuTru_WinForm
             ptbloading.Show();
             // Disable nút DangNhap
             btnDangNhap.Enabled = false;
+            txtUsername.Enabled = false;
+            txtPassword.Enabled = false;
             // Chức năng đăng nhập
             //var loginResult = true;
             var loginResult = await HttpService.LoginAsync(txtUsername.Text, txtPassword.Text);
@@ -98,6 +100,8 @@ namespace QuanLyCuTru_WinForm
             }
             // Disable nút DangNhap
             btnDangNhap.Enabled = true;
+            txtUsername.Enabled = true;
+            txtPassword.Enabled = true;
         }
     }
 }

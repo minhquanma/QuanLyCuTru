@@ -116,7 +116,7 @@ namespace QuanLyCuTru_WinForm
             if (MenuCongdan.Visible == false)
             {
                 MenuCongdan.Visible = true;
-                panelCongdan.Height = 178;
+                panelCongdan.Height = 141;
                 MenuCutru.Visible = false;
                 panelCutru.Height = 54;
             }
@@ -160,14 +160,14 @@ namespace QuanLyCuTru_WinForm
             if (MenuCutru.Visible == false)
             {
                 MenuCutru.Visible = true;
-                panelCutru.Height = 178;
+                panelCutru.Height = 141;
                 MenuCongdan.Visible = false;
-                panelCongdan.Height = 54;
+                panelCongdan.Height = 52;
             }
             else
             {
                 MenuCutru.Visible = false;
-                panelCutru.Height = 54;
+                panelCutru.Height = 52;
             }
         }
 
@@ -176,14 +176,14 @@ namespace QuanLyCuTru_WinForm
             if (MenuCongdan.Visible == false)
             {
                 MenuCongdan.Visible = true;
-                panelCongdan.Height = 95;
+                panelCongdan.Height = 84;
                 MenuCutru.Visible = false;
-                panelCutru.Height = 54;
+                panelCutru.Height = 52;
             }
             else
             {
                 MenuCongdan.Visible = false;
-                panelCongdan.Height = 54;
+                panelCongdan.Height = 52;
             }
         }
 
