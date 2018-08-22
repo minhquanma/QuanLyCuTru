@@ -139,7 +139,7 @@ namespace QuanLyCuTru_WinForm
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCuTru.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCuTru.EnableHeadersVisualStyles = false;
-            this.dgvCuTru.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dgvCuTru.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvCuTru.Location = new System.Drawing.Point(25, 116);
             this.dgvCuTru.Name = "dgvCuTru";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -202,7 +202,7 @@ namespace QuanLyCuTru_WinForm
             // 
             // btnSua
             // 
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnSua.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -234,7 +234,7 @@ namespace QuanLyCuTru_WinForm
             // 
             // btnIn
             // 
-            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnIn.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
             this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
